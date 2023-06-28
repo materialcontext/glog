@@ -1,0 +1,183 @@
+{
+  "Actor": {
+    "types": ["playerCharacter", "hireling", "companion", "npc"],
+    "tempaltes": {
+      "overview": {
+        "name": "",
+        "class": "",
+        "level": {
+          "min": 0,
+          "value": 0,
+          "max": 9
+        },
+        "wounds": {
+          "min": 0,
+          "value": 0,
+          "max": 9
+        }
+      },
+      "resources": {
+        "hp": {
+          "min": 0,
+          "value": 0,
+          "max": 99
+        },
+        "inventory": {
+          "min": 3,
+          "value": 6,
+          "max": 99
+        },
+        "magicDice": {
+          "min": 0,
+          "value": 0,
+          "max": 99
+        },
+        "hires": {
+          "min": 0,
+          "value": 0,
+          "max": 99
+        }
+      },
+      "abilityScores": {
+        "strength": {
+          "min": -3,
+          "value": 0,
+          "max": 3
+        },
+        "dexterity": {
+          "min": -3,
+          "value": 0,
+          "max": 3
+        },
+        "constitution": {
+          "min": -3,
+          "value": 0,
+          "max": 3
+        },
+        "intelligence": {
+          "min": -3,
+          "value": 0,
+          "max": 3
+        },
+        "wisdom": {
+          "min": -3,
+          "value": 0,
+          "max": 3
+        },
+        "charisma": {
+          "min": -3,
+          "value": 0,
+          "max": 3
+        }
+      },
+      "combat": {
+        "attack": {
+          "min": -3,
+          "value": 0,
+          "max": 9
+        },
+        "defense": {
+          "min": -3,
+          "value": 0,
+          "max": 9
+        }
+      },
+      "stealth": {
+        "sneak": {
+          "min": -9,
+          "value": 0,
+          "max": 9
+        },
+        "hide": {
+          "min": -9,
+          "value": 0,
+          "max": 9
+        },
+        "disguise": {
+          "min": -9,
+          "value": 0,
+          "max": 9
+        }
+      },
+      "social": {
+        "reaction": {
+          "min": -9,
+          "value": 0,
+          "max": 9
+        },
+        "diplomacy": {
+          "min": -9,
+          "value": 0,
+          "max": 9
+        },
+        "intimidate": {
+          "min": -9,
+          "value": 0,
+          "max": 9
+        }
+      },
+      "npc": {
+        "loyalty": {
+            "min": 0,
+            "value": 4,
+            "max": 6
+          },
+        "morale": {
+            "min": 1,
+            "value": 6,
+            "max": 12
+        }
+      }
+    },
+    "playerCharacter`": {
+      "templates": [
+        "overview",
+        "resources",
+        "abilityScores",
+        "combat",
+        "stealth",
+        "social"
+      ]
+    },
+    "hireling": {
+      "templates": [
+        "overview",
+        "resources",
+        "abilityScores",
+        "combat",
+        "stealth",
+        "social",
+        "npc"
+      ]
+    },
+    "companion": {
+        "templates": ["abilityScores", "combat", "stealth"],
+        "name": ""
+    },
+    "npc": {
+        "tempaltes": ["abilityScores", "combat", "stealth", "npc"]
+    }
+  },
+  "Item": {
+    "types": ["lightWeapon", "lightArmor"],
+    "templates": {
+        "lightWeapon": {
+            "inventory": 1,
+            "damage": "1",
+            "isThrown": true,
+            "thrownRange": "10ft."
+        },
+        "cheap": {
+            "cost": "1sp"
+        }
+    },
+    "lightWeapon": {
+        "templates": ["lightWeapon"]
+    },
+    "lightArmor": {
+        "defense": 1,
+        "encumberance": 0,
+        "dexCap": 9
+    }
+  }
+}

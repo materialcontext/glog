@@ -1,0 +1,55 @@
+{
+    "id": "glog-2d6",
+    "title": "GLOG 2d6",
+    "description": "A roleplaying game system based on the original GLOG by Arnold K.",
+    "version": "0.0.1",
+    "compatability": {
+        "minimum": "11",
+        "verified": "11",
+        "maximum": "11"
+    },
+    "authors": [
+        {
+            "name": "materialcontext"
+        }
+    ],
+    "scripts": [
+        "scripts/system-script.js"
+    ],
+    "esmodules": [
+        "scripts/system-module.mjs"
+    ],
+    "styles": [
+        "styles/system-styles.css"
+    ],
+    "packs": [
+        {
+            "name": "items",
+            "label": "sample items",
+            "path": "packs/items.db",
+            "type": "Item"
+        },
+        {
+            "name": "monsters",
+            "label": "sample monsters",
+            "path": "packs/monsters.db",
+            "type": "Actor"
+        }
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "socket": false,
+    "initiative": "2d6",
+    "gridDistance": 10,
+    "gridUnits": "ft",
+    "primaryTokenAttribute": "resources.hp",
+    "secondaryTokenAttribute": "resources.inventory",
+    "url": "",
+    "manifest": "",
+    "download": ""
+}
