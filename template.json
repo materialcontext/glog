@@ -41,7 +41,7 @@
           "max": 99
         }
       },
-      "abilities": {
+      "stats": {
         "abilities": {
           "str": {
             "min": -3,
@@ -146,7 +146,7 @@
         "description",
         "attributes",
         "resources",
-        "abilities",
+        "stats",
         "combat",
         "stealth",
         "social",
@@ -158,7 +158,7 @@
         "description",
         "attributes",
         "resources",
-        "abilities",
+        "stats",
         "combat",
         "stealth",
         "social",
@@ -167,11 +167,11 @@
       ]
     },
     "companion": {
-      "templates": ["abilities", "combat", "stealth"],
+      "templates": ["stats", "combat", "stealth"],
       "name": ""
     },
     "npc": {
-      "tempaltes": ["abilities", "combat", "stealth", "npc"]
+      "tempaltes": ["stats", "combat", "stealth", "npc"]
     }
   },
   "Item": {
