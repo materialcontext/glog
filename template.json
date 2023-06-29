@@ -38,33 +38,33 @@
           "max": 99
         }
       },
-      "abilityScores": {
-        "strength": {
+      "abilities": {
+        "str": {
           "min": -3,
           "value": 0,
           "max": 3
         },
-        "dexterity": {
+        "dex": {
           "min": -3,
           "value": 0,
           "max": 3
         },
-        "constitution": {
+        "con": {
           "min": -3,
           "value": 0,
           "max": 3
         },
-        "intelligence": {
+        "int": {
           "min": -3,
           "value": 0,
           "max": 3
         },
-        "wisdom": {
+        "wis": {
           "min": -3,
           "value": 0,
           "max": 3
         },
-        "charisma": {
+        "cha": {
           "min": -3,
           "value": 0,
           "max": 3
@@ -140,7 +140,7 @@
       "templates": [
         "overview",
         "resources",
-        "abilityScores",
+        "abilities",
         "combat",
         "stealth",
         "social",
@@ -151,7 +151,7 @@
       "templates": [
         "overview",
         "resources",
-        "abilityScores",
+        "abilities",
         "combat",
         "stealth",
         "social",
@@ -160,11 +160,11 @@
       ]
     },
     "companion": {
-        "templates": ["abilityScores", "combat", "stealth"],
+        "templates": ["abilities", "combat", "stealth"],
         "name": ""
     },
     "npc": {
-        "tempaltes": ["abilityScores", "combat", "stealth", "npc"]
+        "tempaltes": ["abilities", "combat", "stealth", "npc"]
     }
   },
   "Item": {
