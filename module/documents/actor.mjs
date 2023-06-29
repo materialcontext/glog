@@ -13,6 +13,8 @@ export class PlayerCharacter extends Actor {
     this.system.abilities = this.system.abilities || {};
     const actorData = this;
 
+    console.log(actorData);
+
     this._preparePlayerCharacterData(actorData);
     this._prepareNPCData(actorData);
   }
@@ -66,7 +68,7 @@ export class PlayerCharacter extends Actor {
 
     // do the same for level or fallback to 0
     if (data.attributes.level) {
-      data.lvl = data.attributes.level.value ?? 0;
+      data.level = data.attributes.level.value ?? 0;
     }
   }
 }
