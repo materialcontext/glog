@@ -29,11 +29,9 @@ export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
   getData() {
     const context = super.getData();
-    console.log(context);
     
     // copy the actor to operate safely
     const actorData = this.actor.toObject(false);
-    console.log(actorData)
 
 
     // add to context for easy access
@@ -66,7 +64,6 @@ export class PlayerCharacterSheet extends ActorSheet {
 
   _preparePlayerCharacterData(context) {
     // set ability score localization
-    console.log(context);
     for (let [k, v] of Object.entries(context.system.abilities)) {
         v.label = game.il8n.localize(CONFIG.GLOG.abilities [k]) ?? k;
     };
