@@ -42,35 +42,37 @@
         }
       },
       "abilities": {
-        "str": {
-          "min": -3,
-          "value": 0,
-          "max": 3
-        },
-        "dex": {
-          "min": -3,
-          "value": 0,
-          "max": 3
-        },
-        "con": {
-          "min": -3,
-          "value": 0,
-          "max": 3
-        },
-        "int": {
-          "min": -3,
-          "value": 0,
-          "max": 3
-        },
-        "wis": {
-          "min": -3,
-          "value": 0,
-          "max": 3
-        },
-        "cha": {
-          "min": -3,
-          "value": 0,
-          "max": 3
+        "abilities": {
+          "str": {
+            "min": -3,
+            "value": 0,
+            "max": 3
+          },
+          "dex": {
+            "min": -3,
+            "value": 0,
+            "max": 3
+          },
+          "con": {
+            "min": -3,
+            "value": 0,
+            "max": 3
+          },
+          "int": {
+            "min": -3,
+            "value": 0,
+            "max": 3
+          },
+          "wis": {
+            "min": -3,
+            "value": 0,
+            "max": 3
+          },
+          "cha": {
+            "min": -3,
+            "value": 0,
+            "max": 3
+          }
         }
       },
       "combat": {
@@ -121,14 +123,14 @@
       },
       "npc": {
         "loyalty": {
-            "min": 0,
-            "value": 4,
-            "max": 6
-          },
+          "min": 0,
+          "value": 4,
+          "max": 6
+        },
         "morale": {
-            "min": 1,
-            "value": 6,
-            "max": 12
+          "min": 1,
+          "value": 6,
+          "max": 12
         }
       },
       "encumberance": {
@@ -165,33 +167,33 @@
       ]
     },
     "companion": {
-        "templates": ["abilities", "combat", "stealth"],
-        "name": ""
+      "templates": ["abilities", "combat", "stealth"],
+      "name": ""
     },
     "npc": {
-        "tempaltes": ["abilities", "combat", "stealth", "npc"]
+      "tempaltes": ["abilities", "combat", "stealth", "npc"]
     }
   },
   "Item": {
     "types": ["Weapon", "Armor", "Item", "Feature", "Spell"],
     "templates": {
-        "Weapon": {
-            "inventory": 1,
-            "damage": "1",
-            "isThrown": true,
-            "thrownRange": "10ft."
-        },
-        "cheap": {
-            "cost": "1sp"
-        }
+      "Weapon": {
+        "inventory": 1,
+        "damage": "1",
+        "isThrown": true,
+        "thrownRange": "10ft."
+      },
+      "cheap": {
+        "cost": "1sp"
+      }
     },
     "Weapon": {
-        "templates": ["Weapon"]
+      "templates": ["Weapon"]
     },
     "Armor": {
-        "defense": 1,
-        "encumberance": 0,
-        "dexCap": 9
+      "defense": 1,
+      "encumberance": 0,
+      "dexCap": 9
     },
     "Item": {},
     "Feature": {},
