@@ -1,11 +1,11 @@
 export class PlayerCharacter extends Actor {
   /** @override */
-  prepareData() {
-    super.prepareData();
-  }
+//   prepareData() {
+//     super.prepareData();
+//   }
 
   /** @override */
-  prepareBaseData() {}
+//   prepareBaseData() {}
 
   /** @inheritdoc */
   prepareDerivedData() {
