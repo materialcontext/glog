@@ -173,7 +173,7 @@
     }
   },
   "Item": {
-    "types": ["Weapon", "Armor"],
+    "types": ["Weapon", "Armor", "Item", "Feature", "Spell"],
     "templates": {
         "Weapon": {
             "inventory": 1,
@@ -192,6 +192,9 @@
         "defense": 1,
         "encumberance": 0,
         "dexCap": 9
-    }
+    },
+    "Item": {},
+    "Feature": {},
+    "Spell": {}
   }
 }
