@@ -44,7 +44,7 @@ export class PlayerCharacter extends Actor {
      * Override getRollData() that's supplied to rolls
      */
     getRollData() {
-        const data = supeer.getRollData();
+        const data = super.getRollData();
 
         //prepare character roll data
         this._getCharacterRollData(data);
