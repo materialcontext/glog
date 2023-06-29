@@ -1,5 +1,5 @@
 {
-    "id": "glog-2d6",
+    "id": "glog",
     "title": "GLOG 2d6",
     "description": "A roleplaying game system based on the original GLOG by Arnold K.",
     "version": "0.0.1",
@@ -13,14 +13,12 @@
             "name": "materialcontext"
         }
     ],
-    "scripts": [
-        "scripts/system-script.js"
-    ],
+    "scripts": [],
     "esmodules": [
-        "scripts/system-module.mjs"
+        "scripts/glog.mjs"
     ],
     "styles": [
-        "styles/system-styles.css"
+        "styles/glog.css"
     ],
     "packs": [
         {
@@ -47,8 +45,8 @@
     "initiative": "2d6",
     "gridDistance": 10,
     "gridUnits": "ft",
-    "primaryTokenAttribute": "resources.hp",
-    "secondaryTokenAttribute": "resources.inventory",
+    "primaryTokenAttribute": "hp",
+    "secondaryTokenAttribute": "inventory",
     "url": "",
     "manifest": "",
     "download": ""
