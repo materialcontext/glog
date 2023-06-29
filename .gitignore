@@ -5,3 +5,5 @@ nodemodules
 #secrets
 .env
 
+# binariies
+*.zip
