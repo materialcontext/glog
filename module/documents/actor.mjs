@@ -7,11 +7,11 @@ export class PlayerCharacter extends Actor {
   /** @override */
   prepareBaseData() {}
 
-  /** @override */
+  /** @inheritdoc */
   prepareDerivedData() {
+    super.prepareDerivedData();
+    this.system.abilities = this.system.abilities || {};
     const actorData = this;
-    const systemData = actorData.system;
-    const flags = actorData.flags.glog || {};
 
     this._preparePlayerCharacterData(actorData);
     this._prepareNPCData(actorData);
@@ -23,7 +23,7 @@ export class PlayerCharacter extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    console.log(actorData)
+    console.log(actorData.system)
   
   }
 
