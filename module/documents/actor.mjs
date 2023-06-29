@@ -61,8 +61,8 @@ export class PlayerCharacter extends Actor {
         };
 
         // do the same for level or fallback to 0
-        if (data.overview.level) {
-            data.level = data.overview.level.value ?? 0;
+        if (data.attributes.level) {
+            data.level = data.attributes.level.value ?? 0;
         };
     };
 };

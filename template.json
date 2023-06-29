@@ -2,9 +2,12 @@
   "Actor": {
     "types": ["Player Character", "Hireling", "Companion", "NPC"],
     "tempaltes": {
-      "overview": {
+      "description": {
         "name": "",
-        "class": "",
+        "description": "",
+        "class": ""
+      },
+      "attributes": {
         "level": {
           "min": 0,
           "value": 0,
@@ -138,7 +141,8 @@
     },
     "Player Character`": {
       "templates": [
-        "overview",
+        "description",
+        "attributes",
         "resources",
         "abilities",
         "combat",
@@ -149,7 +153,8 @@
     },
     "Hireling": {
       "templates": [
-        "overview",
+        "description",
+        "attributes",
         "resources",
         "abilities",
         "combat",
