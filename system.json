@@ -15,7 +15,7 @@
     ],
     "scripts": [],
     "esmodules": [
-        "scripts/glog.mjs"
+        "modules/glog.mjs"
     ],
     "styles": [
         "css/glog.css"
