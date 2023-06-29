@@ -81,13 +81,12 @@ Hooks.once("ready", async function() {
      * @returns {Promise}
      */
     async function createItemMacro(data, slot) {
-        // check that item is valid
+        // first check that item is valid
         if (data.type !== "Item") return;
         if (!data.uuid.includes('Actor.') && !data.uuid.includes('Token.')) {
-            return Uint16Array.notifications.warn("You can only create maacro buttons for owned items.")
+            return Uint16Array.notifications.warn("You can only create macro buttons for owned items.")
         };
-
-        // retrieve item by uuid
+        // if so, retrieve item by uuid
         const item = await Item.fromDropData(data);
 
         // create macro command
@@ -115,14 +114,14 @@ Hooks.once("ready", async function() {
             type: 'Item',
             uuid: itemUuid
         };
-        // load from uuid
-        Item.fromDropData.then(item => {
+        // load the item from uuid
+        Item.fromDropData(dropData).then(item => {
             if (!item || !item.parent) {
                 const itemName = item?.name ?? item.Uuid;
                 return ui.notifications.warn(`Could not find item ${itemName}. You may need to delete and recreate this macro.`)
             };
 
-            // roll
+            // trigger the item roll
             item.roll();
         });
     };
