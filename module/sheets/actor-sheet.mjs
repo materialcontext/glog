@@ -11,7 +11,7 @@ export class PlayerCharacterSheet extends ActorSheet {
       height: 600,
       tabs: [
         {
-          naveSelector: ".sheet-tabs",
+          navSelector: ".sheet-tabs",
           contentSelector: ".sheet-body",
           initial: "features",
         },
@@ -29,10 +29,13 @@ export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
   getData() {
     const context = super.getData();
+    console.log(context);
     
     // copy the actor to operate safely
     const actorData = this.actor.toObject(false);
-    
+    console.log(actorData)
+
+
     // add to context for easy access
     context.system = actorData.system;
     context.flags = actorData.flags;
