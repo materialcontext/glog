@@ -47,7 +47,7 @@
     "gridUnits": "ft",
     "primaryTokenAttribute": "hp",
     "secondaryTokenAttribute": "inventory",
-    "url": "",
-    "manifest": "",
+    "url": "https://github.com/materialcontext/glog",
+    "manifest": "https://raw.githubusercontent.com/materialcontext/glog/main/system.json",
     "download": ""
 }
