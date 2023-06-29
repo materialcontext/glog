@@ -52,7 +52,7 @@ export class PlayerCharacter extends Actor {
         return data;
     };
 
-    _getCharacterRollData() {
+    _getCharacterRollData(data) {
         // add ability data to top level for access like `@str + 4`
         if (data.abilities) {
             for (let [k, v] of Object.entries(data.abilities)) {
