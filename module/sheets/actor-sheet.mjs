@@ -125,11 +125,11 @@ export class PlayerCharacterSheet extends ActorSheet {
         // anything rollable
         html.find('.rollable').click(this._onRoll.bind(this));
 
-        // drage events for macros
+        // drag events for macros
         if (this.actor.isOwner) {
             let handler = ev => this.onDragStart(ev);
             html.find('li.item').each((i, li) => {
-                if (HTMLDataListElement.classList.contains("inventory-header")) return;
+                if (li.classList.contains("inventory-header")) return;
                 li.setAttribute("draggable", true);
                 li.addEventListener("dragstart", handler, false);
             });

@@ -1,7 +1,7 @@
 {
   "Actor": {
     "types": ["playerCharacter", "hireling", "companion", "npc"],
-    "tempaltes": {
+    "templates": {
       "description": {
         "name": "",
         "description": "",
