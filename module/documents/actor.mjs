@@ -19,7 +19,7 @@ export class PlayerCharacter extends Actor {
     };
     
     // prepare playerCharacter type specific data
-    _prepareCharacterData(actorData) {
+    _preparePlayerCharacterData(actorData) {
         if (actorData.type !== 'playerCharacter') return;
 
         //make data modifications here
