@@ -1,6 +1,6 @@
 #folders
 .vscode/
-nodemodules
+node_modules
 
 #secrets
 .env
