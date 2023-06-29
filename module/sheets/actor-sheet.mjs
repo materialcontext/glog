@@ -65,7 +65,7 @@ export class PlayerCharacterSheet extends ActorSheet {
   _preparePlayerCharacterData(context) {
     // set ability score localization
     for (let [k, v] of Object.entries(context.system.abilities)) {
-        v.label = game.il8n.localize(CONFIG.GLOG.abilities [k]) ?? k;
+        v.label = game.i18n.localize(CONFIG.GLOG.abilities [k]) ?? k;
     };
   };
 
