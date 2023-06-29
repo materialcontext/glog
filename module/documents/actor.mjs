@@ -20,24 +20,24 @@ export class PlayerCharacter extends Actor {
     
     // prepare playerCharacter type specific data
     _preparePlayerCharacterData(actorData) {
-        if (actorData.type !== 'playerCharacter') return;
+        if (actorData.type !== 'Player Character') return;
 
         //make data modifications here
     };
 
     // prepare NPC type specific data
     _prepareNPCData(actorData) {
-        if (actorData.type !== 'npc') return;
+        if (actorData.type !== 'NPC') return;
     };
 
     // prepare companion specific data
     _prepareCompanionData(actorData) {
-        if (actorData.type !== 'companion') return;
+        if (actorData.type !== 'Companion') return;
     };
     
     // prepare hireling specific data
     _prepareHirelingData(actorData) {
-        if (actorData.type !== 'hireling') return;
+        if (actorData.type !== 'Hireling') return;
     };
 
     /**
@@ -53,6 +53,9 @@ export class PlayerCharacter extends Actor {
     };
 
     _getCharacterRollData(data) {
+        if (this.type !== "Player Character" || this.type !== "Hireling") {
+            return;
+        }
         // add ability data to top level for access like `@str + 4`
         if (data.abilities) {
             for (let [k, v] of Object.entries(data.abilities)) {
@@ -62,7 +65,7 @@ export class PlayerCharacter extends Actor {
 
         // do the same for level or fallback to 0
         if (data.attributes.level) {
-            data.level = data.attributes.level.value ?? 0;
+            data.lvl = data.attributes.level.value ?? 0;
         };
     };
 };
