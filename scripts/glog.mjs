@@ -1,6 +1,7 @@
 // import document classes
 import { PlayerCharacter } from "./documents/actor.mjs";
-
+// import sheet classes
+import {PlayerCharacterSheet}  from "./sheets/actor-sheet.mjs"
 // import helpers
 import { GLOG } from "./helpers/config.mjs"
 
