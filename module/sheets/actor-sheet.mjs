@@ -21,7 +21,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/glog/templates/actor/actor-${this.actor.data.type}-sheet.html`
+    return `systems/glog/templates/actor/actor-${this.actor.type}-sheet.html`
   };
 
   /* --------------------------------------------------- */

@@ -20,24 +20,24 @@ export class PlayerCharacter extends Actor {
     
     // prepare playerCharacter type specific data
     _preparePlayerCharacterData(actorData) {
-        if (actorData.type !== 'Player Character') return;
+        if (actorData.type !== 'playerCharacter') return;
 
         //make data modifications here
     };
 
     // prepare NPC type specific data
     _prepareNPCData(actorData) {
-        if (actorData.type !== 'NPC') return;
+        if (actorData.type !== 'npc') return;
     };
 
     // prepare companion specific data
     _prepareCompanionData(actorData) {
-        if (actorData.type !== 'Companion') return;
+        if (actorData.type !== 'companion') return;
     };
     
     // prepare hireling specific data
     _prepareHirelingData(actorData) {
-        if (actorData.type !== 'Hireling') return;
+        if (actorData.type !== 'hireling') return;
     };
 
     /**
@@ -53,7 +53,7 @@ export class PlayerCharacter extends Actor {
     };
 
     _getCharacterRollData(data) {
-        if (this.type !== "Player Character" || this.type !== "Hireling") {
+        if (this.type !== "playerCharacter" || this.type !== "hireling") {
             return;
         }
         // add ability data to top level for access like `@str + 4`

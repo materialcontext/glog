@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["Player Character", "Hireling", "Companion", "NPC"],
+    "types": ["playerCharacter", "hireling", "companion", "npc"],
     "tempaltes": {
       "description": {
         "name": "",
@@ -119,7 +119,7 @@
           "max": 9
         }
       },
-      "NPC": {
+      "npc": {
         "loyalty": {
             "min": 0,
             "value": 4,
@@ -139,7 +139,7 @@
         }
       }
     },
-    "Player Character`": {
+    "playerCharacter`": {
       "templates": [
         "description",
         "attributes",
@@ -151,7 +151,7 @@
         "encumberance"
       ]
     },
-    "Hireling": {
+    "hireling": {
       "templates": [
         "description",
         "attributes",
@@ -160,16 +160,16 @@
         "combat",
         "stealth",
         "social",
-        "NPC",
+        "npc",
         "encumberance"
       ]
     },
-    "Companion": {
+    "companion": {
         "templates": ["abilities", "combat", "stealth"],
         "name": ""
     },
-    "NPC": {
-        "tempaltes": ["abilities", "combat", "stealth", "NPC"]
+    "npc": {
+        "tempaltes": ["abilities", "combat", "stealth", "npc"]
     }
   },
   "Item": {
