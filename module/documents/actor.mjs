@@ -24,7 +24,6 @@ export class PlayerCharacter extends Actor {
     // Make modifications to data here. For example:
     const systemData = actorData.system;
     console.log(actorData)
-    console.log(actorData.system.abilities);
   
   }
 

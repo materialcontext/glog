@@ -139,7 +139,7 @@
         }
       }
     },
-    "playerCharacter`": {
+    "playerCharacter": {
       "templates": [
         "description",
         "attributes",
