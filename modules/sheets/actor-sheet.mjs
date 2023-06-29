@@ -1,5 +1,5 @@
 /** @extends { ActorSheet }*/
-export class playerCharacterSheet extends ActorSheet {
+export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {

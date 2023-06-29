@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["playerCharacter", "hireling", "companion", "npc"],
+    "types": ["Player Character", "Hireling", "Companion", "NPC"],
     "tempaltes": {
       "overview": {
         "name": "",
@@ -116,7 +116,7 @@
           "max": 9
         }
       },
-      "npc": {
+      "NPC": {
         "loyalty": {
             "min": 0,
             "value": 4,
@@ -136,7 +136,7 @@
         }
       }
     },
-    "playerCharacter`": {
+    "Player Character`": {
       "templates": [
         "overview",
         "resources",
@@ -147,7 +147,7 @@
         "encumberance"
       ]
     },
-    "hireling": {
+    "Hireling": {
       "templates": [
         "overview",
         "resources",
@@ -155,22 +155,22 @@
         "combat",
         "stealth",
         "social",
-        "npc",
+        "NPC",
         "encumberance"
       ]
     },
-    "companion": {
+    "Companion": {
         "templates": ["abilities", "combat", "stealth"],
         "name": ""
     },
-    "npc": {
-        "tempaltes": ["abilities", "combat", "stealth", "npc"]
+    "NPC": {
+        "tempaltes": ["abilities", "combat", "stealth", "NPC"]
     }
   },
   "Item": {
-    "types": ["lightWeapon", "lightArmor"],
+    "types": ["lightWeapon", "Armor"],
     "templates": {
-        "lightWeapon": {
+        "Weapon": {
             "inventory": 1,
             "damage": "1",
             "isThrown": true,
@@ -180,10 +180,10 @@
             "cost": "1sp"
         }
     },
-    "lightWeapon": {
-        "templates": ["lightWeapon"]
+    "Weapon": {
+        "templates": ["Weapon"]
     },
-    "lightArmor": {
+    "Armor": {
         "defense": 1,
         "encumberance": 0,
         "dexCap": 9
