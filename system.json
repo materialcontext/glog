@@ -49,5 +49,5 @@
     "secondaryTokenAttribute": "inventory",
     "url": "https://github.com/materialcontext/glog",
     "manifest": "https://raw.githubusercontent.com/materialcontext/glog/main/system.json",
-    "download": "https://github.com/materialcontext/glog/archive/refs/heads/main.zip"
+    "download": "https://github.com/materialcontext/glog/archive/refs/tags/system.zip"
 }
