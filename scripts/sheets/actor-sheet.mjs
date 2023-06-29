@@ -65,4 +65,55 @@ export class playerCharacterSheet extends ActorSheet {
         v.label = game.il8n.localize(CONFIG.GLOG.abilities [k]) ?? k;
     };
   };
+
+  _prepareItems(context) {
+    // initialize containers
+    const gear = [];
+    const features = [];
+    const spells = [];
+
+    // allocate items to proper containers
+    for (let i of context.items) {
+        i.img = i.img || DEFAULT_TOKEN;
+
+        if (i.type == 'item') {
+            gear.push(i);
+        } else if (i.type == 'feature') {
+            features.push(i);
+        } else if (i.type == 'spell') {
+            spells.push(i);
+        };
+
+        context.gear = gear;
+        context.features = features;
+        context.spells = spells;
+    };
+  };
+
+    /* ------------------------------------- */
+
+    /** @override */
+    activateListeners(html) {
+        super.activateListeners(html)
+
+        //render before edit check
+        html.find('.item-edit').click(ev => {
+            const li = $(ev.currentTarget).parents('.item');
+            const item = this.actor.items.get(li.data("itemId"));
+        });
+
+        // editable
+        if (!this.isEditable) return;
+
+        // add inventory
+        html.find('.item-create').click(this._onItemCreate.bind(this));
+
+        // delete inventory
+        html.find('item-delete').click(ev => {
+            const li = $(ev.currentTarget).parents('.item');
+            const item = this.actor.items.get(li.data("itemId"));
+            item.delete();
+            item.slideUp(200, () => this.render(false));
+        })
+    };
 }
