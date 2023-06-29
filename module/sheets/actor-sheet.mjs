@@ -183,7 +183,7 @@ export class PlayerCharacterSheet extends ActorSheet {
         // handle rolls that supply their own formula
         if (dataset.roll) {
             let label = dataset.label ? `[ability] ${dataset.label}`: '';
-            let roll = new roll(dataset.roll, this.actor.getRollData());
+            let roll = new Roll(dataset.roll, this.actor.getRollData());
             roll.toMessage({
                 speaker: ChatMessage.getSpeaker({ actor: this.actor }),
                 flavor: label,

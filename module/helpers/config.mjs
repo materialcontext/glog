@@ -6,20 +6,20 @@ GLOG.system = 'glog';
  * @type {Object} 
  * */
 GLOG.abilities = {
-    "str": "GLOG.AbilityStr",
-    "dex": "GLOG.AbilityDex",
-    "con": "GLOG.AbilityCon",
-    "int": "GLOG.AbilityInt",
-    "wis": "GLOG.AbilityWis",
-    "cha": "GLOG.AbilityCha"
+    "str": "Strength",
+    "dex": "Dexterity",
+    "con": "Constitution",
+    "int": "Intelligence",
+    "wis": "Wisdom",
+    "cha": "Charisma"
 };
 
 GLOG.abilityAbbreviations = {
-    "str": "BOILERPLATE.AbilityStrAbbr",
-    "dex": "BOILERPLATE.AbilityDexAbbr",
-    "con": "BOILERPLATE.AbilityConAbbr",
-    "int": "BOILERPLATE.AbilityIntAbbr",
-    "wis": "BOILERPLATE.AbilityWisAbbr",
-    "cha": "BOILERPLATE.AbilityChaAbbr"
+    "str": "STR",
+    "dex": "DEX",
+    "con": "CON",
+    "int": "INT",
+    "wis": "WIS",
+    "cha": "CHA"
   };
   
