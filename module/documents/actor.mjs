@@ -10,7 +10,6 @@ export class PlayerCharacter extends Actor {
   /** @inheritdoc */
   prepareDerivedData() {
     super.prepareDerivedData();
-    this.system.abilities = this.system.abilities || {};
     const actorData = this;
 
     console.log(actorData);
