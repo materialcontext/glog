@@ -115,5 +115,78 @@ export class playerCharacterSheet extends ActorSheet {
             item.delete();
             item.slideUp(200, () => this.render(false));
         })
+
+        // Active effect management
+        html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));
+
+        // anything rollable
+        html.find('.rollable').click(this._onRoll.bind(this));
+
+        // drage events for macros
+        if (this.actor.isOwner) {
+            let handler = ev => this.onDragStart(ev);
+            html.find('li.item').each((i, li) => {
+                if (HTMLDataListElement.classList.contains("inventory-header")) return;
+                li.setAttribute("draggable", true);
+                li.addEventListener("dragstart", handler, false);
+            });
+        };
+    };
+    /**
+     * Handle creating new Owned items for a character based on the HTML data
+     * @param {Event} event     The originating click event
+     * @private
+     */
+    async _onItemCreate(event) {
+        event.preventDefault();
+        const header = event.currentTarget;
+        // get the type of the item
+        const type = header.dataset.type;
+        // clopy any relevant data
+        const data = duplicate(header.dataset)
+        // initialize a default name
+        const name = `New ${type.capitalize()}`;
+        // prepare the item object
+        const itemData = {
+            name: name,
+            type: type,
+            system: data
+        };
+
+        //clean up
+        delete itemData.system["type"];
+
+        return await Item.create(itemData, {parent: this.actor});
+    };
+
+    /**
+     * Handle clickable rolls
+     * @param {Event} event     the originating click event
+     * @private
+     */
+    _onRoll(event) {
+        event.preventDefault();
+        const element = event.currentTarget;
+        const dataset = element.dataset;
+        
+        // handle item rolls
+        if (dataset.rollType) {
+            if (dataset.rollType == 'item') {
+                const itemId = element.closest('.item').dataset.itemId;
+                const item = this.actor.items.get(itemId);
+                if (item) return item.roll();
+            };
+        };
+        // handle rolls that supply their own formula
+        if (dataset.roll) {
+            let label = dataset.label ? `[ability] ${dataset.label}`: '';
+            let roll = new roll(dataset.roll, this.actor.getRollData());
+            roll.toMessage({
+                speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+                flavor: label,
+                rollMode: game.settings.get('core', 'rollMode'),
+            });
+            return roll;
+        };
     };
 }
