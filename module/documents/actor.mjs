@@ -1,4 +1,4 @@
-export class PlayerCharacter extends Actor{
+export class PlayerCharacter extends Actor {
     
     /** @override */
     prepareData() {

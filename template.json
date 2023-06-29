@@ -168,7 +168,7 @@
     }
   },
   "Item": {
-    "types": ["lightWeapon", "Armor"],
+    "types": ["Weapon", "Armor"],
     "templates": {
         "Weapon": {
             "inventory": 1,

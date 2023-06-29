@@ -6,6 +6,7 @@ import {PlayerCharacterSheet}  from "./sheets/actor-sheet.mjs"
 import {GlogItemSheet} from "./sheets/item-sheet.mjs" 
 
 // import helpers
+import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { GLOG } from "./helpers/config.mjs"
 
 /* ======== Init Hook ======== */
@@ -31,9 +32,15 @@ Hooks.once('init', async function() {
 
     // Register sheets
     Actors.unregisterSheet("core", ActorSheet);
-    Actors.registerSheet("glog", PlayerCharacterSheet, { makeDefault: true });
+    Actors.registerSheet(GLOG.system, PlayerCharacterSheet, { 
+        makeDefault: true ,
+        label: "GLOG.playerCharacterSheet"
+    });
     Items.unregisterSheet("core", ItemSheet);
-    Items.registerSheet("glog", GlogItemSheet, { makeDefault: true });
+    Items.registerSheet(GLOG.system, GlogItemSheet, { 
+        makeDefault: true,
+        label: "GLOG.itemSheet"
+    });
 
     // Preload Handlebars
     return preloadHandlebarsTemplates();

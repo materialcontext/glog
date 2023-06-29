@@ -15,25 +15,12 @@
     ],
     "scripts": [],
     "esmodules": [
-        "modules/glog.mjs"
+        "module/glog.mjs"
     ],
     "styles": [
         "css/glog.css"
     ],
-    "packs": [
-        {
-            "name": "items",
-            "label": "sample items",
-            "path": "packs/items.db",
-            "type": "Item"
-        },
-        {
-            "name": "monsters",
-            "label": "sample monsters",
-            "path": "packs/monsters.db",
-            "type": "Actor"
-        }
-    ],
+    "packs": [],
     "languages": [
         {
             "lang": "en",

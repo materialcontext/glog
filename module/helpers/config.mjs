@@ -1,5 +1,7 @@
 export const GLOG = {};
 
+GLOG.system = 'glog';
+
 /** Abilities used in the system
  * @type {Object} 
  * */
