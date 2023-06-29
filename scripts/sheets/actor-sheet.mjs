@@ -4,7 +4,7 @@ export class playerCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["glog", "sheet", "actor"],
-      template: "systems/glog/templates/actor-sheet.html",
+      template: "systems/glog/templates/actor/actor-playerCharacter-sheet.html",
       width: 600,
       height: 600,
       tabs: [
