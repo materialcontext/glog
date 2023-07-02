@@ -267,6 +267,13 @@
   color: #000
 }
 
+.glog .stat {
+  border: 1px solid #6495ed; 
+  height: 50px; 
+  width: 92px; 
+  font-size: 2.5rem;
+}
+
 .glog .tab-link {
   background-color: #fff; 
   color:#6495ed;
