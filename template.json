@@ -7,11 +7,11 @@
         "description": "",
         "class": "",
         "origin": "",
-        "languages": "",
+        "languages": "English, Spanish, Common",
         "motivations": {
-          "motivations1": "",
-          "motivations2": "",
-          "motivations3": ""
+          "motivations1": "Here is a motivation.",
+          "motivations2": "Here is a motivation.",
+          "motivations3": "Here is a motivation."
         }
       },
       "warnings": {

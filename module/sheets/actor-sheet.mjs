@@ -11,11 +11,8 @@ export class PlayerCharacterSheet extends ActorSheet {
       width: 1400,
       height: 850,
       tabs: [
-        {
-          navSelector: ".primary-tabs",
-          contentSelector: ".primary-body",
-          initial: "ego",
-        },
+        { navSelector: ".primary-tabs", contentSelector: ".primary-body",initial: "skills" },
+        { navSelector: ".secondary-tabs", contentSelector: ".secondary-body", initial: "ego" }
       ],
     });
   };

@@ -3,6 +3,10 @@
         <div class="wrapperleft">
             {{!-- Sheet Header --}}
                 {{> systems/glog/templates/actor/parts/headerblock.html }}
+                {{!-- Secondary Tab Navigation --}}
+            <nav class="secondary-tabs tabs" data-group="secondary">
+                <a class="item" data-tab="ego">Details</a>
+            </nav>
             <div class="contentleft">
                 {{!-- Left Body --}}
                 <section class="secondary-body">
@@ -25,8 +29,6 @@
             <div class="contentcenter">
                 {{!-- Center Body --}}
                 <section class="primary-body"> 
-                    {{!-- Spells Tab --}}
-                        {{> systems/glog/templates/actor/parts/tabs/ego-tab.html }}
                     {{!--Skills Tab--}}
                         {{> systems/glog/templates/actor/parts/tabs/skills.html }}
                     {{!-- Weapons Tab --}}
