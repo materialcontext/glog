@@ -1,0 +1,131 @@
+<div class="tab ego" data-group="secondary" data-tab="ego">
+    <div class="contentBox" style="margin-bottom: 10px;">
+        <div class="flexrow subheader colorV1">
+            <h3 class="subheader colorV1">{{localize "ep2e.ego.general.headline"}}</h3>
+            <div class="alignRight flexGrowThreeQuarter">
+                <label class="resource-label">{{localize "ep2e.ego.general.egoFlexLabel"}} </label><input class="input-small" type="number" name="system.ego.egoFlex" value="{{actor.system.ego.egoFlex}}" data-dtype="Number" placeholder="0"/>
+            </div>
+        </div>
+        <div class="listBackground" style="background-color: var(--pitchBorder);">
+            <div class="flexrow grid-2col">
+                <label class="input-large resource-value flex-group-left" >{{localize "ep2e.ego.general.origin.headline"}}</label>
+                <select class="selectSpecApt item-standard-margin-medium flex-group-left" 
+                name="system.ego.origin" data-type="String" >
+                    {{#select actor.system.ego.origin}}
+                    {{#each config.origins as |origin key|}}
+                    <option value="{{key}}">{{localize origin}}</option>
+                    {{/each}} {{/select}}
+                </select>
+            </div>
+            <div class="flexrow grid-2col">
+                <label class="input-medium resource-value flex-group-left" >{{localize "ep2e.ego.general.sex.headline"}}</label>
+                <select class="selectSpecApt item-standard-margin-medium flex-group-left"
+                name="system.ego.sex" data-type="String">
+                    {{#select actor.system.ego.sex}}
+                    {{#each config.sexes as |sex key|}}
+                    <option value="{{key}}">{{localize sex}}</option>
+                    {{/each}} {{/select}}
+                </select>
+            </div>
+            <div class="flexrow grid-2col">
+                <label class="input-large resource-value flex-group-left" >{{localize "ep2e.ego.general.gender.headline"}}</label>
+                <select class="selectSpecApt item-standard-margin-medium flex-group-left"
+                name="system.ego.gender" data-type="String">
+                    {{#select actor.system.ego.gender}}
+                    {{#each config.genders as |gender key|}}
+                    <option value="{{key}}">{{localize gender}}</option>
+                    {{/each}} {{/select}}
+                </select>
+            </div>
+        </div>
+        <div class="itemBackground">
+            <label class="input-large resource-value alignLeft" >{{localize "ep2e.ego.motivations.headline"}}</label>
+            <ol style="list-style-type: decimal-leading-zero; padding: 0 0 0 2.5em; margin-top: 10px;">
+                <li><input type="text" name="system.ego.motivations.motivation1" value='{{actor.system.ego.motivations.motivation1}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
+                <li><input type="text" name="system.ego.motivations.motivation2" value='{{actor.system.ego.motivations.motivation2}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
+                <li><input type="text" name="system.ego.motivations.motivation3" value='{{actor.system.ego.motivations.motivation3}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
+            </ol>
+        </div>
+        <div class="itemBackground skills">
+            <label class="input-large resource-value" >{{localize "ep2e.ego.languages.headline"}}</label>
+            <input type="text" name="system.ego.languages" value="{{actor.system.ego.languages}}" placeholder="{{localize 'ep2e.ego.languages.placeholder'}}" style="margin-top: 10px;"/>
+        </div>
+    </div>
+    <div class="flexrow flex-between">
+        <div class="contentBox" style="margin-bottom: 10px; min-width: 100%;">
+            <div class="flexrow subheader colorV1">
+                <h3 class="subheader colorV1">{{localize "ep2e.ego.traits.headline"}}</h3>
+                <div class="alignRight flexGrowHalf">
+                </div>
+            </div>
+            <div class="itemBackground noPadBot edgeAbler flexrow flex-group-center">
+                {{#if actor.trait}}
+                {{#each actor.trait as |item id|}}
+                
+                    {{> systems/eclipsephase/templates/actor/partials/item-partials/traitsAndFlaws.html item=item itemType="success" ego=true}}
+
+                {{/each}}
+                {{else}}
+                <div class="flex-group-center">
+                    <label class="resource-label">{{localize "ep2e.ego.traits.noItems"}}</label>
+                </div>
+                {{/if}}
+            </div>
+            <div class="itemBackground shape2 edgeLord"></div>
+        </div>
+        <div class="contentBox" style="margin-bottom: 10px; min-width: 100%;">
+            <div class="flexrow subheader colorV1">
+                <h3 class="subheader colorV1">{{localize "ep2e.ego.flaws.headline"}}</h3>
+                <div class="alignRight flexGrowHalf">
+                </div>
+            </div>
+            <div class="itemBackground noPadBot edgeAbler flexrow flex-group-center">
+                {{#if actor.flaw}}
+                {{#each actor.flaw as |item id|}}
+                
+                    {{> systems/eclipsephase/templates/actor/partials/item-partials/traitsAndFlaws.html item=item itemType="fail" ego=true}}
+
+                {{/each}}
+                {{else}}
+                <div class="flex-group-center">
+                    <label class="resource-label">{{localize "ep2e.ego.flaws.noItems"}}</label>
+                </div>
+                {{/if}}
+            </div>
+            <div class="itemBackground shape1 edgeLord"></div>
+        </div>
+    </div>
+    <div class="flexrow subheader colorV1">
+        <h3 class="subheader colorV1">{{localize "ep2e.ego.personality.headline"}}</h3>
+        <div class="alignRight flexGrowQuarter">
+        </div>
+    </div>
+        {{editor
+        htmlBiography
+        target="system.biography"
+        button=true
+        owner=owner
+        editable=this.options.editable
+        }}
+</div>
+{{else}}
+<div class="tab ego" data-group="primary" data-tab="ego">
+    {{#if (eq actor.type "npc")}}
+    <div class="itemBackground">
+        <label class="input-large resource-value alignLeft" >Motivations</label>
+        <ol style="list-style-type: decimal-leading-zero; padding: 0 0 0 2.5em; margin-top: 10px;">
+            <li><input type="text" name="system.ego.motivations.motivation1" value='{{actor.system.ego.motivations.motivation1}}' placeholder="e.g. Reach the horizon"/></li>
+            <li><input type="text" name="system.ego.motivations.motivation2" value='{{actor.system.ego.motivations.motivation2}}' placeholder="e.g. Reach the horizon"/></li>
+            <li><input type="text" name="system.ego.motivations.motivation3" value='{{actor.system.ego.motivations.motivation3}}' placeholder="e.g. Reach the horizon"/></li>
+        </ol>
+    </div>
+    {{/if}}
+    {{editor
+        actor.system.biography
+        target="system.biography"
+        button=true
+        owner=owner
+        editable=this.options.editable
+    }}
+</div>
+{{/if}}

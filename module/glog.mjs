@@ -21,7 +21,7 @@ Hooks.once("init", async function () {
   CONFIG.GLOG = GLOG;
 
   CONFIG.Combat.initiative = {
-    formula: "2d6 + @abilities.wis",
+    formula: "2d6 + @initMod",
     decimals: 2,
   };
 

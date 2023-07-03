@@ -6,13 +6,14 @@ export class PlayerCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["glog", "sheet", "actor"],
+      resizable: false,
       template: "systems/glog/templates/actor/actor-npc-sheet.html",
-      width: 600,
-      height: 600,
+      width: 1058,
+      height: 550,
       tabs: [
         {
-          navSelector: ".sheet-tabs",
-          contentSelector: ".sheet-body",
+          navSelector: ".primary-tabs",
+          contentSelector: ".primary-body",
           initial: "ego",
         },
       ],
