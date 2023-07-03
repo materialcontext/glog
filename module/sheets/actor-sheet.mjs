@@ -1,4 +1,5 @@
-import { onManageActiveEffect, prepareActiveEffectCategories } from "../helpers/effects.mjs"
+import { GLOG } from "../helpers/config.mjs";
+import { onManageActiveEffect, prepareActiveEffectCategories } from "../helpers/effects.mjs";
 
 /** @extends { ActorSheet }*/
 export class PlayerCharacterSheet extends ActorSheet {
@@ -35,8 +36,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     // add to context for easy access
     context.system = actorData.system;
     context.flags = actorData.flags;
-    
-    sheetData.config = CONFIG.glog;
+    context.config = CONFIG.glog;
 
     // prepare playerCharacter data and items
     if (actorData.type == 'playerCharacter') {
