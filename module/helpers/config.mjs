@@ -14,6 +14,30 @@ GLOG.abilities = {
     "cha": "Charisma"
 };
 
+GLOG.classes = {
+    "acrobat": "Acrobat",
+    "assassin": "Assassin",
+    "barbarian": "Barbarian",
+    "courtier": "Courtier",
+    "fighter": "Fighter",
+    "hunter": "Hunter",
+    "thief": "Thief",
+    "wizard": "Wizard"
+};
+
+GLOG.genders = {
+    "masc": "He/Him",
+    "femm": "She/Her",
+    "andr": "They/Them"
+}
+
+GLOG.origins = {
+    "noble": "Noble",
+    "freeman": "Freeman",
+    "peasant": "Peasant",
+    "barbarian": "Barbarian"
+};
+
 GLOG.abilityAbbreviations = {
     "str": "STR",
     "dex": "DEX",

@@ -5,7 +5,12 @@
       "description": {
         "name": "",
         "description": "",
-        "class": ""
+        "class": "",
+        "origin": ""
+      },
+      "warnings": {
+        "noSwimWarning": "You can't swim in this armor.",
+        "strSwimWarning": "Make a strength check to swim in this armor."
       },
       "attributes": {
         "level": {
@@ -23,7 +28,11 @@
         "initMod": {
           "min": 0,
           "value": 0
-        }
+        },
+        "armorEquipped": false,
+        "shieldEquipped": false,
+        "noSwim": true,
+        "strSwim": false
       },
       "resources": {
         "hp": {
