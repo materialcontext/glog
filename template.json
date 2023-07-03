@@ -32,8 +32,13 @@
         },
         "armorEquipped": false,
         "shieldEquipped": false,
+        "wpnEquipped": true,
         "noSwim": true,
         "strSwim": false
+      },
+      "equipment": {
+        "weapons": {},
+        "magicItems": {}
       },
       "resources": {
         "hp": {
