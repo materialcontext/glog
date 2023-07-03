@@ -11,7 +11,7 @@ export const preloadHandlebarsTemplates = async function() {
       "systems/glog/templates/actor/parts/healthbar.html",
       "systems/glog/templates/actor/parts/tabs/psi-tab.html",
       "systems/glog/templates/actor/parts/tabs/npcgear.html",
-      "systems/glog/templates/actor/parts/tabs/effects.html",
+      "systems/glog/templates/actor/parts/tabs/effects-tab.html",
       "systems/glog/templates/actor/parts/tabs/skills.html",
       "systems/glog/templates/actor/parts/tabs/ego-tab.html",
     ]);
