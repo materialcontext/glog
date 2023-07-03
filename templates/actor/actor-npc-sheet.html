@@ -2,7 +2,45 @@
     <div class="grid grid-9col">
         <div class="wrapperleft npcVariant1">
             {{!-- Sheet Header --}}
-                {{> "systems/glog/templates/actor/parts/headerblock.html" }}
+            <header style="margin-top: 27px">
+            <div class="headroom">
+                {{!-- Character Picture --}}
+                <div class="centerBackground" style="position: absolute; clip-path: polygon(0 25%, 85% 25%, 100% 100%, 0% 100%); width: 120px; padding-left: 0.5em; top: -43px; z-index: 1; height: 68px;">
+                    <!-- <img class="logo-img" src="" title="logo"/> -->
+                </div>
+                <div style="max-height: 358px;">
+                    <img class="profile-img" src="{{actor.img}}" data-edit="img"
+                    title="{{actor.name}}"/>
+                </div>
+                <div class="centerBackground" style="position: absolute; top: -28px; right: 0px; background-color: var(--highlightBackground); width: 240px; padding: 16px 0px 0px 22px; box-shadow: 0 5px var(--pitchBorder); height: 48px;">
+                    <!-- Change this placeholder attribute to a localizable name structure-->
+                    <input 
+                        name="name" type="text" value="{{actor.name}}"
+                        placeholder="New Actor" 
+                        style="width: auto; font-size: 17px; text-shadow: 0 0 5px #161616"
+                    />
+                </div>
+            </div>
+            <div class="contentBox" style="background-color: var(--pitchBorder); min-height: 111px;">
+                <div class="flexrow">
+                    <!--change this to a localizable placeholder header structure-->
+                    <h3 class="subheader colorV1">"Abilities"</h3>
+                    <div class="flexGrowHalf">
+                    </div>
+                </div>
+                <div class="listBackground shape2 grid grid-3col noMargin">
+                    {{#each actor.system.abilities as |ability key|}}
+                    <div class="flexrow flex-group-center reveal standard-height">
+                        <div class="flexrow flex-group-center input-small">
+                            <span class="toggle resource-value alignCenter" style=" min-width: 26px;">{{localize ability.label}}</span>
+                            <label class="toggle roll-label task-check noShow" data-type="ability" data-name="{{localize aptitude.name}}" data-key="system.abilities.{{key}}.value" data-rollvalue="{{ability.roll}}"><img src="icons/svg/d10-grey.svg" class="icon-small"/></label>
+                        </div>
+                        <input class="input-small" type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" placeholder="0"/>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            </header>            
         </div>
         <div class="wrappercenter npcVariant1">
             {{!-- Primary Tab Navigation --}}
@@ -13,7 +51,7 @@
                     <a class="item" data-tab="psi">"Spells"</a>
                 </nav>
             {{!-- Health Overview --}}
-                {{> "systems/glog/templates/actor/parts/healthbar.html" }}
+                {{> systems/glog/templates/actor/parts/healthbar.html }}
             <div class="contentcenter npcVariant2">
                 {{!-- Center Body --}}
                 <section class="primary-body"> 
