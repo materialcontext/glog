@@ -9,9 +9,9 @@
         "origin": "",
         "languages": "English, Spanish, Common",
         "motivations": {
-          "motivations1": "Here is a motivation.",
-          "motivations2": "Here is a motivation.",
-          "motivations3": "Here is a motivation."
+          "motivation1": "Here is a motivation.",
+          "motivation2": "Here is a motivation.",
+          "motivation3": "Here is a motivation."
         }
       },
       "warnings": {

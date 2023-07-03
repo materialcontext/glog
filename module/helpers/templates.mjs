@@ -14,6 +14,8 @@ export const preloadHandlebarsTemplates = async function() {
       "systems/glog/templates/actor/parts/tabs/effects-tab.html",
       "systems/glog/templates/actor/parts/tabs/skills.html",
       "systems/glog/templates/actor/parts/tabs/ego-tab.html",
+      "systems/glog/templates/actor/parts/tabs/wounds-tab.html",
+      "systems/glog/templates/actor/parts/tabs/templates-tab.html",
       "systems/glog/templates/actor/parts/currentStatus/sidecar.html",
       "systems/glog/templates/actor/parts/currentStatus/armorSummary.html",
       "systems/glog/templates/actor/parts/currentStatus/statusSummary.html",
