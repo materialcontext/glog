@@ -10,134 +10,123 @@
       "attributes": {
         "level": {
           "min": 0,
-          "value": 0,
-          "max": 9
+          "value": 0
         },
         "wounds": {
           "min": 0,
-          "value": 0,
-          "max": 9
+          "value": 0
+        },
+        "traumaMod": {
+          "min": 0,
+          "value": 0
+        },
+        "initMod": {
+          "min": 0,
+          "value": 0
         }
       },
       "resources": {
         "hp": {
           "min": 0,
           "value": 0,
-          "max": 99
+          "max": 0
         },
         "inventory": {
-          "min": 3,
-          "value": 6,
-          "max": 99
+          "min": 0,
+          "value": 0,
+          "max": 0
         },
         "magicDice": {
           "min": 0,
           "value": 0,
-          "max": 99
+          "max": 0
         },
         "hires": {
           "min": 0,
           "value": 0,
-          "max": 99
+          "max": 0
         }
       },
       "stats": {
         "abilities": {
           "str": {
             "min": -3,
-            "value": 0,
-            "max": 3
+            "value": 0
           },
           "dex": {
             "min": -3,
-            "value": 0,
-            "max": 3
+            "value": 0
           },
           "con": {
             "min": -3,
-            "value": 0,
-            "max": 3
+            "value": 0
           },
           "int": {
             "min": -3,
-            "value": 0,
-            "max": 3
+            "value": 0
           },
           "wis": {
             "min": -3,
-            "value": 0,
-            "max": 3
+            "value": 0
           },
           "cha": {
             "min": -3,
-            "value": 0,
-            "max": 3
+            "value": 0
           }
         }
       },
       "combat": {
         "attack": {
           "min": -3,
-          "value": 0,
-          "max": 9
+          "value": 0
         },
         "defense": {
           "min": -3,
-          "value": 0,
-          "max": 9
+          "value": 0
         }
       },
       "stealth": {
         "sneak": {
           "min": -9,
-          "value": 0,
-          "max": 9
+          "value": 0
         },
         "hide": {
           "min": -9,
-          "value": 0,
-          "max": 9
+          "value": 0
         },
         "disguise": {
           "min": -9,
-          "value": 0,
-          "max": 9
+          "value": 0
         }
       },
       "social": {
         "reaction": {
           "min": -9,
-          "value": 0,
-          "max": 9
+          "value": 0
         },
         "diplomacy": {
           "min": -9,
-          "value": 0,
-          "max": 9
+          "value": 0
         },
         "intimidate": {
           "min": -9,
-          "value": 0,
-          "max": 9
+          "value": 0
         }
       },
       "npc": {
         "loyalty": {
           "min": 0,
-          "value": 4,
-          "max": 6
+          "value": 4
         },
         "morale": {
           "min": 1,
-          "value": 6,
-          "max": 12
+          "value": 6
         }
       },
       "encumberance": {
         "encumberance": {
           "min": 0,
-          "value": 0,
-          "max": 9
+          "value": 0
         }
       }
     },

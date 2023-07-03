@@ -6,7 +6,7 @@ export class PlayerCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["glog", "sheet", "actor"],
-      template: "systems/glog/templates/actor/actor-playerCharacter-sheet.html",
+      template: "systems/glog/templates/actor/actor-npc-sheet.html",
       width: 600,
       height: 600,
       tabs: [
@@ -21,7 +21,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/glog/templates/actor/actor-playerCharacter-sheet.html`
+    return `systems/glog/templates/actor/actor-npc-sheet.html`
   };
 
   /* --------------------------------------------------- */

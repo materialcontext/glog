@@ -1,0 +1,29 @@
+<div style="background-color: var(--mainBackground); padding: 10px 0 10px 0;">
+    <div class="flexrow flex-group-center listBackground grid grid-5col" style="background-color: var(--pitchBorder); margin: 0;">
+        <div class="wantToKnowMore">
+            <i class="fa-solid fa-heart-pulse awesomeIcon" style="font-size: 18px;"></i>
+            <span class="tooltipText resource-label" style="font-size: 13px;">HP</span>
+            <input class="input-xs" type="number" name="hp" value="{{actor.system.hp.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">/{{actor.system.health.physical.max}}/{{actor.system.physical.dr}}</span>
+        </div>
+        <div class="wantToKnowMore">
+            <i class="fa-regular fa-bandage awesomeIcon" style="font-size: 18px;"></i>
+            <span class="tooltipText resource-label" style="font-size: 13px;">Wounds</span>
+            <input class="input-xs" type="number" name="wounds" value="{{actor.system.wounds.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">({{actor.system.physical.wt}})</span>
+        </div>
+        <div class="wantToKnowMore">
+            <i class="fa-regular fa-burst awesomeIcon" style="font-size: 18px;"></i>
+            <span class="tooltipText resource-label" style="font-size: 13px;">Trauma Mod (Con + Misc)</span>
+            <input class="input-xs" type="number" name="system.traumaMod" value="{{actor.system.traumaMod.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">({{actor.system.mental.tt}})</span>
+        </div>
+        <div class="wantToKnowMore">
+            <i class="fa-regular fa-stopwatch awesomeIcon" style="font-size: 18px;"></i>
+            <span class="tooltipText resource-label" style="font-size: 13px;">Init Mod (Wis + Misc)</span>
+            <input class="input-small" style="text-align: center" type="text" name="system.initMod" value="{{actor.system.iniMod.value}}" data-dtype="Number" placeholder="0"/>
+        </div>
+        <div class="wantToKnowMore">
+            <i class="fa-solid fa-land-mine-on awesomeIcon" style="font-size: 18px;"></i>
+            <span class="tooltipText resource-label" style="font-size: 13px;">Level</span>
+            <input class="input-xs standard-height" style="text-align: center" type="text" name="system.level" value="{{actor.system.level.value}}" placeholder="0"/>/ 
+        </div>
+    </div>
+</div>
