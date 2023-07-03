@@ -35,6 +35,8 @@ export class PlayerCharacterSheet extends ActorSheet {
     // add to context for easy access
     context.system = actorData.system;
     context.flags = actorData.flags;
+    
+    sheetData.config = CONFIG.glog;
 
     // prepare playerCharacter data and items
     if (actorData.type == 'playerCharacter') {
