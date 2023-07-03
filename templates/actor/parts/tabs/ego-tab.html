@@ -18,7 +18,7 @@
             <div class="flexrow grid-2col">
                 <label class="input-medium resource-value flex-group-left" >Origin</label>
                 <select class="selectSpecApt item-standard-margin-medium flex-group-left"
-                name="system.sex" data-type="String">
+                name="system.origin" data-type="String">
                     {{#select actor.origin}}
                     {{#each config.origins as |origin key|}}
                     <option value="{{key}}">{{localize origin}}</option>
@@ -49,16 +49,4 @@
             <input type="text" name="system.languages" value="{{actor.system.languages}}" placeholder="write a motivation here" style="margin-top: 10px;"/>
         </div>
     </div>
-    <div class="flexrow subheader colorV1">
-        <h3 class="subheader colorV1">Biography</h3>
-        <div class="alignRight flexGrowQuarter">
-        </div>
-    </div>
-        {{editor
-        htmlBiography
-        target="system.biography"
-        button=true
-        owner=owner
-        editable=this.options.editable
-        }}
 </div>
