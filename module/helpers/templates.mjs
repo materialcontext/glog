@@ -7,9 +7,12 @@ export const preloadHandlebarsTemplates = async function() {
     return loadTemplates([
   
       // Actor partials.
-      "systems/glog/templates/actor/parts/actor-features.html",
-      "systems/glog/templates/actor/parts/actor-items.html",
-      "systems/glog/templates/actor/parts/actor-spells.html",
-      "systems/glog/templates/actor/parts/actor-effects.html",
+      "systems/glog/templates/actor/parts/headerblock.html",
+      "systems/glog/templates/actor/parts/healthbar.html",
+      "systems/glog/templates/actor/parts/tabs/psi-tab.html",
+      "systems/glog/templates/actor/parts/tabs/npcgear.html",
+      "systems/glog/templates/actor/parts/tabs/effects.html",
+      "systems/glog/templates/actor/parts/tabs/skills.html",
+      "systems/glog/templates/actor/parts/tabs/ego-tab.html",
     ]);
   };
