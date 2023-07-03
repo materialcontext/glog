@@ -1,8 +1,8 @@
 <div class="sideCarBox consumableSideCar">
     <div style=" margin-bottom: 20px;">
-        <label class="resource-value" style="font-size: 20px;">{{localize "ep2e.sideCar.consumables.headline"}}</label>
+        <label class="resource-value" style="font-size: 20px;">Consumables</label>
     </div>
-    {{#if actor.system.additionalSystems.consumableEquipped}}
+    {{#if actor.system.consumableEquipped}}
         {{#each actor.consumable as |item id|}}
             {{#if this.system.active}}
             <div class="item flexrow" data-item-id="{{item._id}}">
@@ -28,6 +28,6 @@
             {{/if}}
         {{/each}}
     {{else}}
-    <div class="flexrow flex-group-center" style="height: 60px;"><span class="resource-value">{{localize "ep2e.sideCar.consumables.noConsumablesSubheadline"}}</span></div>
+    <div class="flexrow flex-group-center" style="height: 60px;"><span class="resource-value">Nothing to see here.</span></div>
     {{/if}}
 </div>

@@ -34,12 +34,16 @@
         "initMod": {
           "min": 0,
           "value": 0
-        },
+        }
+      },
+      "flags": {
         "armorEquipped": false,
         "shieldEquipped": false,
-        "wpnEquipped": true,
-        "noSwim": true,
-        "strSwim": false
+        "wpnEquipped": false,
+        "lightEquipped": false,
+        "noSwim": false,
+        "strSwim": false,
+        "consumableEquipped": false
       },
       "equipment": {
         "armor": {},
@@ -159,7 +163,9 @@
         "combat",
         "stealth",
         "social",
-        "encumberance"
+        "encumberance",
+        "equipment",
+        "flags"
       ]
     },
     "hireling": {
@@ -172,7 +178,9 @@
         "stealth",
         "social",
         "npc",
-        "encumberance"
+        "encumberance",
+        "equipment",
+        "flags"
       ]
     },
     "companion": {

@@ -17,6 +17,8 @@ export const preloadHandlebarsTemplates = async function() {
       "systems/glog/templates/actor/parts/currentStatus/sidecar.html",
       "systems/glog/templates/actor/parts/currentStatus/armorSummary.html",
       "systems/glog/templates/actor/parts/currentStatus/statusSummary.html",
-      "systems/glog/templates/actor/parts/currentStatus/weaponSummary.html"
+      "systems/glog/templates/actor/parts/currentStatus/weaponSummary.html",
+      "systems/glog/templates/actor/parts/currentStatus/lightSummary.html",
+      "systems/glog/templates/actor/parts/currentStatus/consumableSummary.html"
     ]);
   };
