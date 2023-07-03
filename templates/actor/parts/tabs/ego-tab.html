@@ -11,7 +11,7 @@
                 name="system.ego.origin" data-type="String" >
                     {{#select actor.system.class}}
                     {{#each config.classes as |class key|}}
-                    <option value="{{key}}">{{localize class}}</option>
+                    <option value="{{key}}">{{class}}</option>
                     {{/each}} {{/select}}
                 </select>
             </div>
@@ -21,7 +21,7 @@
                 name="system.origin" data-type="String">
                     {{#select actor.origin}}
                     {{#each config.origins as |origin key|}}
-                    <option value="{{key}}">{{localize origin}}</option>
+                    <option value="{{key}}">{{origin}}</option>
                     {{/each}} {{/select}}
                 </select>
             </div>
@@ -31,7 +31,7 @@
                 name="system.gender" data-type="String">
                     {{#select actor.system.gender}}
                     {{#each config.genders as |gender key|}}
-                    <option value="{{key}}">{{localize gender}}</option>
+                    <option value="{{key}}">{{gender}}</option>
                     {{/each}} {{/select}}
                 </select>
             </div>
@@ -39,9 +39,9 @@
         <div class="itemBackground">
             <label class="input-large resource-value alignLeft" >Motivations</label>
             <ol style="list-style-type: decimal-leading-zero; padding: 0 0 0 2.5em; margin-top: 10px;">
+                <li><input type="text" name="system.motivations.motivation1" value='{{actor.system.motivations.motivation1}}' placeholder="A Motivation goes here"/></li>
                 <li><input type="text" name="system.motivations.motivation2" value='{{actor.system.motivations.motivation2}}' placeholder="A Motivation goes here"/></li>
                 <li><input type="text" name="system.motivations.motivation3" value='{{actor.system.motivations.motivation3}}' placeholder="A Motivation goes here"/></li>
-                <li><input type="text" name="system.motivations.motivation1" value='{{actor.system.motivations.motivation1}}' placeholder="A Motivation goes here"/></li>
             </ol>
         </div>
         <div class="itemBackground skills">

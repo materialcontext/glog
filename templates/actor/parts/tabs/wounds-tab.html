@@ -1,52 +1,8 @@
-<div class="tab ego" data-group="secondary" data-tab="ego">
+<div class="tab ego" data-group="secondary" data-tab="wounds">
     <div class="contentBox" style="margin-bottom: 10px;">
         <div class="flexrow subheader colorV1">
             <!-- localize headlines and labels throughout document -->
-            <h3 class="subheader colorV1">General</h3>
-        </div>
-        <div class="listBackground" style="background-color: var(--pitchBorder);">
-            <div class="flexrow grid-2col">
-                <label class="input-large resource-value flex-group-left" >Class</label>
-                <select class="selectSpecApt item-standard-margin-medium flex-group-left" 
-                name="system.ego.origin" data-type="String" >
-                    {{#select actor.system.class}}
-                    {{#each config.classes as |class key|}}
-                    <option value="{{key}}">{{localize class}}</option>
-                    {{/each}} {{/select}}
-                </select>
-            </div>
-            <div class="flexrow grid-2col">
-                <label class="input-medium resource-value flex-group-left" >Origin</label>
-                <select class="selectSpecApt item-standard-margin-medium flex-group-left"
-                name="system.origin" data-type="String">
-                    {{#select actor.origin}}
-                    {{#each config.origins as |origin key|}}
-                    <option value="{{key}}">{{localize origin}}</option>
-                    {{/each}} {{/select}}
-                </select>
-            </div>
-            <div class="flexrow grid-2col">
-                <label class="input-large resource-value flex-group-left" >Gender</label>
-                <select class="selectSpecApt item-standard-margin-medium flex-group-left"
-                name="system.gender" data-type="String">
-                    {{#select actor.system.gender}}
-                    {{#each config.genders as |gender key|}}
-                    <option value="{{key}}">{{localize gender}}</option>
-                    {{/each}} {{/select}}
-                </select>
-            </div>
-        </div>
-        <div class="itemBackground">
-            <label class="input-large resource-value alignLeft" >Motivations</label>
-            <ol style="list-style-type: decimal-leading-zero; padding: 0 0 0 2.5em; margin-top: 10px;">
-                <li><input type="text" name="system.motivations.motivation2" value='{{actor.system.motivations.motivation2}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
-                <li><input type="text" name="system.motivations.motivation3" value='{{actor.system.motivations.motivation3}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
-                <li><input type="text" name="system.motivations.motivation1" value='{{actor.system.motivations.motivation1}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
-            </ol>
-        </div>
-        <div class="itemBackground skills">
-            <label class="input-large resource-value" >Languages</label>
-            <input type="text" name="system.languages" value="{{actor.system.languages}}" placeholder="languages go here" style="margin-top: 10px;"/>
+            <h3 class="subheader colorV1">Wounds</h3>
         </div>
     </div>
 </div>
