@@ -3,7 +3,7 @@
         <div class="wantToKnowMore">
             <i class="fa-solid fa-heart-pulse awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">HP</span>
-            <input class="input-xs" type="number" name="hp" value="{{actor.system.hp.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">/{{actor.system.health.physical.max}}/{{actor.system.physical.dr}}</span>
+            <input class="input-xs" type="number" name="hp" value="{{actor.system.hp.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">/{{actor.system.hp.max}}</span>
         </div>
         <div class="wantToKnowMore">
             <i class="fa-regular fa-bandage awesomeIcon" style="font-size: 18px;"></i>
@@ -19,6 +19,11 @@
             <i class="fa-regular fa-stopwatch awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Init Mod (Wis + Misc)</span>
             <input class="input-small" style="text-align: center" type="text" name="system.initMod" value="{{actor.system.iniMod.value}}" data-dtype="Number" placeholder="0"/>
+        </div>
+        <div class="wantToKnowMore">
+            <i class="fa-solid fa-brain awesomeIcon" style="font-size: 18px;"></i>
+            <span class="tooltipText resource-label" style="font-size: 13px;">Move</span>
+            <input class="input-xs" type="number" name="system.move" value="{{actor.system.move.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">/{{actor.system.health.mental.max}}/{{actor.system.mental.ir}}</span>
         </div>
         <div class="wantToKnowMore">
             <i class="fa-solid fa-land-mine-on awesomeIcon" style="font-size: 18px;"></i>

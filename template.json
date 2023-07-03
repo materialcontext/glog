@@ -37,11 +37,12 @@
         }
       },
       "flags": {
-        "armorEquipped": false,
+        "hasStash": true,
+        "armorEquipped": true,
         "shieldEquipped": false,
         "wpnEquipped": false,
         "lightEquipped": false,
-        "noSwim": false,
+        "noSwim": true,
         "strSwim": false,
         "consumableEquipped": false
       },

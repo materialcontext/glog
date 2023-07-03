@@ -3,6 +3,8 @@
         <div class="flexrow subheader colorV1">
             <!-- localize headlines and labels throughout document -->
             <h3 class="subheader colorV1">General</h3>
+            <div class="alignRight flexGrowThreeQuarter">
+            </div>
         </div>
         <div class="listBackground" style="background-color: var(--pitchBorder);">
             <div class="flexrow grid-2col">
@@ -22,16 +24,6 @@
                     {{#select actor.origin}}
                     {{#each glog.origins as |origin key|}}
                     <option value="{{key}}">{{origin}}</option>
-                    {{/each}} {{/select}}
-                </select>
-            </div>
-            <div class="flexrow grid-2col">
-                <label class="input-large resource-value flex-group-left" >Gender</label>
-                <select class="selectSpecApt item-standard-margin-medium flex-group-left"
-                name="system.gender" data-type="String">
-                    {{#select actor.system.gender}}
-                    {{#each glog.genders as |gender key|}}
-                    <option value="{{key}}">{{gender}}</option>
                     {{/each}} {{/select}}
                 </select>
             </div>
