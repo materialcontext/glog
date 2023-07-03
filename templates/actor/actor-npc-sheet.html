@@ -2,7 +2,7 @@
     <div class="grid grid-9col">
         <div class="wrapperleft npcVariant1">
             {{!-- Sheet Header --}}
-                {{> systems/glog/templates/actor/parts/headerblock.html }}
+                {{> "systems/glog/templates/actor/parts/headerblock.html" }}
         </div>
         <div class="wrappercenter npcVariant1">
             {{!-- Primary Tab Navigation --}}
@@ -13,7 +13,7 @@
                     <a class="item" data-tab="psi">"Spells"</a>
                 </nav>
             {{!-- Health Overview --}}
-                {{> systems/glog/templates/actor/parts/-bar.html }}
+                {{> "systems/glog/templates/actor/parts/healthbar.html" }}
             <div class="contentcenter npcVariant2">
                 {{!-- Center Body --}}
                 <section class="primary-body"> 

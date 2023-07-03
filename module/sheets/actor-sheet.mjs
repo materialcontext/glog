@@ -13,7 +13,7 @@ export class PlayerCharacterSheet extends ActorSheet {
         {
           navSelector: ".sheet-tabs",
           contentSelector: ".sheet-body",
-          initial: "features",
+          initial: "ego",
         },
       ],
     });
