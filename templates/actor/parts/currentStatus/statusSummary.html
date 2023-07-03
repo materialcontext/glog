@@ -1,7 +1,7 @@
 <div class="sideCarBox statusSideCar flexrow" style="align-content: center;">
     <div class="tooltip">
         <label class="resource-value" style ="font-size: 16px;">Encumberance:</label>
-        {{#if actor.system.encumberance.value > 0}}
+        {{#if actor.system.encumberance.value}}
             <label class="resource-value" style ="font-size: 16px; color: var(--negative);">{{actor.system.encumberance.value}}</label>
         {{else}}
             <label class="resource-value" style ="font-size: 16px;">0</label>
