@@ -20,7 +20,7 @@
 <div class="contentBox" style="background-color: var(--pitchBorder); min-height: 111px;">
     <div class="flexrow">
         <!--change this to a localizable placeholder header structure-->
-        <h3 class="subheader colorV1">"Abilities"</h3>
+        <h3 class="subheader colorV1">Abilities</h3>
         <div class="flexGrowHalf">
         </div>
     </div>
@@ -28,7 +28,7 @@
         {{#each actor.system.abilities as |ability key|}}
         <div class="flexrow flex-group-center reveal standard-height">
             <div class="flexrow flex-group-center input-small">
-                <span class="toggle resource-value alignCenter" style=" min-width: 26px;">{{key}}</span>
+                <span class="toggle resource-value alignCenter" style=" min-width: 26px; text-transform: uppercase;">{{key}}</span>
                 <label class="toggle roll-label task-check noShow" data-type="ability" data-name="{{key}}" data-key="system.abilities.{{key}}.value" data-rollvalue="{{ability.roll}}"><img src="icons/svg/d10-grey.svg" class="icon-small"/></label>
             </div>
             <input class="input-small" type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" placeholder="0"/>

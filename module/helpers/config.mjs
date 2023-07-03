@@ -38,7 +38,7 @@ GLOG.origins = {
     "barbarian": "Barbarian"
 };
 
-GLOG.abilityAbbreviations = {
+GLOG.abbrev = {
     "str": "STR",
     "dex": "DEX",
     "con": "CON",
