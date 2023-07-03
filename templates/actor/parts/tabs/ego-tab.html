@@ -18,7 +18,7 @@
             <div class="flexrow grid-2col">
                 <label class="input-medium resource-value flex-group-left" >Origin</label>
                 <select class="selectSpecApt item-standard-margin-medium flex-group-left"
-                name="system.ego.sex" data-type="String">
+                name="system.sex" data-type="String">
                     {{#select actor.origin}}
                     {{#each config.origins as |origin key|}}
                     <option value="{{key}}">{{localize origin}}</option>
@@ -28,7 +28,7 @@
             <div class="flexrow grid-2col">
                 <label class="input-large resource-value flex-group-left" >Gender</label>
                 <select class="selectSpecApt item-standard-margin-medium flex-group-left"
-                name="system.ego.gender" data-type="String">
+                name="system.gender" data-type="String">
                     {{#select actor.system.gender}}
                     {{#each config.genders as |gender key|}}
                     <option value="{{key}}">{{localize gender}}</option>

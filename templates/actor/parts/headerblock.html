@@ -29,7 +29,7 @@
         <div class="flexrow flex-group-center reveal standard-height">
             <div class="flexrow flex-group-center input-small">
                 <span class="toggle resource-value alignCenter rollable" data-roll="2d6+@abilities.{{key}}.value" style=" min-width: 26px; text-transform: uppercase;">{{key}}</span>
-                <label class="toggle roll-label task-check noShow" data-type="ability" data-name="{{key}}" data-key="system.abilities.{{key}}.value" data-roll="{{2d6+@abilities.{{key}}.value}}"><img src="icons/svg/d10-grey.svg" class="icon-small"/></label>
+                <label class="toggle roll-label task-check noShow" data-type="ability" data-name="{{key}}" data-key="system.abilities.{{key}}.value" data-roll="2d6+@abilities.{{key}}.value"><img src="icons/svg/d10-grey.svg" class="icon-small"/></label>
             </div>
             <input class="input-small" type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" placeholder="0"/>
         </div>
