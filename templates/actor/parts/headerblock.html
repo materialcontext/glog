@@ -28,8 +28,8 @@
         {{#each actor.system.abilities as |ability key|}}
         <div class="flexrow flex-group-center reveal standard-height">
             <div class="flexrow flex-group-center input-small">
-                <span class="toggle resource-value alignCenter" style=" min-width: 26px;">{{localize ability.label}}</span>
-                <label class="toggle roll-label task-check noShow" data-type="ability" data-name="{{localize aptitude.name}}" data-key="system.abilities.{{key}}.value" data-rollvalue="{{ability.roll}}"><img src="icons/svg/d10-grey.svg" class="icon-small"/></label>
+                <span class="toggle resource-value alignCenter" style=" min-width: 26px;">{{ability}}</span>
+                <label class="toggle roll-label task-check noShow" data-type="ability" data-name="{{ability}}" data-key="system.abilities.{{key}}.value" data-rollvalue="{{ability.roll}}"><img src="icons/svg/d10-grey.svg" class="icon-small"/></label>
             </div>
             <input class="input-small" type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" placeholder="0"/>
         </div>

@@ -6,7 +6,8 @@
         "name": "",
         "description": "",
         "class": "",
-        "origin": ""
+        "origin": "",
+        "languages": ""
       },
       "warnings": {
         "noSwimWarning": "You can't swim in this armor.",

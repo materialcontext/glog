@@ -29,7 +29,7 @@
                 <label class="input-large resource-value flex-group-left" >Gender</label>
                 <select class="selectSpecApt item-standard-margin-medium flex-group-left"
                 name="system.ego.gender" data-type="String">
-                    {{#select actor.system.ego.gender}}
+                    {{#select actor.system.gender}}
                     {{#each config.genders as |gender key|}}
                     <option value="{{key}}">{{localize gender}}</option>
                     {{/each}} {{/select}}
@@ -39,18 +39,18 @@
         <div class="itemBackground">
             <label class="input-large resource-value alignLeft" >Motivations</label>
             <ol style="list-style-type: decimal-leading-zero; padding: 0 0 0 2.5em; margin-top: 10px;">
-                <li><input type="text" name="system.ego.motivations.motivation1" value='{{actor.system.ego.motivations.motivation1}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
-                <li><input type="text" name="system.ego.motivations.motivation2" value='{{actor.system.ego.motivations.motivation2}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
-                <li><input type="text" name="system.ego.motivations.motivation3" value='{{actor.system.ego.motivations.motivation3}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
+                <li><input type="text" name="system.motivations.motivation2" value='{{actor.system.ego.motivations.motivation2}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
+                <li><input type="text" name="system.motivations.motivation3" value='{{actor.system.ego.motivations.motivation3}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
+                <li><input type="text" name="system.motivations.motivation1" value='{{actor.system.ego.motivations.motivation1}}' placeholder="{{localize 'ep2e.ego.motivations.placeholder'}}"/></li>
             </ol>
         </div>
         <div class="itemBackground skills">
             <label class="input-large resource-value" >Languages</label>
-            <input type="text" name="system.ego.languages" value="{{actor.system.ego.languages}}" placeholder="{{localize 'ep2e.ego.languages.placeholder'}}" style="margin-top: 10px;"/>
+            <input type="text" name="system.languages" value="{{actor.system.languages}}" placeholder="write a motivation here" style="margin-top: 10px;"/>
         </div>
     </div>
     <div class="flexrow subheader colorV1">
-        <h3 class="subheader colorV1">{{localize "ep2e.ego.personality.headline"}}</h3>
+        <h3 class="subheader colorV1">Biography</h3>
         <div class="alignRight flexGrowQuarter">
         </div>
     </div>

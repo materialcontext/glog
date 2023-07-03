@@ -1,10 +1,10 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
     <div class="grid grid-9col">
-        <div class="wrapperleft npcVariant1">
+        <div class="wrapperleft">
             {{!-- Sheet Header --}}
                 {{> systems/glog/templates/actor/parts/headerblock.html }}
         </div>
-        <div class="wrappercenter npcVariant1">
+        <div class="wrappercenter">
             {{!-- Primary Tab Navigation --}}
                 <nav class="primary-tabs tabs" data-group="primary">
                     <a class="item" data-tab="ego">Bio</a>
@@ -14,7 +14,7 @@
                 </nav>
             {{!-- Health Overview --}}
                 {{> systems/glog/templates/actor/parts/healthbar.html }}
-            <div class="contentcenter npcVariant2">
+            <div class="contentcenter">
                 {{!-- Center Body --}}
                 <section class="primary-body"> 
                     {{!-- Spells Tab --}}
