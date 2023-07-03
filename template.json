@@ -133,10 +133,8 @@
         }
       },
       "encumberance": {
-        "encumberance": {
-          "min": 0,
-          "value": 0
-        }
+        "min": 0,
+        "value": 0
       }
     },
     "playerCharacter": {
