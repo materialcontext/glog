@@ -1,9 +1,10 @@
 <div class="tab ego" data-group="secondary" data-tab="ego">
   <div class="contentBox" style="margin-bottom: 10px">
     <div class="flexrow subheader colorV1">
-      <!-- localize headlines and labels throughout document -->
       <h3 class="subheader colorV1">General</h3>
-      <div class="alignRight flexGrowThreeQuarter"></div>
+      <div class="alignRight flexGrowThreeQuarter">
+          <label class="resource-label">Level</label><input class="input-small" type="number" name="system.level" value="{{actor.system.level}}" data-dtype="Number" placeholder="0"/>
+      </div>
     </div>
     <div class="listBackground" style="background-color: var(--pitchBorder)">
       <div class="flexrow grid-2col">
@@ -55,14 +56,6 @@
             type="text"
             name="system.motivations.motivation2"
             value="{{actor.system.motivations.motivation2}}"
-            placeholder="A Motivation goes here"
-          />
-        </li>
-        <li>
-          <input
-            type="text"
-            name="system.motivations.motivation3"
-            value="{{actor.system.motivations.motivation3}}"
             placeholder="A Motivation goes here"
           />
         </li>
