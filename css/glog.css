@@ -131,24 +131,24 @@
 /*Content Wrapper*/
 
 .wrapperleft {
-  height: 795px;
+  height: 667px;
   grid-area: left;
 }
 
 .contentleft {
-  height: 291px;
+  height: 220px;
   overflow: auto;
   padding: 0;
   background-color: var(--mainBackground);
 }
 
 .wrappercenter {
-  height: 795px;
+  height: 667px;
   grid-area: center;
 }
 
 .contentcenter {
-  height: 685px;
+  height: 575px;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: var(--mainBackground);
@@ -164,13 +164,13 @@
 
 .wrapperright {
   grid-area: right;
-  height: 795px;
+  height: 667px;
   overflow: auto;
   background-color: var(--mainBackground);
 }
 
 .contentright {
-  height: 511px;
+  height: 429px;
   overflow: auto;
 }
 
