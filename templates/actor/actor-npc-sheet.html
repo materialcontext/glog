@@ -3,12 +3,33 @@
         <div class="wrapperleft npcvariant1">
             {{!-- Sheet Header --}}
                 {{> systems/glog/templates/actor/parts/headerblock.html }}
+<<<<<<< HEAD
+=======
+            {{!-- Secondary Tab Navigation --}}
+            <nav class="secondary-tabs tabs" data-group="secondary">
+                <a class="item" data-tab="ego">General</a>
+                <a class="item" data-tab="templates">Wounds</a>
+                <a class="item" data-tab="wounds">Templates</a>
+            </nav>
+            <div class="contentleft">
+                {{!-- Left Body --}}
+                <section class="secondary-body">
+                    {{!-- Profile --}}
+                        {{> systems/glog/templates/actor/parts/tabs/ego-tab.html }}
+                    {{!-- Templates --}}
+                        {{> systems/glog/templates/actor/parts/tabs/templates-tab.html }}
+                    {{!-- Wounds --}}
+                        {{> systems/glog/templates/actor/parts/tabs/wounds-tab.html }}
+                </section>
+            </div>
+>>>>>>> parent of 596a7d9 (asdw)
         </div>
         <div class="wrappercenter npcvariant1">
             {{!-- Primary Tab Navigation --}}
                 <nav class="primary-tabs tabs" data-group="primary">
-                    <a class="item" data-tab="skills">Bio</a>
-                    <a class="item" data-tab="npcgear">Inventory</a>
+                    <a class="item" data-tab="Bio">Bio</a>
+                    <a class="item" data-tab="skills">Combat</a>
+                    <a class="item" data-tab="weapons">Inventory</a>
                     <a class="item" data-tab="psi">Spells</a>
                     <a class="item" data-tab="effects">Effects</a>
                 </nav>
@@ -19,7 +40,7 @@
                 <section class="primary-body"> 
                     {{!--Skills Tab--}}
                         {{> systems/glog/templates/actor/parts/tabs/skills.html }}
-                    {{!-- Gear Tab --}}
+                    {{!-- Weapons Tab --}}
                         {{> systems/glog/templates/actor/parts/tabs/npcgear.html }}
                     {{!-- Psi Tab --}}
                         {{> systems/glog/templates/actor/parts/tabs/psi-tab.html }}
