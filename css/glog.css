@@ -131,7 +131,7 @@
 /*Content Wrapper*/
 
 .wrapperleft {
-  height: 667px;
+  height: 665px;
   grid-area: left;
 }
 
@@ -143,12 +143,12 @@
 }
 
 .wrappercenter {
-  height: 667px;
+  height: 665px;
   grid-area: center;
 }
 
 .contentcenter {
-  height: 575px;
+  height: 560px;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: var(--mainBackground);
@@ -164,13 +164,13 @@
 
 .wrapperright {
   grid-area: right;
-  height: 667px;
+  height: 665px;
   overflow: auto;
   background-color: var(--mainBackground);
 }
 
 .contentright {
-  height: 429px;
+  height: 427px;
   overflow: auto;
 }
 

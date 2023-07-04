@@ -1,9 +1,9 @@
 <div class="tab ego" data-group="secondary" data-tab="ego">
   <div class="contentBox" style="margin-bottom: 10px">
     <div class="flexrow subheader colorV1">
-      <h3 class="subheader colorV1">General</h3>
+      <h3 class="subheader colorV1">Level</h3>
       <div class="alignRight flexGrowThreeQuarter">
-          <label class="resource-label">Level</label><input class="input-small" type="number" name="system.level" value="{{actor.system.level}}" data-dtype="Number" placeholder="0"/>
+          <input class="input-small" type="number" name="system.level" value="{{actor.system.level}}" data-dtype="Number" placeholder="0"/>
       </div>
     </div>
     <div class="listBackground" style="background-color: var(--pitchBorder)">
@@ -16,20 +16,6 @@
         >
           {{#select actor.system.class}} {{#each glog.classes as |class key|}}
           <option value="{{key}}">{{class}}</option>
-          {{/each}} {{/select}}
-        </select>
-      </div>
-      <div class="flexrow grid-2col">
-        <label class="input-medium resource-value flex-group-left"
-          >Origin</label
-        >
-        <select
-          class="selectSpecApt item-standard-margin-medium flex-group-left"
-          name="system.origin"
-          data-type="String"
-        >
-          {{#select actor.origin}} {{#each glog.origins as |origin key|}}
-          <option value="{{key}}">{{origin}}</option>
           {{/each}} {{/select}}
         </select>
       </div>
@@ -56,6 +42,14 @@
             type="text"
             name="system.motivations.motivation2"
             value="{{actor.system.motivations.motivation2}}"
+            placeholder="A Motivation goes here"
+          />
+        </li>
+        <li>
+          <input
+            type="text"
+            name="system.motivations.motivation3"
+            value="{{actor.system.motivations.motivation3}}"
             placeholder="A Motivation goes here"
           />
         </li>
