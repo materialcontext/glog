@@ -1307,8 +1307,12 @@ h3.subheaderBlank {
 
 .sideCarBox {
   padding: 10px;
-  height: 155px;
+  height: 112.8px;
   background-color: var(--pitchBorder);
+  margin-bottom: 10px;
+}
+
+.boxheadmargin {
   margin-bottom: 10px;
 }
 
