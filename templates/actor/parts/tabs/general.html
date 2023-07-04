@@ -14,7 +14,7 @@
           name="system.class"
           data-type="String"
         >
-          {{#select actor.system.class}} {{#each glog.classes as |class key|}}
+          {{#select actor.system.class}} {{#each config.classes as |class key|}}
           <option value="{{key}}">{{class}}</option>
           {{/each}} {{/select}}
         </select>
