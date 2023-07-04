@@ -14,7 +14,7 @@
   --positive: #2bb42b;
   --warning: #ce8532;
   --iconBlue: #ff4f00;
-  --highlight: #FFA500;
+  --highlight: #FF8F00;
   --mainText: #d8d8d8;
   --iconGrey: #aaaaaa;
   --inactive: #999;
@@ -23,10 +23,10 @@
   --highlightBackground: #414141;
   --accentBackground: #ff4f00;
   --color-bg-option: #1f1f1f;
-  --color-shadow-primary: #FF8F00;
-  --color-border-highlight: #FF8F00;
-  --color-underline-header: #FF8F00;
-  --color-underline-active: #FF8F00;
+  --color-shadow-primary: #FF8300;
+  --color-border-highlight: #FF8300;
+  --color-underline-header: #FF8300;
+  --color-underline-active: #FF8300;
 }
 
 .grid,
