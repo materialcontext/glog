@@ -9,7 +9,7 @@ export class PlayerCharacterSheet extends ActorSheet {
       classes: ["glog", "sheet", "actor"],
       resizable: false,
       template: "systems/glog/templates/actor/actor-npc-sheet.html",
-      width: 960,
+      width: 990,
       height: 700,
       tabs: [
         { navSelector: ".primary-tabs", contentSelector: ".primary-body",initial: "skills" },
