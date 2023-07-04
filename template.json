@@ -7,12 +7,7 @@
         "description": "",
         "class": "",
         "origin": "",
-        "languages": "English, Spanish, Common",
-        "motivations": {
-          "motivation1": "Here is a motivation.",
-          "motivation2": "Here is a motivation.",
-          "motivation3": "Here is a motivation."
-        }
+        "languages": "English, Spanish, Common"
       },
       "warnings": {
         "noSwimWarning": "You can't swim in this armor.",

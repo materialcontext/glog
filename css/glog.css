@@ -259,7 +259,8 @@
 
 .glog .profile-img {
   min-width: 100%;
-  min-height: 284px;
+  height: auto;
+  object-fit: contain;
   border: solid var(--pitchBorder) 5px;
   margin-top: 20px;
 }

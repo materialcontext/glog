@@ -38,6 +38,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     context.flags = actorData.flags;
     context.config = CONFIG.glog;
 
+    console.log(context);
     // prepare playerCharacter data and items
     if (actorData.type == 'playerCharacter') {
         this._prepareItems(context);
