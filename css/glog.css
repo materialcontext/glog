@@ -13,7 +13,7 @@
   --negative: #db2a2a;
   --positive: #2bb42b;
   --warning: #ce8532;
-  --iconBlue: #E25822;
+  --iconBlue: #346d8e;
   --highlight: #4098d6;
   --mainText: #d8d8d8;
   --iconGrey: #aaaaaa;
@@ -21,12 +21,12 @@
   --mainBackground: #1f1f1f;
   --focusBackground: #2b2b2b;
   --highlightBackground: #414141;
-  --accentBackground: #a52a2a;
+  --accentBackground: #24485d;
   --color-bg-option: #1f1f1f;
-  --color-shadow-primary: #FF7700;
-  --color-border-highlight: #FF7700;
-  --color-underline-header: #FF7700;
-  --color-underline-active: #FF7700;
+  --color-shadow-primary: #36aee9;
+  --color-border-highlight: #36aee9;
+  --color-underline-header: #36aee9;
+  --color-underline-active: #36aee9;
 }
 
 .grid,
@@ -131,24 +131,24 @@
 /*Content Wrapper*/
 
 .wrapperleft {
-  height: 795px;
+  height: 636px;
   grid-area: left;
 }
 
 .contentleft {
-  height: 291px;
+  height: 232px;
   overflow: auto;
   padding: 0;
   background-color: var(--mainBackground);
 }
 
 .wrappercenter {
-  height: 795px;
+  height: 548px;
   grid-area: center;
 }
 
 .contentcenter {
-  height: 685px;
+  height: 548px;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: var(--mainBackground);
@@ -164,13 +164,13 @@
 
 .wrapperright {
   grid-area: right;
-  height: 795px;
+  height: 636px;
   overflow: auto;
   background-color: var(--mainBackground);
 }
 
 .contentright {
-  height: 621px;
+  height: 496px;
   overflow: auto;
 }
 
@@ -259,7 +259,7 @@
 
 .glog .profile-img {
   min-width: 100%;
-  min-height: 339px;
+  min-height: 271px;
   border: solid var(--pitchBorder) 5px;
   margin-top: 20px;
 }
