@@ -1,15 +1,14 @@
 {{!-- Character Picture --}}
 <header style="margin-top: 27px">
 <div class="headroom">
-    <div class="centerBackground" 
-        style="position: absolute; clip-path: polygon(0 25%, 85% 25%, 100% 100%, 0% 100%); width: 120px; padding-left: 0.5em; top: -67px; z-index: 1; height: 60px;">
+    <div class="centerBackground" style="position: absolute; clip-path: polygon(0 25%, 85% 25%, 100% 100%, 0% 100%); width: 120px; padding-left: 0.5em; top: -43px; z-index: 1; height: 68px;">
         <!-- <img class="logo-img" src="" title="logo"/> -->
     </div>
-    <div style="max-height: 286px;">
+    <div style="max-height: 338px;">
         <img class="profile-img" src="{{actor.img}}" data-edit="img"
         title="{{actor.name}}"/>
     </div>
-    <div class="centerBackground" style="position: absolute; top: -28px; right: 0px; background-color: var(--highlightBackground); width: 200px; padding: 16px 0px 0px 22px; box-shadow: 0 5px var(--pitchBorder); height: 41px;">
+    <div class="centerBackground" style="position: absolute; top: -28px; right: 0px; background-color: var(--highlightBackground); width: 240px; padding: 16px 0px 0px 22px; box-shadow: 0 5px var(--pitchBorder); height: 48px;">
         <!-- Change this placeholder attribute to a localizable name structure-->
         <input 
             name="name" type="text" value="{{actor.name}}"
@@ -18,7 +17,7 @@
         />
     </div>
 </div>
-<div class="contentBox" style="background-color: var(--pitchBorder);">
+<div class="contentBox" style="background-color: var(--pitchBorder); min-height: 111px;">
     <div class="flexrow">
         <!--change this to a localizable placeholder header structure-->
         <h3 class="subheader colorV1">Abilities</h3>

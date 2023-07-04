@@ -131,24 +131,24 @@
 /*Content Wrapper*/
 
 .wrapperleft {
-  height: 655px;
+  height: 795px;
   grid-area: left;
 }
 
 .contentleft {
-  height: 225px;
+  height: 291px;
   overflow: auto;
   padding: 0;
   background-color: var(--mainBackground);
 }
 
 .wrappercenter {
-  height: 565px;
+  height: 795px;
   grid-area: center;
 }
 
 .contentcenter {
-  height: 565px;
+  height: 685px;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: var(--mainBackground);
@@ -164,13 +164,13 @@
 
 .wrapperright {
   grid-area: right;
-  height: 655px;
+  height: 795px;
   overflow: auto;
   background-color: var(--mainBackground);
 }
 
 .contentright {
-  height: 425px;
+  height: 621px;
   overflow: auto;
 }
 
@@ -259,7 +259,7 @@
 
 .glog .profile-img {
   min-width: 100%;
-  min-height: 271px;
+  min-height: 339px;
   border: solid var(--pitchBorder) 5px;
   margin-top: 20px;
 }
@@ -794,8 +794,8 @@ a:hover,
 
 .sheet nav.primary-tabs,
 .sheet nav.secondary-tabs {
-  height: 42px;
-  line-height: 42px;
+  height: 50px;
+  line-height: 50px;
   flex: 0 0 43px;
   border-top: none;
   border-bottom: 3px solid var(--mainBackground);
@@ -1342,8 +1342,8 @@ h3.subheaderBlank {
 }
 
 .statusSideCar {
-  max-height: 42px;
-  min-height: 42px;
+  max-height: 50px;
+  min-height: 50px;
 }
 
 .chiBackground{
