@@ -24,9 +24,8 @@
         <div class="wrappercenter npcvariant1">
             {{!-- Primary Tab Navigation --}}
                 <nav class="primary-tabs tabs" data-group="primary">
-                    <a class="item" data-tab="history">History</a>
+                    <a class="item" data-tab="overview">Overviw</a>
                     <a class="item" data-tab="gear">Inventory</a>
-                    <a class="item" data-tab="exploration">Exploration</a>
                     <a class="item" data-tab="psi">Spells</a>
                     <a class="item" data-tab="effects">Effects</a>
                 </nav>
@@ -36,10 +35,8 @@
                 {{!-- Center Body --}}
                 <section class="primary-body"> 
                     {{!--History Tab--}}
-                        {{> systems/glog/templates/actor/parts/tabs/history.html }}
+                        {{> systems/glog/templates/actor/parts/tabs/overview.html }}
                     {{!-- Inventory Tab --}}
-                        {{> systems/glog/templates/actor/parts/tabs/gear.html }}
-                    {{!-- Exploration Tab --}}
                         {{> systems/glog/templates/actor/parts/tabs/gear.html }}
                     {{!-- Spells Tab --}}
                         {{> systems/glog/templates/actor/parts/tabs/spells.html }}
