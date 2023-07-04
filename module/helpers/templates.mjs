@@ -22,6 +22,9 @@ export const preloadHandlebarsTemplates = async function() {
       "systems/glog/templates/actor/parts/currentStatus/weaponSummary.html",
       "systems/glog/templates/actor/parts/currentStatus/stealthSummary.html",
       "systems/glog/templates/actor/parts/currentStatus/gearSummary.html",
-      "systems/glog/templates/actor/parts/currentStatus/consumableSummary.html"
+      "systems/glog/templates/actor/parts/currentStatus/consumableSummary.html",
+      "systems/glog/templates/actor/parts/item-parts/weapons.html",
+      "systems/glog/templates/actor/parts/item-parts/gear.html",
+      "systems/glog/templates/actor/parts/item-parts/armor.html"
     ]);
   };
