@@ -1307,7 +1307,7 @@ h3.subheaderBlank {
 
 .sideCarBox {
   padding: 10px;
-  min-height: 100px;
+  min-height: 90px;
   background-color: var(--pitchBorder);
   margin-bottom: 10px;
 }
@@ -1316,12 +1316,6 @@ h3.subheaderBlank {
   background-image: url(../resources/img/armorSideCar.webp);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-}
-
-.rangedSideCar {
-  background-image: url(../resources/img/rangedSideCar.webp);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
 }
 
 .ccSideCar {
