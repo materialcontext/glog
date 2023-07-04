@@ -794,8 +794,8 @@ a:hover,
 
 .sheet nav.primary-tabs,
 .sheet nav.secondary-tabs {
-  height: 50px;
-  line-height: 50px;
+  height: 42px;
+  line-height: 42px;
   flex: 0 0 43px;
   border-top: none;
   border-bottom: 3px solid var(--mainBackground);
@@ -1342,8 +1342,8 @@ h3.subheaderBlank {
 }
 
 .statusSideCar {
-  max-height: 50px;
-  min-height: 50px;
+  max-height: 42px;
+  min-height: 42px;
 }
 
 .chiBackground{
