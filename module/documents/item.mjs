@@ -2,59 +2,43 @@
  * Extend the basic item class
  * @extends {Item}
  */
-export class GlogItem extends Item{
+export default class GlogItem extends Item {
+
     prepareData() {
         super.prepareData();
+        
+        const brewStatus = game.settings.get("glog", "superBrew");
+        let model = this.system
+    
+        // Homebrew Switch
+        if (brewStatus) {
+          model.homebrew = true;
+        }
+        else {
+          model.homebrew = false;
+        }
+      }
+
+    chatTemplate = {
+        "weapon": "systems/glog/templates/actor/parts/item-parts/weapons.html",
+        "gear": "systems/glog/templates/actor/parts/item-parts/gear.html"
     };
 
-    /**
-     * Prepare data to pass to Rolls created by an item
-     * @private
-     */
-    getRollData() {
-        if (!this.actor) return null;
-        // get actor data
-        const rollData = this.actor.getRollData();
-        // get item data
-        rollData.item = foundry.utils.deepClone(this.system);
-
-        return rollData;
-    };
-
-    /**
-     * Handle clickable
-     * @param {Event} event     originating click event
-     * @private
-     */
     async roll() {
-        const item = this;
-
-        // initialize chat data
-        const speaker = ChatMessage.getSpeaker({actor: this.actor});
-        const rollMode = game.settings.get('core', 'rollMode');
-        const label = `[item.type] ${item.name}`;
-
-        // if there's no roll data send a message else create the roll and message
-        if (!this.system.formula) {
-            ChatMessage.create({
-                speker: speaker,
-                rollMode: rollMode,
-                flavor: label,
-                content: item.system.description ?? ''
-            });
-        } else {
-            const rollData = this.getRollData();
-
-            // roll and submit to chat
-            const roll = new this.roll(rollData.item.formula, rollData);
-            // if you need to store value for use uncomment next line
-            // let result = await roll.roll({async: true});
-            roll.toMessage({
-                speaker: speaker,
-                rollMode: rollMode,
-                flavor: label,
-            });
-            return roll;
+        let chatData = {
+            user: game.user._id,
+            speaker: ChatMessage.getSpeaker()
         };
-    };
-};
+
+        let cardData = {
+            ...this.system,
+            owner: this.actor.id
+        };
+
+        chatData.content = await renderTemplate(this.chatTemplate[this.type], cardData);
+
+        chatData.roll = true;
+
+        return ChatMessage.create(chatData);
+    }
+}
