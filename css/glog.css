@@ -170,7 +170,7 @@
 }
 
 .contentright {
-  height: 607px;
+  height: 605px;
   overflow: auto;
 }
 
@@ -1307,7 +1307,7 @@ h3.subheaderBlank {
 
 .sideCarBox {
   padding: 10px;
-  min-height: 92px;
+  min-height: 94px;
   background-color: var(--pitchBorder);
   margin-bottom: 10px;
 }
