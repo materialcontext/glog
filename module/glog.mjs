@@ -1,9 +1,9 @@
 // import document classes
 import { PlayerCharacter } from "./documents/actor.mjs";
-import { GlogItem } from "./documents/item.mjs";
+// import { GlogItem } from "./documents/item.mjs";
 // import sheet classes
 import { PlayerCharacterSheet } from "./sheets/actor-sheet.mjs";
-import { GlogGearSheet } from "./sheets/gear-sheet.mjs";
+// import { GlogGearSheet } from "./sheets/gear-sheet.mjs";
 
 // import helpers
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
@@ -25,7 +25,7 @@ Hooks.once("init", async function () {
   // Define custom Document classes
   CONFIG.Actor.documentClass = PlayerCharacter;
   CONFIG.GLOG = GLOG;
-  CONFIG.Item.documentClass = GlogItem;
+  // CONFIG.Item.documentClass = GlogItem;
 
   // Register sheets
   Actors.unregisterSheet("core", ActorSheet);
