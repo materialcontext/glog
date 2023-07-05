@@ -10,7 +10,9 @@ export default class GlogItem extends Item {
 
     chatTemplate = {
         "weapon": "systems/glog/templates/actor/parts/item-parts/weapons.html",
-        "gear": "systems/glog/templates/actor/parts/item-parts/gear.html"
+        "gear": "systems/glog/templates/actor/parts/item-parts/gear.html",
+        "spell": "systems/glog/templates/actor/parts/item-parts/spells.html",
+        "armor": "systems/glog/templates/actor/parts/item-parts/armor.html"
     };
 
     async roll() {

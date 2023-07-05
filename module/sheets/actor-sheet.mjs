@@ -70,29 +70,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     };
   };
 
-  _prepareItems(context) {
-    // initialize containers
-    // const gear = [];
-    // const features = [];
-    // const spells = [];
-
-    // allocate items to proper containers
-//     for (let i of context.items) {
-//         i.img = i.img || DEFAULT_TOKEN;
-
-//         if (i.type == 'item') {
-//             gear.push(i);
-//         } else if (i.type == 'feature') {
-//             features.push(i);
-//         } else if (i.type == 'spell') {
-//             spells.push(i);
-//         };
-
-//         context.gear = gear;
-//         context.features = features;
-//         context.spells = spells;
-//     };
-  };
+  _prepareItems(context) {};
 
     /* ------------------------------------- */
 
