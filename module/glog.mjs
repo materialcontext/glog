@@ -11,13 +11,11 @@ import { GLOG } from "./helpers/config.mjs";
 
 /* ======== Init Hook ======== */
 Hooks.once("init", async function () {
-  game.classes = {
+  game.glog = {
     PlayerCharacter,
-    GlogItem
-  };
-
-  // add custom constant configuration
-  CONFIG.GLOG = GLOG;
+    GlogItem,
+    rollItemMacro
+  }
 
   CONFIG.Combat.initiative = {
     formula: "2d6 + @initMod",
@@ -26,6 +24,7 @@ Hooks.once("init", async function () {
 
   // Define custom Document classes
   CONFIG.Actor.documentClass = PlayerCharacter;
+  CONFIG.GLOG = GLOG;
   CONFIG.Item.documentClass = GlogItem;
 
   // Register sheets
