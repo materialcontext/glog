@@ -190,7 +190,8 @@
   "Item": {
     "types": [
       "gear",
-      "ccWeapon",
+      "spell",
+      "Weapon",
       "armor"
     ],
     "templates": {
@@ -212,13 +213,21 @@
       "quantity": 1,
       "displayCategory": "gear"
     },
-    "ccWeapon": {
+    "spell": {
+      "templates": [
+        "base",
+        "buyable"
+      ],
+      "quantity": 1,
+      "displayCategory": "gear"
+    },
+    "weapon": {
       "templates": [
         "base",
         "buyable"
       ],
       "dv": null,
-      "displayCategory": "ccweapon"
+      "displayCategory": "weapon"
     },
     "armor": {
       "templates": [
