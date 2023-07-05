@@ -9,6 +9,17 @@ import { GlogGearSheet } from "./sheets/gear-sheet.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { GLOG } from "./helpers/config.mjs";
 
+function registerSystemSettings() {
+  game.settings.register("eclipsephase", "effectPanel", {
+    config: true,
+    scope: "world",
+    name: "Enable Effect Panel",
+    hint: 'Enable the Effect Panel on Actors',
+    type: Boolean,
+    default: false
+  });
+};
+
 /* ======== Init Hook ======== */
 Hooks.once("init", async function () {
   game.glog = {
@@ -24,7 +35,7 @@ Hooks.once("init", async function () {
 
   // Define custom Document classes
   CONFIG.Actor.documentClass = PlayerCharacter;
-  CONFIG.GLOG = GLOG;
+  CONFIG.glog = GLOG;
   CONFIG.Item.documentClass = GlogItem;
 
   // Register sheets
@@ -65,6 +76,13 @@ Handlebars.registerHelper("concat", function () {
 Handlebars.registerHelper("toLowerCase", function (str) {
   return str.toLowerCase();
 });
+
+  // Helper to dump content from within the handlebars system
+  Handlebars.registerHelper('inspect', function(obj) {
+    return '> ' + JSON.stringify(obj)
+  })
+
+  registerSystemSettings();
 
 /* ======== Ready Hook ======= */
 Hooks.once("ready", async function () {
