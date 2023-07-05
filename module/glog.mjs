@@ -42,6 +42,8 @@ Hooks.once("init", async function () {
     label: "GLOG.gearSheet"
   };
 
+
+  console.log(CONFIG)
   // Preload Handlebars
   return preloadHandlebarsTemplates();
 });
