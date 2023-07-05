@@ -188,28 +188,46 @@
     }
   },
   "Item": {
-    "types": ["Weapon", "Armor", "Item", "Feature", "Spell"],
+    "types": [
+      "gear",
+      "ccWeapon",
+      "armor"
+    ],
     "templates": {
-      "Weapon": {
-        "inventory": 1,
-        "damage": "1",
-        "isThrown": true,
-        "thrownRange": "10ft."
+      "base": {
+        "description": "",
+        "active": true
       },
-      "cheap": {
-        "cost": "1sp"
+      "buyable": {
+        "cost": "",
+        "slotType": "",
+        "displayCategory": ""
       }
     },
-    "Weapon": {
-      "templates": ["Weapon"]
+    "gear": {
+      "templates": [
+        "base",
+        "buyable"
+      ],
+      "quantity": 1,
+      "displayCategory": "gear"
     },
-    "Armor": {
-      "defense": 1,
-      "encumberance": 0,
-      "dexCap": 9
+    "ccWeapon": {
+      "templates": [
+        "base",
+        "buyable"
+      ],
+      "dv": null,
+      "displayCategory": "ccweapon"
     },
-    "Item": {},
-    "Feature": {},
-    "Spell": {}
+    "armor": {
+      "templates": [
+        "base",
+        "buyable"
+      ],
+      "energy": null,
+      "kinetic": null,
+      "displayCategory": "armor"
+    }
   }
 }
