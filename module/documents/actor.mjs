@@ -1,4 +1,4 @@
-import { registerEffectHandlers,registerCommonHandlers,_tempEffectCreation,confirmation } from "../common/common-sheet-functions.js";
+import { registerEffectHandlers,registerCommonHandlers,_tempEffectCreation,confirmation } from "../helpers/common-sheet-functions.mjs";
 
 /**
  * Extends the basic actor sheet
