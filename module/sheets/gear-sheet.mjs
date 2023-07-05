@@ -5,7 +5,7 @@ import { registerEffectHandlers,registerCommonHandlers } from "../helpers/common
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export default class GlogGearSheet extends ItemSheet {
+export class GlogGearSheet extends ItemSheet {
 
   /** @override */
   static get defaultOptions() {
