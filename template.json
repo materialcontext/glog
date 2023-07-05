@@ -37,18 +37,20 @@
         }
       },
       "flags": {
-        "armorEquipped": true,
+        "hasGear": false,
+        "armorEquipped": false,
         "shieldEquipped": false,
         "wpnEquipped": false,
         "lightEquipped": false,
-        "noSwim": true,
+        "noSwim": false,
         "strSwim": false,
         "consumableEquipped": false
       },
       "equipment": {
-        "armor": {},
-        "shield": {},
+        "armors": {},
+        "shields": {},
         "weapons": {},
+        "consumables": {},
         "magicItems": {}
       },
       "resources": {

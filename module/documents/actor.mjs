@@ -15,8 +15,8 @@ export class PlayerCharacter extends Actor {
 
     //Determin whether any gear is present
     for(let gearCheck of items){
-      if(gearCheck.system.displayCategory === "ranged" || gearCheck.system.displayCategory === "ccweapon" || gearCheck.system.displayCategory === "gear" || gearCheck.system.displayCategory === "armor" || gearCheck.system.slotType === "consumable" || gearCheck.system.slotType === "digital"){
-        actorModel.additionalSystems.hasGear = true;
+      if(gearCheck.system.displayCategory === "weapon" || gearCheck.system.displayCategory === "gear" || gearCheck.system.displayCategory === "armor" || gearCheck.system.slotType === "consumable") {
+        actorModel.hasGear = true;
         break;
       };
     };
@@ -29,8 +29,6 @@ export class PlayerCharacter extends Actor {
   prepareDerivedData() {
     super.prepareDerivedData();
     const actorData = this;
-
-    console.log(actorData);
 
     this._preparePlayerCharacterData(actorData);
     this._prepareNPCData(actorData);
@@ -60,19 +58,22 @@ export class PlayerCharacter extends Actor {
     if (actorData.type !== "hireling") return;
   };
 
-
+  /** @override */
   async getData() {
+    console.log("we do get data")
     const sheetData = super.getData();
     const actor = sheetData.actor;
     sheetData.dtypes = ["String", "Number", "Boolean"];
     
     // Prepare items.
     if(actor.img === "icons/svg/mystery-man.svg"){
-      actor.img = "systems/eclipsephase/resources/img/anObjectificationByMichaelSilverRIP.jpg";
+      actor.img = "systems/glog/resources/img/anObjectificationByMichaelSilverRIP.jpg";
     }
 
     if (actor.type === 'playerCharacter') {
       this._prepareCharacterItems(sheetData);
+      console.log("finished")
+      console.log(actor)
     }
 
     await this._prepareRenderedHTMLContent(sheetData)
@@ -93,6 +94,7 @@ export class PlayerCharacter extends Actor {
   /**
    * Override getRollData() that's supplied to rolls
    */
+
   getRollData() {
     const data = super.getRollData();
 
@@ -127,6 +129,7 @@ export class PlayerCharacter extends Actor {
    * @return {undefined}
    */
   async _prepareCharacterItems(sheetData) {
+    console.log("we do arrive")
     const actor = sheetData.actor
 
     const gear = [];
