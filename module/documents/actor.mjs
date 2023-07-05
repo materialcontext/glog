@@ -85,6 +85,11 @@ export class PlayerCharacter extends Actor {
     });
   };
 
+  async _onDropItemCreate(item) {
+    // Create the owned item as normal
+    return super._onDropItemCreate(item)
+  }
+
   /**
    * Override getRollData() that's supplied to rolls
    */
