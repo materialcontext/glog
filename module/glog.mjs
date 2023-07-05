@@ -3,7 +3,7 @@ import { PlayerCharacter } from "./documents/actor.mjs";
 import { GlogItem } from "./documents/item.mjs";
 // import sheet classes
 import { PlayerCharacterSheet } from "./sheets/actor-sheet.mjs";
-// import { GlogGearSheet } from "./sheets/gear-sheet.mjs";
+import { GlogGearSheet } from "./sheets/gear-sheet.mjs";
 
 // import helpers
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
