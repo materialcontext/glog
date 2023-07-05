@@ -1,8 +1,6 @@
 import { GLOG } from "../helpers/config.mjs";
-import {
-  onManageActiveEffect,
-  prepareActiveEffectCategories,
-} from "../helpers/effects.mjs";
+import { prepareActiveEffectCategories } from "../helpers/effects.mjs";
+import { registerEffectHandlers,registerCommonHandlers,_tempEffectCreation,confirmation } from "../helpers/common-sheet-functions.mjs";
 
 /** @extends { ActorSheet } */
 export class PlayerCharacterSheet extends ActorSheet {
@@ -75,6 +73,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
     await this._prepareRenderedHTMLContent(context);
 
+    console.log(context)
     return context;
   }
 

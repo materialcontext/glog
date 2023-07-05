@@ -1,5 +1,3 @@
-import { registerEffectHandlers,registerCommonHandlers,_tempEffectCreation,confirmation } from "../helpers/common-sheet-functions.mjs";
-
 /**
  * Extends the basic actor sheet
  * @extends {Actor}
