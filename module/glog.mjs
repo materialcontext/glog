@@ -35,12 +35,12 @@ Hooks.once("init", async function () {
     label: "glog.playerCharacterSheet"
   });
 
-  // Items.unregisterSheet("core", ItemSheet);
-  // Items.registerSheet(GLOG.system, GlogGearSheet), {
-  //   types: ["gear", "weapon", "armor", "spell"],
-  //   makeDefault: true,
-  //   label: "glog.gearSheet"
-  // };
+  Items.unregisterSheet("core", ItemSheet);
+  Items.registerSheet(GLOG.system, GlogGearSheet), {
+    types: ["gear", "weapon", "armor", "spell"],
+    makeDefault: true,
+    label: "glog.gearSheet"
+  };
 
 
   console.log(CONFIG)
