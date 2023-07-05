@@ -1,6 +1,6 @@
 // import document classes
 import { PlayerCharacter } from "./documents/actor.mjs";
-// import { GlogItem } from "./documents/item.mjs";
+import { GlogItem } from "./documents/item.mjs";
 // import sheet classes
 import { PlayerCharacterSheet } from "./sheets/actor-sheet.mjs";
 // import { GlogGearSheet } from "./sheets/gear-sheet.mjs";
@@ -13,7 +13,7 @@ import { GLOG } from "./helpers/config.mjs";
 Hooks.once("init", async function () {
   game.glog = {
     PlayerCharacter,
-    // GlogItem,
+    GlogItem,
     rollItemMacro
   }
 
