@@ -56,7 +56,8 @@ Hooks.once("init", async function () {
 
   console.log(CONFIG)
   // Preload Handlebars
-  return preloadHandlebarsTemplates();
+  await preloadHandlebarsTemplates();
+  registerSystemSettings();
 });
 
 /* --------------------------------------- */
@@ -81,8 +82,6 @@ Handlebars.registerHelper("toLowerCase", function (str) {
   Handlebars.registerHelper('inspect', function(obj) {
     return '> ' + JSON.stringify(obj)
   })
-
-  registerSystemSettings();
 
 /* ======== Ready Hook ======= */
 Hooks.once("ready", async function () {
