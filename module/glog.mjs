@@ -31,12 +31,14 @@ Hooks.once("init", async function () {
   // Register sheets
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet(GLOG.system, PlayerCharacterSheet, {
+    types: ["playerCharacter", "npc", "hireling", "companion"],
     makeDefault: true,
     label: "GLOG.playerCharacterSheet",
   });
 
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet(GLOG.system, GlogItemSheet, {
+    types: ["gear", "weapon", "armor", "spell"],
     makeDefault: true,
     label: "GLOG.itemSheet",
   });
