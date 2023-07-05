@@ -6,17 +6,6 @@ export default class GlogItem extends Item {
 
     prepareData() {
         super.prepareData();
-        
-        const brewStatus = game.settings.get("glog", "superBrew");
-        let model = this.system
-    
-        // Homebrew Switch
-        if (brewStatus) {
-          model.homebrew = true;
-        }
-        else {
-          model.homebrew = false;
-        }
       }
 
     chatTemplate = {

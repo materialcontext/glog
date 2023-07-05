@@ -1,7 +1,7 @@
 import { GLOG } from "../helpers/config.mjs";
 import { onManageActiveEffect, prepareActiveEffectCategories } from "../helpers/effects.mjs";
 
-/** @extends { ActorSheet }*/
+/** @extends { ActorSheet } */
 export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {

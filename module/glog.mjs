@@ -13,7 +13,7 @@ import { GLOG } from "./helpers/config.mjs";
 Hooks.once("init", async function () {
   game.classes = {
     PlayerCharacter,
-    Item: GlogItem,
+    GlogItem,
     rollItemMacro,
   };
 
@@ -35,6 +35,8 @@ Hooks.once("init", async function () {
     makeDefault: true,
     label: "GLOG.playerCharacterSheet",
   });
+
+  console.log(Glog.system)
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet(GLOG.system, GlogItemSheet, {
     makeDefault: true,
