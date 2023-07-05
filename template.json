@@ -205,8 +205,8 @@
         "active": true
       },
       "buyable": {
-        "cost": "",
-        "slotType": "",
+        "cost": 0,
+        "slots": 0,
         "displayCategory": ""
       }
     },

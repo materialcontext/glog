@@ -21,28 +21,18 @@
             <table>
                 <tr>
                     <td>
-                        <label class="resource-label">Resource Label 1</label>
+                        <label class="resource-label">Slots</label>
                     </td>
                     <td>
-                        <label class="resource-label">Resource Label 2</label>
+                        <label class="resource-label">Cost</label>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <select name="system.slotType" data-type="String">
-                            {{#select item.system.slotType}}
-                            {{#each config.gearTypes as |name key|}}
-                            <option value="{{key}}">{{ name }}</option>
-                            {{/each}} {{/select}}
-                        </select>
+                        <input class="input-small" type="number" name="slots" value="{{item.system.slots}}" data-dtype="Number" placeholder="0"/>
                     </td>
                     <td>
-                        <select name="system.cost" data-type="String">
-                            {{#select item.system.cost}}
-                            {{#each config.costTypes as |name key|}}
-                            <option value="{{key}}">{{ name }}</option>
-                            {{/each}} {{/select}}
-                        </select>
+                        <input class="input-small" type="number" name="cost" value="{{item.system.cost}}" data-dtype="Number" placeholder="0"/>
                     </td>
                 </tr>
             </table>
