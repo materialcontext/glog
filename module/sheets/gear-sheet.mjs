@@ -1,5 +1,5 @@
 import { GLOG } from "../helpers/config.mjs";
-import { registerEffectHandlers,registerCommonHandlers } from "../helpers/common-sheet-functions.js";
+import { registerEffectHandlers,registerCommonHandlers } from "../helpers/common-sheet-functions.mjs";
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
