@@ -37,11 +37,6 @@ Hooks.once("init", async function () {
   });
 
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet(GLOG.system, GlogItemSheet, {
-    types: ["gear", "weapon", "armor", "spell"],
-    makeDefault: true,
-    label: "GLOG.itemSheet"
-  });
   Items.registerSheet(GLOG.system, GlogGearSheet), {
     types: ["gear", "weapon", "armor", "spell"],
     makeDefault: true,
