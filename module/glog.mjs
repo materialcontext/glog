@@ -3,7 +3,7 @@ import { PlayerCharacter } from "./documents/actor.mjs";
 import { GlogItem } from "./documents/item.mjs";
 // import sheet classes
 import { PlayerCharacterSheet } from "./sheets/actor-sheet.mjs";
-import { GlogItemSheet } from "./sheets/item-sheet.mjs";
+import { GlogGearSheet } from "./sheets/gear-sheet.mjs";
 
 // import helpers
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
@@ -33,15 +33,20 @@ Hooks.once("init", async function () {
   Actors.registerSheet(GLOG.system, PlayerCharacterSheet, {
     types: ["playerCharacter", "npc", "hireling", "companion"],
     makeDefault: true,
-    label: "GLOG.playerCharacterSheet",
+    label: "GLOG.playerCharacterSheet"
   });
 
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet(GLOG.system, GlogItemSheet, {
     types: ["gear", "weapon", "armor", "spell"],
     makeDefault: true,
-    label: "GLOG.itemSheet",
+    label: "GLOG.itemSheet"
   });
+  Items.registerSheet(GLOG.system, GlogGearSheet), {
+    types: ["gear", "weapon", "armor", "spell"],
+    makeDefault: true,
+    label: "GLOG.gearSheet"
+  };
 
   // Preload Handlebars
   return preloadHandlebarsTemplates();

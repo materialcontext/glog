@@ -2,6 +2,7 @@
  * Extends the basic actor sheet
  * @extends {Actor}
  */
+
 export class PlayerCharacter extends Actor {
   /** @override */
 //   prepareData() {
