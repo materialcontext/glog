@@ -1,5 +1,16 @@
 <div class="tab gear" data-group="primary" data-tab="gear">
-    {{#if actor.system.hasStash}}
+    {{#if actor.weapon}}
+        <div class="contentBox">
+            <div class="flexrow subheader">
+                <h3 class="subheader">{{localize "ep2e.inventory.ccLabel"}}</h3>
+                <div class="flexrow alignRight flexGrowThreeQuarter" style="align-items: center; justify-content: flex-end;">
+                </div>
+            </div>
+
+            {{> systems/eclipsephase/templates/actor/partials/item-partials/cc-weapons.html }}
+
+        </div>   
+    {{/if}}
     <div class="contentBox" style="max-width: 33%; margin: auto; top: 150px">
         <div class="flexrow">
             <h3 class="subheaderBlank">Inventory Empty</h3>
@@ -8,5 +19,4 @@
             <i style="font-size: 12px; margin-bottom: 10px;">Might wanna get a weapon before you die.</i>
         </div>
     </div>
-    {{/if}}
 </div>

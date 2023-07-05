@@ -37,7 +37,6 @@
         }
       },
       "flags": {
-        "hasStash": true,
         "armorEquipped": true,
         "shieldEquipped": false,
         "wpnEquipped": false,
