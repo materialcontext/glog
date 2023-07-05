@@ -25,7 +25,7 @@ Hooks.once("init", async function () {
   // Define custom Document classes
   CONFIG.Actor.documentClass = PlayerCharacter;
   CONFIG.GLOG = GLOG;
-  // CONFIG.Item.documentClass = GlogItem;
+  CONFIG.Item.documentClass = GlogItem;
 
   // Register sheets
   Actors.unregisterSheet("core", ActorSheet);

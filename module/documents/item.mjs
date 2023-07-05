@@ -2,7 +2,7 @@
  * Extend the basic item class
  * @extends {Item}
  */
-export default class GlogItem extends Item {
+export class GlogItem extends Item {
 
     prepareData() {
         super.prepareData();
