@@ -8,22 +8,22 @@
         <div class="wantToKnowMore">
             <i class="fa-regular fa-bandage awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Wounds</span>
-            <input class="input-xs" type="number" name="wounds" value="{{actor.system.wounds.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">({{actor.system.physical.wt}})</span>
+            <input class="input-small" style="text-align: center" type="number" name="system.traumaMod" value="{{actor.system.traumaMod.value}}" data-dtype="Number" placeholder="0"/>
         </div>
         <div class="wantToKnowMore">
             <i class="fa-regular fa-stopwatch awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Init Mod (Wis + Misc)</span>
-            <input class="input-small" style="text-align: center" type="text" name="system.initMod" value="{{actor.system.iniMod.value}}" data-dtype="Number" placeholder="0"/>
-        </div>
-        <div class="wantToKnowMore">
-            <i class="fa-regular fa-burst awesomeIcon" style="font-size: 18px;"></i>
-            <span class="tooltipText resource-label" style="font-size: 13px;">Move</span>
-            <input class="input-xs" type="number" name="system.move" value="{{actor.system.move.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">({{actor.system.mental.tt}})</span>
+            <input class="input-small" style="text-align: center" type="number" name="system.initMod" value="{{actor.system.iniMod.value}}" data-dtype="Number" placeholder="0"/>
         </div>
         <div class="wantToKnowMore">
             <i class="fa-solid fa-land-mine-on awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Level</span>
             <input class="input-xs standard-height" style="text-align: center" type="text" name="system.level" value="{{actor.system.level.value}}" placeholder="0"/>/ 
+        </div>
+        <div class="wantToKnowMore">
+            <i class="fa-solid fa-heart-pulse awesomeIcon" style="font-size: 18px;"></i>
+            <span class="tooltipText resource-label" style="font-size: 13px;">HP</span>
+            <input class="input-xs" type="number" name="hp" value="{{actor.system.magicDice.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">/{{actor.system.magicDice.max}}</span>
         </div>
     </div>
 </div>

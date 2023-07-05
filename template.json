@@ -14,13 +14,14 @@
         "strSwimWarning": "Make a strength check to swim in this armor."
       },
       "attributes": {
-        "level": {
-          "min": 0,
-          "value": 0
-        },
         "wounds": {
           "min": 0,
           "value": 0
+        },
+        "magicDice": {
+          "min": 0,
+          "value": 0,
+          "max": 0
         },
         "traumaMod": {
           "min": 0,

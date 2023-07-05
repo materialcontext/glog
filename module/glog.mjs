@@ -10,7 +10,7 @@ import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { GLOG } from "./helpers/config.mjs";
 
 function registerSystemSettings() {
-  game.settings.register("eclipsephase", "effectPanel", {
+  game.settings.register("glog", "effectPanel", {
     config: true,
     scope: "world",
     name: "Enable Effect Panel",
