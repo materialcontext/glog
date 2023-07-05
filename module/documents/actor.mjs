@@ -9,7 +9,18 @@ export class PlayerCharacter extends Actor {
   /** @override */
   prepareData() {
     super.prepareData();
-  }
+
+    const actorModel = this.system;
+    const items = this.items;
+
+    //Determin whether any gear is present
+    for(let gearCheck of items){
+      if(gearCheck.system.displayCategory === "ranged" || gearCheck.system.displayCategory === "ccweapon" || gearCheck.system.displayCategory === "gear" || gearCheck.system.displayCategory === "armor" || gearCheck.system.slotType === "consumable" || gearCheck.system.slotType === "digital"){
+        actorModel.additionalSystems.hasGear = true;
+        break;
+      };
+    };
+  };
 
   /** @override */
   prepareBaseData() {}
@@ -23,7 +34,7 @@ export class PlayerCharacter extends Actor {
 
     this._preparePlayerCharacterData(actorData);
     this._prepareNPCData(actorData);
-  }
+  };
 
   // prepare playerCharacter type specific data
   _preparePlayerCharacterData(actorData) {
@@ -32,22 +43,23 @@ export class PlayerCharacter extends Actor {
     // Make modifications to data here. For example:
     const systemData = actorData.system;
   
-  }
+  };
 
   // prepare NPC type specific data
   _prepareNPCData(actorData) {
     if (actorData.type !== "npc") return;
-  }
+  };
 
   // prepare companion specific data
   _prepareCompanionData(actorData) {
     if (actorData.type !== "companion") return;
-  }
+  };
 
   // prepare hireling specific data
   _prepareHirelingData(actorData) {
     if (actorData.type !== "hireling") return;
-  }
+  };
+
 
   async getData() {
     const sheetData = super.getData();
@@ -59,7 +71,7 @@ export class PlayerCharacter extends Actor {
       actor.img = "systems/eclipsephase/resources/img/anObjectificationByMichaelSilverRIP.jpg";
     }
 
-    if (actor.type === 'character') {
+    if (actor.type === 'playerCharacter') {
       this._prepareCharacterItems(sheetData);
     }
 
@@ -111,7 +123,6 @@ export class PlayerCharacter extends Actor {
    */
   async _prepareCharacterItems(sheetData) {
     const actor = sheetData.actor
-    const actorModel = sheetData.actor.system
 
     const gear = [];
     const consumables = [];

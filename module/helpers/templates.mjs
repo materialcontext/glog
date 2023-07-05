@@ -23,13 +23,15 @@ export const preloadHandlebarsTemplates = async function() {
       "systems/glog/templates/actor/parts/currentStatus/stealthSummary.html",
       "systems/glog/templates/actor/parts/currentStatus/gearSummary.html",
       "systems/glog/templates/actor/parts/currentStatus/consumableSummary.html",
-      "systems/glog/templates/actor/parts/item-parts/weapons.html",
+      "systems/glog/templates/actor/parts/item-parts/weapons.html",,
+      "systems/glog/templates/actor/parts/item-parts/consumables.html",
       "systems/glog/templates/actor/parts/item-parts/gear.html",
-      "systems/glog/templates/actor/parts/item-parts/armor.html",
+      "systems/glog/templates/actor/parts/item-parts/armors.html",
       "systems/glog/templates/actor/parts/item-parts/spells.html",
       "systems/glog/templates/item/item-spell-sheet.html",
       "systems/glog/templates/item/item-weapon-sheet.html",
       "systems/glog/templates/item/item-gear-sheet.html",
+      "systems/glog/templates/item/item-consumable-sheet.html",
       "systems/glog/templates/item/item-armor-sheet.html"
     ]);
   };

@@ -18,6 +18,15 @@ function registerSystemSettings() {
     type: Boolean,
     default: false
   });
+
+  game.settings.register("glog", "GMmenu", {
+    config: true,
+    scope: "world",
+    name: "Enable GM Menu",
+    hint: 'Shows special GM menu on the lefthand side of the game canvas (marked in blue)',
+    type: Boolean,
+    default: true
+  });
 };
 
 /* ======== Init Hook ======== */

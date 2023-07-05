@@ -195,8 +195,9 @@
     "types": [
       "gear",
       "spell",
-      "Weapon",
-      "armor"
+      "weapon",
+      "armor",
+      "consumable"
     ],
     "templates": {
       "base": {
@@ -217,13 +218,21 @@
       "quantity": 1,
       "displayCategory": "gear"
     },
+    "consumable": {
+      "templates": [
+        "base",
+        "buyable"
+      ],
+      "quantity": 1,
+      "displayCategory": "consumable"
+    },
     "spell": {
       "templates": [
         "base",
         "buyable"
       ],
       "quantity": 1,
-      "displayCategory": "gear"
+      "displayCategory": "spell"
     },
     "weapon": {
       "templates": [
