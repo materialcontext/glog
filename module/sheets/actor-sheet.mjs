@@ -73,7 +73,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     // prepare active effects
     context.effects = prepareActiveEffectCategories(this.actor.effects);
 
-    await this._prepareRenderedHTMLContent(sheetData);
+    await this._prepareRenderedHTMLContent(context);
 
     return context;
   }
@@ -125,13 +125,13 @@ export class PlayerCharacterSheet extends ActorSheet {
     actor.itemEffects = itemEffects;
   }
 
-  async _prepareRenderedHTMLContent(sheetData) {
-    let actorModel = sheetData.actor.system;
+  async _prepareRenderedHTMLContent(context) {
+    let actorModel = context.actor.system;
 
     let bio = await TextEditor.enrichHTML(actorModel.biography, {
       async: true,
     });
-    sheetData["htmlBiography"] = bio;
+    context["htmlBiography"] = bio;
   }
 
   /* ------------------------------------- */
