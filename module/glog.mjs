@@ -13,7 +13,7 @@ import { GLOG } from "./helpers/config.mjs";
 Hooks.once("init", async function () {
   game.glog = {
     PlayerCharacter,
-    GlogItem,
+    // GlogItem,
     rollItemMacro
   }
 
@@ -32,15 +32,15 @@ Hooks.once("init", async function () {
   Actors.registerSheet(GLOG.system, PlayerCharacterSheet, {
     types: ["playerCharacter", "npc", "hireling", "companion"],
     makeDefault: true,
-    label: "GLOG.playerCharacterSheet"
+    label: "glog.playerCharacterSheet"
   });
 
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet(GLOG.system, GlogGearSheet), {
-    types: ["gear", "weapon", "armor", "spell"],
-    makeDefault: true,
-    label: "GLOG.gearSheet"
-  };
+  // Items.unregisterSheet("core", ItemSheet);
+  // Items.registerSheet(GLOG.system, GlogGearSheet), {
+  //   types: ["gear", "weapon", "armor", "spell"],
+  //   makeDefault: true,
+  //   label: "glog.gearSheet"
+  // };
 
 
   console.log(CONFIG)
