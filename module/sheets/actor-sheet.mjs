@@ -91,7 +91,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     const gear = [];
     const consumables = [];
     const spells = [];
-    const effects = [];
+    const itemEffects = [];
     const weapons = [];
     const armors = [];
     const shields = [];
@@ -106,7 +106,7 @@ export class PlayerCharacterSheet extends ActorSheet {
       } else if (itemModel.displayCategory === "shield") {
         shields.push(item);
       } else if (itemModel.displayCategory === "effect") {
-        effects.push(item);
+        itemEffects.push(item);
       } else if (itemModel.displayCategory === "consumable") {
         consumables.push(item);
       } else if (itemModel.displayCategory === "spell") {
@@ -122,7 +122,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     actor.spells = spells;
     actor.consumables = consumables;
     actor.gear = gear;
-    actor.effects = effects;
+    actor.itemEffects = itemEffects;
   }
 
   async _prepareRenderedHTMLContent(sheetData) {
