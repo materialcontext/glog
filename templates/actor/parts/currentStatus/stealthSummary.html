@@ -4,25 +4,31 @@
     </div>
         <div class="flexrow flex-justify flex-align" style="height: 30px;">
             <div class="flexrow flex-group-center reveal">
-                <button class="toggle restReset flexgrow rollable reveal" data-roll="2d6+@stealth.sneak.value">Sneak</button>
-                <label class="toggle restReset task-check noShow flexrow" data-type="stealth" data-name="sneak" data-key="system.sneak.value" 
-                    data-roll="2d6+@stealth.sneak.value">
-                    <i class="fa-regular fa-dice"></i> +{{system.stealth.sneak.value}}
-                </label>
+                <button class="toggle restReset flexgrow rollable" data-roll="2d6+@stealth.sneak.value">
+                    <span class="toggle resource-value align-center rollable" data-roll="2d6+@stealth.sneak.value">SNEAK</span>
+                    <label class="toggle noShow flexrow" data-type="stealth" data-name="sneak" data-key="system.sneak.value" 
+                        data-roll="2d6+@stealth.sneak.value">
+                        <i class="fa-solid fa-dice-six"></i> +{{system.stealth.sneak.value}}
+                    </label>
+                </button>
             </div>
             <div class="flexrow flex-group-center reveal">
-                <button class="toggle restReset flexgrow rollable reveal" data-roll="2d6+@stealth.hide.value">Hide</button>
-                <label class="toggle restReset task-check noShow flexrow" data-type="hide" data-name="sneak" data-key="system.hide.value" 
-                    data-roll="2d6+@stealth.hide.value">
-                    <i class="fa-regular fa-dice"></i> +{{system.stealth.hide.value}}
-                </label>
+                <button class="toggle restReset flexgrow rollable" data-roll="2d6+@stealth.hide.value">
+                    <span class="toggle resource-value align-center rollable" data-roll="2d6+@stealth.hide.value">HIDE</span>
+                    <label class="toggle noShow flexrow" data-type="hide" data-name="sneak" data-key="system.hide.value" 
+                        data-roll="2d6+@stealth.hide.value">
+                        <i class="fa-solid fa-dice-six"></i> +{{system.stealth.hide.value}}
+                    </label>
+                </button>
             </div>
             <div class="flexrow flex-group-center reveal">
-                <button class="toggle restReset flexgrow rollable reveal" data-roll="2d6+@stealth.disgusie.value">Disguise</button>
-                <label class="toggle restReset task-check noShow flexrow" data-type="disguise" data-name="sneak" data-key="system.disguise.value" 
-                    data-roll="2d6+@stealth.disguise.value">
-                    <i class="fa-regular fa-dice"></i> +{{system.stealth.disguise.value}}
-                </label>
+                <button class="restReset" >
+                    <span class="toggle resource-value align-center rollable" data-roll="2d6+@stealth.disgusie.value">DISGUISE</span>
+                    <label class="toggle noShow flexrow" data-type="disguise" data-name="sneak" data-key="system.disguise.value" 
+                        data-roll="2d6+@stealth.disguise.value">
+                        <i class="fa-solid fa-dice-six"></i> +{{system.stealth.disguise.value}}
+                    </label>
+                </button>
             </div>
         </div>
 </div>
