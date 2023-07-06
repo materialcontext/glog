@@ -62,10 +62,10 @@ Hooks.once("init", async function () {
     label: "glog.gearSheet"
   };
 
-
-  console.log(CONFIG)
   // Preload Handlebars
   await preloadHandlebarsTemplates();
+
+  // register settings
   registerSystemSettings();
 });
 
