@@ -1316,6 +1316,21 @@ h3.subheaderBlank {
   margin-bottom: 10px;
 }
 
+.sideCarStealthBox {
+  padding: 10px;
+  height: 73.6px;
+  background-color: var(--pitchBorder);
+  margin-bottom: 10px;
+}
+
+.sideCarConsumeBox {
+  padding: 10px;
+  height: 213.6px;
+  background-color: var(--pitchBorder);
+  margin-bottom: 10px;
+}
+
+
 .boxheadmargin {
   margin-bottom: 10px;
 }
