@@ -101,44 +101,44 @@
             "min": -3,
             "value": 0
           }
-        }
-      },
-      "combat": {
-        "attack": {
-          "min": -3,
-          "value": 0
         },
-        "defense": {
-          "min": -3,
-          "value": 0
-        }
-      },
-      "stealth": {
-        "sneak": {
-          "min": -9,
-          "value": 0
+        "stealth": {
+          "sneak": {
+            "min": -9,
+            "value": 0
+          },
+          "hide": {
+            "min": -9,
+            "value": 0
+          },
+          "disguise": {
+            "min": -9,
+            "value": 0
+          }
         },
-        "hide": {
-          "min": -9,
-          "value": 0
+        "combat": {
+          "attack": {
+            "min": -3,
+            "value": 0
+          },
+          "defense": {
+            "min": -3,
+            "value": 0
+          }
         },
-        "disguise": {
-          "min": -9,
-          "value": 0
-        }
-      },
-      "social": {
-        "reaction": {
-          "min": -9,
-          "value": 0
-        },
-        "diplomacy": {
-          "min": -9,
-          "value": 0
-        },
-        "intimidate": {
-          "min": -9,
-          "value": 0
+        "social": {
+          "reaction": {
+            "min": -9,
+            "value": 0
+          },
+          "diplomacy": {
+            "min": -9,
+            "value": 0
+          },
+          "intimidate": {
+            "min": -9,
+            "value": 0
+          }
         }
       },
       "npc": {
@@ -162,9 +162,6 @@
         "attributes",
         "resources",
         "stats",
-        "combat",
-        "stealth",
-        "social",
         "encumberance",
         "equipment",
         "flags"
@@ -176,9 +173,6 @@
         "attributes",
         "resources",
         "stats",
-        "combat",
-        "stealth",
-        "social",
         "npc",
         "encumberance",
         "equipment",
