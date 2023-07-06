@@ -1,45 +1,46 @@
 <div class="tab gear" data-group="primary" data-tab="gear">
-    {{#if actor.weapons}}
-        <div class="contentBox">
-            <div class="flexrow subheader">
-                <h3 class="subheader">Weapons</h3>
-                <div class="flexrow alignRight flexGrowThreeQuarter" style="align-items: center; justify-content: flex-end;">
-                </div>
-            </div>
-            {{> systems/glog/templates/actor/parts/item-parts/weapons.html }}
-        </div>
-    {{/if}}
-    {{#if actor.armors}}
+  <div class="grid-2col">
     <div class="contentBox">
-        <div class="flexrow subheader">
-            <h3 class="subheader">Armor</h3>
-            <div class="flexrow alignRight flexGrowThreeQuarter" style="align-items: center; justify-content: flex-end;">
-            </div>
-        </div>
-        {{> systems/glog/templates/actor/parts/item-parts/armors.html }}
+      <div class="flexrow subheader">
+        <h3 class="subheader">Weapons</h3>
+        <div
+          class="flexrow alignRight flexGrowThreeQuarter"
+          style="align-items: center; justify-content: flex-end"
+        ></div>
+      </div>
+      {{#if actor.weapons}}
+        {{> systems/glog/templates/actor/parts/item-parts/weapons.html }}
+      {{/if}} 
     </div>
-    {{/if}}
-    {{#if actor.consumables}}
-        <div class="contentBox">
-            <div class="flexrow subheader">
-                <h3 class="subheader">Consumables</h3>
-                <div class="alignRight flexGrowThreeQuarter">
-                </div>
-            </div>
-
-            {{> systems/glog/templates/actor/parts/item-parts/consumables.html }}    
-        </div>
-    {{/if}}
-    {{#if actor.gear}}
-        <div class="contentBox">
-            <div class="flexrow subheader">
-                <h3 class="subheader">Gear</h3>
-                <div class="alignRight flexGrowThreeQuarter">
-                </div>
-            </div>
-
-            {{> systems/glog/templates/actor/parts/item-parts/gear.html }}    
-
-        </div>
-    {{/if}}
+    <div class="contentBox">
+      <div class="flexrow subheader">
+        <h3 class="subheader">Armor</h3>
+        <div
+          class="flexrow alignRight flexGrowThreeQuarter"
+          style="align-items: center; justify-content: flex-end"
+        ></div>
+      </div>
+      {{#if actor.armors}}
+        {{> systems/glog/templates/actor/parts/item-parts/armors.html }}
+      {{/if}}
+    </div>
+    <div class="contentBox">
+      <div class="flexrow subheader">
+        <h3 class="subheader">Consumables</h3>
+        <div class="alignRight flexGrowThreeQuarter"></div>
+      </div>
+      {{#if actor.consumables}}
+        {{> systems/glog/templates/actor/parts/item-parts/consumables.html }}
+      {{/if}} 
+    </div>
+    <div class="contentBox">
+      <div class="flexrow subheader">
+        <h3 class="subheader">Gear</h3>
+        <div class="alignRight flexGrowThreeQuarter"></div>
+      </div>
+      {{#if actor.gear}}
+        {{> systems/glog/templates/actor/parts/item-parts/gear.html }}
+      {{/if}}
+    </div>
+  </div>
 </div>
