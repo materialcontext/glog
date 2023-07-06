@@ -3,20 +3,20 @@
         <label class="resource-value" style="font-size: 20px;">Stealth</label>
     </div>
         <div class="flexrow flex-justify flex-align" style="height: 30px;">
-            <button class="toggle restReset flexgrow rollable" data-roll="2d6+@abilities.dex.value+@stealth.sneak.value">Sneak</button>
+            <button class="toggle restReset flexgrow rollable" data-roll="2d6+@stealth.sneak.value">Sneak</button>
             <label class="toggle roll-label task-check noShow" data-type="stealth" data-name="sneak" data-key="system.sneak.value" 
-                data-roll="2d6+@abilities.dex.value+@stealth.sneak.value">
-                <i class="fa-solid fa-dice-d20"></i> +{{system.abilities.dex.value + system.stealth.sneak.value}}
+                data-roll="2d6+@stealth.sneak.value">
+                <i class="fa-solid fa-dice-d20"></i> +{{system.stealth.sneak.value}}
             </label>
-            <button class="toggle restReset flexgrow rollable" data-roll="2d6+@abilities.wis.value+@stealth.hide.value">Hide</button>
+            <button class="toggle restReset flexgrow rollable" data-roll="2d6+@stealth.hide.value">Hide</button>
             <label class="toggle roll-label task-check noShow" data-type="hide" data-name="sneak" data-key="system.hide.value" 
-                data-roll="2d6+@abilities.wis.value+@stealth.hide.value">
-                <i class="fa-solid fa-dice-d20"></i> +{{system.abilities.wis.value + system.stealth.hide.value}}
+                data-roll="2d6+@stealth.hide.value">
+                <i class="fa-solid fa-dice-d20"></i> +{{system.stealth.hide.value}}
             </label>
-            <button class="toggle restReset flexgrow rollable" data-roll="2d6+@abilities.int.value+@stealth.disgusie.value">Disguise</button>
+            <button class="toggle restReset flexgrow rollable" data-roll="2d6+@stealth.disgusie.value">Disguise</button>
             <label class="toggle roll-label task-check noShow" data-type="disguise" data-name="sneak" data-key="system.disguise.value" 
-                data-roll="2d6+@abilities.int.value+@stealth.disguise.value">
-                <i class="fa-solid fa-dice-d20"></i> +{{system.abilities.int.value + system.stealth.disguise.value}}
+                data-roll="2d6+@stealth.disguise.value">
+                <i class="fa-solid fa-dice-d20"></i> +{{system.stealth.disguise.value}}
             </label>
         </div>
 </div>
