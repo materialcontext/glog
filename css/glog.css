@@ -772,6 +772,10 @@ a[href] {
   border-bottom: 1px solid #BBB;
 }
 
+.glog .itemHover:hover {
+  background-color: var(--focusBackground);
+}
+
 .macro-sheet .form-group.command .furnace-macro-command textarea, .macro-sheet .form-group.command .furnace-macro-command code{
   color: var(--mainText);
 }

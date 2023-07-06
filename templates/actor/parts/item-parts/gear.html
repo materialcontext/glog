@@ -1,9 +1,8 @@
 <div class="itemBackground">
     <div class="flex flexcol">
         {{#each actor.gear as |item id|}}
-            <div class="flex flexrow" style="width: 100%;">
                 {{#if this.system.active}}
-                <div class="item flexrow flex-group-left atHand" style="width: 100%;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
+                <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
                     <input class="sheet equipped checkBox" data-dtype="Boolean" data-item-id="{{item._id}}" type="checkbox" {{checked system.active}}>
                     <div class="item-image flex-group-left input-small"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div>
                     <label class="truncate alignLeft" style="flex: 3.5;"><strong>{{item.name}}</strong></label>
@@ -24,7 +23,7 @@
                     </div>
                 </div>
                 {{else}}
-                <div class="item flexrow offHand flex-group-left" style="width: 100%;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
+                <div class="item flexrow offHand flex-group-left itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
                     <input class="sheet equipped checkBox" data-dtype="Boolean" data-item-id="{{item._id}}" type="checkbox" {{checked system.active}}>
                     <div class="item-image flex-group-left input-small"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div>
                     <label class="truncate alignLeft" style="flex: 3.5;"><strong>{{item.name}}</strong></label>
@@ -45,7 +44,6 @@
                     </div>
                 </div>
                 {{/if}}
-            </div>
             {{/each}}
         </div>
     </div>
