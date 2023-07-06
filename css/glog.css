@@ -230,6 +230,13 @@
   justify-content: space-between;
 }
 
+.flex-align {
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  text-align: center;
+}
+
 /* Styles limited to glog sheets */
 .glog .awesomeIcon {
   color: var(--iconGrey);
@@ -1318,14 +1325,14 @@ h3.subheaderBlank {
 
 .sideCarStealthBox {
   padding: 10px;
-  height: 73.6px;
+  height: 93.6px;
   background-color: var(--pitchBorder);
   margin-bottom: 10px;
 }
 
 .sideCarConsumeBox {
   padding: 10px;
-  height: 213.6px;
+  height: 193.6px;
   background-color: var(--pitchBorder);
   margin-bottom: 10px;
 }
