@@ -10,7 +10,7 @@ export class PlayerCharacterSheet extends ActorSheet {
       classes: ["glog", "sheet", "actor"],
       resizable: false,
       template: "systems/glog/templates/actor/actor-npc-sheet.html",
-      width: 1280,
+      width: 1120,
       height: 720,
       tabs: [
         {
@@ -243,9 +243,6 @@ export class PlayerCharacterSheet extends ActorSheet {
     html
       .find(".reveal")
       .on("mouseover mouseout", this._onToggleReveal.bind(this));
-
-    //post to chat WIP
-    html.find(".post-chat").click(this._postToChat.bind(this));
   }
 
   /** @override */
