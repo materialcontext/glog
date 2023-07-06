@@ -47,7 +47,7 @@
 .grid-3col-limited1 {
   grid-column: span 3 / span 3;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-areas: 
+  grid-template-areas:
     "left center center";
 }
 
