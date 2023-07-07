@@ -36,15 +36,19 @@
           "value": 0
         }
       },
-      "flags": {
-        "hasGear": false,
-        "armorEquipped": false,
-        "shieldEquipped": false,
-        "wpnEquipped": false,
-        "lightEquipped": false,
-        "noSwim": false,
-        "strSwim": false,
-        "consumableEquipped": false
+      "currStat": {
+        "equipped": {
+          "gear": [],
+          "armor": [],
+          "shield": [],
+          "weapon": [],
+          "light": [],
+          "consumable": []
+        },
+        "flags": {
+          "noSwim": [],
+          "strSwim": []
+        }
       },
       "equipment": {
         "armors": {},
@@ -164,7 +168,7 @@
         "stats",
         "encumberance",
         "equipment",
-        "flags"
+        "currStat"
       ]
     },
     "hireling": {
@@ -176,7 +180,7 @@
         "npc",
         "encumberance",
         "equipment",
-        "flags"
+        "currStat"
       ]
     },
     "companion": {

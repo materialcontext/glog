@@ -1,16 +1,16 @@
 <div class="sideCarBox armorSideCar">
     <div class="boxheadmargin">
         <label class="resource-value" style="font-size: 20px;">Defense</label>
-        {{#if actor.system.noSwim}} 
+        {{#if actor.system.flags.noSwim}} 
             <label style='color: var(--negative);'>{{actor.system.noSwimWarning}}</label><br/>
         {{else}}
-            {{#if actor.system.strSwim}}
+            {{#if actor.system.flags.strSwim}}
                     <label style='color: var(--warning);'>{{actor.system.strSwimWarning}}</label><br/>
             {{/if}}
         {{/if}}
     </div>
-    {{#if actor.system.armorEquipped}}
-        {{#each actor.armor as |item id|}}
+    {{#if actor.system.equipped.armor}}
+        {{#each actor.armors as |item id|}}
             {{#if this.system.active}}
             <div class="item flexrow" data-item-id="{{item._id}}">
                 <div class=" flexrow flex-group-center offHand reveal wantToKnowMore">
