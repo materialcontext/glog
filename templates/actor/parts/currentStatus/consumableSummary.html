@@ -2,8 +2,8 @@
     <div class="boxheadmargin">
         <label class="resource-value" style="font-size: 20px;">Consumables</label>
     </div>
-    {{#if actor.system.consumableEquipped}}
-        {{#each actor.consumable as |item id|}}
+    {{#if actor.consumables}}
+        {{#each actor.consumables as |item id|}}
             {{#if this.system.active}}
             <div class="item flexrow" data-item-id="{{item._id}}">
                 <div class=" flexrow flex-group-center offHand reveal wantToKnowMore">

@@ -9,7 +9,7 @@
             {{/if}}
         {{/if}}
     </div>
-    {{#if actor.system.equipped.armor}}
+    {{#if actor.armor}}
         {{#each actor.armors as |item id|}}
             {{#if this.system.active}}
             <div class="item flexrow" data-item-id="{{item._id}}">

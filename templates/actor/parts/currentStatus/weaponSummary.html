@@ -2,7 +2,7 @@
     <div class="boxheadmargin">
         <label class="resource-value" style="font-size: 20px;">Combat</label>
     </div>
-    {{#if actor.system.equipped.weapon}}
+    {{#if actor.weapons}}
         {{#each actor.weapons as |item id|}}
             {{#if this.system.active}}
             <div class="item" style="margin-bottom: 10px;" data-item-id="{{item._id}}">
