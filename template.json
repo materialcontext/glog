@@ -113,11 +113,15 @@
           }
         },
         "combat": {
-          "attack": {
+          "atk": {
             "min": -3,
             "value": 0
           },
-          "defense": {
+          "def": {
+            "min": -3,
+            "value": 0
+          },
+          "man": {
             "min": -3,
             "value": 0
           }

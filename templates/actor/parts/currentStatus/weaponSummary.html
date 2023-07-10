@@ -1,74 +1,34 @@
-<div class="sideCarBox ccSideCar">
+<div class="sideCarStealthBox gearSideCar">
     <div class="boxheadmargin">
-        <label class="resource-value" style="font-size: 20px;">Combat</label>
+        <label class="resource-value" style="font-size: 20px;">Stealth</label>
     </div>
-    {{#if actor.weapons}}
-        {{#each actor.weapons as |item id|}}
-            {{#if this.system.active}}
-            <div class="item" style="margin-bottom: 10px;" data-item-id="{{item._id}}">
-                <div class="flexrow subheader">
-                    <div class="flexrow flex-group-left reveal wantToKnowMore" style="max-width: 100%;">
-                        <span class="tooltipText">{{item.name}}</span>
-                        <h3 class="subheader truncate">
-                            <img src="{{item.img}}" title="{{item.name}}" class="toggle item-image input-small icon-small" style="margin-right: 5px;"/>
-                            <img src="icons/svg/d10-grey.svg" class="toggle icon-small task-check roll-label input-small noShow" style="margin-right: 5px;" data-type="skill" data-key="melee" data-name="{{localize 'ep2e.skills.vigorSkills.melee'}}" data-rolledfrom="ccWeapon" data-weapontype="melee" data-roll="{{item.system.dv}}" data-weaponname="{{item.name}}" data-weaponid="{{item._id}}"/>
-                            <span style="max-width: 200px; padding-right: 34px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{item.name}}</span>
-                        </h3>
-                    </div>
-                    <div class="flexrow alignRight flexGrowQuarter reveal" style="align-items: center; justify-content: flex-end;" data-item-id="{{item._id}}">
-                    </div>
-                </div>
-                <div class="flexrow flex-group-center slideShow" style="height: 26px; background-color: var(--accentBackground);">
-                    <a class="flexrow">
-                        <table>
-                            <tr style="background-color: var(--accentBackground);">
-                                <td style="padding-left: 8px; max-width: 20px;">
-                                    <i class="fa-solid fa-chevron-down awesomeIcon"></i>
-                                </td>
-                                <td style="width: 100%;">
-                                    <label class="resource-label">See more</label>
-                                </td>
-                                <td style="padding-right: 25px; max-width: 20px;">
-                                    <i class="fa-solid fa-chevron-down awesomeIcon"></i>
-                                </td>
-                            </tr>
-                        </table>
-                    </a>
-                    <a class="noShow flexrow">
-                        <table>
-                            <tr style="background-color: var(--accentBackground);">
-                                <td style="padding-left: 8px; max-width: 20px;">
-                                    <i class="fa-solid fa-chevron-up awesomeIcon"></i>
-                                </td>
-                                <td style="width: 100%;">
-                                    <label class="resource-label">Hide</label>
-                                </td>
-                                <td style="padding-right: 25px; max-width: 20px;">
-                                    <i class="fa-solid fa-chevron-up awesomeIcon"></i>
-                                </td>
-                            </tr>
-                        </table>
-                    </a>
-                </div>
-                <div class="item showMore noShow" data-item-id="{{item._id}}">
-                    <div class="grid" data-item-id="{{item._id}}">
-                        <div class="flexrow flex-group-left">
-                            <i class="fa-solid fa-explosion icon-small alignCenter awesomeIcon"></i>
-                            <h4 class="item-image input-medium noMargin"><strong>{{item.system.dv}}</strong></h4>
-                        </div>
-                    </div>
-                    {{#if item.system.description}}
-                    <div class="item" data-item-id="{{item._id}}">
-                        <div class="itemDescription">
-                            {{item.system.description}}
-                        </div>
-                    </div>
-                    {{/if}}
-                </div>
+        <div class="flexrow flex-justify flex-align" style="height: 30px;">
+            <div class="flexrow flex-group-center reveal">
+                <button class="restReset rollable" style="width:32px;"  data-type="stealth" data-name="sneak" data-key="system.sneak.value" data-roll="2d6+@stealth.sneak.value">
+                    <span class="toggle resource-value align-center">SNEAK</span>
+                    <label class="toggle noShow flexrow flex-group-center" style="font-size: 16px;">
+                        <i class="fa-light fa-dice-six" style="font-size: 16px; width: 16px;"></i>
+                        <span>+{{system.combat.atk.value}}</span>
+                    </label>
+                </button>
             </div>
-            {{/if}}
-        {{/each}}
-    {{else}}
-    <div class="flexrow flex-group-center" style="height: 60px;"><span class="resource-value">You are unarmed.</span></div>
-    {{/if}}
+            <div class="flexrow flex-group-center reveal">
+                <button class="restReset rollable" style="width:32px;" data-type="hide" data-name="sneak" data-key="system.hide.value" data-roll="2d6+@stealth.hide.value">
+                    <span class="toggle resource-value align-center">HIDE</span>
+                    <label class="toggle noShow flexrow flex-group-center" style="font-size: 16px;">
+                        <i class="fa-light fa-dice-six" style="font-size: 16px; width: 16px;"></i>
+                        <span>+{{system.comabt.def.value}}</span>
+                    </label>
+                </button>
+            </div>
+            <div class="flexrow flex-group-center reveal">
+                <button class="restReset rollable" style="width:32px;" data-type="disguise" data-name="sneak" data-key="system.disguise.value" data-roll="2d6+@stealth.disgusie.value">
+                    <span class="toggle resource-value align-center">DISGUISE</span>
+                    <label class="toggle noShow flexrow flex-group-center" style="font-size: 16px;">
+                        <i class="fa-light fa-dice-six" style="font-size: 16px; width: 16px;"></i>
+                        <span>+{{system.combat.man.value}}</span>
+                    </label>
+                </button>
+            </div>
+        </div>
 </div>
