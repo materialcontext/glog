@@ -1,9 +1,16 @@
 <div class="tab general" data-group="secondary" data-tab="general">
   <div class="contentBox" style="margin-bottom: 10px">
     <div class="flexrow subheader colorV1">
-      <h3 class="subheader colorV1">Level</h3>
+      <h3 class="subheader colorV1 flexrow alignCenter justifyBetween"> 
+        Level 
+        <input class="input-small" type="number" name="system.level" value="{{actor.system.level.value}}" data-dtype="Number" placeholder="0"/> 
+      </h3>
       <div class="alignRight flexGrowThreeQuarter">
-          <input class="input-small" type="number" name="system.charLvl" value="{{actor.system.charLvl.value}}" data-dtype="Number" placeholder="0"/> 
+        <span class="resource-label input-small">XP: </span>
+        <div>
+          <input class="input-small" type="number" name="system.level" value=" {{actor.system.xp.value}}" data-dtype="Number" placeholder="0"/>
+          <span class="resource-label input-small">{{actor.system.xp.req[actor.system.level.value]}}</span>
+        </div> 
       </div>
     </div>
     <div class="listBackground" style="background-color: var(--pitchBorder)">

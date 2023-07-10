@@ -4,27 +4,29 @@
         <div class="wantToKnowMore">
             <i class="fa-solid fa-heart-pulse awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">HP</span>
-            <input class="input-xs" type="number" name="hp" value="{{actor.system.hp.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">/ {{actor.system.hp.max}}</span>
+            <input class="input-xs" style="font-size: 18px;" type="number" name="hp" value="{{actor.system.hp.value}}" data-dtype="Number" placeholder="0"/>
+            <span class="resource-value input-small" style="font-size: 18px;"> / {{actor.system.hp.max}}</span>
         </div>
-        <div class="wantToKnowMore">
+        <div class="wantToKnowMore rollable" data-type="traumeSave" data-name="traumaSave" data-key="system.traumaMod.value" data-roll="2d6+@traumaMod.value">
             <i class="fa-regular fa-bandage awesomeIcon" style="font-size: 18px;"></i>
-            <span class="tooltipText resource-label" style="font-size: 13px;">Trauma Mod</span>
-            <input class="input-small" style="text-align: center" type="number" name="system.traumaMod" value="{{actor.system.traumaMod.value}}" data-dtype="Number" placeholder="0"/>
+            <span class="tooltipText resource-label" style="font-size: 13px;">Trauma Save</span>
+            <span class="resource-label" style="font-size: 18px">+{{actor.system.traumaMod.value}}</span>
         </div>
-        <div class="wantToKnowMore">
+        <div class="wantToKnowMore rollable" data-type="initiative" data-name="initiative" data-key="system.initMod.value" data-roll="2d6+@initMod.value">
             <i class="fa-regular fa-stopwatch awesomeIcon" style="font-size: 18px;"></i>
-            <span class="tooltipText resource-label" style="font-size: 13px;">Init Mod</span>
-            <input class="input-small" style="text-align: center" type="number" name="system.initMod" value="{{actor.system.iniMod.value}}" data-dtype="Number" placeholder="0"/>
-        </div>
-        <div class="wantToKnowMore">
-            <i class="fa-solid fa-hand-sparkles awesomeIcon" style="font-size: 18px;"></i>
-            <span class="tooltipText resource-label" style="font-size: 13px;">MD</span>
-            <input class="input-xs" type="number" name="md" value="{{actor.system.magicDice.value}}" data-dtype="Number" placeholder="0"/><span class="resource-value input-small">/ {{actor.system.magicDice.max}}</span>
+            <span class="tooltipText resource-label" style="font-size: 13px;">Initiative</span>
+            <span class="resource-label" style="font-size: 18px">+{{actor.system.initMod.value}}</span>
         </div>
         <div class="wantToKnowMore">
             <i class="fa-regular fa-person-running awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Move</span>
-            <input class="input-xs" type="number" name="system.move" value="{{actor.system.move.value}}" data-dtype="Number" placeholder="0"/>
+            <span class="resource-label" style="font-size: 18px">{{actor.system.move.value}}</span>
+        </div>
+        <div class="wantToKnowMore">
+            <i class="fa-solid fa-hand-sparkles awesomeIcon" style="font-size: 18px;"></i>
+            <span class="tooltipText resource-label" style="font-size: 13px;">MD</span>
+            <input class="input-xs" style="font-size: 18px;" type="number" name="md" value="{{actor.system.magicDice.value}}" data-dtype="Number" placeholder="0"/>
+            <span class="resource-value input-small" style="font-size: 18px;"> / {{actor.system.magicDice.max}}</span>
         </div>
     </div>
 </div>

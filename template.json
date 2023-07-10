@@ -14,9 +14,12 @@
         "strSwimWarning": "Make a strength check to swim in this armor."
       },
       "attributes": {
-        "charLvl" : {
-          "min": 0,
+        "level" : {
           "value": 0
+        },
+        "xp": {
+          "value": 0,
+          "req": [0, 1]
         },
         "wounds": {
           "min": 0,
@@ -34,12 +37,20 @@
         "initMod": {
           "min": 0,
           "value": 0
+        },
+        "move": {
+          "min": 0,
+          "value": 4
+        },
+        "encumberance": {
+          "min": 0,
+          "value": 0
         }
       },
       "currStat": {
         "flags": {
-          "noSwim": [],
-          "strSwim": []
+          "noSwim": true,
+          "strSwim": false
         }
       },
       "equipment": {
@@ -150,10 +161,6 @@
           "min": 1,
           "value": 6
         }
-      },
-      "encumberance": {
-        "min": 0,
-        "value": 0
       }
     },
     "playerCharacter": {
@@ -162,7 +169,6 @@
         "attributes",
         "resources",
         "stats",
-        "encumberance",
         "equipment",
         "currStat"
       ]
@@ -174,7 +180,6 @@
         "resources",
         "stats",
         "npc",
-        "encumberance",
         "equipment",
         "currStat"
       ]
