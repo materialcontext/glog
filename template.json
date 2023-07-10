@@ -127,15 +127,15 @@
           }
         },
         "social": {
-          "reaction": {
+          "react": {
             "min": -9,
             "value": 0
           },
-          "diplomacy": {
+          "diplo": {
             "min": -9,
             "value": 0
           },
-          "intimidate": {
+          "intim": {
             "min": -9,
             "value": 0
           }

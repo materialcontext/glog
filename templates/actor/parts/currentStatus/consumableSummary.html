@@ -1,33 +1,27 @@
-<div class="sideCarConsumeBox consumableSideCar" style="margin-bottom: 0px;">
+<div class="sideCarStealthBox gearSideCar">
     <div class="boxheadmargin">
-        <label class="resource-value" style="font-size: 20px;">Consumables</label>
+        <label class="resource-value" style="font-size: 20px;">Social</label>
     </div>
-    {{#if actor.consumables}}
-        {{#each actor.consumables as |item id|}}
-            {{#if this.system.active}}
-            <div class="item flexrow" data-item-id="{{item._id}}">
-                <div class=" flexrow flex-group-center offHand reveal wantToKnowMore">
-                    <span class="tooltipText">{{item.name}}</span>
-                    <div class="item-image flex-group-left input-small"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div>
-                    <label class="truncate alignLeft" style="flex: 3.5;"><strong>{{item.name}}</strong></label>
-                    <label class="flex-group-center alignCenter" style="background: none; font-size: 12px; flex: 0.4; margin-left: 10px;"><i>{{localize item.system.slotName}}</i></label>
-                    <label class="flex-group-center alignCenter" style="background: none; margin-left: 10px;">{{item.system.quantity}}</label>
-                </div>
-                <div class="flex-group-right slideShow input-small">
-                    <a><i class="fas fa-plus icon-small awesomeIcon"></i></a>
-                    <a class="noShow"><i class="fas fa-minus icon-small awesomeIcon"></i></a>
-                </div>
-                <div class="item showMore descriptionContainer" data-item-id="{{item._id}}">
-                    {{#if item.system.description}}
-                    <div class="itemDescription shape3">
-                        {{item.system.description}}
-                    </div>
-                    {{/if}}
-                </div>
-            </div>
-            {{/if}}
-        {{/each}}
-    {{else}}
-    <div class="flexrow flex-group-center" style="height: 60px;"><span class="resource-value">Nothing to see here.</span></div>
-    {{/if}}
+    <div class="flexrow flex-justify flex-align" style="height: 30px;">
+        <div class="flexrow flex-group-center reveal">
+            <button class="restReset rollable" style="width:48px;"  data-type="social" data-name="react" data-key="system.react.value" data-roll="2d6+@social.react.value">
+                <span class="toggle resource-value align-center">REACTION</span>
+                <label class="toggle noShow flexrow flex-group-center" style="font-size: 16px; max-width: 48px;">+{{system.social.react.value}}</label>
+            </button>
+        </div>
+        <div class="flexrow flex-group-center reveal">
+            <button class="restReset rollable" style="width:48px;" data-type="social" data-name="diplo" data-key="system.diplo.value" data-roll="2d6+@social.diplo.value">
+                <span class="toggle resource-value align-center">DIPLOMACY</span>
+                <label class="toggle noShow flexrow flex-group-center" style="font-size: 16px;  max-width: 48px;">+{{system.social.diplo.value}}</label>
+            </button>
+        </div>
+    </div>
+    <div class="flexrow flex-justify flex-align" style="height: 30px;">
+        <div class="flexrow flex-group-center reveal">
+            <button class="restReset rollable" style="width:96px;"  data-type="social" data-name="intim" data-key="system.intim.value" data-roll="2d6+@social.intim.value">
+                <span class="toggle resource-value align-center">INTIMIDATE</span>
+                <label class="toggle noShow flexrow flex-group-center" style="font-size: 16px; max-width: 48px;">+{{system.social.intim.value}}</label>
+            </button>
+        </div>
+    </div>
 </div>

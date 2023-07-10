@@ -8,26 +8,26 @@
 }
 
 :root {
-  --pitchBorder: #071108;
-  --pitchBackground: #0711086b ;
+  --pitchBorder: #161616;
+  --pitchBackground: #1616166b ;
   --negative: #db2a2a;
   --positive: #2bb42b;
   --warning: #ce8532;
-  --iconBlue: #AF274F;
-  --highlight: #DE3163;
-  --mainText: #364652;
-  --altText: #F0EFF4;
+  --iconBlue: #346d8e;
+  --highlight: #4098d6;
+  --mainText: #d8d8d8;
   --iconGrey: #aaaaaa;
   --inactive: #999;
-  --mainBackground: #F0EFF4;
-  --focusBackground: #fffaf0;
-  --highlightBackground: #FFDAE9;
-  --accentBackground: #A4243B;
+  --mainBackground: #1f1f1f;
+  --focusBackground: #2b2b2b;
+  --highlightBackground: #414141;
+  --accentBackground: #24485d;
   --color-bg-option: #1f1f1f;
-  --color-shadow-primary: #A4243B;
-  --color-border-highlight: #A4243B;
-  --color-underline-header: #A4243B;
-  --color-underline-active: #A4243B;
+  --color-shadow-primary: #36aee9;
+  --color-border-highlight: #36aee9;
+  --color-underline-header: #36aee9;
+  --color-underline-active: #36aee9;
+  --color-bg-btn-minor-inactive: #414141;
 }
 
 .grid,
