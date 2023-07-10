@@ -899,7 +899,7 @@ a:hover,
 }
 
 .sheet .editor-content{
-  background: var(--pitchBorder);
+  background: transparent;
   padding: 1em;
   overflow-x: hidden;
   min-height: 273px;

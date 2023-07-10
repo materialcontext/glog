@@ -1,1 +1,20 @@
-<div class="tab history" data-group="primary" data-tab="history"></div>
+<div class="tab overview" data-group="primary" data-tab="overview">
+    <div class="flexrow subheader">
+        <h3 class="subheader">Features</h3>
+        <div class="alignRight flexGrowHalf reveal">
+            <div class="alignRight flexGrowHalf"></div>
+        </div>
+    </div>
+    <div class="flexcol flex-group-left" style="padding: 10px;">
+        {{#each actor.system.features as |description name|}}
+        <div style="width: 100%; margin-bottom: 10px;"><span style="margin-right: 10px;">{{name}}</span><span>{{description}}</span></div>
+        {{/each}}
+    </div>
+    <div class="flexrow subheader">
+        <h3 class="subheader">Legend</h3>
+        <div class="alignRight flexGrowHalf reveal">
+            <div class="alignRight flexGrowHalf"></div>
+        </div>
+    </div>
+    {{editor content=system.legend target="system.legend" button=true owner=owner editable=editable}}
+</div>

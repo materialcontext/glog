@@ -7,7 +7,8 @@
         "description": "",
         "class": "",
         "origin": "",
-        "languages": ""
+        "languages": "",
+        "legend": ""
       },
       "warnings": {
         "noSwimWarning": "You can't swim in this armor.",
@@ -18,7 +19,10 @@
         "xp": 0,
         "templates": 0,
         "wounds": 0,
-        "features": [],
+        "features": {
+          "first": "this si the first feature",
+          "second": "this is the second feature"
+        },
         "magicDice": {
           "min": 0,
           "value": 0,

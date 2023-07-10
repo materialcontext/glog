@@ -16,7 +16,7 @@ export class PlayerCharacterSheet extends ActorSheet {
         {
           navSelector: ".primary-tabs",
           contentSelector: ".primary-body",
-          initial: "overview",
+          initial: "history",
         },
         {
           navSelector: ".secondary-tabs",
