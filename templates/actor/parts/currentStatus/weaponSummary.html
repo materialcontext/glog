@@ -4,13 +4,13 @@
     </div>
     <div class="flexrow flex-justify flex-align" style="height: 30px; margin-bottom: 10px;">
         <div class="flexrow flex-group-center reveal">
-            <button class="restReset rollable" style="width:96px;"  data-type="combat" data-name="attack" data-key="system.atk.value" data-roll="2d6+@combat.atk.value">
+            <button class="restReset rollable" style="width:96px;" type="button" data-type="combat" data-name="attack" data-key="actor.system.atk.value" data-roll="2d6+@combat.atk.value">
                 <span class="toggle resource-value align-center">ATTACK</span>
                 <label class="toggle noShow flex-group-center" style="font-size: 16px; max-width: 48px;">+{{system.combat.atk.value}}</label>
             </button>
         </div>
         <div class="flexrow flex-group-center reveal">
-            <button class="restReset rollable" style="width:96px;"  data-type="combat" data-name="maneuver" data-key="system.man.value" data-roll="2d6+@combat.man.value">
+            <button class="restReset rollable" style="width:96px;" type="button" data-type="combat" data-name="maneuver" data-key="actor.system.man.value" data-roll="2d6+@combat.man.value">
                 <span class="toggle resource-value align-center">MANEUVER</span>
                 <label class="toggle noShow flex-group-center" style="font-size: 16px; max-width: 48px;">+{{system.combat.man.value}}</label>
             </button>
@@ -18,7 +18,7 @@
     </div>
     <div class="flexrow flex-justify flex-align" style="height: 30px;">
         <div class="flexrow flex-group-center reveal">
-            <button class="restReset rollable" style="width:96px;" data-type="defend" data-name="defend" data-key="system.def.value" data-roll="2d6+@combat.def.value">
+            <button class="restReset rollable" style="width:96px;" type="button" data-type="defend" data-name="defend" data-key="actor.system.def.value" data-roll="2d6+@combat.def.value">
                 <span class="toggle resource-value align-center">DEFEND</span>
                 <label class="toggle noShow flex-group-center" style="font-size: 16px;  max-width: 48px;"> +{{system.combat.def.value}}</label>
             </button>

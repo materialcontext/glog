@@ -28,17 +28,27 @@ export class PlayerCharacter extends Actor {
     super.prepareDerivedData();
     const actorData = this;
 
-    this._preparePlayerCharacterData(actorData);
+    this._prepareCharacterData(actorData);
     this._prepareNPCData(actorData);
   };
 
   // prepare playerCharacter type specific data
-  _preparePlayerCharacterData(actorData) {
+  _prepareCharacterData(actorData) {
     if (actorData.type !== "playerCharacter") return;
 
-    // Make modifications to data here. For example:
-    const systemData = actorData.system;
-  
+    let abilities = actorData.system.abilities;
+    if (abilities) {
+      for (let [k, v] of Object.entries(abilities)) {
+        if (v.value < 3) { abilities[k].mod = -3; }
+        else if (v.value == 3 || v.value == 4) { abilities[k].mod = -2; } 
+        else if (v.value == 5 || v.value == 6) { abilities[k].mod = -1; } 
+        else if (v.value == 8 || v.value == 9) { abilities[k].mod = 1; } 
+        else if (v.value == 10 || v.value == 11) { abilities[k].mod = 2; }
+        else if (v.value > 11) { abilities[k].mod = 3; }
+        else { abilities[k].mod = 0; 
+        };
+      };
+    };
   };
 
   // prepare NPC type specific data

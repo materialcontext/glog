@@ -5,14 +5,14 @@
             <i class="fa-solid fa-heart-pulse awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">HP</span>
             <input class="input-xs" style="font-size: 18px;" type="number" name="hp" value="{{actor.system.hp.value}}" data-dtype="Number" placeholder="0"/>
-            <span class="resource-value input-small" style="font-size: 18px;"> / {{actor.system.hp.max}}</span>
+            <span class="resource-value input-small" style="font-size: 18px;">/ {{actor.system.hp.max}}</span>
         </div>
-        <div class="wantToKnowMore rollable" data-type="traumeSave" data-name="traumaSave" data-key="system.traumaMod.value" data-roll="2d6+@traumaMod.value">
+        <div class="wantToKnowMore rollable" data-type="traumeSave" data-name="traumaSave" data-key="system.traumaMod.value" data-roll="2d6+@abilities.con.mod+@traumaMod.value">
             <i class="fa-regular fa-bandage awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Trauma Save</span>
             <span class="resource-label" style="font-size: 18px">+{{actor.system.traumaMod.value}}</span>
         </div>
-        <div class="wantToKnowMore rollable" data-type="initiative" data-name="initiative" data-key="system.initMod.value" data-roll="2d6+@initMod.value">
+        <div class="wantToKnowMore rollable" data-type="initiative" data-name="initiative" data-key="system.initMod.value" data-roll="2d6+@abilities.wis.mod+@initMod.value">
             <i class="fa-regular fa-stopwatch awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Initiative</span>
             <span class="resource-label" style="font-size: 18px">+{{actor.system.initMod.value}}</span>
@@ -26,7 +26,7 @@
             <i class="fa-solid fa-hand-sparkles awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">MD</span>
             <input class="input-xs" style="font-size: 18px;" type="number" name="md" value="{{actor.system.magicDice.value}}" data-dtype="Number" placeholder="0"/>
-            <span class="resource-value input-small" style="font-size: 18px;"> / {{actor.system.magicDice.max}}</span>
+            <span class="resource-value input-small" style="font-size: 18px;">/ {{actor.system.magicDice.max}}</span>
         </div>
     </div>
 </div>

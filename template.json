@@ -14,17 +14,11 @@
         "strSwimWarning": "Make a strength check to swim in this armor."
       },
       "attributes": {
-        "level" : {
-          "value": 0
-        },
-        "xp": {
-          "value": 0,
-          "req": [0, 1]
-        },
-        "wounds": {
-          "min": 0,
-          "value": 0
-        },
+        "level" : 0,
+        "xp": 0,
+        "templates": 0,
+        "wounds": 0,
+        "features": [],
         "magicDice": {
           "min": 0,
           "value": 0,
@@ -86,26 +80,32 @@
         "abilities": {
           "str": {
             "min": -3,
+            "mod": 0,
             "value": 0
           },
           "dex": {
             "min": -3,
+            "mod": 0,
             "value": 0
           },
           "con": {
             "min": -3,
+            "mod": 0,
             "value": 0
           },
           "int": {
             "min": -3,
+            "mod": 0,
             "value": 0
           },
           "wis": {
             "min": -3,
+            "mod": 0,
             "value": 0
           },
           "cha": {
             "min": -3,
+            "mod": 0,
             "value": 0
           }
         },
