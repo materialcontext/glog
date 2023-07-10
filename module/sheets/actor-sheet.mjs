@@ -303,6 +303,9 @@ export class PlayerCharacterSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
 
+    console.log("actor is doing something")
+    console.log(element, dataset)
+
     // handle item rolls
     if (dataset.rollType) {
       if (dataset.rollType == "item") {
