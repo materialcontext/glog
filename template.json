@@ -37,14 +37,6 @@
         }
       },
       "currStat": {
-        "equipped": {
-          "gear": [],
-          "armor": [],
-          "shield": [],
-          "weapon": [],
-          "light": [],
-          "consumable": []
-        },
         "flags": {
           "noSwim": [],
           "strSwim": []

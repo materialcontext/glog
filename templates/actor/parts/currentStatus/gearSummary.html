@@ -2,7 +2,7 @@
     <div class="boxheadmargin">
         <label class="resource-value" style="font-size: 20px;">Gear</label>
     </div>
-    {{#if actor.system.gearEquipped}}
+    {{#if actor.gear}}
         {{#each actor.gear as |item id|}}
             {{#if this.system.active}}
             <div class="item flexrow" data-item-id="{{item._id}}">
