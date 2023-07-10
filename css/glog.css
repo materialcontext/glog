@@ -8,25 +8,26 @@
 }
 
 :root {
-  --pitchBorder: #161616;
-  --pitchBackground: #1616166b ;
+  --pitchBorder: #071108;
+  --pitchBackground: #0711086b ;
   --negative: #db2a2a;
   --positive: #2bb42b;
   --warning: #ce8532;
-  --iconBlue: #ff4f00;
-  --highlight: #FF8F00;
-  --mainText: #d8d8d8;
+  --iconBlue: #AF274F;
+  --highlight: #DE3163;
+  --mainText: #364652;
+  --altText: #F0EFF4;
   --iconGrey: #aaaaaa;
   --inactive: #999;
-  --mainBackground: #1f1f1f;
-  --focusBackground: #2b2b2b;
-  --highlightBackground: #414141;
-  --accentBackground: #FF8300;
+  --mainBackground: #F0EFF4;
+  --focusBackground: #fffaf0;
+  --highlightBackground: #FFDAE9;
+  --accentBackground: #A4243B;
   --color-bg-option: #1f1f1f;
-  --color-shadow-primary: #FF8300;
-  --color-border-highlight: #FF8300;
-  --color-underline-header: #FF8300;
-  --color-underline-active: #FF8300;
+  --color-shadow-primary: #A4243B;
+  --color-border-highlight: #A4243B;
+  --color-underline-header: #A4243B;
+  --color-underline-active: #A4243B;
 }
 
 .grid,
@@ -698,6 +699,7 @@ input[name="useMitigate"]{
 h2 {
   display: flex;
   flex-direction: row;
+  color: var(--altText);
   border-bottom: 1px solid var(--accentBackground);
 }
 
@@ -759,12 +761,14 @@ a.content-link, a.inline-roll {
 ::-webkit-scrollbar-thumb {
   outline: none;
   border-radius: 3px;
+  color: var(--altText);
   background: var(--accentBackground);
   border: 1px solid var(--highlight);
 }
 
 .wa-link{
   border: none!important;
+  color: var(--altText);
   background-color: var(--accentBackground)!important;
 }
 
@@ -1118,6 +1122,7 @@ h1, h2, h3, h4 {
 }
 
 h3.subheader {
+  color: var(--altText);
   background-color: var(--accentBackground);
   clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
   padding: 0.3em 0.5em 0.2em 0.5em;
@@ -1142,6 +1147,7 @@ h3.subheader.dialog {
 }
 
 h3.subheaderMirror {
+  color: var(--altText);
   background-color: var(--accentBackground);
   clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0% 100%);
   padding: 0.3em 0.5em 0.2em 0.5em;
