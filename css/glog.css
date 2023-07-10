@@ -1342,12 +1342,6 @@ h3.subheaderBlank {
   margin-bottom: 10px;
 }
 
-.armorSideCar {
-  background-image: url(../resources/img/armorSideCar.webp);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
 .ccSideCar {
   background-image: url(../resources/img/ccSideCar.webp);
   background-repeat: no-repeat;
