@@ -252,8 +252,8 @@
         "base",
         "buyable"
       ],
-      "energy": null,
-      "kinetic": null,
+      "defense": 1,
+      "encumberance": 1,
       "displayCategory": "armor"
     }
   }

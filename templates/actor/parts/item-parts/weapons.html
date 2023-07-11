@@ -4,13 +4,13 @@
         <input class="sheet equipped checkBox" data-dtype="Boolean" data-item-id="{{item._id}}" type="checkbox" {{checked system.active}}>
         <div class="item-image flex-group-left input-small"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div>
         <label class="truncate alignLeft" style="flex: 2.5;"><strong>{{item.name}}</strong></label>
-        <label class="flex-group-center alignCenter wantToKnowMore" 
-            style="color: var(--inactive); background: none; font-size: 12px; flex: 1.2; margin: 0 5px 0 10px;">
+        <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
+            style="color: var(--inactive); background: none; font-size: 13px; flex: 1.25; margin-right: 10px; height: 20px;">
             {{item.system.dmg}}
             <span class="tooltipText resource-label" style="font-size: 13px;">Damage</span>
         </label>
         <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
-            style="max-width: 20px!important; color: var(--inactive); margin-right:5px;">
+            style="max-width: 20px!important; color: var(--inactive); margin-right:5px; height: 20px;">
             {{item.system.slots}}
             <span class="tooltipText resource-label" style="font-size: 13px;">Slots</span>
         </label>
@@ -33,14 +33,14 @@
         <input class="sheet equipped checkBox" data-dtype="Boolean" data-item-id="{{item._id}}" type="checkbox" {{checked system.active}}>
         <div class="item-image flex-group-left input-small"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div>
         <label class="truncate alignLeft" style="flex: 2.5;"><strong>{{item.name}}</strong></label>
-        <label class="flex-group-center alignCenter wantToKnowMore" 
-            style="color: var(--inactive); background: none; font-size: 12px; flex: 1.2; margin: 0 5px 0 10px;">
+        <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
+            style="color: var(--inactive); background: none; font-size: 13px; flex: 1.25; margin-right: 10px; height: 20px;">
             {{item.system.dmg}}
             <span class="tooltipText resource-label" style="font-size: 13px;">Damage</span>
         </label>
 
-        <label class="flexrow flex-group-center alignCenter" 
-            style="max-width: 20px!important; color: var(--inactive); margin-right:5px;">
+        <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
+            style="max-width: 20px!important; color: var(--inactive); margin-right:5px; height: 20px;">
             {{item.system.slots}}
             <span class="tooltipText resource-label" style="font-size: 13px;">Slots</span>
         </label>

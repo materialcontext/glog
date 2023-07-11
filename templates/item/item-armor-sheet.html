@@ -19,39 +19,13 @@
             <table>
                 <tr>
                     <td>
-                        <label class="resource-label">Armor Bonus</label>
+                        <label class="resource-label">Defense</label>
                     </td>
                     <td>
                         <label class="resource-label">Encumberance</label>
                     </td>
                     <td>
                         <label class="resource-label">Cost</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="input-large alignCenter" type="text" name="system.energy" value="put a system value here" 
-                            placeholder="e.g. 10"/>
-                    </td>
-                    <td>
-                        <input class="input-large alignCenter" type="text" name="system.kinetic" value="put a system value here" 
-                            placeholder="e.g. 10"/>
-                    </td>
-                    <td>
-                        <select class="alignCenter" name="system.slotType" data-type="String">
-                            {{#select item.system.slotType}}
-                            {{#each config.armorTypes as |name key|}}
-                            <option value="{{key}}">{{localize name}}</option>
-                            {{/each}} {{/select}}
-                        </select>
-                    </td>
-                    <td>
-                        <select class="alignCenter" name="system.cost" data-type="String">
-                            {{#select item.system.cost}}
-                            {{#each config.costTypes as |name key|}}
-                            <option value="{{key}}">{{localize name}}</option>
-                            {{/each}} {{/select}}
-                        </select>
                     </td>
                 </tr>
             </table>
