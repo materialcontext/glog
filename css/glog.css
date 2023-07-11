@@ -1254,6 +1254,10 @@ h3.subheaderBlank {
   height: 26px;
 }
 
+.input-xxs {
+  max-width: 20px!important;
+}
+
 .input-xs {
   max-width: 25px!important;
 }

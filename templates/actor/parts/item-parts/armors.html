@@ -5,12 +5,17 @@
         <div class="item-image flex-group-left input-small"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div>
         <label class="truncate alignLeft" style="flex: 2.5;"><strong>{{item.name}}</strong></label>
         <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
-            style="color: var(--inactive); background: none; font-size: 13px; flex: 1.5; margin-right: 10px; height: 20px;">
-            {{item.system.defense}}
+            style="color: var(--inactive); background: none; font-size: 13px; margin-right: 10px; width: 40px; height: 20px;">
+            {{item.system.defense}} <i class=" fa-solid fa-shield" style="margin-left: 2px;"></i> 
             <span class="tooltipText resource-label" style="font-size: 13px;">Defense</span>
         </label>
+        <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
+        style="max-width: 30px!important; color: var(--inactive); height: 20px;">
+        {{item.system.encumberance}} <i class=" fa-solid fa-weight-hanging" style="margin-left: 2px;"></i>
+        <span class="tooltipText resource-label" style="font-size: 13px;">Encumberance</span>
+    </label>
         <div class="flexrow item-controls flex-group-right" style="max-width: 50px; min-width: 50px;">
-            <a class="item-control item-delete resource-label editWithLabel input-xs alignRight" title="Delete Item"><i class="far fa-times-circle awesomeIcon"></i></a>
+            <a class="item-control item-delete resource-label editWithLabel input-xxs alignRight" title="Delete Item"><i class="far fa-times-circle awesomeIcon"></i></a>
             <a class="item-control item-edit resource-label editWithLabel input-xs alignRight" title="Edit Item"><i class="far fa-edit awesomeIcon"></i></a>
         </div>
         <div class="flex-group-right slideShow input-xs">
@@ -29,12 +34,17 @@
         <div class="item-image flex-group-left input-small"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div>
         <label class="truncate alignLeft" style="flex: 2.5;"><strong>{{item.name}}</strong></label>
         <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
-            style="color: var(--inactive); background: none; font-size: 13px; flex: 1.5; margin-right: 10px; height: 20px;">
-            {{item.system.defense}}
+            style="color: var(--inactive); background: none; font-size: 13px; margin-right: 10px; width: 40px; height: 20px;">
+            {{item.system.defense}} <i class=" fa-solid fa-shield" style="margin-left: 2px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Defense</span>
         </label>
+        <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
+        style="max-width: 30px!important; color: var(--inactive); height: 20px;">
+        {{item.system.encumberance}} <i class=" fa-solid fa-weight-hanging" style="margin-left: 2px;"></i>
+        <span class="tooltipText resource-label" style="font-size: 13px;">Encumberance</span>
+    </label>
         <div class="flexrow item-controls flex-group-right" style="max-width: 50px; min-width: 50px;">
-            <a class="item-control item-delete resource-label editWithLabel input-xs alignRight" title="Delete Item"><i class="far fa-times-circle awesomeIcon"></i></a>
+            <a class="item-control item-delete resource-label editWithLabel input-xxs alignRight" title="Delete Item"><i class="far fa-times-circle awesomeIcon"></i></a>
             <a class="item-control item-edit resource-label editWithLabel  input-xs alignRight" title="Edit Item"><i class="far fa-edit awesomeIcon"></i></a>
         </div>
         <div class="flex-group-right slideShow input-xs">
