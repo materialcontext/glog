@@ -2,7 +2,7 @@
     {{#if this.system.active}}
     <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
         <input class="sheet equipped checkBox" data-dtype="Boolean" data-item-id="{{item._id}}" type="checkbox" {{checked system.active}}>
-        <div class="item-image flex-group-left input-small rollable">
+        <div class="item-image flex-group-left input-small rollable" data-type="item" data-name="{{item.name}}" data-key="item.system.roll" data-roll="{{item.system.roll}}" >
             <img class="toggle" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
             <label class="toggle roll-label task-check noShow flexrow flex-group-center" style="font-size: 24px;">
                 <i class="fa-light fa-dice-six alignCenter"></i>
@@ -36,7 +36,7 @@
     {{else}}
     <div class="item flexrow offHand flex-group-left itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
         <input class="sheet equipped checkBox" data-dtype="Boolean" data-item-id="{{item._id}}" type="checkbox" {{checked system.active}}>
-        <div class="item-image flex-group-left input-small rollable">
+        <div class="item-image flex-group-left input-small rollable" data-type="item" data-name="{{item.name}}" data-key="item.system.roll" data-roll="{{item.system.roll}}">
             <img class="toggle" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
             <label class="toggle roll-label task-check noShow flexrow flex-group-center" style="font-size: 24px;">
                 <i class="fa-light fa-dice-six alignCenter"></i>
