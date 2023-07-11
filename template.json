@@ -207,12 +207,12 @@
     "templates": {
       "base": {
         "description": "",
-        "active": true
+        "active": true,
+        "slots": 0
       },
       "buyable": {
         "cost": 0,
-        "slots": 0,
-        "displayCategory": ""
+        "rarity": ""
       }
     },
     "gear": {
@@ -244,7 +244,7 @@
         "base",
         "buyable"
       ],
-      "dv": null,
+      "dmg": "1d6",
       "displayCategory": "weapon"
     },
     "armor": {
