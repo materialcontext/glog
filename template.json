@@ -206,9 +206,10 @@
     ],
     "templates": {
       "base": {
-        "description": "",
+        "description": "This is the item description.",
         "active": true,
-        "slots": 0
+        "slots": 0,
+        "roll": "2d6"
       },
       "buyable": {
         "cost": 0,
