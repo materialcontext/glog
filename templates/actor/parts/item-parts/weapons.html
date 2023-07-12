@@ -3,14 +3,14 @@
     <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
         <input class="sheet equipped checkBox" data-dtype="Boolean" data-item-id="{{item._id}}" type="checkbox" {{checked system.active}}>
         <div class="item-image flex-group-left input-small rollable">
-            <img class="toggle noShow" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-            <label class="toggle roll-label task-check flexrow flex-group-center" style="font-size: 24px;">
+            <div class="toggle"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div>
+            <label class="toggle roll-label task-check noShow flexrow flex-group-center" style="font-size: 24px;" width="24px" height="24px">
                 <i class="fa-light fa-dice-six alignCenter"></i>
             </label>
         </div>
         <label class="truncate alignLeft" style="flex: 2.5;"><strong>{{item.name}}</strong></label>
         <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
-            style="color: var(--inactive); background: none; font-size: 13px; margin-right: 10px; width: 40px; height: 20px;">
+            style="color: var(--inactive); background: none; font-size: 13px; margin-right: 10px; width: 44px; height: 20px;">
             {{item.system.dmg}} <i class="fa-solid fa-burst" style="margin-left: 3px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Damage</span>
         </label>
