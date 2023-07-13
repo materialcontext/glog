@@ -36,7 +36,10 @@ export class PlayerCharacter extends Actor {
   _prepareCharacterData(actorData) {
     if (actorData.type !== "playerCharacter") return;
 
-    let abilities = actorData.system.abilities;
+    let context = actorData.system;
+    let abilities = context.abilities;
+
+    // derive abilitiy bonuses from scores and set as ability.mod
     if (abilities) {
       for (let [k, v] of Object.entries(abilities)) {
         if (v.value < 3) { abilities[k].mod = -3; }
@@ -49,6 +52,33 @@ export class PlayerCharacter extends Actor {
         };
       };
     };
+
+    // calculate inventory
+    context.inventory.value = actorData.items.length();
+    context.inventory.max = 6 + (Math.max(abilities.str, abilities.con) * 2);
+
+    // calculate encumberance
+    context.encumberance.value = Math.max(0, context.inventory.value - context.inventory.max);
+
+    // subtract encumebrance from move
+    context.move.value = 4 - context.encumberance.value;
+
+    /** 
+     * dexterity check penalties for encumberance are handled in dex.roll...
+     * ...because it simplifies defense calculations
+     * */ 
+
+    // attack
+    if (context.class == "Fighter")  {
+      context.combat.atk.value = Math.min(context.level, 4) + 2;
+    } else { 
+      context.combat.atk.value = Math.min(context.level, 4); 
+    };
+
+    // hires
+    context.resources.hires.value = context.level;
+
+
   };
 
   // prepare NPC type specific data

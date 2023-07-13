@@ -72,8 +72,6 @@ export class PlayerCharacterSheet extends ActorSheet {
     context.effects = prepareActiveEffectCategories(this.actor.effects);
 
     await this._prepareRenderedHTMLContent(context);
-
-    console.log(context)
     return context;
   }
 
