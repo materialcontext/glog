@@ -17,9 +17,9 @@
         }
       },
       "attributes": {
-        "encumberance": 0,
+        "encumberance": 3,
         "enduranceMod": 0,
-        "exhaustion": 0,
+        "exhaustion": 3,
         "initMod": 0,
         "level" : 0,
         "traumaMod": 0,
