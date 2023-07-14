@@ -41,6 +41,9 @@ export class PlayerCharacter extends Actor {
     let context = actorData.system;
     let abilities = context.abilities;
 
+    // set exhaustion flag
+    context.flags.exhuasted = context.exhaustion > 0 ? true : false;
+
     // derive abilitiy bonuses from scores and set as ability.mod after factoring exhaustion
     if (abilities) {
       for (let [k, v] of Object.entries(abilities)) {
@@ -71,8 +74,9 @@ export class PlayerCharacter extends Actor {
     context.inventory.value = actorData.items.length();
     context.inventory.max = 6 + (Math.max(abilities.str, abilities.con) * 2);
 
-    // calculate encumberance
+    // calculate encumberance and set flag
     context.encumberance = Math.max(0, context.inventory.value - context.inventory.max);
+    context.encumbered = context.encumberance > 0 ? true : false;
 
     // subtract encumebrance from move
     context.move.value = 4;

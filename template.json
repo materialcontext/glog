@@ -11,8 +11,10 @@
         "legend": ""
       },
       "warnings": {
-        "noSwimWarning": "You can't swim in this armor.",
-        "strSwimWarning": "Make a strength check to swim in this armor."
+        "warnings": {
+          "noSwimWarning": "You can't swim in this armor.",
+          "strSwimWarning": "Make a strength check to swim in this armor."
+        }
       },
       "attributes": {
         "encumberance": 0,
@@ -52,7 +54,9 @@
         "flags": {
           "noSwim": true,
           "strSwim": false,
-          "deprived": false
+          "deprived": false,
+          "exhausted": false,
+          "encumbered": false
         }
       },
       "equipment": {
