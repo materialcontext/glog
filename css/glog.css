@@ -808,6 +808,19 @@ a:hover,
   cursor: pointer;
 }
 
+.edit-abilities {
+  cursor: pointer;
+  font-size: 18px; 
+  border: none; 
+  background-color: transparent;
+  max-width: 18px;
+  max-height: 18px;
+}
+
+.editing {
+  text-shadow: 0 0 10px var(--highlight);
+}
+
 .sheet nav.primary-tabs,
 .sheet nav.secondary-tabs {
   height: 50px;

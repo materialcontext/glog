@@ -7,15 +7,15 @@
             <input class="input-xs" style="font-size: 18px;" type="number" name="hp" value="{{actor.system.hp.value}}" data-dtype="Number" placeholder="0"/>
             <span class="resource-value input-small" style="font-size: 18px;">/ {{actor.system.hp.max}}</span>
         </div>
-        <div class="wantToKnowMore rollable" data-type="traumeSave" data-name="traumaSave" data-key="system.traumaMod.value" data-roll="2d6+@abilities.con.mod+@traumaMod.value">
+        <div class="wantToKnowMore rollable" data-type="traumeSave" data-name="traumaSave" data-key="system.traumaMod" data-roll="2d6+@abilities.con.mod+@traumaMod">
             <i class="fa-regular fa-bandage awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Trauma Save</span>
-            <span class="resource-label" style="font-size: 18px">+{{actor.system.traumaMod.value}}</span>
+            <span class="resource-label" style="font-size: 18px"> {{actor.system.traumaMod}}</span>
         </div>
-        <div class="wantToKnowMore rollable" data-type="initiative" data-name="initiative" data-key="system.initMod.value" data-roll="2d6+@abilities.wis.mod+@initMod.value">
+        <div class="wantToKnowMore rollable" data-type="initiative" data-name="initiative" data-key="system.initMod" data-roll="2d6+@abilities.wis.mod+@initMod">
             <i class="fa-regular fa-stopwatch awesomeIcon" style="font-size: 18px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Initiative</span>
-            <span class="resource-label" style="font-size: 18px">+{{actor.system.initMod.value}}</span>
+            <span class="resource-label" style="font-size: 18px"> {{actor.system.initMod}}</span>
         </div>
         <div class="wantToKnowMore">
             <i class="fa-regular fa-person-running awesomeIcon" style="font-size: 18px;"></i>

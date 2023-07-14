@@ -205,6 +205,11 @@ export class PlayerCharacterSheet extends ActorSheet {
         });
     };
 
+    // toggle edit abilities
+    html.find(".edit-abilities").click(ev => {
+      actor.system.flags.editAbilities = !actor.system.flags.editAbilities
+    });
+
     //Edit Item Input Fields
     html.find(".sheet-inline-edit").change(this._onSkillEdit.bind(this));
 

@@ -1,14 +1,13 @@
-
 export function registerItemHandlers(html,callerobj,caller){
-    // Add Inventory Item
-    html.find('.item-create').click(caller._onItemCreate.bind(this));
+  // Add Inventory Item
+  html.find('.item-create').click(caller._onItemCreate.bind(this));
 
-    // Update Inventory Item
-    html.find('.item-edit').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
-      const item = callerobj.items.get(li.data("itemId"));
-      item.sheet.render(true);
-    });
+  // Update Inventory Item
+  html.find('.item-edit').click(ev => {
+    const li = $(ev.currentTarget).parents(".item");
+    const item = callerobj.items.get(li.data("itemId"));
+    item.sheet.render(true);
+  });
 
         // Delete Inventory Item
   html.find('.item-delete').click(ev => {
@@ -16,7 +15,7 @@ export function registerItemHandlers(html,callerobj,caller){
     callerobj.deleteEmbeddedDocuments("Item", [li.data("itemId")]);
     li.slideUp(200, () => this.render(false));
   });
-}
+};
 
 
 export function registerEffectHandlers(html,callerobj){
@@ -37,20 +36,19 @@ export function registerEffectHandlers(html,callerobj){
       const li = $(ev.currentTarget).parents(".effect");
       callerobj.deleteEmbeddedDocuments('ActiveEffect', [li.data("itemId")]);
     });
-
-}
+};
 
 
 
 export async function _tempEffectCreation(callerobj, numberOfRuns, tempEffLabel, tempEffIcon, tempEffTar, tempEffMode, tempEffVal){
-for (let i = 0; numberOfRuns > i; i++){
-  callerobj.createEmbeddedDocuments('ActiveEffect', [{
-    label: tempEffLabel,
-    icon: tempEffIcon,
-    changes: [{key : tempEffTar, mode : tempEffMode, value : tempEffVal}]
-  }]);
-}
-}
+  for (let i = 0; numberOfRuns > i; i++){
+    callerobj.createEmbeddedDocuments('ActiveEffect', [{
+      label: tempEffLabel,
+      icon: tempEffIcon,
+      changes: [{key : tempEffTar, mode : tempEffMode, value : tempEffVal}]
+    }]);
+  }
+};
 
 export function registerCommonHandlers(html,callerobj){
   

@@ -15,41 +15,44 @@
         "strSwimWarning": "Make a strength check to swim in this armor."
       },
       "attributes": {
+        "encumberance": 0,
+        "enduranceMod": 0,
+        "exhaustion": 0,
+        "initMod": 0,
         "level" : 0,
-        "xp": 0,
-        "templates": 0,
+        "traumaMod": 0,
         "wounds": 0,
+        "xp": 0,
+        "templates": {
+          "value": 0,
+          "assassin": 0,
+          "acrobat": 0,
+          "barbarian": 0,
+          "courtier": 0,
+          "fighter": 0,
+          "hunter": 0,
+          "thief": 0,
+          "wizard": 0
+        },
         "features": {
           "fighter": "",
           "first": "this is the first feature",
           "second": "this is the second feature"
         },
         "magicDice": {
-          "min": 0,
+          "base": 0,
           "value": 0,
           "max": 0
         },
-        "traumaMod": {
-          "min": 0,
-          "value": 0
-        },
-        "initMod": {
-          "min": 0,
-          "value": 0
-        },
         "move": {
-          "min": 0,
           "value": 4
-        },
-        "encumberance": {
-          "min": 0,
-          "value": 0
         }
       },
       "currStat": {
         "flags": {
           "noSwim": true,
-          "strSwim": false
+          "strSwim": false,
+          "deprived": false
         }
       },
       "equipment": {
@@ -61,6 +64,7 @@
       },
       "resources": {
         "hp": {
+          "base": 0,
           "value": 0,
           "max": 0
         },
@@ -81,81 +85,65 @@
         "abilities": {
           "str": {
             "mod": 0,
+            "base": 0,
             "value": 0,
-            "roll": "2d6+@abilities.str.mod"
+            "roll": "2d6+@abilities.str.mod-@exhaustion"
           },
           "dex": {
             "mod": 0,
+            "base": 0,
             "value": 0,
-            "roll": "2d6+@abilities.dex.mod-@encumberance.value"
+            "roll": "2d6+@abilities.dex.mod-@encumberance-@exhaustion"
           },
           "con": {
             "mod": 0,
+            "base": 0,
             "value": 0,
-            "roll": "2d6+@abilities.con.mod"
+            "roll": "2d6+@abilities.con.mod-@exhaustion"
           },
           "int": {
             "mod": 0,
+            "base": 0,
             "value": 0,
-            "roll": "2d6+@abilities.int.mod"
+            "roll": "2d6+@abilities.int.mod-@exhaustion"
           },
           "wis": {
             "mod": 0,
+            "base": 0,
             "value": 0,
-            "roll": "2d6+@abilities.wis.mod"
+            "roll": "2d6+@abilities.wis.mod-@exhaustion"
           },
           "cha": {
             "mod": 0,
+            "base": 0,
             "value": 0,
-            "roll": "2d6+@abilities.cha.mod"
+            "roll": "2d6+@abilities.cha.mod-@exhaustion"
           }
         },
         "stealth": {
-          "sneak": {
-            "min": -9,
-            "value": 0
-          },
-          "hide": {
-            "min": -9,
-            "value": 0
-          },
-          "disguise": {
-            "min": -9,
-            "value": 0
-          }
+          "sneak": 0,
+          "hide": 0,
+          "disguise": 0
         },
         "combat": {
-          "atk": {
-            "value": 0
-          },
-          "def": {
-            "value": 0
-          },
-          "man": {
-            "value": 0
-          }
+          "atk": 0,
+          "def": 0,
+          "man": 0,
+          "archery": false
         },
         "social": {
-          "react": {
-            "value": 0
-          },
-          "diplo": {
-            "value": 0
-          },
-          "intim": {
-            "value": 0
-          }
+          "react": 0,
+          "diplo": 0,
+          "intim": 0
+        },
+        "explore": {
+          "amushMod": 0,
+          "reconMod": 0
         }
       },
       "npc": {
-        "loyalty": {
-          "min": 0,
-          "value": 4
-        },
-        "morale": {
-          "min": 1,
-          "value": 6
-        }
+        "loyalty": 0,
+        "morale": 0
       }
     },
     "playerCharacter": {

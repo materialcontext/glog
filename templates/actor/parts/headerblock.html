@@ -19,7 +19,7 @@
     </div>
 </div>
 <div class="contentBox" style="background-color: var(--pitchBorder);">
-    <div class="flexrow">
+    <div class="flexrow flex-between">
         <!--change this to a localizable placeholder header structure-->
         <h3 class="subheader colorV1">Abilities</h3>
         <div class="flexGrowHalf">
@@ -34,7 +34,11 @@
                     <i class="fa-light fa-dice-six alignCenter"></i>
                 </label>
             </div>
+            {{#if actor.system.exhaustion}}
             <input class="input-small" type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" placeholder="0"/>
+            {{else}}
+            <input class="input-small" style="color: var(--warning);" type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" placeholder="0"/>
+            {{/if}}
         </div>
         {{/each}}
     </div>
