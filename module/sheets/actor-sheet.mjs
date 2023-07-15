@@ -82,7 +82,8 @@ export class PlayerCharacterSheet extends ActorSheet {
   }
 
   _prepareItems(context) {
-    const actor = context.actor;
+    let actor = context.actor;
+    let equip = actor.equipment;
 
     const gear = [];
     const consumables = [];
@@ -112,13 +113,20 @@ export class PlayerCharacterSheet extends ActorSheet {
       }
     }
 
-    actor.weapons = weapons;
-    actor.armors = armors;
-    actor.shields = shields;
-    actor.spells = spells;
-    actor.consumables = consumables;
-    actor.gear = gear;
-    actor.itemEffects = itemEffects;
+    equip.weapons = weapons;
+    equip.armors = armors;
+    equip.shields = shields;
+    equip.spells = spells;
+    equip.consumables = consumables;
+    equip.gear = gear;
+    equip.itemEffects = itemEffects;
+
+    // apply inventory
+    let inventory = 0;
+    for (arr in equip) {
+      arr.forEach(item => inventory += item.system.slots);
+    }
+    actor.system.inventory = inventory;
   }
 
   async _prepareRenderedHTMLContent(context) {

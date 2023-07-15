@@ -5,9 +5,9 @@
     <div class="flexrow flex-justify flex-align" style="height: 30px; margin-bottom: 10px;">
         <label class="resource-value flexrow flex-group-left" style ="font-size: 16px; height: 30px;">Exhaustion:</label>
         {{#if actor.system.exhausted}}
-        <input class="input-small" style="color: var(--warning);" type="number" name="actor.system.exhaustion" value="{{actor.system.exhaustion}}" data-dtype="Number" placeholder="0"/>
+        <input class="input-small" style="color: var(--warning);" type="number" name="system.exhaustion" value="{{actor.system.exhaustion}}" data-dtype="Number" placeholder="0"/>
         {{else}}
-        <input class="input-small" type="number" name="actor.system.exhaustion" value="{{actor.system.exhaustion}}" data-dtype="Number" placeholder="0"/>
+        <input class="input-small" type="number" name="system.exhaustion" value="{{actor.system.exhaustion}}" data-dtype="Number" placeholder="0"/>
         {{/if}}
         {{#if actor.system.flags.noSwim}}
         <label class="resource-value flexrow flex-group-left" style ="font-size: 16px; height: 30px; color: var(--negative)">

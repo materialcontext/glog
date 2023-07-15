@@ -6,7 +6,6 @@
         "name": "",
         "description": "",
         "class": "",
-        "origin": "",
         "languages": "",
         "legend": ""
       },
@@ -60,11 +59,11 @@
         }
       },
       "equipment": {
-        "armors": {},
-        "shields": {},
-        "weapons": {},
-        "consumables": {},
-        "magicItems": {}
+        "armors": [],
+        "shields": [],
+        "weapons": [],
+        "consumables": [],
+        "magicItems": []
       },
       "resources": {
         "hp": {
@@ -145,7 +144,8 @@
         "resources",
         "stats",
         "equipment",
-        "currStat"
+        "currStat",
+        "warnings"
       ]
     },
     "hireling": {
@@ -156,7 +156,8 @@
         "stats",
         "npc",
         "equipment",
-        "currStat"
+        "currStat",
+        "warnings"
       ]
     },
     "companion": {

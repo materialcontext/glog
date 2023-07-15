@@ -23,7 +23,13 @@ export class PlayerCharacter extends Actor {
   };
 
   /** @override */
-  prepareBaseData() {};
+  prepareBaseData() {
+    super.prepareBaseData();
+    let context = this.system;
+
+    //set exhaustion flag ebfore processing ability scores
+    context.exhausted = context.exhaustion > 0 ? true : false;
+  };
 
   /** @inheritdoc */
   prepareDerivedData() {
@@ -40,10 +46,6 @@ export class PlayerCharacter extends Actor {
 
     let context = actorData.system;
     let abilities = context.abilities;
-
-    // set exhaustion and flag
-    context.exhausted = context.exhaustion > 0 ? true : false;
-    console.log(context);
 
     // derive abilitiy bonuses from scores and set as ability.mod after factoring exhaustion
     if (abilities) {
@@ -71,7 +73,6 @@ export class PlayerCharacter extends Actor {
     context.enduranceMod = abilities.con.mod;
 
     // calculate inventory
-    context.inventory.value = actorData.items.length();
     context.inventory.max = 6 + (Math.max(abilities.str, abilities.con) * 2);
 
     // calculate encumberance and set flag
@@ -112,6 +113,8 @@ export class PlayerCharacter extends Actor {
 
     this._applyClass(actorData);
     this._applyFeatures(actorData);
+
+    console.log(actorData);
   };
 
   // applies class (level 0) roll and data transforms to the document
