@@ -17,9 +17,9 @@
         }
       },
       "attributes": {
-        "encumberance": 3,
+        "encumberance": 0,
         "enduranceMod": 0,
-        "exhaustion": 3,
+        "exhaustion": 0,
         "initMod": 0,
         "level" : 0,
         "traumaMod": 0,
@@ -88,39 +88,27 @@
       "stats": {
         "abilities": {
           "str": {
-            "mod": 0,
             "base": 0,
-            "value": 0,
             "roll": "2d6+@abilities.str.mod-@exhaustion"
           },
           "dex": {
-            "mod": 0,
             "base": 0,
-            "value": 0,
             "roll": "2d6+@abilities.dex.mod-@encumberance-@exhaustion"
           },
           "con": {
-            "mod": 0,
             "base": 0,
-            "value": 0,
             "roll": "2d6+@abilities.con.mod-@exhaustion"
           },
           "int": {
-            "mod": 0,
             "base": 0,
-            "value": 0,
             "roll": "2d6+@abilities.int.mod-@exhaustion"
           },
           "wis": {
-            "mod": 0,
             "base": 0,
-            "value": 0,
             "roll": "2d6+@abilities.wis.mod-@exhaustion"
           },
           "cha": {
-            "mod": 0,
             "base": 0,
-            "value": 0,
             "roll": "2d6+@abilities.cha.mod-@exhaustion"
           }
         },

@@ -43,9 +43,8 @@ export class PlayerCharacterSheet extends ActorSheet {
     const actorData = this.actor.toObject(false);
 
     // add to context for easy access
-    context.system = actorData.system;
-    context.flags = actorData.flags;
     context.config = GLOG;
+    context.system = actorData.system;
 
     // prepare playerCharacter data and items
     if (actorData.type == "playerCharacter") {
@@ -204,11 +203,6 @@ export class PlayerCharacterSheet extends ActorSheet {
             li.addEventListener("dragstart", handler, false);
         });
     };
-
-    // toggle edit abilities
-    html.find(".edit-abilities").click(ev => {
-      actor.system.flags.editAbilities = !actor.system.flags.editAbilities
-    });
 
     //Edit Item Input Fields
     html.find(".sheet-inline-edit").change(this._onSkillEdit.bind(this));

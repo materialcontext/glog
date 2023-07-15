@@ -35,9 +35,9 @@
                 </label>
             </div>
             {{#if actor.system.exhausted}}
-            <input class="input-small" type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" placeholder="0"/>
+            <input class="input-small" style="color: var(--warning);" type="number" name="system.abilities.{{key}}.base" value="{{ability.base}}" data-dtype="Number" placeholder="0"/>
             {{else}}
-            <input class="input-small" style="color: var(--warning);" type="number" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" placeholder="0"/>
+            <input class="input-small" type="number" name="system.abilities.{{key}}.base" value="{{ability.base}}" data-dtype="Number" placeholder="0"/>            
             {{/if}}
         </div>
         {{/each}}

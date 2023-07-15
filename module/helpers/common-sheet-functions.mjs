@@ -70,16 +70,6 @@ export function registerCommonHandlers(html,callerobj){
   const closeBtns = html.find(".closeButton");
 
   // Close the dropdown menu if the user clicks outside of it
-  
-  //This part needs further investigation as it triggers AFTER the button is clicked, leading to directly closing the just opened dropdown.
-  /*document.addEventListener("click", function(event) {
-    console.log("My event target matches .dropdown: ",event.target.matches(".dropdown"))
-    console.log("this is because my event target is: ",event.target)
-    if (!event.target.matches(".dropdown")) {
-      console.log("Now I trigger closeAll")
-      closeAllDropdowns();
-    }
-  });*/
 
   document.addEventListener("click", function(event) {
     if (event.target.matches(".droplistBackground") || event.target.matches(".droplistElement")) {

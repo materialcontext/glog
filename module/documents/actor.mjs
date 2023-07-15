@@ -23,7 +23,22 @@ export class PlayerCharacter extends Actor {
   };
 
   /** @override */
-  prepareBaseData() {}
+  prepareBaseData() {
+    super.prepareBaseData();
+    const actorData = this;
+   
+    this._preparePlayerCharacterBase(actorData);
+  }
+
+  // prepare player base data for tempalte
+  _preparePlayerCharacterBase(actorData) {
+    if (actorData.type !== "playerCharacter") return;
+
+    let context = actorData.system;
+    
+    // set exhaustion flag
+    context.exhausted= context.exhaustion > 0 ? true : false;
+  };
 
   /** @inheritdoc */
   prepareDerivedData() {
@@ -41,9 +56,6 @@ export class PlayerCharacter extends Actor {
     let context = actorData.system;
     let abilities = context.abilities;
 
-    // set exhaustion flag
-    context.flags.exhuasted = context.exhaustion > 0 ? true : false;
-
     // derive abilitiy bonuses from scores and set as ability.mod after factoring exhaustion
     if (abilities) {
       for (let [k, v] of Object.entries(abilities)) {
@@ -55,8 +67,7 @@ export class PlayerCharacter extends Actor {
         else if (v.value == 8 || v.value == 9) { abilities[k].mod = 1; } 
         else if (v.value == 10 || v.value == 11) { abilities[k].mod = 2; }
         else if (v.value > 11) { abilities[k].mod = 3; }
-        else { abilities[k].mod = 0; 
-        };
+        else { abilities[k].mod = 0; };
       };
     };
 
