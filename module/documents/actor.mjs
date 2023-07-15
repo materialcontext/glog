@@ -101,14 +101,14 @@ export class PlayerCharacter extends Actor {
 
     // social
     context.social.react = abilities.cha.mod;
-    context.social.diplo = abilities.cha.mod;
+    context.social.diplo = abilities.cha.mod;context.
     context.social.intim = abilities.cha.mod;
 
     // hires
     if (context.level > 3) {
-      context.resources.hires.max = level;
+      context.resources.hires.max = context.level;
     } else { 
-      context.resources.hires.max = level + abilities.cha.mod; 
+      context.resources.hires.max = context.level + abilities.cha.mod; 
     };
 
     this._applyClass(actorData);

@@ -116,10 +116,11 @@ export class PlayerCharacterSheet extends ActorSheet {
     equip.weapons = weapons;
     equip.armors = armors;
     equip.shields = shields;
-    equip.spells = spells;
     equip.consumables = consumables;
     equip.gear = gear;
-    equip.itemEffects = itemEffects;
+
+    actor.system.spells = spells;
+    actor.system.itemEffects = itemEffects;
 
     // apply inventory
     let inventory = 0;

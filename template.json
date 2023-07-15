@@ -59,11 +59,13 @@
         }
       },
       "equipment": {
-        "armors": [],
-        "shields": [],
-        "weapons": [],
-        "consumables": [],
-        "magicItems": []
+        "equipment": {
+          "armors": [],
+          "shields": [],
+          "weapons": [],
+          "consumables": [],
+          "gear": []
+        }
       },
       "resources": {
         "hp": {
