@@ -23,22 +23,7 @@ export class PlayerCharacter extends Actor {
   };
 
   /** @override */
-  prepareBaseData() {
-    super.prepareBaseData();
-    const actorData = this;
-   
-    this._preparePlayerCharacterBase(actorData);
-  }
-
-  // prepare player base data for tempalte
-  _preparePlayerCharacterBase(actorData) {
-    if (actorData.type !== "playerCharacter") return;
-
-    let context = actorData.system;
-    
-    // set exhaustion flag
-    context.exhausted= context.exhaustion > 0 ? true : false;
-  };
+  prepareBaseData() {};
 
   /** @inheritdoc */
   prepareDerivedData() {
@@ -55,6 +40,10 @@ export class PlayerCharacter extends Actor {
 
     let context = actorData.system;
     let abilities = context.abilities;
+
+    // set exhaustion and flag
+    context.exhausted = context.exhaustion > 0 ? true : false;
+    console.log(context);
 
     // derive abilitiy bonuses from scores and set as ability.mod after factoring exhaustion
     if (abilities) {
@@ -142,7 +131,7 @@ export class PlayerCharacter extends Actor {
         sneak += 2; hide += 2; disguise +=2;
         break;
       case "barbarian":
-        context.hp.max += context.templates.barbarian; // +1 hp per barbarian template
+        context.hp.max += context.classTemplates.barbarian; // +1 hp per barbarian template
         break;
       case "courtier": 
         context.social.react += this._halfClass(context, "courtier"); // +1 react per 2 couriter levels
@@ -159,7 +148,7 @@ export class PlayerCharacter extends Actor {
         disguise += this._halfClass(context, "thief");
         break;
       case "wiard":
-        context.magicDice.max = context.templates.wizard // +1 md per wizard template
+        context.magicDice.max = context.classTemplates.wizard // +1 md per wizard template
         break;
       default: break; //do nothing
     };
@@ -195,7 +184,7 @@ export class PlayerCharacter extends Actor {
   };
 
   _halfClass(context, templateName) {
-    return Math.floor(context.templates[templateName] / 2);
+    return Math.floor(context.classTemplates[templateName] / 2);
   };
 
   // prepare NPC type specific data
