@@ -45,7 +45,9 @@ export class PlayerCharacter extends Actor {
     if (actorData.type !== "playerCharacter") return;
 
     let context = actorData.system;
+    console.log(context);
     let abilities = context.abilities;
+    let level = context.level;
 
     // derive abilitiy bonuses from scores and set as ability.mod after factoring exhaustion
     if (abilities) {
@@ -72,8 +74,11 @@ export class PlayerCharacter extends Actor {
     context.traumaMod = abilities.con.mod;
     context.enduranceMod = abilities.con.mod;
 
+    // set initiative mod
+    context.initMod = abilities.wis.mod;
+
     // calculate inventory
-    context.inventory.max = 6 + (Math.max(abilities.str, abilities.con) * 2);
+    context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);
 
     // calculate encumberance and set flag
     context.encumberance = Math.max(0, context.inventory.value - context.inventory.max);
@@ -101,14 +106,14 @@ export class PlayerCharacter extends Actor {
 
     // social
     context.social.react = abilities.cha.mod;
-    context.social.diplo = abilities.cha.mod;context.
+    context.social.diplo = abilities.cha.mod;
     context.social.intim = abilities.cha.mod;
 
     // hires
-    if (context.level > 3) {
-      context.resources.hires.max = context.level;
+    if (level > 3) {
+      context.hires.max = level;
     } else { 
-      context.resources.hires.max = context.level + abilities.cha.mod; 
+      context.hires.max = level + abilities.cha.mod; 
     };
 
     this._applyClass(actorData);
@@ -212,7 +217,6 @@ export class PlayerCharacter extends Actor {
   getRollData() {
     const data = super.getRollData();
     // do general roll adjutments in here
-
 
     //prepare character roll data
     this._getCharacterRollData(data);

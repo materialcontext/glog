@@ -8,7 +8,7 @@
           style="align-items: center; justify-content: flex-end"
         ></div>
       </div>
-      {{#if actor.weapons}}
+      {{#if actor.system.equipment.weapons}}
         {{> systems/glog/templates/actor/parts/item-parts/weapons.html }}
       {{/if}} 
     </div>
@@ -20,7 +20,7 @@
           style="align-items: center; justify-content: flex-end"
         ></div>
       </div>
-      {{#if actor.armors}}
+      {{#if actor.system.equipment.armors}}
         {{> systems/glog/templates/actor/parts/item-parts/armors.html }}
       {{/if}}
     </div>
@@ -29,7 +29,7 @@
         <h3 class="subheader">Consumables</h3>
         <div class="alignRight flexGrowHalf"></div>
       </div>
-      {{#if actor.consumables}}
+      {{#if actor.system.equipment.consumables}}
         {{> systems/glog/templates/actor/parts/item-parts/consumables.html }}
       {{/if}} 
     </div>
@@ -38,7 +38,7 @@
         <h3 class="subheader">Gear</h3>
         <div class="alignRight flexGrowHalf"></div>
       </div>
-      {{#if actor.gear}}
+      {{#if actor.system.equipment.gear}}
         {{> systems/glog/templates/actor/parts/item-parts/gear.html }}
       {{/if}}
     </div>

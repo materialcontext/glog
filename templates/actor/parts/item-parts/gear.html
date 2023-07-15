@@ -1,4 +1,4 @@
-{{#each actor.gear as |item id|}}
+{{#each actor.system.equipment.gear as |item id|}}
     {{#if this.system.active}}
     <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
         <input class="sheet equipped checkBox" data-dtype="Boolean" data-item-id="{{item._id}}" type="checkbox" {{checked system.active}}>

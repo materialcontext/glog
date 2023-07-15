@@ -83,7 +83,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
   _prepareItems(context) {
     let actor = context.actor;
-    let equip = actor.equipment;
+    let equip = actor.system.equipment;
 
     const gear = [];
     const consumables = [];
@@ -124,10 +124,8 @@ export class PlayerCharacterSheet extends ActorSheet {
 
     // apply inventory
     let inventory = 0;
-    for (arr in equip) {
-      arr.forEach(item => inventory += item.system.slots);
-    }
-    actor.system.inventory = inventory;
+    Object.values(equip).forEach(arr => arr.forEach(item => inventory += item.system.slots));
+    actor.system.inventory.value = inventory;
   }
 
   async _prepareRenderedHTMLContent(context) {
