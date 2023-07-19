@@ -1,0 +1,22 @@
+{
+    "name": "Barbarian",
+    "0": {
+        "Level-0": "You get +1 HP for each Barbarian template you possess.",
+        "equipment": "an ax, hammer, or farm tool; olive oil, whiskey, light armor"
+    },
+    "1": {
+        "Uncivilized": "Your homeland is on the edge of the map, at the border of the empire, beyond the reach of the tax collector. Nobody thinks the bonds of feudal society apply to you. People who consider themselves civilized will universally mark you as an outsider. You can always find someone to explain what is happening, find people looking for disposable assistance, and find people interested in foreign cultures.",
+        "Foreign": "You get the language of your homeland, a +1 bonus to Attack rolls with an exotic weapon of your choice,  and 2 random features from Table 2-1. Everyone outside your culture thinks this stuff is weird."
+    },
+    "2": {
+        "Reputation For...": "Whether or not it's true, people of your culture have a certain reputation. There’s a 50% chance characters you meet can tell where you’re from just by appearance. You gain a random reputation from Table 2-2.",
+        "Tough": "This civilization makes men weak and decadent. Where they crumble, you survive. You get a +1 bonus on all Endurance checks and Trauma Saves. The first time you take a wound in an encounter regain 1d6 HP."
+    },
+    "3": {
+        "Danger Sense": "You get a +1 bonus to Hide checks for every two Barbarian templates you possess. Additionally, improve all Ambush die results by 1 and any time you would be surprised, make a DC 7 Wisdom Check.  On a success you are not surprised. ",
+        "Feats of Strength": "Whenever you roll doubles (other than snake eyes) on a Strength check double your Strength bonus for that roll. Likewise, when you roll doubles and hit with a Melee Attack roll (other than snake-eyes) double your Strength bonus for damage."
+    },
+    "4": {
+        "Tread the Jeweled thrones": "Kings are nothing to you, you were born to lay them low. Sovereigns and tyrants have no HP against you. This includes true sovereigns, leaders of criminal syndicates or cults, champions, etc."
+    }
+}

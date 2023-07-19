@@ -1,0 +1,22 @@
+{
+    "name": "Assassin",
+    "0": {
+        "level-0": "You get +2 on all Stealth checks. Attacks you make against unaware targets ignore 2HP for each Assassin template.",
+        "equipment": "Fraudulent papers; a black mask; and a knife or a pistol with 1 magazine."
+    },
+    "1": {
+        "Poisoner": "You know all there is to know about poisons and with a week and a few 10s silver to the right people you can acquire just what you need. This includes toxic plants, venomous snakes, and inorganic poisons, but not novel magics or supernatural curses. ",
+        "Deadly Improvisation": "You ignore all penalties to improvised weapons and your light weapons deal an additional 1d4 damage."
+    },
+    "2": {
+        "Mr. Thus-and-Such": "With a week and a few 10s of silver to the right friends, you can create a foolproof false identity. For example, you might acquire appropriate clothing, letters of introduction, and official-looking certification to establish yourself as an important merchant from a remote city. Make a disguise check. On 11-12 the effect is perfect. On a 2-3 there is a small flaw, detectable only by those who are exceptionally worldly.",
+        "Studied Target": "Keep a list of potential targets – up to the number of Assassin templates you possess – and important facts about them.  Whenever you attempt to track, investigate, or harm a target on your list, you may cross off a fact related to the target and add a +1 bonus to the roll. It’s up to you to explain how such a fact is relevant. These facts can be simple but they shouldn't be obvious."
+    },
+    "3": {
+        "Dramatic Infiltration": "So long as you are not in immediate danger, you may declare that you are walking off-screen. Later on in a different scene, you may reveal yourself to have been a minor NPC in the background of the scene “all along” as long as there actually are minor NPCs in the background of the scene. You can always walk back on stage at any time, even climbing in a window. This ability is limited only by plausibility.",
+        "Co-conspirator": "Whenever you work with a hireling you've hired  to murder or spy on a target, that hireling receives bonuses as if they were you so long as you are in the scene with them."
+    },
+    "4": {
+        "Assassinate": "Any target you know three facts about who fails a Trauma Save against you dies instantly."
+    }
+}

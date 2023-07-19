@@ -1,0 +1,22 @@
+{
+    "name": "Hunter",
+    "0": {
+        "Level-0": "You are trained in archery and have a +1 Attack bonus with bows for every two Hunter templates you possess.",
+        "equipment": "light armor; a bow and 10 arrows or a rifle and 1 magazine;"
+    },
+    "1": {
+        "Tracker": "When you have the Recon Die, your chances of surprising the enemy or finding its trail increase to 2-in-6. You may designate a specific creature as your quarry. You learn one new fact about it whenever you encounter it.",
+        "Woodsman": "You don't need to make Endurance checks related to travel, you are not Deprived for resting without bedroll or fire, you have no trouble finding sources of food and water in the wilderness, and you ignore penalties from difficult terrain when alone."
+    },
+    "2": {
+        "Stalker": "You get a +1 bonus to Sneak and Hide checks for every 2 Hunter templates you possess. Improve all results of the Ambush die by 1.",
+        "Animal Companion": "You have an animal companion you trained yourself. This companion can perform a certain action when a condition is true. The most common one is “attack when I fire”, but others are possible. Normally you'd spend a round giving orders to your pet. It learns an extra such action for each Hunter template you possess. Animal companions roll 2d6 for three stats and 1d6 for the other three (player's choice). They have 1d4 HP, no Attack bonus, light weapon damage, and start at 6 loyalty. They don't gain levels, take shares of loot, or count toward the number of hirelings you can hire."
+    },
+    "3": {
+        "Trapper": "You're experienced with all kinds of animal traps. You can set any animal trap (snares, pits, cages, etc.) in five minutes and you immediately spot any such trap.  You get a +2 bonus on any roll to construct or spot non-magical traps outside this expertise.",
+        "Advantageous Terrain": "If you have the Recon die and roll an active or passive encounter in the wild, you can draw the map for the encounter and may decide where everyone is, so long as it's plausible. If you are outdoors but in an urban environment, you may add 2 minor features to the scene."
+    },
+    "4": {
+        "Legendary Hunt": "You can kill anything. Work with your DM to plan a hunt of any non-humanoid creature in the game world. Whatever you kill should be utterly unique and the reward for killing it should take the place of a capstone feature. "
+    }
+}

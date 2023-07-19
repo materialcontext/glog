@@ -1,0 +1,22 @@
+{
+    "name": "Fighter",
+    "0": {
+        "Level-0": "You gain +1 Move  and +1 Defense against Melee Attacks for every 2 Acrobat templates. If you are encumbered or have your Movement impaired, you lose these bonuses.",
+        "equipment": "50’ of rope; good shoes"
+    },
+    "1": {
+        "Tricky": "Whenever you Attack or execute a Combat Maneuver and get doubles (other than snake-eyes), you may attempt a free Combat Maneuver or Dexterity check.",
+        "Nimble": "You get +1 bonus on all Dexterity Checks related to balancing, climbing, tumbling, and Sneak. Reduce all fall damage by 1d6."
+    },
+    "2": {
+        "Escape Artist": "You have +2 bonus on all checks to escape something that is restraining you. This includes grapples, lynchings, and awkward social situations, but not sealed coffins.",
+        "Close Call": "You always get a Dexterity save to get out of the path of danger, even if you have no idea it’s coming. Additionally, whenever you have at least 1 HP and would roll a Trauma Save as a result of a critical hit or a failed save, drop to 0 HP instead."
+    },
+    "3": {
+        "Traceur": "You ignore any movement penalties caused by obstacles and any action penalties caused by moving. If there is a stable wall, you may treat it as if it were flat ground while moving, so long as you end your movement on a flat (horizontal) surface.",
+        "Redirect": "When an enemy misses you with a melee attack, you may choose an adjacent target to take the blow instead.  The new target rolls their defense as normal."
+    },
+    "4": {
+        "The Greatest Escape": "Once per lifetime, you can literally escape death.  Your DM will describe the afterlife to you, as well as the opportunity that allows you to escape (if  you wish to). This ability has no effect if your body has been destroyed beyond plausibility. A solo adventure to return to the land of the living is encouraged, but not required."
+    }
+}

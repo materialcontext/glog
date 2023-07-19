@@ -23,7 +23,14 @@ export class PlayerCharacter extends Actor {
   };
 
   /** @override */
-  prepareBaseData() {}
+  prepareBaseData() {
+    super.prepareBaseData();
+    let context = this.system;
+
+    //set exhaustion and encumberance flags before processing ability scores
+    context.exhausted = context.exhaustion > 0 ? true : false;
+    context.encumbered = context.encumberance > 0 ? true : false;
+  };
 
   /** @inheritdoc */
   prepareDerivedData() {
@@ -39,10 +46,9 @@ export class PlayerCharacter extends Actor {
     if (actorData.type !== "playerCharacter") return;
 
     let context = actorData.system;
+    console.log(context);
     let abilities = context.abilities;
-
-    // set exhaustion flag
-    context.flags.exhuasted = context.exhaustion > 0 ? true : false;
+    let level = context.level;
 
     // derive abilitiy bonuses from scores and set as ability.mod after factoring exhaustion
     if (abilities) {
@@ -55,8 +61,7 @@ export class PlayerCharacter extends Actor {
         else if (v.value == 8 || v.value == 9) { abilities[k].mod = 1; } 
         else if (v.value == 10 || v.value == 11) { abilities[k].mod = 2; }
         else if (v.value > 11) { abilities[k].mod = 3; }
-        else { abilities[k].mod = 0; 
-        };
+        else { abilities[k].mod = 0; };
       };
     };
 
@@ -70,16 +75,14 @@ export class PlayerCharacter extends Actor {
     context.traumaMod = abilities.con.mod;
     context.enduranceMod = abilities.con.mod;
 
-    // calculate inventory
-    context.inventory.value = actorData.items.length();
-    context.inventory.max = 6 + (Math.max(abilities.str, abilities.con) * 2);
+    // set initiative mod
+    context.initMod = abilities.wis.mod;
 
-    // calculate encumberance and set flag
-    context.encumberance = Math.max(0, context.inventory.value - context.inventory.max);
-    context.encumbered = context.encumberance > 0 ? true : false;
+    // calculate inventory
+    context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);
 
     // subtract encumebrance from move
-    context.move.value = 4;
+    context.move.value = 4 - context.encumberance;
 
     /** 
      * dexterity check penalties for encumberance are handled in template.json > dex.roll...
@@ -104,14 +107,16 @@ export class PlayerCharacter extends Actor {
     context.social.intim = abilities.cha.mod;
 
     // hires
-    if (context.level > 3) {
-      context.resources.hires.max = level;
+    if (level > 3) {
+      context.hires.max = level;
     } else { 
-      context.resources.hires.max = level + abilities.cha.mod; 
+      context.hires.max = level + abilities.cha.mod; 
     };
 
     this._applyClass(actorData);
     this._applyFeatures(actorData);
+
+    console.log(actorData);
   };
 
   // applies class (level 0) roll and data transforms to the document
@@ -131,7 +136,7 @@ export class PlayerCharacter extends Actor {
         sneak += 2; hide += 2; disguise +=2;
         break;
       case "barbarian":
-        context.hp.max += context.templates.barbarian; // +1 hp per barbarian template
+        context.hp.max += context.classTemplates.barbarian; // +1 hp per barbarian template
         break;
       case "courtier": 
         context.social.react += this._halfClass(context, "courtier"); // +1 react per 2 couriter levels
@@ -148,7 +153,7 @@ export class PlayerCharacter extends Actor {
         disguise += this._halfClass(context, "thief");
         break;
       case "wiard":
-        context.magicDice.max = context.templates.wizard // +1 md per wizard template
+        context.magicDice.max = context.classTemplates.wizard // +1 md per wizard template
         break;
       default: break; //do nothing
     };
@@ -184,7 +189,7 @@ export class PlayerCharacter extends Actor {
   };
 
   _halfClass(context, templateName) {
-    return Math.floor(context.templates[templateName] / 2);
+    return Math.floor(context.classTemplates[templateName] / 2);
   };
 
   // prepare NPC type specific data
@@ -209,7 +214,6 @@ export class PlayerCharacter extends Actor {
   getRollData() {
     const data = super.getRollData();
     // do general roll adjutments in here
-
 
     //prepare character roll data
     this._getCharacterRollData(data);

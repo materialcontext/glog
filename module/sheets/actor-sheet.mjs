@@ -43,9 +43,8 @@ export class PlayerCharacterSheet extends ActorSheet {
     const actorData = this.actor.toObject(false);
 
     // add to context for easy access
-    context.system = actorData.system;
-    context.flags = actorData.flags;
     context.config = GLOG;
+    context.system = actorData.system;
 
     // prepare playerCharacter data and items
     if (actorData.type == "playerCharacter") {
@@ -83,7 +82,8 @@ export class PlayerCharacterSheet extends ActorSheet {
   }
 
   _prepareItems(context) {
-    const actor = context.actor;
+    let actor = context.actor;
+    let equip = actor.system.equipment;
 
     const gear = [];
     const consumables = [];
@@ -113,13 +113,21 @@ export class PlayerCharacterSheet extends ActorSheet {
       }
     }
 
-    actor.weapons = weapons;
-    actor.armors = armors;
-    actor.shields = shields;
-    actor.spells = spells;
-    actor.consumables = consumables;
-    actor.gear = gear;
-    actor.itemEffects = itemEffects;
+    equip.weapons = weapons;
+    equip.armors = armors;
+    equip.shields = shields;
+    equip.consumables = consumables;
+    equip.gear = gear;
+
+    actor.system.spells = spells;
+    actor.system.itemEffects = itemEffects;
+
+    // apply inventory
+    let inventory = 0;
+    Object.values(equip).forEach(arr => arr.forEach(item => inventory += item.system.slots));
+    actor.system.inventory.value = inventory;
+    actor.system.encumberance = Math.max(0, actor.system.inventory.value - actor.system.inventory.max);
+
   }
 
   async _prepareRenderedHTMLContent(context) {
@@ -204,11 +212,6 @@ export class PlayerCharacterSheet extends ActorSheet {
             li.addEventListener("dragstart", handler, false);
         });
     };
-
-    // toggle edit abilities
-    html.find(".edit-abilities").click(ev => {
-      actor.system.flags.editAbilities = !actor.system.flags.editAbilities
-    });
 
     //Edit Item Input Fields
     html.find(".sheet-inline-edit").change(this._onSkillEdit.bind(this));
