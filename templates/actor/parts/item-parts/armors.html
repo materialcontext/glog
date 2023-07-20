@@ -1,7 +1,7 @@
 {{#each actor.system.equipment.armors as |item id|}}
     {{#if this.system.active}}
     <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
-        {{> systems/glog/templates/actor/parts/item-parts/itemInfo.html }}
+        {{> systems/glog/templates/actor/parts/item-parts/itemInfo.html item=item}}
         <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
             style="color: var(--inactive); background: none; font-size: 13px; margin-right: 10px; flex: 1.3; height: 20px;">
         </label>
@@ -15,11 +15,11 @@
             {{item.system.encumberance}} <i class=" fa-solid fa-weight-hanging" style="margin-left: 3px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Encumberance</span>
         </label>
-        {{> systems/glog/templates/actor/parts/item-parts/itemControls.html }}
+        {{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
     </div>
     {{else}}
     <div class="item flexrow offHand flex-group-left itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
-        {{> systems/glog/templates/actor/parts/item-parts/itemInfo.html }}
+        {{> systems/glog/templates/actor/parts/item-parts/itemInfo.html item=item}}
         <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
             style="color: var(--inactive); background: none; font-size: 13px; margin-right: 10px; flex: 1.3; height: 20px;">
         </label>
@@ -33,7 +33,7 @@
             {{item.system.encumberance}} <i class=" fa-solid fa-weight-hanging" style="margin-left: 3px;"></i>
             <span class="tooltipText resource-label" style="font-size: 13px;">Encumberance</span>
         </label>
-        {{> systems/glog/templates/actor/parts/item-parts/itemControls.html }}
+        {{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
     </div>
     {{/if}}
 {{/each}}
