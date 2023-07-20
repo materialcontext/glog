@@ -103,7 +103,7 @@ export class PlayerCharacter extends Actor {
 
     // social
     context.social.react = abilities.cha.mod;
-    context.social.diplo = abilities.cha.mod;
+    context.social.diplo = abilities.cha.mod;context.
     context.social.intim = abilities.cha.mod;
 
     // hires
