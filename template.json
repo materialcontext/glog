@@ -181,8 +181,8 @@
     ],
     "templates": {
       "info": {
-        "name": "",
-        "description": ""
+        "name": "name here",
+        "description": "description here"
       },
       "base": {
         "active": true,
