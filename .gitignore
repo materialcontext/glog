@@ -1,6 +1,7 @@
 #folders
 .vscode/
 node_modules
+utils
 
 #secrets
 .env
