@@ -176,11 +176,15 @@
       "spell",
       "weapon",
       "armor",
-      "consumable"
+      "consumable",
+      "feature"
     ],
     "templates": {
+      "info": {
+        "name": "",
+        "description": ""
+      },
       "base": {
-        "description": "This is the item description.",
         "active": true,
         "slots": 0,
         "roll": "2d6"
@@ -192,6 +196,7 @@
     },
     "gear": {
       "templates": [
+        "info",
         "base",
         "buyable"
       ],
@@ -200,6 +205,7 @@
     },
     "consumable": {
       "templates": [
+        "info",
         "base",
         "buyable"
       ],
@@ -208,6 +214,7 @@
     },
     "spell": {
       "templates": [
+        "info",
         "base",
         "buyable"
       ],
@@ -216,6 +223,7 @@
     },
     "weapon": {
       "templates": [
+        "info",
         "base",
         "buyable"
       ],
@@ -224,12 +232,18 @@
     },
     "armor": {
       "templates": [
+        "info",
         "base",
         "buyable"
       ],
       "defense": 1,
       "encumberance": 1,
       "displayCategory": "armor"
+    },
+    "feature": {
+      "templates": [
+        "info"
+      ]
     }
   }
 }
