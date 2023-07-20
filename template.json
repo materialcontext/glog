@@ -36,9 +36,6 @@
           "wizard": 0
         },
         "features": {
-          "fighter": "",
-          "first": "this is the first feature",
-          "second": "this is the second feature"
         },
         "magicDice": {
           "base": 0,
