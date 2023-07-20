@@ -6,13 +6,13 @@
         </div>
     </div>
     <div class="flexcol flex-group-left" >
-        <div class="flexrow flex-group-left">
-            {{#each actor.system.features as |item id|}}
-            <label class="truncate alignLeft" style="flex: 1; font-size: 18px"><strong>{{item.name}}</strong></label>
-            <div class="truncate alignLeft" style="flex: 3;">{{item.description}}</div>
+        {{#each actor.system.features as |item id|}}
+        <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 10px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
+            <label class="truncate alignLeft" style="flex: 1; font-size: 18px; margin-right: 10px;"><strong>{{item.name}}</strong></label>
+            <div class="truncate alignLeft" style="flex: 4;">{{item.system.description}}</div>
             {{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
-            {{/each}}
         </div>
+        {{/each}}
     </div>
     <div class="flexrow subheader">
         <h3 class="subheader">Legend</h3>

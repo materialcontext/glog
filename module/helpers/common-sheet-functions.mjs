@@ -120,8 +120,8 @@ export function itemCreate(event,callerobj){
   }
 
 export async function confirmation(popUpTitle, popUpHeadline, popUpCopy, popUpInfo, popUpTarget) {
-let cancelButton = game.i18n.localize('ep2e.roll.dialog.button.cancel');
-let deleteButton = game.i18n.localize('ep2e.actorSheet.button.delete');
+let cancelButton = 'Cancel';
+let deleteButton = 'Delete';
 const dialogType = "confirmation"
 const template = "systems/glog/templates/chat/pop-up.html";
 const html = await renderTemplate(template, {popUpHeadline, popUpCopy, dialogType, popUpInfo, popUpTarget});

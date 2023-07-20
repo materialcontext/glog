@@ -26,27 +26,6 @@ export class PlayerCharacter extends Actor {
   prepareBaseData() {
     super.prepareBaseData();
     let context = this.system;
-
-    //set exhaustion and encumberance flags before processing ability scores
-    context.exhausted = context.exhaustion > 0 ? true : false;
-    context.encumbered = context.encumberance > 0 ? true : false;
-  };
-
-  /** @inheritdoc */
-  prepareDerivedData() {
-    super.prepareDerivedData();
-    const actorData = this;
-
-    this._prepareCharacterData(actorData);
-    this._prepareNPCData(actorData);
-  };
-
-  // prepare playerCharacter type specific data
-  _prepareCharacterData(actorData) {
-    if (actorData.type !== "playerCharacter") return;
-
-    let context = actorData.system;
-    console.log(context);
     let abilities = context.abilities;
     let level = context.level;
 
@@ -65,29 +44,9 @@ export class PlayerCharacter extends Actor {
       };
     };
 
-    // set max HP to base
-    context.hp.max = context.hp.base - context.exhaustion;
-
-    // set magicDice to base;
-    context.magicDice.max = context.magicDice.base;
-
-    // set trauma and endurance mods
-    context.traumaMod = abilities.con.mod;
-    context.enduranceMod = abilities.con.mod;
-
-    // set initiative mod
-    context.initMod = abilities.wis.mod;
-
-    // calculate inventory
-    context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);
-
-    // subtract encumebrance from move
-    context.move.value = 4 - context.encumberance;
-
-    /** 
-     * dexterity check penalties for encumberance are handled in template.json > dex.roll...
-     * ...because it simplifies defense calculations
-     * */ 
+    //set exhaustion and encumberance flags before processing ability scores
+    context.exhausted = context.exhaustion > 0 ? true : false;
+    context.encumbered = context.encumberance > 0 ? true : false;
 
     // attack
     context.combat.atk = Math.min(level, 4);
@@ -105,6 +64,48 @@ export class PlayerCharacter extends Actor {
     context.social.react = abilities.cha.mod;
     context.social.diplo = abilities.cha.mod;
     context.social.intim = abilities.cha.mod;
+
+    // set trauma and endurance mods
+    context.traumaMod = abilities.con.mod;
+    context.enduranceMod = abilities.con.mod;
+
+    // set initiative mod
+    context.initMod = abilities.wis.mod;
+  };
+
+  /** @inheritdoc */
+  prepareDerivedData() {
+    super.prepareDerivedData();
+    const actorData = this;
+
+    this._prepareCharacterData(actorData);
+    this._prepareNPCData(actorData);
+  };
+
+  // prepare playerCharacter type specific data
+  _prepareCharacterData(actorData) {
+    if (actorData.type !== "playerCharacter") return;
+
+    let context = actorData.system;
+    let abilities = context.abilities;
+    let level = context.level;
+
+    // set max HP to base
+    context.hp.max = context.hp.base - context.exhaustion;
+
+    // set magicDice to base;
+    context.magicDice.max = context.magicDice.base;
+
+    // calculate inventory
+    context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);
+
+    // subtract encumebrance from move
+    context.move.value = 4 - context.encumberance;
+
+    /** 
+     * dexterity check penalties for encumberance are handled in template.json > dex.roll...
+     * ...because it simplifies defense calculations
+     * */ 
 
     // hires
     if (level > 3) {
