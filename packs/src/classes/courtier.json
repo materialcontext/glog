@@ -1,0 +1,22 @@
+{
+    "name": "Fighter",
+    "0": {
+        "Level-0": " You get a +1 bonus on all Reaction rolls for every 2 Courtier templates you possess.",
+        "equipment": "fine clothes, crippling debt, 4d6 silver"
+    },
+    "1": {
+        "Courtly Education": "You get +1 language and are trained in archery. You get +1 on all rolls related to dress, dance, etiquette, horseback riding,  poetry, and verse.",
+        "Fast Talker": "You are an expert blatherer, liar, and wit. You can persuade any number of people that what you are saying is true for 1d6 minutes, provided it is not obviously untrue. Sober, angry, and intelligent people get a Save to negate. When the effect ends, they realize what you've been saying is utter nonsense. Idiots believe you forever."
+    },
+    "2": {
+        "Welcome Guest": "You have no trouble finding an invitation to dinner and never pay for lodging. When entering a new town you have a 4-in-6 chance of having already received an invitation from a local lord or wealthy merchant.",
+        "Entourage": ""
+    },
+    "3": {
+        "Never Forget a Face": "Memorizing the ins-and-outs of noble lineage and court life has given you a perfect memory for names and faces. When you meet someone new, you have a 3-in-6 chance of knowing their name. If they are nobility or from an otherwise prominent house, you have a 4-in-6 chance and also know their title and details about their family. This may even apply to named monsters and other implausible encounters.",
+        "Loyal servants": "If an Attack would cause you to make a Trauma Save, an adjacent hireling takes the damage instead. Your servants will act proactively on your behalf, doing their best to look after what they believe to be your interests. "
+    },
+    "4": {
+        "Windfall": "You inherit 4d6 * 1000 gold. Perhaps an uncle died. 1d6 nuisance relatives will be showing up at your door to live in your house and ask for money, and turning them away would be deadly to your reputation. Coincidentally, there is a 4-in-6 chance that the Assassin's Guild has just accepted a contract to kill you."
+    }
+}

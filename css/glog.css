@@ -918,6 +918,10 @@ a:hover,
   min-height: 273px;
 }
 
+.sheet .feature . editor-content {
+  min-height: 253px;
+  max-height: 253px;
+}
 .glog .sheet-body .tab .editor {
   padding: 0;
 }

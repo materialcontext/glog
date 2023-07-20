@@ -27,8 +27,9 @@ export class PlayerCharacter extends Actor {
     super.prepareBaseData();
     let context = this.system;
 
-    //set exhaustion flag ebfore processing ability scores
+    //set exhaustion and encumberance flags before processing ability scores
     context.exhausted = context.exhaustion > 0 ? true : false;
+    context.encumbered = context.encumberance > 0 ? true : false;
   };
 
   /** @inheritdoc */
@@ -80,12 +81,8 @@ export class PlayerCharacter extends Actor {
     // calculate inventory
     context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);
 
-    // calculate encumberance and set flag
-    context.encumberance = Math.max(0, context.inventory.value - context.inventory.max);
-    context.encumbered = context.encumberance > 0 ? true : false;
-
     // subtract encumebrance from move
-    context.move.value = 4;
+    context.move.value = 4 - context.encumberance;
 
     /** 
      * dexterity check penalties for encumberance are handled in template.json > dex.roll...
