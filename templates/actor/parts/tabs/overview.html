@@ -5,12 +5,14 @@
             <div class="alignRight flexGrowHalf"></div>
         </div>
     </div>
-    <div class="flexcol flex-group-left" style="padding: 10px; width:100%;">
-        {{#each actor.system.features as |item id|}}
-        <label class="truncate alignLeft" style="flex: 1; font-size: 18px"><strong>{{item.name}}</strong></label>
-        <div class="truncate alignLeft" style="flex: 3;">{{item.description}}</div>
-        {{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
-        {{/each}}
+    <div class="flexcol flex-group-left" >
+        <div class="flexrow flex-group-left">
+            {{#each actor.system.features as |item id|}}
+            <label class="truncate alignLeft" style="flex: 1; font-size: 18px"><strong>{{item.name}}</strong></label>
+            <div class="truncate alignLeft" style="flex: 3;">{{item.description}}</div>
+            {{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
+            {{/each}}
+        </div>
     </div>
     <div class="flexrow subheader">
         <h3 class="subheader">Legend</h3>
