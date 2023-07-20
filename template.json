@@ -24,19 +24,7 @@
         "traumaMod": 0,
         "wounds": 0,
         "xp": 0,
-        "classTemplates": {
-          "value": 0,
-          "assassin": 0,
-          "acrobat": 0,
-          "barbarian": 0,
-          "courtier": 0,
-          "fighter": 0,
-          "hunter": 0,
-          "thief": 0,
-          "wizard": 0
-        },
-        "features": {
-        },
+        "features": [],
         "magicDice": {
           "base": 0,
           "value": 0,
@@ -240,7 +228,8 @@
     "feature": {
       "templates": [
         "info"
-      ]
+      ],
+      "displayCategory": "feature"
     }
   }
 }

@@ -86,6 +86,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     let equip = actor.system.equipment;
 
     const gear = [];
+    const features = [];
     const consumables = [];
     const spells = [];
     const itemEffects = [];
@@ -108,6 +109,8 @@ export class PlayerCharacterSheet extends ActorSheet {
         consumables.push(item);
       } else if (itemModel.displayCategory === "spell") {
         spells.push(item);
+      } else if (itemModel.displayCategory === "feature") {
+        features.push(item);
       } else {
         gear.push(item);
       }
@@ -120,6 +123,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     equip.gear = gear;
 
     actor.system.spells = spells;
+    actor.system.features = features;
     actor.system.itemEffects = itemEffects;
 
     // apply inventory
@@ -127,7 +131,6 @@ export class PlayerCharacterSheet extends ActorSheet {
     Object.values(equip).forEach(arr => arr.forEach(item => inventory += item.system.slots));
     actor.system.inventory.value = inventory;
     actor.system.encumberance = Math.max(0, actor.system.inventory.value - actor.system.inventory.max);
-
   }
 
   async _prepareRenderedHTMLContent(context) {
