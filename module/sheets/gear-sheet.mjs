@@ -38,12 +38,6 @@ export class GlogGearSheet extends ItemSheet {
 
     sheetData.config = GLOG
     item.showEffectsTab = true
-    if(game.settings.get("glog", "effectPanel")){
-      item.showEffectsTab = true
-    }
-
-    console.log("***** gear-sheet")
-    console.log(sheetData)
 
     return sheetData
   }
