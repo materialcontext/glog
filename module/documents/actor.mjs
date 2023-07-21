@@ -94,8 +94,6 @@ export class PlayerCharacter extends Actor {
 
     // xp for next level
     context.flags.xpNext = GLOG.xp[level];
-    // set max HP to base
-    context.hp.max = context.hp.base - context.exhaustion;
 
     // calculate inventory
     context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);

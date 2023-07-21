@@ -3,7 +3,6 @@
     "types": ["playerCharacter", "hireling", "companion", "npc"],
     "templates": {
       "description": {
-        "name": "",
         "description": "",
         "class": "",
         "languages": "",
