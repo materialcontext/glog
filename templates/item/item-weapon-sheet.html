@@ -33,20 +33,10 @@
                         <input class="input-large alignCenter" type="text" name="system.damage" value="{{item.system.damage}}" placeholder="e.g. 1d10+1"/>
                     </td>
                     <td>
-                        <select name="system.slotType" data-type="String">
-                            {{#select item.system.slotType}}
-                            {{#each config.weaponTypes as |name key|}}
-                            <option value="{{key}}">{{localize name}}</option>
-                            {{/each}} {{/select}}
-                        </select>
+                        <input class="input-small" type="number" name="system.slots" value="{{item.system.slots}}" data-dtype="Number" placeholder="0"/>
                     </td>
                     <td>
-                        <select name="system.cost" data-type="String">
-                            {{#select item.system.cost}}
-                            {{#each config.costTypes as |name key|}}
-                            <option value="{{key}}">{{localize name}}</option>
-                            {{/each}} {{/select}}
-                        </select>
+                        <input class="input-small" type="number" name="system.cost" value="{{item.system.cost}}" data-dtype="Number" placeholder="0"/>
                     </td>
                 </tr>
             </table>
