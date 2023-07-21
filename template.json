@@ -215,7 +215,7 @@
         "base",
         "buyable"
       ],
-      "dmg": "1d6",
+      "dmg": "",
       "displayCategory": "weapon"
     },
     "armor": {
