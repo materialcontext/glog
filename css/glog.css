@@ -522,7 +522,7 @@ span.neutral {
 }
 
 #chat-log .message {
-  background-image: url(../resources/img/background2.jpg);
+  background-image: url(../resources/img/background2.png);
   opacity: 0.8;
   color: var(--mainText);
   border: #131313 2px solid;
@@ -1376,7 +1376,7 @@ h3.subheaderBlank {
 }
 
 .gearSideCar {
-  background-image: url(../resources/img/gearSideCar.webp);
+  background-image: url(../resources/img/gearSideCar.png);
   background-repeat: no-repeat;
   background-size: 100% auto;
 }
