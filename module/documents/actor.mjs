@@ -1,3 +1,5 @@
+import { GLOG } from "../helpers/config.mjs";
+
 /**
  * Extends the basic actor sheet
  * @extends {Actor}
@@ -90,6 +92,8 @@ export class PlayerCharacter extends Actor {
     let abilities = context.abilities;
     let level = context.level;
 
+    // xp for next level
+    context.flags.xpNext = GLOG.xp[level];
     // set max HP to base
     context.hp.max = context.hp.base - context.exhaustion;
 

@@ -40,7 +40,8 @@
           "strSwim": false,
           "deprived": false,
           "exhausted": false,
-          "encumbered": false
+          "encumbered": false,
+          "xpNext": "-"
         }
       },
       "equipment": {
