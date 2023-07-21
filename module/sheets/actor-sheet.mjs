@@ -9,7 +9,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["glog", "sheet", "actor"],
       resizable: false,
-      template: "systems/glog/templates/actor/actor-npc-sheet.html",
+      template: "systems/glog/templates/actor/actor-sheet.html",
       width: 1210,
       height: 720,
       tabs: [
@@ -29,7 +29,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/glog/templates/actor/actor-npc-sheet.html`;
+    return `systems/glog/templates/actor/actor-sheet.html`;
   }
 
   /* --------------------------------------------------- */

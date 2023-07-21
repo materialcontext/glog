@@ -9,13 +9,36 @@
         {{#each actor.system.features as |item id|}}
         <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 10px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
             <label class="truncate alignLeft" style="flex: 1; font-size: 18px; margin-right: 10px;"><strong>{{item.name}}</strong></label>
-            <div class="truncate alignLeft" style="flex: 4;">{{item.system.description}}</div>
+            <input class="truncate alignLeft" style="flex: 4;" 
+                name="prev" type="text" value="{{item.system.preview}} " placeholder=""
+            />
             {{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
         </div>
         {{/each}}
     </div>
-    <div class="flexrow subheader">
-        <h3 class="subheader">Legend</h3>
+<!--
+    <div class="flexrow subheader" style="margin-top: 10px;">
+        <h3 class="subheader">Hirelings</h3>
+        <div class="alignRight flexGrowHalf reveal">
+            <div class="alignRight flexGrowHalf">
+                <input class="input-small" type="number" name="system.hires.value" value="{{actor.system.hires.value}}" data-dtype="Number" placeholder="0"/>
+                <span class="input-small">/ {{actor.system.hires.max}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="flexcol flex-group-left">
+        {{#each actor.system.hirelings as |item id|}}
+        <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 10px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
+            <label class="truncate alignLeft" style="flex: 1; font-size: 18px; margin-right: 10px;"><strong>{{item.system.name}}</strong></label>
+            <label class="truncate alignLeft" style="flex: 1; font-size: 18px; margin-right: 10px;"><strong>{{item.system.level}}</strong></label>
+            <label class="truncate alignLeft" style="flex: 1; font-size: 18px; margin-right: 10px;"><strong>{{item.system.class}}</strong></label>
+            {{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
+        </div>
+        {{/each}}
+    </div>
+-->
+    <div class="flexrow subheader" style="margin-top: 10px;">
+        <h3 class="subheader">Notes</h3>
         <div class="alignRight flexGrowHalf reveal">
             <div class="alignRight flexGrowHalf"></div>
         </div>

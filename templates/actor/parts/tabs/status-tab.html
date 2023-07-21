@@ -1,0 +1,21 @@
+<div class="tab ego" data-group="secondary" data-tab="templates">
+    <div class="contentBox" style="margin-bottom: 10px;">
+        <div class="flexrow subheader colorV1">
+            <h3 class="subheader colorV1">Exhaustion</h3>
+            <div class="alignRight flexGrowThreeQuarter">
+                {{#if actor.system.exhausted}}
+                <input class="input-small" style="color: var(--negative);" type="number" name="system.exhaustion" value="{{actor.system.exhaustion}}" data-dtype="Number" placeholder="0"/>
+                {{else}}
+                <input class="input-small" style="color: var(--negative);" type="number" name="system.exhaustion" value="{{actor.system.exhaustion}}" data-dtype="Number" placeholder="0"/>
+                {{/if}}
+            </div>
+        </div>
+        <div class="flexrow">
+            {{#if actor.system.flags.noSwim}}
+            <label class="resource-value flexrow flex-group-left" style ="font-size: 13px; height: 20px; color: var(--negative)">
+                {{actor.system.warnings.noSwimWarning}}
+            </label>
+            {{/if}}
+        </div>
+    </div>
+</div>

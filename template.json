@@ -36,7 +36,7 @@
       },
       "currStat": {
         "flags": {
-          "noSwim": true,
+          "noSwim": false,
           "strSwim": false,
           "deprived": false,
           "exhausted": false,
@@ -107,6 +107,7 @@
           "atk": 0,
           "def": 0,
           "man": 0,
+          "dmg": 0,
           "archery": false
         },
         "social": {
@@ -115,8 +116,9 @@
           "intim": 0
         },
         "explore": {
-          "ambushMod": 0,
-          "reconMod": 0
+          "ambush": 0,
+          "recon": 0,
+          "invest": 0
         }
       },
       "npc": {
@@ -133,7 +135,8 @@
         "equipment",
         "currStat",
         "warnings"
-      ]
+      ],
+      "hirelings": []
     },
     "hireling": {
       "templates": [

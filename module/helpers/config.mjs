@@ -14,6 +14,7 @@ GLOG.abilities = {
     "cha": "Charisma"
 };
 
+
 GLOG.classes = {
     "dwarf": "Dwarf",
     "acrobat": "Acrobat",
@@ -47,4 +48,15 @@ GLOG.abbrev = {
     "wis": "WIS",
     "cha": "CHA"
   };
-  
+
+GLOG.xp = {
+    "0": "1",
+    "1": "2000",
+    "2": "7000",
+    "3": "12000",
+    "4": "24000",
+    "5": "42000",
+    "6": "60000",
+    "7": "80000",
+    "8":  "-"
+}

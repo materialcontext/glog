@@ -8,7 +8,7 @@
       <div class="alignRight flexGrowThreeQuarter">
         <span class="input-small">XP: </span>
         <input class="input-small" type="number" name="system.xp" value="{{actor.system.xp}}" data-dtype="Number" placeholder="0"/>
-        <span class="input-small">/ 1</span>
+        <span class="input-small">/ {{config.xp.[actor.system.level]}}</span>
       </div>
     </div>
     <div class="listBackground" style="background-color: var(--pitchBorder)">
