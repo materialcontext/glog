@@ -130,6 +130,8 @@ export class PlayerCharacterSheet extends ActorSheet {
     let inventory = 0;
     Object.values(equip).forEach(arr => arr.forEach(item => inventory += item.system.slots));
     actor.system.inventory.value = inventory;
+
+    console.log(inventory, actor.system.inventory)
     actor.system.encumberance = Math.max(0, actor.system.inventory.value - actor.system.inventory.max);
   }
 

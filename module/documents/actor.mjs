@@ -46,10 +46,6 @@ export class PlayerCharacter extends Actor {
       };
     };
 
-    //set exhaustion and encumberance flags before processing ability scores
-    context.exhausted = context.exhaustion > 0 ? true : false;
-    context.encumbered = context.encumberance > 0 ? true : false;
-
     // attack
     context.combat.atk = Math.min(level, 4);
 
@@ -73,6 +69,14 @@ export class PlayerCharacter extends Actor {
 
     // set initiative mod
     context.initMod = abilities.wis.mod;
+
+    // calculate inventory and encumberance
+    context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);
+    context.encumberance = Math.max(0, context.inventory.value - context.inventory.max);
+
+    //set exhaustion and encumberance flags before processing ability scores
+    context.exhausted = context.exhaustion > 0 ? true : false;
+    context.encumbered = context.encumberance > 0 ? true : false;
   };
 
   /** @inheritdoc */
@@ -94,9 +98,6 @@ export class PlayerCharacter extends Actor {
 
     // xp for next level
     context.flags.xpNext = GLOG.xp[level];
-
-    // calculate inventory
-    context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);
 
     // subtract encumebrance from move
     context.move.value = 4 - context.encumberance;
