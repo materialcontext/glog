@@ -8,7 +8,7 @@
     <div class="flexcol flex-group-left" >
         {{#each actor.system.spells as |item id|}}
         <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 10px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
-            <label class="truncate alignLeft" style="flex: 1; font-size: 18px; margin-right: 10px;"><strong>{{item.name}}</strong></label>
+            <label class="alignLeft" style="flex: 1; font-size: 18px; margin-right: 10px;"><strong>{{item.name}}</strong></label>
             <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
                 style="width: 100%; padding-right: 10px; flex: 1; color: var(--inactive); height: 20px;">
                 {{item.system.range}} <i class="fa-solid fa-ruler style="margin-left: 3px;"></i>
