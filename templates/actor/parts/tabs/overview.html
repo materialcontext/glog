@@ -9,9 +9,7 @@
         {{#each actor.system.features as |item id|}}
         <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 10px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
             <label class="truncate alignLeft" style="flex: 1; font-size: 18px; margin-right: 10px;"><strong>{{item.name}}</strong></label>
-            <input class="truncate alignLeft" style="flex: 4;" 
-                name="prev" type="text" value="{{item.system.preview}} " placeholder=""
-            />
+            <input class="truncate alignLeft" style="flex: 4;" name="prev" type="text" value="{{item.system.preview}} " placeholder="..."/>
             {{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
         </div>
         {{/each}}
