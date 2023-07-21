@@ -1061,14 +1061,6 @@ button.restReset {
   border: 1px solid var(--inactive);
 }
 
-#pause img {
-  content: url(../resources/img/eclipse.webp);
-}
-
-#logo {
-  content: url(../resources/img/logoalt.webp);
-}
-
 .chat-message #context-menu.expand-down {
   top: calc(0% - 70px);
 }
