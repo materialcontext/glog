@@ -175,6 +175,7 @@
       "base": {
         "active": true,
         "slots": 0,
+        "quantity": 1,
         "roll": "2d6"
       },
       "buyable": {
@@ -188,7 +189,6 @@
         "base",
         "buyable"
       ],
-      "quantity": 1,
       "displayCategory": "gear"
     },
     "consumable": {
@@ -197,16 +197,16 @@
         "base",
         "buyable"
       ],
-      "quantity": 1,
       "displayCategory": "consumable"
     },
     "spell": {
       "templates": [
         "info",
-        "base",
         "buyable"
       ],
-      "quantity": 1,
+      "range": "",
+      "target": "",
+      "duration": "",
       "displayCategory": "spell"
     },
     "weapon": {
