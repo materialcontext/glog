@@ -97,9 +97,6 @@ export class PlayerCharacter extends Actor {
     // set max HP to base
     context.hp.max = context.hp.base - context.exhaustion;
 
-    // set magicDice to base;
-    context.magicDice.max = context.magicDice.base;
-
     // calculate inventory
     context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);
 
