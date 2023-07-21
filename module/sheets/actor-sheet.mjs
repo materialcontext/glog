@@ -126,13 +126,12 @@ export class PlayerCharacterSheet extends ActorSheet {
     actor.system.features = features;
     actor.system.itemEffects = itemEffects;
 
-    // apply inventory
-    let inventory = 0;
-    Object.values(equip).forEach(arr => arr.forEach(item => inventory += item.system.slots));
+    let inventory = 0
+    Object.values(actor.system.equipment).forEach((arr) => {arr.forEach(item => inventory += item.system.slots)});
     actor.system.inventory.value = inventory;
 
-    console.log(inventory, actor.system.inventory)
     actor.system.encumberance = Math.max(0, actor.system.inventory.value - actor.system.inventory.max);
+    if (actor.overrides.system && actor.overrides.system.encumberance) {actor.system.encumberance += actor.overrides.system.encumberance};
   }
 
   async _prepareRenderedHTMLContent(context) {
