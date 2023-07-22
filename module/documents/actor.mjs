@@ -74,6 +74,9 @@ export class PlayerCharacter extends Actor {
     // set initiative mod
     context.initMod = abilities.wis.mod;
 
+    // set move
+    context.move.value = 4;
+    
     // calculate inventory
     context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);
   };
@@ -99,8 +102,7 @@ export class PlayerCharacter extends Actor {
     context.flags.xpNext = GLOG.xp[level];
 
     // subtract encumebrance from move
-    context.move.value = 4 - context.encumberance;
-    console.log(context.equipment);
+    context.move.value -= context.encumberance;
 
     // set max HP to base
     context.hp.max = context.hp.base - context.exhaustion;
