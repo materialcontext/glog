@@ -5,6 +5,9 @@ on:
     branches:
       - '**'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,6 +36,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Delete existing release
+      run: |
+        gh release delete latest -y || true
+        gh api -X DELETE repos/${{ github.repository }}/git/refs/tags/latest || true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create new tag
+      run: git tag latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Push new tag
+      run: git push origin latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Download ZIP archive
       uses: actions/download-artifact@v4
       with:
@@ -49,10 +72,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: release-${{ github.run_id }}
-        release_name: Release ${{ github.run_id }}
+        tag_name: latest
+        release_name: latest
         body: |
-          Release for run ${{ github.run_id }}
+          Latest release
         files: |
           system.zip
           system.json
