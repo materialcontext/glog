@@ -41,18 +41,18 @@ jobs:
 
       - name: Delete existing release
         run: |
-          gh release delete latest -y || true
-          gh api -X DELETE repos/${{ github.repository }}/git/refs/tags/latest || true
+          gh release delete release -y || true
+          gh api -X DELETE repos/${{ github.repository }}/git/refs/tags/release || true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create new tag
-        run: git tag latest
+        run: git tag release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push new tag
-        run: git push origin latest
+        run: git push origin release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -69,8 +69,8 @@ jobs:
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
-          tag: latest
-          name: latest
+          tag: release
+          name: release
           body: Latest release
           artifacts: |
             system.zip
