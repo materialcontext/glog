@@ -5,10 +5,10 @@
       {{#if (eq dialogType "poolUsage")}}
         <div class="contentBoxMargin">
           <div class="flexrow subheader">
-              <h3 class="subheader dialog">{{localize "GLOG.skills.pool.infoSubheadline"}}</h3>
+              <h3 class="subheader dialog">{{localize "glog.skills.pool.infoSubheadline"}}</h3>
           </div>
           <div class="listBackgroundMain">
-            <p>{{localize "GLOG.skills.pool.dialogCopy"}}</p>
+            <p>{{localize "glog.skills.pool.dialogCopy"}}</p>
             <div class="listBackgroundPitch">
               <span class="resource-value"><strong>{{localize subtitle}}: </strong></span><span>{{localize copy}}</span>
             </div>
@@ -17,23 +17,23 @@
         {{#if inputNeeded}}
           <div class="contentBoxMargin">
             <div class="flexrow subheader">
-              <h3 class="subheader dialog">{{localize "GLOG.skills.pool.inputSubheadline"}}</h3>
+              <h3 class="subheader dialog">{{localize "glog.skills.pool.inputSubheadline"}}</h3>
             </div>
             <div class="listBackgroundMain">
               <div class="form-group listBackgroundMain alignLeft">
             {{#if (eq inputType "repFill")}}
-                <label class="resource-label">{{localize "GLOG.skills.pool.repSize"}}</label>
+                <label class="resource-label">{{localize "glog.skills.pool.repSize"}}</label>
                 <select name="modifier" class="alignCenter input-large">
-                    <option value="1">{{localize "GLOG.roll.dialog.reputationMode.minor"}} (1 {{localize poolName}})</option>
-                    <option value="2">{{localize "GLOG.roll.dialog.reputationMode.moderate"}} (2 {{localize poolName}})</option>
+                    <option value="1">{{localize "glog.roll.dialog.reputationMode.minor"}} (1 {{localize poolName}})</option>
+                    <option value="2">{{localize "glog.roll.dialog.reputationMode.moderate"}} (2 {{localize poolName}})</option>
                 </select>
             {{/if}}
             {{#if (eq inputType "woundIgnore")}}
-                <label class="resource-label">{{localize "GLOG.skills.pool.numberWounds"}}</label>
+                <label class="resource-label">{{localize "glog.skills.pool.numberWounds"}}</label>
                 <input class="input-small" type="number" name="modifier" placeholder="1" />
             {{/if}}
             {{#if (eq inputType "traumaIgnore")}}
-                <label class="resource-label">{{localize "GLOG.skills.pool.numberTrauma"}}</label>
+                <label class="resource-label">{{localize "glog.skills.pool.numberTrauma"}}</label>
                 <input class="input-small" type="number" name="modifier" placeholder="1" />
             {{/if}}
               </div>
@@ -94,18 +94,18 @@
       {{#if (eq dialogType "selectAutoPush")}}
       <div class="contentBoxMargin">
         <div class="flexrow subheader">
-            <h3 class="subheader dialog">{{localize "GLOG.roll.dialog.autoPush"}}</h3>
+            <h3 class="subheader dialog">{{localize "glog.roll.dialog.autoPush"}}</h3>
         </div>
         <div class="form-group listBackgroundMain">
-            <label class="resource-labelDialog">{{localize "GLOG.roll.dialog.push.label"}}</label>
+            <label class="resource-labelDialog">{{localize "glog.roll.dialog.push.label"}}</label>
             <select name="autoPush">
-                <option value="none">{{localize "GLOG.roll.dialog.push.none"}}</option>
-                <option value="range">{{localize "GLOG.roll.dialog.push.range"}}</option>
-                <option value="effect">{{localize "GLOG.roll.dialog.push.effect"}}</option>
-                <option value="power">{{localize "GLOG.roll.dialog.push.power"}}</option>
-                <option value="penetration">{{localize "GLOG.roll.dialog.push.penetration"}}</option>
-                <option value="duration">{{localize "GLOG.roll.dialog.push.duration"}}</option>
-                <option value="target">{{localize "GLOG.roll.dialog.push.target"}}</option>
+                <option value="none">{{localize "glog.roll.dialog.push.none"}}</option>
+                <option value="range">{{localize "glog.roll.dialog.push.range"}}</option>
+                <option value="effect">{{localize "glog.roll.dialog.push.effect"}}</option>
+                <option value="power">{{localize "glog.roll.dialog.push.power"}}</option>
+                <option value="penetration">{{localize "glog.roll.dialog.push.penetration"}}</option>
+                <option value="duration">{{localize "glog.roll.dialog.push.duration"}}</option>
+                <option value="target">{{localize "glog.roll.dialog.push.target"}}</option>
             </select>
         </div>
         {{/if}}
@@ -142,11 +142,11 @@
               {{{localize popUpCopy}}}
               <div style="display: flex; justify-content: center; margin: 10px 0;">
                 <select name="type">
-                  <option value="none">{{localize "GLOG.item.vehicle.table.habitat.none"}}</option>
-                  <option value="ground">{{localize "GLOG.item.vehicle.table.habitat.ground"}}</option>
-                  <option value="air">{{localize "GLOG.item.vehicle.table.habitat.air"}}</option>
-                  <option value="space">{{localize "GLOG.item.vehicle.table.habitat.space"}}</option>
-                  <option value="nautical">{{localize "GLOG.item.vehicle.table.habitat.nautical"}}</option>
+                  <option value="none">{{localize "glog.item.vehicle.table.habitat.none"}}</option>
+                  <option value="ground">{{localize "glog.item.vehicle.table.habitat.ground"}}</option>
+                  <option value="air">{{localize "glog.item.vehicle.table.habitat.air"}}</option>
+                  <option value="space">{{localize "glog.item.vehicle.table.habitat.space"}}</option>
+                  <option value="nautical">{{localize "glog.item.vehicle.table.habitat.nautical"}}</option>
                 </select>
               </div>
               {{{localize popUpInfo}}}
