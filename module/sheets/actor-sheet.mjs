@@ -6,7 +6,7 @@ import { registerEffectHandlers,registerCommonHandlers,_tempEffectCreation,confi
 export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return utils.mergeObject(super.defaultOptions, {
       classes: ["glog", "sheet", "actor"],
       resizable: false,
       template: "systems/glog/templates/actor/actor-sheet.html",

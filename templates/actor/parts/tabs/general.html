@@ -19,7 +19,7 @@
           name="system.class"
           data-type="String"
         >
-          {{#select actor.system.class}} {{#each config.classes as |class key|}}
+          {{#selectOptions actor.system.class}} {{#each config.classes as |class key|}}
           <option value="{{key}}">{{class}}</option>
           {{/each}} {{/select}}
         </select>
