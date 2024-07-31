@@ -3,55 +3,57 @@ name: Archive and Release
 on:
   push:
     branches:
-      - "**"
+      - '**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Create ZIP archive
-        run: zip -r system.zip .
+    - name: Create ZIP archive
+      run: zip -r system.zip .
 
-      - name: Upload ZIP archive
-        uses: actions/upload-artifact@v2
-        with:
-          name: system-zip
-          path: system.zip
+    - name: Upload ZIP archive
+      uses: actions/upload-artifact@v4
+      with:
+        name: system-zip
+        path: system.zip
 
-      - name: Upload system.json
-        uses: actions/upload-artifact@v2
-        with:
-          name: system-json
-          path: system.json
+    - name: Upload system.json
+      uses: actions/upload-artifact@v4
+      with:
+        name: system-json
+        path: system.json
 
   release:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download ZIP archive
-        uses: actions/download-artifact@v2
-        with:
-          name: system-zip
+    - name: Download ZIP archive
+      uses: actions/download-artifact@v4
+      with:
+        name: system-zip
 
-      - name: Download system.json
-        uses: actions/download-artifact@v2
-        with:
-          name: system-json
+    - name: Download system.json
+      uses: actions/download-artifact@v4
+      with:
+        name: system-json
 
-      - name: Create GitHub Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.sha }}
-          release_name: Release ${{ github.sha }}
-          body: |
-            Release for commit ${{ github.sha }}
-          files: |
-            system.zip
-            system.json
+    - name: Create GitHub Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: release-${{ github.run_id }}
+        release_name: Release ${{ github.run_id }}
+        body: |
+          Release for run ${{ github.run_id }}
+        files: |
+          system.zip
+          system.json
+
