@@ -1,12 +1,17 @@
 import { GLOG } from "../helpers/config.mjs";
 import { prepareActiveEffectCategories } from "../helpers/effects.mjs";
-import { registerEffectHandlers,registerCommonHandlers,_tempEffectCreation,confirmation } from "../helpers/common-sheet-functions.mjs";
+import {
+  registerEffectHandlers,
+  registerCommonHandlers,
+  _tempEffectCreation,
+  confirmation,
+} from "../helpers/common-sheet-functions.mjs";
 
 /** @extends { ActorSheet } */
 export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
-    return utils.mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["glog", "sheet", "actor"],
       resizable: false,
       template: "systems/glog/templates/actor/actor-sheet.html",
@@ -126,12 +131,19 @@ export class PlayerCharacterSheet extends ActorSheet {
     actor.system.features = features;
     actor.system.itemEffects = itemEffects;
 
-    let inventory = 0
-    Object.values(actor.system.equipment).forEach((arr) => {arr.forEach(item => inventory += item.system.slots)});
+    let inventory = 0;
+    Object.values(actor.system.equipment).forEach((arr) => {
+      arr.forEach((item) => (inventory += item.system.slots));
+    });
     actor.system.inventory.value = inventory;
 
-    actor.system.encumberance = Math.max(0, actor.system.inventory.value - actor.system.inventory.max);
-    if (actor.overrides.system && actor.overrides.system.encumberance) {actor.system.encumberance += actor.overrides.system.encumberance};
+    actor.system.encumberance = Math.max(
+      0,
+      actor.system.inventory.value - actor.system.inventory.max,
+    );
+    if (actor.overrides.system && actor.overrides.system.encumberance) {
+      actor.system.encumberance += actor.overrides.system.encumberance;
+    }
   }
 
   async _prepareRenderedHTMLContent(context) {
@@ -188,7 +200,7 @@ export class PlayerCharacterSheet extends ActorSheet {
           popUpTitle,
           popUpHeadline,
           popUpCopy,
-          popUpInfo
+          popUpInfo,
         );
 
         if (popUp.confirm === true) {
@@ -209,13 +221,13 @@ export class PlayerCharacterSheet extends ActorSheet {
 
     // drag events for macros
     if (this.actor.isOwner) {
-        let handler = ev => this._onDragStart(ev);
-        html.find('li.item').each((i, li) => {
-            if (li.classList.contains("inventory-header")) return;
-            li.setAttribute("draggable", true);
-            li.addEventListener("dragstart", handler, false);
-        });
-    };
+      let handler = (ev) => this._onDragStart(ev);
+      html.find("li.item").each((i, li) => {
+        if (li.classList.contains("inventory-header")) return;
+        li.setAttribute("draggable", true);
+        li.addEventListener("dragstart", handler, false);
+      });
+    }
 
     //Edit Item Input Fields
     html.find(".sheet-inline-edit").change(this._onSkillEdit.bind(this));
@@ -266,7 +278,7 @@ export class PlayerCharacterSheet extends ActorSheet {
    * @param {Event} event     The originating click event
    * @private
    */
-  async  _onItemCreate(event) {
+  async _onItemCreate(event) {
     event.preventDefault();
     const header = event.currentTarget;
     const type = header.dataset.type;
@@ -275,12 +287,12 @@ export class PlayerCharacterSheet extends ActorSheet {
     const itemData = {
       name: name,
       type: type,
-      data: data
+      data: data,
     };
-    
+
     delete itemData.data["type"];
     this.actor.createEmbeddedDocuments("Item", [itemData]);
-  };
+  }
 
   _onSkillEdit(event) {
     event.preventDefault();
@@ -294,13 +306,13 @@ export class PlayerCharacterSheet extends ActorSheet {
 
   _onToggleReveal(event) {
     const reveals = event.currentTarget.getElementsByClassName("info");
-    $.each(reveals, function (index, value){
+    $.each(reveals, function (index, value) {
       $(value).toggleClass("icon-hidden");
-    })
+    });
     const revealer = event.currentTarget.getElementsByClassName("toggle");
-    $.each(revealer, function (index, value){
+    $.each(revealer, function (index, value) {
       $(value).toggleClass("noShow");
-    })
+    });
   }
 
   /**
