@@ -1,13 +1,33 @@
 <div class="tab general" data-group="secondary" data-tab="general">
+  <script>
+    const options = Object.entries(config.classes).map(([key, value]) => ({
+      value: key,
+      label: value,
+    }));
+  </script>
   <div class="contentBox" style="margin-bottom: 10px">
     <div class="flexrow subheader colorV1">
-      <h3 class="subheader colorV1"> 
-        <span style="margin-right: 10px;">Level</span> 
-        <input class="input-small" type="number" name="system.level" value="{{actor.system.level}}" data-dtype="Number" placeholder="0"/> 
+      <h3 class="subheader colorV1">
+        <span style="margin-right: 10px">Level</span>
+        <input
+          class="input-small"
+          type="number"
+          name="system.level"
+          value="{{actor.system.level}}"
+          data-dtype="Number"
+          placeholder="0"
+        />
       </h3>
       <div class="alignRight flexGrowThreeQuarter">
         <span class="input-small">XP: </span>
-        <input class="input-small" type="number" name="system.xp" value="{{actor.system.xp}}" data-dtype="Number" placeholder="0"/>
+        <input
+          class="input-small"
+          type="number"
+          name="system.xp"
+          value="{{actor.system.xp}}"
+          data-dtype="Number"
+          placeholder="0"
+        />
         <span class="input-large">/ {{actor.system.flags.xpNext}}</span>
       </div>
     </div>
@@ -19,9 +39,7 @@
           name="system.class"
           data-type="String"
         >
-          {{#selectOptions actor.system.class}} {{#each config.classes as |class key|}}
-          <option value="{{key}}">{{class}}</option>
-          {{/each}} {{/select}}
+          {{selectOptions actor.system.class options}}
         </select>
       </div>
     </div>
