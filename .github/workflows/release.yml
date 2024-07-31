@@ -1,0 +1,57 @@
+name: Archive and Release
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Create ZIP archive
+      run: zip -r system.zip .
+
+    - name: Upload ZIP archive
+      uses: actions/upload-artifact@v2
+      with:
+        name: system-zip
+        path: system.zip
+
+    - name: Upload system.json
+      uses: actions/upload-artifact@v2
+      with:
+        name: system-json
+        path: system.json
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download ZIP archive
+      uses: actions/download-artifact@v2
+      with:
+        name: system-zip
+
+    - name: Download system.json
+      uses: actions/download-artifact@v2
+      with:
+        name: system-json
+
+    - name: Create GitHub Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.sha }}
+        release_name: Release ${{ github.sha }}
+        body: |
+          Release for commit ${{ github.sha }}
+        files: |
+          system.zip
+          system.json
