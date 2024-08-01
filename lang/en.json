@@ -1,28 +1,28 @@
 {
-    "glog.AbilityStr": "Strength",
-    "glog.AbilityCon": "Constitution",
-    "glog.AbilityDex": "Dexterity",
-    "glog.AbilityInt": "Intelligence",
-    "glog.AbilityWis": "Wisdom",
-    "glog.AbilityCha": "Charisma",
+    "GLOG.ability.str": "Strength",
+    "GLOG.ability.con": "Constitution",
+    "GLOG.ability.dex": "Dexterity",
+    "GLOG.ability.int": "Intelligence",
+    "GLOG.ability.wis": "Wisdom",
+    "GLOG.ability.cha": "Charisma",
   
-    "glog.AbilityStrAbbr": "str",
-    "glog.AbilityConAbbr": "con",
-    "glog.AbilityDexAbbr": "dex",
-    "glog.AbilityIntAbbr": "int",
-    "glog.AbilityWisAbbr": "wis",
-    "glog.AbilityChaAbbr": "cha",
+    "GLOG.ability.strabbr": "str",
+    "GLOG.ability.conAbbr": "con",
+    "GLOG.ability.dexabbr": "dex",
+    "GLOG.ability.intabbr": "int",
+    "GLOG.ability.wisabbr": "wis",
+    "GLOG.ability.chaabbr": "cha",
   
-    "glog.EffectCreate": "Create Effect",
-    "glog.EffectToggle": "Toggle Effect",
-    "glog.EffectEdit": "Edit Effect",
-    "glog.EffectDelete": "Delete Effect",
+    "GLOG.EffectCreate": "Create Effect",
+    "GLOG.EffectToggle": "Toggle Effect",
+    "GLOG.EffectEdit": "Edit Effect",
+    "GLOG.EffectDelete": "Delete Effect",
   
-    "glog.Add": "Add",
+    "GLOG.Add": "Add",
 
-	"glog.Item.DefaultName": "New Item",
-	"glog.skills.infoSubheadline": "Info Subheader",
-	"glog.skills.inputSubheadline": "Input Subheader",
-	"glog.skills.dialogCopy": "DialogCopy"
+	"GLOG.Item.DefaultName": "New Item",
+	"GLOG.skills.infoSubheadline": "Info Subheader",
+	"GLOG.skills.inputSubheadline": "Input Subheader",
+	"GLOG.skills.dialogCopy": "DialogCopy"
   }
   
