@@ -20,6 +20,9 @@
   
     "glog.Add": "Add",
 
-	"glog.Item.DefaultName": "New Item"
+	"glog.Item.DefaultName": "New Item",
+	"glog.skills.infoSubheadline": "Info Subheader",
+	"glog.skills.inputSubheadline": "Input Subheader",
+	"glog.skills.dialogCopy": "DialogCopy"
   }
   
