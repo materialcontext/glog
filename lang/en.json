@@ -1,23 +1,25 @@
 {
-    "BOILERPLATE.AbilityStr": "Strength",
-    "BOILERPLATE.AbilityCon": "Constitution",
-    "BOILERPLATE.AbilityDex": "Dexterity",
-    "BOILERPLATE.AbilityInt": "Intelligence",
-    "BOILERPLATE.AbilityWis": "Wisdom",
-    "BOILERPLATE.AbilityCha": "Charisma",
+    "glog.AbilityStr": "Strength",
+    "glog.AbilityCon": "Constitution",
+    "glog.AbilityDex": "Dexterity",
+    "glog.AbilityInt": "Intelligence",
+    "glog.AbilityWis": "Wisdom",
+    "glog.AbilityCha": "Charisma",
   
-    "BOILERPLATE.AbilityStrAbbr": "str",
-    "BOILERPLATE.AbilityConAbbr": "con",
-    "BOILERPLATE.AbilityDexAbbr": "dex",
-    "BOILERPLATE.AbilityIntAbbr": "int",
-    "BOILERPLATE.AbilityWisAbbr": "wis",
-    "BOILERPLATE.AbilityChaAbbr": "cha",
+    "glog.AbilityStrAbbr": "str",
+    "glog.AbilityConAbbr": "con",
+    "glog.AbilityDexAbbr": "dex",
+    "glog.AbilityIntAbbr": "int",
+    "glog.AbilityWisAbbr": "wis",
+    "glog.AbilityChaAbbr": "cha",
   
-    "BOILERPLATE.EffectCreate": "Create Effect",
-    "BOILERPLATE.EffectToggle": "Toggle Effect",
-    "BOILERPLATE.EffectEdit": "Edit Effect",
-    "BOILERPLATE.EffectDelete": "Delete Effect",
+    "glog.EffectCreate": "Create Effect",
+    "glog.EffectToggle": "Toggle Effect",
+    "glog.EffectEdit": "Edit Effect",
+    "glog.EffectDelete": "Delete Effect",
   
-    "BOILERPLATE.Add": "Add"
+    "glog.Add": "Add",
+
+	"glog.Item.DefaultName": "New Item"
   }
   
