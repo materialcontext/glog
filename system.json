@@ -2,7 +2,7 @@
     "id": "glog",
     "title": "GLOG 2d6",
     "description": "A roleplaying game system based on the original GLOG by Arnold K.",
-    "version": "0.1.55",
+    "version": "0.1.56",
     "compatability": {
         "minimum": "11",
         "verified": "12"
@@ -20,13 +20,6 @@
         "css/glog.css"
     ],
     "packs": [],
-    "languages": [
-        {
-            "lang": "en",
-            "name": "English",
-            "path": "lang/en.json"
-        }
-    ],
     "socket": false,
     "initiative": "2d6",
     "gridDistance": 10,
