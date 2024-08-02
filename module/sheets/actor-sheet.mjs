@@ -10,27 +10,31 @@ import {
 /** @extends { ActorSheet } */
 export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
-  static get defaultOptions() {
-    return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["glog", "sheet", "actor"],
-      resizable: false,
+
+  static DEFAULT_OPTIONS = {
+    classes: ["glog", "sheet", "actor"],
+    resizable: false,
+    width: 1210,
+    height: 720,
+    tabs: [
+      {
+        navSelector: ".primary-tabs",
+        contentSelector: ".primary-body",
+        initial: "history",
+      },
+      {
+        navSelector: ".secondary-tabs",
+        contentSelector: ".secondary-body",
+        initial: "general",
+      },
+    ],
+  };
+
+  static PARTS = {
+    actor: {
       template: "systems/glog/templates/actor/actor-sheet.html",
-      width: 1210,
-      height: 720,
-      tabs: [
-        {
-          navSelector: ".primary-tabs",
-          contentSelector: ".primary-body",
-          initial: "history",
-        },
-        {
-          navSelector: ".secondary-tabs",
-          contentSelector: ".secondary-body",
-          initial: "general",
-        },
-      ],
-    });
-  }
+    },
+  };
 
   /** @override */
   get template() {
@@ -40,8 +44,8 @@ export class PlayerCharacterSheet extends ActorSheet {
   /* --------------------------------------------------- */
 
   /** @override */
-  async getData() {
-    const context = super.getData();
+  async _prepare_context() {
+    const context = super._prepare_context();
     context.dtypes = ["String", "Number", "Boolean"];
 
     // copy the actor to operate safely
@@ -157,8 +161,8 @@ export class PlayerCharacterSheet extends ActorSheet {
   /* ------------------------------------- */
 
   /** @override */
-  activateListeners(html) {
-    super.activateListeners(html);
+  _onRender(context) {
+    super._onRender(context);
 
     let actor = this.actor;
 

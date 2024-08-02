@@ -32,8 +32,8 @@ export class GlogGearSheet extends ItemSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    const sheetData = super.getData()
+  _prepare_context() {
+    const sheetData = super._prepare_context()
     const item = sheetData.item
 
     sheetData.config = GLOG
@@ -43,8 +43,8 @@ export class GlogGearSheet extends ItemSheet {
   }
 
   /** @override */
-  activateListeners(html) {
-    super.activateListeners(html);
+  _onRender(context) {
+    super._onRender(context);
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
