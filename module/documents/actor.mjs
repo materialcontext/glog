@@ -1,4 +1,4 @@
-import { GLOG } from '..helpers/config.mjs';
+import { GLOG } from '../helpers/config.mjs';
 
 /**
  * Extends the basic actor sheet
