@@ -1,10 +1,13 @@
-<input class="sheet equipped checkBox" data-dtype="Boolean" data-item-id="{{item._id}}" type="checkbox" {{checked system.active}} />
+<input class="sheet equipped checkBox" data-dtype="Boolean" data-item-id="{{item._id}}" type="checkbox" {{checked
+	system.active}} />
 <div class="flexrow flex-group-center reveal" style="max-width: 36px; min-width:36px;">
-    <div class="item-image flex-group-center input-small rollable" data-type="item" data-name="{{item.name}}" data-key="item.system.roll" data-roll="{{item.system.roll}}">
-        <img class="toggle" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-        <label class="toggle roll-label task-check noShow flexrow flex-group-center" style="font-size: 18px;" width="24px" height="24px">
-            <i class="fa-light fa-dice-six alignCenter"></i>
-        </label>
-    </div>
+	<div class="item-image flex-group-center input-small rollable" data-type="item" data-name="{{item.name}}"
+		data-key="item.system.roll" data-roll="{{item.system.roll}}">
+		<img class="toggle" src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+		<label class="toggle roll-label task-check noShow flexrow flex-group-center" style="font-size: 18px;"
+			width="24px" height="24px">
+			<i class="fa-light fa-dice-six alignCenter"></i>
+		</label>
+	</div>
 </div>
 <label class="truncate alignLeft" style="flex: 2.5;"><strong>{{item.name}}</strong></label>

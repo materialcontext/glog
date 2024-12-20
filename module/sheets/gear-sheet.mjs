@@ -1,26 +1,25 @@
-import { GLOG } from "../helpers/config.mjs";
-import { registerEffectHandlers,registerCommonHandlers } from "../helpers/common-sheet-functions.mjs";
+import { GLOG } from '../helpers/config.mjs';
+import { registerEffectHandlers, registerCommonHandlers } from '../helpers/common-sheet-functions.mjs';
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
 export class GlogGearSheet extends ItemSheet {
-
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["glog", "sheet", "item"],
+      classes: ['glog', 'sheet', 'item'],
       resizable: false,
       width: 520,
       height: 445,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
+      tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description' }],
     });
   }
 
   /** @override */
   get template() {
-    const path = "systems/glog/templates/item";
+    const path = 'systems/glog/templates/item';
     // Return a single sheet for all item types.
     // return `${path}/item-sheet.html`;
 
@@ -33,13 +32,13 @@ export class GlogGearSheet extends ItemSheet {
 
   /** @override */
   _prepare_context() {
-    const sheetData = super._prepare_context()
-    const item = sheetData.item
+    const sheetData = super._prepare_context();
+    const item = sheetData.item;
 
-    sheetData.config = GLOG
-    item.showEffectsTab = true
+    sheetData.config = GLOG;
+    item.showEffectsTab = true;
 
-    return sheetData
+    return sheetData;
   }
 
   /** @override */
@@ -58,9 +57,9 @@ export class GlogGearSheet extends ItemSheet {
   /** @override */
   setPosition(options = {}) {
     const position = super.setPosition(options);
-    const sheetBody = this.element.find(".sheet-body");
+    const sheetBody = this.element.find('.sheet-body');
     const bodyHeight = position.height - 192;
-    sheetBody.css("height", bodyHeight);
+    sheetBody.css('height', bodyHeight);
     return position;
   }
 

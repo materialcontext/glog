@@ -1,40 +1,32 @@
-import { GLOG } from "../helpers/config.mjs";
-import { prepareActiveEffectCategories } from "../helpers/effects.mjs";
+import { GLOG } from '../helpers/config.mjs';
+import { prepareActiveEffectCategories } from '../helpers/effects.mjs';
 import {
   registerEffectHandlers,
   registerCommonHandlers,
   _tempEffectCreation,
   confirmation,
-} from "../helpers/common-sheet-functions.mjs";
+} from '../helpers/common-sheet-functions.mjs';
 
 /** @extends { ActorSheet } */
 export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
 
-  static DEFAULT_OPTIONS = {
-    classes: ["glog", "sheet", "actor"],
-    resizable: false,
-    width: 1210,
-    height: 720,
-    tabs: [
-      {
-        navSelector: ".primary-tabs",
-        contentSelector: ".primary-body",
-        initial: "history",
-      },
-      {
-        navSelector: ".secondary-tabs",
-        contentSelector: ".secondary-body",
-        initial: "general",
-      },
-    ],
-  };
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      classes: ['glog', 'sheet', 'actor'],
+      resizable: false,
+      width: 1210,
+      height: 720,
+      tabs: [
+        { navSelector: '.primary-tabs', contentSelector: '.primary-body', initial: 'history' },
+        { navSelector: '.secondary-tabs', contentSelector: '.secondary-body', initial: 'general' },
+      ],
+    });
+  }
 
-  static PARTS = {
-    actor: {
-      template: "systems/glog/templates/actor/actor-sheet.html",
-    },
-  };
+  static get PARTS() {
+    return { actor: { template: 'systems/glog/templates/actor/actor-sheet.html' } };
+  }
 
   /** @override */
   get template() {
@@ -46,7 +38,7 @@ export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
   async _prepare_context() {
     const context = super._prepare_context();
-    context.dtypes = ["String", "Number", "Boolean"];
+    context.dtypes = ['String', 'Number', 'Boolean'];
 
     // copy the actor to operate safely
     const actorData = this.actor.toObject(false);
@@ -56,21 +48,21 @@ export class PlayerCharacterSheet extends ActorSheet {
     context.system = actorData.system;
 
     // prepare playerCharacter data and items
-    if (actorData.type == "playerCharacter") {
+    if (actorData.type == 'playerCharacter') {
       this._prepareItems(context);
       this._preparePlayerCharacterData(context);
     }
 
     //prepare NPC data
-    if (actorData.type == "npc") {
+    if (actorData.type == 'npc') {
     }
 
     //prepareCompanionData
-    if (actorData.type == "companion") {
+    if (actorData.type == 'companion') {
     }
 
     //prepare hireling data
-    if (actorData.type == "hireling") {
+    if (actorData.type == 'hireling') {
     }
 
     // roll data access
@@ -105,19 +97,19 @@ export class PlayerCharacterSheet extends ActorSheet {
     for (let item of context.items) {
       let itemModel = item.system;
 
-      if (itemModel.displayCategory === "weapon") {
+      if (itemModel.displayCategory === 'weapon') {
         weapons.push(item);
-      } else if (itemModel.displayCategory === "armor") {
+      } else if (itemModel.displayCategory === 'armor') {
         armors.push(item);
-      } else if (itemModel.displayCategory === "shield") {
+      } else if (itemModel.displayCategory === 'shield') {
         shields.push(item);
-      } else if (itemModel.displayCategory === "effect") {
+      } else if (itemModel.displayCategory === 'effect') {
         itemEffects.push(item);
-      } else if (itemModel.displayCategory === "consumable") {
+      } else if (itemModel.displayCategory === 'consumable') {
         consumables.push(item);
-      } else if (itemModel.displayCategory === "spell") {
+      } else if (itemModel.displayCategory === 'spell') {
         spells.push(item);
-      } else if (itemModel.displayCategory === "feature") {
+      } else if (itemModel.displayCategory === 'feature') {
         features.push(item);
       } else {
         gear.push(item);
@@ -140,10 +132,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     });
     actor.system.inventory.value = inventory;
 
-    actor.system.encumberance = Math.max(
-      0,
-      actor.system.inventory.value - actor.system.inventory.max,
-    );
+    actor.system.encumberance = Math.max(0, actor.system.inventory.value - actor.system.inventory.max);
     if (actor.overrides.system && actor.overrides.system.encumberance) {
       actor.system.encumberance += actor.overrides.system.encumberance;
     }
@@ -155,7 +144,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     let bio = await TextEditor.enrichHTML(actorModel.biography, {
       async: true,
     });
-    context["htmlBiography"] = bio;
+    context['htmlBiography'] = bio;
   }
 
   /* ------------------------------------- */
@@ -173,9 +162,9 @@ export class PlayerCharacterSheet extends ActorSheet {
     registerCommonHandlers(html, actor);
 
     //render before edit check
-    html.find(".item-edit").click((ev) => {
-      const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.items.get(li.data("itemId"));
+    html.find('.item-edit').click((ev) => {
+      const li = $(ev.currentTarget).parents('.item');
+      const item = this.actor.items.get(li.data('itemId'));
       item.sheet.render(true);
     });
 
@@ -183,66 +172,59 @@ export class PlayerCharacterSheet extends ActorSheet {
     if (!this.isEditable) return;
 
     // add inventory
-    html.find(".item-create").click(this._onItemCreate.bind(this));
+    html.find('.item-create').click(this._onItemCreate.bind(this));
 
     // Delete Inventory Item
-    html.find(".item-delete").click(async (ev) => {
+    html.find('.item-delete').click(async (ev) => {
       let askForOptions = ev.shiftKey;
 
       if (!askForOptions) {
-        const li = $(ev.currentTarget).parents(".item");
-        const itemName = [li.data("itemName")] ? [li.data("itemName")] : null;
-        const popUpTitle = "Confirmation Needed";
-        const popUpHeadline = "Delete" + " " + (itemName ? itemName : "");
-        const popUpCopy =
-          "<b>Warning:</b>This will delete the item from your sheet permanently";
+        const li = $(ev.currentTarget).parents('.item');
+        const itemName = li.data('itemName') ?? null;
+        const popUpTitle = 'Confirmation Needed';
+        const popUpHeadline = 'Delete' + ' ' + (itemName ? itemName : '');
+        const popUpCopy = '<b>Warning:</b>This will delete the item from your sheet permanently';
         const popUpInfo =
           "<i><p style='font-size: 11px;'>To delete items without seeing this pop-up hold SHIFT while pressing the delete button.</p></i>";
 
-        let popUp = await confirmation(
-          popUpTitle,
-          popUpHeadline,
-          popUpCopy,
-          popUpInfo,
-        );
+        let popUp = await confirmation(popUpTitle, popUpHeadline, popUpCopy, popUpInfo);
 
         if (popUp.confirm === true) {
-          actor.deleteEmbeddedDocuments("Item", [li.data("itemId")]);
+          actor.deleteEmbeddedDocuments('Item', [li.data('itemId')]);
           li.slideUp(200, () => this.render(false));
         } else {
           return;
         }
       } else if (askForOptions) {
-        const li = $(ev.currentTarget).parents(".item");
-        actor.deleteEmbeddedDocuments("Item", [li.data("itemId")]);
+        const li = $(ev.currentTarget).parents('.item');
+        actor.deleteEmbeddedDocuments('Item', [li.data('itemId')]);
         li.slideUp(200, () => this.render(false));
       }
     });
 
     // anything rollable
-    html.find(".rollable").click(this._onRoll.bind(this));
+    html.find('.rollable').click(this._onRoll.bind(this));
 
     // drag events for macros
     if (this.actor.isOwner) {
       let handler = (ev) => this._onDragStart(ev);
-      html.find("li.item").each((i, li) => {
-        if (li.classList.contains("inventory-header")) return;
-        li.setAttribute("draggable", true);
-        li.addEventListener("dragstart", handler, false);
+      html.find('li.item').each((i, li) => {
+        if (li.classList.contains('inventory-header')) return;
+        li.setAttribute('draggable', true);
+        li.addEventListener('dragstart', handler, false);
       });
     }
 
     //Edit Item Input Fields
-    html.find(".sheet-inline-edit").change(this._onSkillEdit.bind(this));
+    html.find('.sheet-inline-edit').change(this._onSkillEdit.bind(this));
 
     //Edit Item Checkboxes
-    html.find(".equipped.checkBox").click(async (ev) => {
-      const itemId =
-        ev.currentTarget.closest(".equipped.checkBox").dataset.itemId;
+    html.find('.equipped.checkBox').click(async (ev) => {
+      const itemId = ev.currentTarget.closest('.equipped.checkBox').dataset.itemId;
       const item = actor.items.get(itemId);
       let toggle = !item.system.active;
       const updateData = {
-        "system.active": toggle,
+        'system.active': toggle,
       };
       const updated = item.update(updateData);
 
@@ -261,13 +243,11 @@ export class PlayerCharacterSheet extends ActorSheet {
           }
         }
       }
-      actor.updateEmbeddedDocuments("ActiveEffect", effUpdateData);
+      actor.updateEmbeddedDocuments('ActiveEffect', effUpdateData);
     });
 
     //show on hover
-    html
-      .find(".reveal")
-      .on("mouseover mouseout", this._onToggleReveal.bind(this));
+    html.find('.reveal').on('mouseover mouseout', this._onToggleReveal.bind(this));
   }
 
   /** @override */
@@ -293,14 +273,14 @@ export class PlayerCharacterSheet extends ActorSheet {
       data: data,
     };
 
-    delete itemData.data["type"];
-    this.actor.createEmbeddedDocuments("Item", [itemData]);
+    delete itemData.data['type'];
+    this.actor.createEmbeddedDocuments('Item', [itemData]);
   }
 
   _onSkillEdit(event) {
     event.preventDefault();
     let element = event.currentTarget;
-    let itemId = element.closest(".item").dataset.itemId;
+    let itemId = element.closest('.item').dataset.itemId;
     let item = this.actor.items.get(itemId);
     let field = element.dataset.field;
 
@@ -308,13 +288,13 @@ export class PlayerCharacterSheet extends ActorSheet {
   }
 
   _onToggleReveal(event) {
-    const reveals = event.currentTarget.getElementsByClassName("info");
+    const reveals = event.currentTarget.getElementsByClassName('info');
     $.each(reveals, function (index, value) {
-      $(value).toggleClass("icon-hidden");
+      $(value).toggleClass('icon-hidden');
     });
-    const revealer = event.currentTarget.getElementsByClassName("toggle");
+    const revealer = event.currentTarget.getElementsByClassName('toggle');
     $.each(revealer, function (index, value) {
-      $(value).toggleClass("noShow");
+      $(value).toggleClass('noShow');
     });
   }
 
@@ -330,20 +310,20 @@ export class PlayerCharacterSheet extends ActorSheet {
 
     // handle item rolls
     if (dataset.rollType) {
-      if (dataset.rollType == "item") {
-        const itemId = element.closest(".item").dataset.itemId;
+      if (dataset.rollType == 'item') {
+        const itemId = element.closest('.item').dataset.itemId;
         const item = this.actor.items.get(itemId);
         if (item) return item.roll();
       }
     }
     // handle rolls that supply their own formula
     if (dataset.roll) {
-      let label = dataset.label ? `[ability] ${dataset.label}` : "";
+      let label = dataset.label ? `[ability] ${dataset.label}` : '';
       let roll = new Roll(dataset.roll, this.actor.getRollData());
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: label,
-        rollMode: game.settings.get("core", "rollMode"),
+        rollMode: game.settings.get('core', 'rollMode'),
       });
       return roll;
     }

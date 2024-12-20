@@ -1,29 +1,31 @@
 {{#each actor.system.equipment.gear as |item id|}}
-    {{#if this.system.active}}
-    <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
-        {{> systems/glog/templates/actor/parts/item-parts/itemInfo.html item=item}}
-        <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
-            style="color: var(--inactive); background: none; font-size: 13px; margin-right: 10px; flex: 1.3; height: 20px;">
-        </label>
-        <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
-            style="max-width: 30px!important; color: var(--inactive); height: 20px;">
-            {{item.system.slots}} <i class="fa-solid fa-boxes-stacked" style="margin-left: 3px;"></i>
-            <span class="tooltipText resource-label" style="font-size: 13px;">Slots</span>
-        </label>
-        {{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
-    </div>
-    {{else}}
-    <div class="item flexrow offHand flex-group-center itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
-        {{> systems/glog/templates/actor/parts/item-parts/itemInfo.html item=item}}
-        <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
-            style="color: var(--inactive); background: none; font-size: 13px; margin-right: 10px; flex: 1.3; height: 20px;">
-        </label>
-        <label class="flexrow flex-group-center alignCenter wantToKnowMore" 
-            style="max-width: 30px!important; color: var(--inactive); height: 20px;">
-            {{item.system.slots}} <i class="fa-solid fa-boxes-stacked" style="margin-left: 3px;"></i>
-            <span class="tooltipText resource-label" style="font-size: 13px;">Slots</span>
-        </label>
-        {{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
-    </div>
-    {{/if}}
+{{#if this.system.active}}
+<div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;"
+	data-item-id="{{item._id}}" data-item-name="{{item.name}}">
+	{{> systems/glog/templates/actor/parts/item-parts/itemInfo.html item=item}}
+	<label class="flexrow flex-group-center alignCenter wantToKnowMore"
+		style="color: var(--inactive); background: none; font-size: 13px; margin-right: 10px; flex: 1.3; height: 20px;">
+	</label>
+	<label class="flexrow flex-group-center alignCenter wantToKnowMore"
+		style="max-width: 30px!important; color: var(--inactive); height: 20px;">
+		{{item.system.slots}} <i class="fa-solid fa-boxes-stacked" style="margin-left: 3px;"></i>
+		<span class="tooltipText resource-label" style="font-size: 13px;">Slots</span>
+	</label>
+	{{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
+</div>
+{{else}}
+<div class="item flexrow offHand flex-group-center itemHover" style="width: 100%; padding: 0 5px; min-height: 36px;"
+	data-item-id="{{item._id}}" data-item-name="{{item.name}}">
+	{{> systems/glog/templates/actor/parts/item-parts/itemInfo.html item=item}}
+	<label class="flexrow flex-group-center alignCenter wantToKnowMore"
+		style="color: var(--inactive); background: none; font-size: 13px; margin-right: 10px; flex: 1.3; height: 20px;">
+	</label>
+	<label class="flexrow flex-group-center alignCenter wantToKnowMore"
+		style="max-width: 30px!important; color: var(--inactive); height: 20px;">
+		{{item.system.slots}} <i class="fa-solid fa-boxes-stacked" style="margin-left: 3px;"></i>
+		<span class="tooltipText resource-label" style="font-size: 13px;">Slots</span>
+	</label>
+	{{> systems/glog/templates/actor/parts/item-parts/itemControls.html item=item}}
+</div>
+{{/if}}
 {{/each}}

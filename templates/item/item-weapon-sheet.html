@@ -1,94 +1,58 @@
 <form class="{{cssClass}}" autocomplete="off">
-  <header class="sheet-header">
-    <img
-      class="item-img"
-      src="{{item.img}}"
-      data-edit="img"
-      title="{{item.name}}"
-    />
-    <div class="header-fields">
-      <h1 class="charname">
-        <input
-          name="name"
-          type="text"
-          value="{{item.name}}"
-          placeholder="Name"
-        />
-      </h1>
-    </div>
-  </header>
-  <nav class="sheet-tabs itemnav tabs" data-group="primary">
-    <a class="item" data-tab="details">Details</a>
-    {{#if item.showEffectsTab}}
-    <a class="item" data-tab="effects">Effects</a>
-    {{/if}}
-  </nav>
-  {{!-- Sheet Body --}}
+	<header class="sheet-header">
+		<img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+		<div class="header-fields">
+			<h1 class="charname">
+				<input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+			</h1>
+		</div>
+	</header>
+	<nav class="sheet-tabs itemnav tabs" data-group="primary">
+		<a class="item" data-tab="details">Details</a>
+		{{#if item.showEffectsTab}}
+		<a class="item" data-tab="effects">Effects</a>
+		{{/if}}
+	</nav>
+	{{!-- Sheet Body --}}
 
-  <section class="sheet-body">
-    <div class="tab details" data-group="primary" data-tab="details">
-      <div class="flexrow flex-group-center">
-        <table>
-          <tr>
-            <td>
-              <label class="resource-label">Damage</label>
-            </td>
-            <td>
-              <label class="resource-label">Slots</label>
-            </td>
-            <td>
-              <label class="resource-label">Cost</label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                class="input-large alignCenter"
-                type="text"
-                name="system.dmg"
-                value="{{item.system.dmg}}"
-                placeholder="e.g. 1d10+1"
-              />
-            </td>
-            <td>
-              <input
-                class="input-small"
-                type="number"
-                name="system.slots"
-                value="{{item.system.slots}}"
-                data-dtype="Number"
-                placeholder="0"
-              />
-            </td>
-            <td>
-              <label
-                ><input
-                  class="input-small"
-                  type="number"
-                  name="system.cost"
-                  value="{{item.system.cost}}"
-                  data-dtype="Number"
-                  placeholder="0"
-                />sp</label
-              >
-            </td>
-          </tr>
-        </table>
-      </div>
-      <p></p>
-      <h2>Description</h2>
-      <div class="textAreaDescription">
-        <textarea
-          class="description"
-          name="system.description"
-          rows="10"
-          cols="60"
-          placeholder="New Item"
-        >
-{{item.system.description}}</textarea
-        >
-      </div>
-    </div>
-    {{> systems/glog/templates/actor/parts/tabs/effects-tab.html }}
-  </section>
+	<section class="sheet-body">
+		<div class="tab details" data-group="primary" data-tab="details">
+			<div class="flexrow flex-group-center">
+				<table>
+					<tr>
+						<td>
+							<label class="resource-label">Damage</label>
+						</td>
+						<td>
+							<label class="resource-label">Slots</label>
+						</td>
+						<td>
+							<label class="resource-label">Cost</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="input-large alignCenter" type="text" name="system.dmg"
+								value="{{item.system.dmg}}" placeholder="e.g. 1d10+1" />
+						</td>
+						<td>
+							<input class="input-small" type="number" name="system.slots" value="{{item.system.slots}}"
+								data-dtype="Number" placeholder="0" />
+						</td>
+						<td>
+							<label><input class="input-small" type="number" name="system.cost"
+									value="{{item.system.cost}}" data-dtype="Number" placeholder="0" />sp</label>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<p></p>
+			<h2>Description</h2>
+			<div class="textAreaDescription">
+				<textarea class="description" name="system.description" rows="10" cols="60" placeholder="New Item">
+					{{item.system.description}}</textarea>
+			</div>
+		</div>
+		{{> systems/glog/templates/actor/parts/tabs/effects-tab.html }}
+	</section>
 </form>

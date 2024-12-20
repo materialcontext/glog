@@ -1,31 +1,31 @@
 {
-    "id": "glog",
-    "title": "GLOG 2d6",
-    "description": "A roleplaying game system based on the original GLOG by Arnold K.",
-    "version": "0.1.57",
-    "compatability": {
-        "minimum": "11",
-        "verified": "12"
-    },
-    "authors": [
-        {
-            "name": "materialcontext"
-        }
-    ],
-    "scripts": [],
-    "esmodules": [
-        "module/glog.mjs"
-    ],
-    "styles": [
-        "css/glog.css"
-    ],
-    "packs": [],
-    "socket": false,
-    "initiative": "2d6",
-    "gridDistance": 10,
-    "gridUnits": "ft",
-    "primaryTokenAttribute": "hp",
-    "url": "https://github.com/materialcontext/glog",
-    "manifest": "https://github.com/materialcontext/glog/releases/download/release/system.json",
-    "download": "https://github.com/materialcontext/glog/releases/download/release/system.zip"
+	"id": "glog",
+	"title": "GLOG 2d6",
+	"description": "A roleplaying game system based on the original GLOG by Arnold K.",
+	"version": "0.1.58",
+	"compatability": {
+		"minimum": "11",
+		"verified": "12"
+	},
+	"authors": [
+		{
+			"name": "materialcontext"
+		}
+	],
+	"scripts": [],
+	"esmodules": [
+		"module/glog.mjs"
+	],
+	"styles": [
+		"css/glog.css"
+	],
+	"packs": [],
+	"socket": false,
+	"initiative": "2d6",
+	"gridDistance": 10,
+	"gridUnits": "ft",
+	"primaryTokenAttribute": "hp",
+	"url": "https://github.com/materialcontext/glog",
+	"manifest": "https://github.com/materialcontext/glog/releases/download/release/system.json",
+	"download": "https://github.com/materialcontext/glog/releases/download/release/system.zip"
 }
