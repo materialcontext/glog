@@ -14,7 +14,7 @@ module.exports = [
   {
     files: ['**/*.{js,cjs,mjs}'],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2022,
       sourceType: 'module',
       globals: {
         // Node.js globals
