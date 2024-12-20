@@ -31,7 +31,7 @@ export class GlogGearSheet extends ItemSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  _prepare_context() {
+  _prepareContext() {
     const sheetData = super._prepare_context();
     const item = sheetData.item;
 

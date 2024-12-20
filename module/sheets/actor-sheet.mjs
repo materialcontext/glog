@@ -32,7 +32,7 @@ export class PlayerCharacterSheet extends ActorSheet {
   /* --------------------------------------------------- */
 
   /** @override */
-  async _prepare_context() {
+  async _prepareContext() {
     const context = super._prepare_context();
     context.dtypes = ['String', 'Number', 'Boolean'];
 
