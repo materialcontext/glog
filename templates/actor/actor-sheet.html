@@ -1,5 +1,6 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
 	<div class="grid grid-12col">
+		<!--
 		<div class="wrapperleft npcvariant1">
 			{{!-- Sheet Header --}}
 			{{> systems/glog/templates/actor/parts/headerblock.html }}
@@ -15,13 +16,12 @@
 					{{!-- Profile --}}
 					{{> systems/glog/templates/actor/parts/tabs/general.html }}
 					{{!-- Wounds --}}
-					<!-- {{> systems/glog/templates/actor/parts/tabs/wounds-tab.html }} -->
+					{{> systems/glog/templates/actor/parts/tabs/wounds-tab.html }}
 					{{!-- Status --}}
-					<!-- {{> systems/glog/templates/actor/parts/tabs/status-tab.html }} -->
+					{{> systems/glog/templates/actor/parts/tabs/status-tab.html }}
 				</section>
 			</div>
 		</div>
-		<!--
 		<div class="wrappercenter npcvariant1">
 			{{!-- Primary Tab Navigation --}}
 			<nav class="primary-tabs tabs" data-group="primary">
