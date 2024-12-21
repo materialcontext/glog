@@ -30,11 +30,10 @@ export class PlayerCharacterSheet extends ActorSheet {
 
   /** @override */
   async getData() {
-    const actorData = super.getData();
-    context.dtypes = ['String', 'Number', 'Boolean'];
+    const context = super.getData();
 
     // Copy the actor to operate safely
-    const context = actorData.data;
+    const actorData = context.data;
 
     // Add to context for easy access
     context.config = GLOG;
