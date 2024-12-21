@@ -2,7 +2,7 @@
 	"id": "glog",
 	"title": "GLOG 2d6",
 	"description": "A roleplaying game system based on the original GLOG by Arnold K.",
-	"version": "0.1.105",
+	"version": "0.1.106",
 	"compatability": {
 		"minimum": "11",
 		"verified": "12"
