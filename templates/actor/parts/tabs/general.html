@@ -18,7 +18,7 @@
 				<label class="input-large resource-value flex-group-left">Class</label>
 				<select class="selectSpecApt item-standard-margin-medium flex-group-left" name="system.class"
 					data-type="String">
-					{{selectOptions config.classes selected=actor.system.class valueAttr="value"
+					{{selectOptions GLOG.classes selected=actor.system.class valueAttr="value"
 					labelAttr="label"}}
 				</select>
 			</div>
@@ -33,3 +33,9 @@
 		</div>
 	</div>
 </div>
+<script>
+	console.log(config);
+	console.log(CONFIG);
+	console.log(glog);
+	console.log(GLOG);
+</script>

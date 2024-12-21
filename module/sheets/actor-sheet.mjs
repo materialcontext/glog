@@ -1,6 +1,6 @@
 import { GLOG } from '../helpers/config.mjs';
 import { prepareActiveEffectCategories } from '../helpers/effects.mjs';
-// import { registerEffectHandlers, registerCommonHandlers, confirmation } from '../helpers/common-sheet-functions.mjs';
+import { registerEffectHandlers, registerCommonHandlers, confirmation } from '../helpers/common-sheet-functions.mjs';
 
 /** @extends { ActorSheet } */
 export class PlayerCharacterSheet extends ActorSheet {
@@ -133,105 +133,103 @@ export class PlayerCharacterSheet extends ActorSheet {
   /* ------------------------------------- */
 
   /** @override */
-  //  _onRender(context) {
-  //    super._onRender(context);
-  //
-  //    let actor = this.actor;
-  //    console.log('actor');
-  //    console.log(actor);
-  //
-  //    // Everything below here is only needed if the sheet is editable
-  //    if (!this.options.editable) return;
-  //
-  //    registerEffectHandlers(html, actor);
-  //    registerCommonHandlers(html, actor);
-  //
-  //    // Render before edit check
-  //    html.find('.item-edit').click((ev) => {
-  //      const li = $(ev.currentTarget).parents('.item');
-  //      const item = this.actor.items.get(li.data('itemId'));
-  //      item.sheet.render(true);
-  //    });
-  //
-  //    // Editable
-  //    if (!this.isEditable) return;
-  //
-  //    // Add inventory
-  //    html.find('.item-create').click(this._onItemCreate.bind(this));
-  //
-  //    // Delete Inventory Item
-  //    html.find('.item-delete').click(async (ev) => {
-  //      let askForOptions = ev.shiftKey;
-  //
-  //      if (!askForOptions) {
-  //        const li = $(ev.currentTarget).parents('.item');
-  //        const itemName = li.data('itemName') ?? null;
-  //        const popUpTitle = 'Confirmation Needed';
-  //        const popUpHeadline = 'Delete' + ' ' + (itemName ? itemName : '');
-  //        const popUpCopy = '<b>Warning:</b>This will delete the item from your sheet permanently';
-  //        const popUpInfo =
-  //          "<i><p style='font-size: 11px;'>To delete items without seeing this pop-up hold SHIFT while pressing the delete button.</p></i>";
-  //
-  //        let popUp = await confirmation(popUpTitle, popUpHeadline, popUpCopy, popUpInfo);
-  //
-  //        if (popUp.confirm === true) {
-  //          actor.deleteEmbeddedDocuments('Item', [li.data('itemId')]);
-  //          li.slideUp(200, () => this.render(false));
-  //        } else {
-  //          return;
-  //        }
-  //      } else if (askForOptions) {
-  //        const li = $(ev.currentTarget).parents('.item');
-  //        actor.deleteEmbeddedDocuments('Item', [li.data('itemId')]);
-  //        li.slideUp(200, () => this.render(false));
-  //      }
-  //    });
-  //
-  //    // Anything rollable
-  //    html.find('.rollable').click(this._onRoll.bind(this));
-  //
-  //    // Drag events for macros
-  //    if (this.actor.isOwner) {
-  //      let handler = (ev) => this._onDragStart(ev);
-  //      html.find('li.item').each((i, li) => {
-  //        if (li.classList.contains('inventory-header')) return;
-  //        li.setAttribute('draggable', true);
-  //        li.addEventListener('dragstart', handler, false);
-  //      });
-  //    }
-  //
-  //    // Edit Item Input Fields
-  //    html.find('.sheet-inline-edit').change(this._onSkillEdit.bind(this));
-  //
-  //    // Edit Item Checkboxes
-  //    html.find('.equipped.checkBox').click(async (ev) => {
-  //      const itemId = ev.currentTarget.closest('.equipped.checkBox').dataset.itemId;
-  //      const item = actor.items.get(itemId);
-  //      let toggle = !item.system.active;
-  //      const updateData = {
-  //        'system.active': toggle,
-  //      };
-  //      const updated = item.update(updateData);
-  //
-  //      // Handles activation/deactivation of values provided by effects inherited from items
-  //      let allEffects = this.object.effects;
-  //      let effUpdateData = [];
-  //      for (let effectScan of allEffects) {
-  //        if (effectScan.origin) {
-  //          let parentItem = await fromUuid(effectScan.origin);
-  //
-  //          if (itemId === parentItem._id) {
-  //            effUpdateData.push({
-  //              _id: effectScan._id,
-  //              disabled: !toggle,
-  //            });
-  //          }
-  //        }
-  //      }
-  //      actor.updateEmbeddedDocuments('ActiveEffect', effUpdateData);
-  //    });
-  //
-  //    // Show on hover
-  //    html.find('.reveal').on('mouseover mouseout', this._onToggleReveal.bind(this));
-  //  }
+  _onRender(context) {
+    super._onRender(context);
+
+    let actor = this.actor;
+
+    // Everything below here is only needed if the sheet is editable
+    if (!this.options.editable) return;
+
+    registerEffectHandlers(html, actor);
+    registerCommonHandlers(html, actor);
+
+    // Render before edit check
+    html.find('.item-edit').click((ev) => {
+      const li = $(ev.currentTarget).parents('.item');
+      const item = this.actor.items.get(li.data('itemId'));
+      item.sheet.render(true);
+    });
+
+    // Editable
+    if (!this.isEditable) return;
+
+    // Add inventory
+    html.find('.item-create').click(this._onItemCreate.bind(this));
+
+    // Delete Inventory Item
+    html.find('.item-delete').click(async (ev) => {
+      let askForOptions = ev.shiftKey;
+
+      if (!askForOptions) {
+        const li = $(ev.currentTarget).parents('.item');
+        const itemName = li.data('itemName') ?? null;
+        const popUpTitle = 'Confirmation Needed';
+        const popUpHeadline = 'Delete' + ' ' + (itemName ? itemName : '');
+        const popUpCopy = '<b>Warning:</b>This will delete the item from your sheet permanently';
+        const popUpInfo =
+          "<i><p style='font-size: 11px;'>To delete items without seeing this pop-up hold SHIFT while pressing the delete button.</p></i>";
+
+        let popUp = await confirmation(popUpTitle, popUpHeadline, popUpCopy, popUpInfo);
+
+        if (popUp.confirm === true) {
+          actor.deleteEmbeddedDocuments('Item', [li.data('itemId')]);
+          li.slideUp(200, () => this.render(false));
+        } else {
+          return;
+        }
+      } else if (askForOptions) {
+        const li = $(ev.currentTarget).parents('.item');
+        actor.deleteEmbeddedDocuments('Item', [li.data('itemId')]);
+        li.slideUp(200, () => this.render(false));
+      }
+    });
+
+    // Anything rollable
+    html.find('.rollable').click(this._onRoll.bind(this));
+
+    // Drag events for macros
+    if (this.actor.isOwner) {
+      let handler = (ev) => this._onDragStart(ev);
+      html.find('li.item').each((i, li) => {
+        if (li.classList.contains('inventory-header')) return;
+        li.setAttribute('draggable', true);
+        li.addEventListener('dragstart', handler, false);
+      });
+    }
+
+    // Edit Item Input Fields
+    html.find('.sheet-inline-edit').change(this._onSkillEdit.bind(this));
+
+    // Edit Item Checkboxes
+    html.find('.equipped.checkBox').click(async (ev) => {
+      const itemId = ev.currentTarget.closest('.equipped.checkBox').dataset.itemId;
+      const item = actor.items.get(itemId);
+      let toggle = !item.system.active;
+      const updateData = {
+        'system.active': toggle,
+      };
+      const updated = item.update(updateData);
+
+      // Handles activation/deactivation of values provided by effects inherited from items
+      let allEffects = this.object.effects;
+      let effUpdateData = [];
+      for (let effectScan of allEffects) {
+        if (effectScan.origin) {
+          let parentItem = await fromUuid(effectScan.origin);
+
+          if (itemId === parentItem._id) {
+            effUpdateData.push({
+              _id: effectScan._id,
+              disabled: !toggle,
+            });
+          }
+        }
+      }
+      actor.updateEmbeddedDocuments('ActiveEffect', effUpdateData);
+    });
+
+    // Show on hover
+    html.find('.reveal').on('mouseover mouseout', this._onToggleReveal.bind(this));
+  }
 }
