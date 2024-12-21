@@ -77,6 +77,7 @@ export class PlayerCharacterSheet extends ActorSheet {
   }
 
   _prepareItems(context) {
+    console.log(context);
     let actor = context.actor;
     let equip = actor.system.equipment;
 
@@ -149,6 +150,8 @@ export class PlayerCharacterSheet extends ActorSheet {
     super._onRender(context);
 
     let actor = this.actor;
+    console.log('actor');
+    console.log(actor);
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
