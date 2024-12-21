@@ -30,18 +30,18 @@ export class PlayerCharacterSheet extends ActorSheet {
 
   /** @override */
   async _prepareContext() {
-    const context = super._prepare_context();
+    const actorData = super._prepare_context();
     context.dtypes = ['String', 'Number', 'Boolean'];
 
     // Copy the actor to operate safely
-    const actorData = this.actor.toObject(false);
+    const context = actorData.data;
 
     // Add to context for easy access
     context.config = GLOG;
     context.system = actorData.system;
 
     // Prepare playerCharacter data and items
-    if (actorData.type === 'playerCharacter') {
+    if (context.type === 'playerCharacter') {
       this._prepareItems(context);
       this._preparePlayerCharacterData(context);
     }
