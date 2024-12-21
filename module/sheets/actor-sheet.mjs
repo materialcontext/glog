@@ -7,7 +7,7 @@ export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
 
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['glog', 'sheet', 'actor'],
       resizable: false,
       width: 1210,
@@ -19,9 +19,7 @@ export class PlayerCharacterSheet extends ActorSheet {
     });
   }
 
-  static get PARTS() {
-    return { actor: { template: 'systems/glog/templates/actor/actor-sheet.html' } };
-  }
+  // static PARTS = { actor: { template: 'systems/glog/templates/actor/actor-sheet.html' } };
 
   /** @override */
   get template() {
