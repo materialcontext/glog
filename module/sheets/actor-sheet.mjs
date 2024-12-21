@@ -20,7 +20,7 @@ export class PlayerCharacterSheet extends ActorSheet {
   }
 
   static get PARTS() {
-    return { actor: { template: 'systems/appv1/templates/actor/actor-sheet.html' } };
+    return { actor: { template: 'systems/glog/templates/actor/actor-sheet.html' } };
   }
 
   /** @override */
