@@ -1,11 +1,6 @@
 import { GLOG } from '../helpers/config.mjs';
 import { prepareActiveEffectCategories } from '../helpers/effects.mjs';
-import {
-  registerEffectHandlers,
-  registerCommonHandlers,
-  _tempEffectCreation,
-  confirmation,
-} from '../helpers/common-sheet-functions.mjs';
+import { registerEffectHandlers, registerCommonHandlers, confirmation } from '../helpers/common-sheet-functions.mjs';
 
 /** @extends { ActorSheet } */
 export class PlayerCharacterSheet extends ActorSheet {
@@ -24,6 +19,10 @@ export class PlayerCharacterSheet extends ActorSheet {
     });
   }
 
+  static get PARTS() {
+    return { actor: { template: 'systems/appv1/templates/actor/actor-sheet.html' } };
+  }
+
   /** @override */
   get template() {
     return `systems/glog/templates/actor/actor-sheet.html`;
@@ -33,7 +32,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
   /** @override */
   async _prepareContext() {
-    const context = super._prepare_context();
+    const context = super._prepareContext();
     context.dtypes = ['String', 'Number', 'Boolean'];
 
     // copy the actor to operate safely
@@ -146,8 +145,8 @@ export class PlayerCharacterSheet extends ActorSheet {
   /* ------------------------------------- */
 
   /** @override */
-  _onRender(context) {
-    super._onRender(context);
+  _onRender(html) {
+    super._onRender(html);
 
     let actor = this.actor;
 
