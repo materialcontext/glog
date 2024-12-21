@@ -1,4 +1,7 @@
 <div class="tab general" data-group="secondary" data-tab="general">
+	<script>
+		const options = CONFIG.glog.classes;
+	</script>
 	<div class="contentBox" style="margin-bottom: 10px">
 		<div class="flexrow subheader colorV1">
 			<h3 class="subheader colorV1">
@@ -18,7 +21,7 @@
 				<label class="input-large resource-value flex-group-left">Class</label>
 				<select class="selectSpecApt item-standard-margin-medium flex-group-left" name="system.class"
 					data-type="String">
-					{{selectOptions GLOG.classes selected=actor.system.class valueAttr="value"
+					{{selectOptions options selected=actor.system.class valueAttr="value"
 					labelAttr="label"}}
 				</select>
 			</div>
@@ -33,9 +36,3 @@
 		</div>
 	</div>
 </div>
-<script>
-	console.log(config);
-	console.log(CONFIG);
-	console.log(glog);
-	console.log(GLOG);
-</script>
