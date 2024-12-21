@@ -622,7 +622,7 @@ input[type="number"],
 select,
 .sidebar-tab .directory-header .header-search input {
 	color: var(--mainText);
-	background: transparent;
+	background: var(--pitchBackground);
 	border: none;
 	height: 20px;
 	padding: 0;
@@ -630,7 +630,7 @@ select,
 
 textarea {
 	color: var(--mainText);
-	background: transparent;
+	background: var(--pitchBackground);
 	border: solid var(--focusBackground) 3px;
 }
 
