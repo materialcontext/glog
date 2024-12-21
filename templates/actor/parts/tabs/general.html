@@ -1,5 +1,5 @@
 <div class="tab general" data-group="secondary" data-tab="general">
-	<script>console.log(actor);</script>
+	{{log actor}}
 	<div class="contentBox" style="margin-bottom: 10px">
 		<div class="flexrow subheader colorV1">
 			<h3 class="subheader colorV1">
@@ -19,8 +19,11 @@
 				<label class="input-large resource-value flex-group-left">Class</label>
 				<select class="selectSpecApt item-standard-margin-medium flex-group-left" name="system.class"
 					data-type="String">
-					{{selectOptions [{"a": "abc"}, {"b": "bcd"}] selected=actor.system.class valueAttr="value"
-					labelAttr="label"}}
+					{{#each config.classes}}
+					<option value="{{@key}}" {{#if (eq @key ../actor.system.class)}} selected {{/if}}>
+						{{this}}
+					</option>
+					{{/each}}
 				</select>
 			</div>
 		</div>
