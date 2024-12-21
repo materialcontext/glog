@@ -7,7 +7,7 @@ export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
 
   static get defaultOptions() {
-    return foundry.utils.mergeObject(super.defaultOptions, {
+    return mergeObject(super.defaultOptions, {
       classes: ['glog', 'sheet', 'actor'],
       resizable: false,
       width: 1210,
