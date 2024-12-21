@@ -31,7 +31,6 @@ export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
   async _prepareContext() {
     const context = super._prepare_context();
-    console.log(context);
     context.dtypes = ['String', 'Number', 'Boolean'];
 
     // Copy the actor to operate safely
