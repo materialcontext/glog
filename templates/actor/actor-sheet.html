@@ -9,6 +9,17 @@
 				<a class="item" data-tab="wounds">Wounds</a>
 				<a class="item" data-tab="templates">Status</a>
 			</nav>
+			<div class="contentleft">
+				{{!-- Left Body --}}
+				<section class="secondary-body">
+					{{!-- Profile --}}
+					{{> systems/glog/templates/actor/parts/tabs/general.html }}
+					{{!-- Wounds --}}
+					{{> systems/glog/templates/actor/parts/tabs/wounds-tab.html }}
+					{{!-- Status --}}
+					{{> systems/glog/templates/actor/parts/tabs/status-tab.html }}
+				</section>
+			</div>
 		</div>
 	</div>
 </form>
