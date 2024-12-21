@@ -14,17 +14,17 @@ GLOG.abilities = {
   cha: 'Charisma',
 };
 
-GLOG.classes = {
-  dwarf: 'Dwarf',
-  acrobat: 'Acrobat',
-  assassin: 'Assassin',
-  barbarian: 'Barbarian',
-  courtier: 'Courtier',
-  fighter: 'Fighter',
-  hunter: 'Hunter',
-  thief: 'Thief',
-  wizard: 'Wizard',
-};
+GLOG.classes = [
+  { dwarf: 'Dwarf' },
+  { acrobat: 'Acrobat' },
+  { assassin: 'Assassin' },
+  { barbarian: 'Barbarian' },
+  { courtier: 'Courtier' },
+  { fighter: 'Fighter' },
+  { hunter: 'Hunter' },
+  { thief: 'Thief' },
+  { wizard: 'Wizard' },
+];
 
 GLOG.genders = {
   masc: 'He/Him',
