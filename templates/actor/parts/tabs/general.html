@@ -1,27 +1,22 @@
 <div class="tab general" data-group="secondary" data-tab="general">
 	<div class="contentBox" style="margin-bottom: 10px">
 		<div class="flexrow subheader colorV1">
-			<h3 class="subheader colorV1">
-				<span style="margin-right: 10px">Level</span>
-				<input class="input-small" type="number" name="system.level" value="{{actor.system.level}}"
-					data-dtype="Number" placeholder="0" />
-			</h3>
-			<div class="alignRight flexGrowThreeQuarter">
-				<span class="input-small">XP: </span>
-				<input class="input-small" type="number" name="system.xp" value="{{actor.system.xp}}"
-					data-dtype="Number" placeholder="0" />
-				<span class="input-large">/ {{actor.system.flags.xpNext}}</span>
+			<h3 class="subheader colorV1"> <span style="margin-right: 10px">Level</span> <input class="input-small"
+					type="number" name="system.level" value="{{actor.system.level}}" data-dtype="Number"
+					placeholder="0" /> </h3>
+			<div class="alignRight flexGrowThreeQuarter"> <span class="input-small">XP: </span> <input
+					class="input-small" type="number" name="system.xp" value="{{actor.system.xp}}" data-dtype="Number"
+					placeholder="0" />
+				<span class="input-large">
+					/ {{actor.system.flags.xpNext}}
+				</span>
 			</div>
 		</div>
 		<div class="listBackground" style="background-color: var(--pitchBorder)">
-			<div class="flexrow grid-2col">
-				<label class="input-large resource-value flex-group-left">Class</label>
+			<div class="flexrow grid-2col"> <label class="input-large resource-value flex-group-left">Class</label>
 				<select class="selectSpecApt item-standard-margin-medium flex-group-left" name="system.class"
 					data-type="String">
-					{{#each options}}
-					<option value="{{this.value}}" {{#if (eq this.value ../actor.system.class)}}selected{{/if}}>
-						{{this.label}}</option>
-					{{/each}}
+					{{selectOptions options selected=actor.system.class valueAttr="value" labelAttr="label"}}
 				</select>
 			</div>
 		</div>
@@ -37,9 +32,6 @@
 </div>
 
 <script>
-	const options = Object.entries(config.classes).map(([key, value]) => ({
-		value: key,
-		label: value,
-	}));
+	const options = Object.entries(config.classes).map(([key, value]) => ({value: key, label: value, }));
 	console.log(options);
 </script>
