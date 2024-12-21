@@ -11,16 +11,18 @@ import {
 export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
 
-  static DEFAULT_OPTIONS = {
-    classes: ['glog', 'sheet', 'actor'],
-    resizable: false,
-    width: 1210,
-    height: 720,
-    tabs: [
-      { navSelector: '.primary-tabs', contentSelector: '.primary-body', initial: 'history' },
-      { navSelector: '.secondary-tabs', contentSelector: '.secondary-body', initial: 'general' },
-    ],
-  };
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      classes: ['glog', 'sheet', 'actor'],
+      resizable: false,
+      width: 1210,
+      height: 720,
+      tabs: [
+        { navSelector: '.primary-tabs', contentSelector: '.primary-body', initial: 'history' },
+        { navSelector: '.secondary-tabs', contentSelector: '.secondary-body', initial: 'general' },
+      ],
+    });
+  }
 
   static PARTS = { actor: { template: 'systems/glog/templates/actor/actor-sheet.html' } };
 
