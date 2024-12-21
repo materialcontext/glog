@@ -30,6 +30,20 @@
 				<a class="item" data-tab="effects">Effects</a>
 			</nav>
 			{{!-- Health Overview --}}
+			{{> systems/glog/templates/actor/parts/healthbar.html }}
+			<div class="contentcenter">
+				{{!-- Center Body --}}
+				<section class="primary-body">
+					{{!--History Tab--}}
+					{{> systems/glog/templates/actor/parts/tabs/overview.html }}
+					{{!-- Inventory Tab --}}
+					{{> systems/glog/templates/actor/parts/tabs/gear.html }}
+					{{!-- Spells Tab --}}
+					{{> systems/glog/templates/actor/parts/tabs/spells.html }}
+					{{!-- Effects Tab --}}
+					{{> systems/glog/templates/actor/parts/tabs/effects-tab.html }}
+				</section>
+			</div>
 		</div>
 
 		<div class="wrapperright npcvariant1">
