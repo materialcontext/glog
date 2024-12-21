@@ -1,6 +1,6 @@
 import { GLOG } from '../helpers/config.mjs';
 import { prepareActiveEffectCategories } from '../helpers/effects.mjs';
-import { registerEffectHandlers, registerCommonHandlers, confirmation } from '../helpers/common-sheet-functions.mjs';
+// import { registerEffectHandlers, registerCommonHandlers, confirmation } from '../helpers/common-sheet-functions.mjs';
 
 /** @extends { ActorSheet } */
 export class PlayerCharacterSheet extends ActorSheet {
@@ -33,6 +33,7 @@ export class PlayerCharacterSheet extends ActorSheet {
   /** @override */
   async _prepareContext() {
     const context = super._prepare_context();
+    console.log(context);
     context.dtypes = ['String', 'Number', 'Boolean'];
 
     // Copy the actor to operate safely
@@ -46,18 +47,6 @@ export class PlayerCharacterSheet extends ActorSheet {
     if (actorData.type === 'playerCharacter') {
       this._prepareItems(context);
       this._preparePlayerCharacterData(context);
-    }
-
-    // Prepare NPC data
-    if (actorData.type === 'npc') {
-    }
-
-    // Prepare Companion data
-    if (actorData.type === 'companion') {
-    }
-
-    // Prepare hireling data
-    if (actorData.type === 'hireling') {
     }
 
     // Roll data access
