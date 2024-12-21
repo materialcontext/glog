@@ -35,35 +35,35 @@ export class PlayerCharacterSheet extends ActorSheet {
     const context = super._prepareContext();
     context.dtypes = ['String', 'Number', 'Boolean'];
 
-    // copy the actor to operate safely
+    // Copy the actor to operate safely
     const actorData = this.actor.toObject(false);
 
-    // add to context for easy access
+    // Add to context for easy access
     context.config = GLOG;
     context.system = actorData.system;
 
-    // prepare playerCharacter data and items
-    if (actorData.type == 'playerCharacter') {
+    // Prepare playerCharacter data and items
+    if (actorData.type === 'playerCharacter') {
       this._prepareItems(context);
       this._preparePlayerCharacterData(context);
     }
 
-    //prepare NPC data
-    if (actorData.type == 'npc') {
+    // Prepare NPC data
+    if (actorData.type === 'npc') {
     }
 
-    //prepareCompanionData
-    if (actorData.type == 'companion') {
+    // Prepare Companion data
+    if (actorData.type === 'companion') {
     }
 
-    //prepare hireling data
-    if (actorData.type == 'hireling') {
+    // Prepare hireling data
+    if (actorData.type === 'hireling') {
     }
 
-    // roll data access
+    // Roll data access
     context.rollData = context.actor.getRollData();
 
-    // prepare active effects
+    // Prepare active effects
     context.effects = prepareActiveEffectCategories(this.actor.effects);
 
     await this._prepareRenderedHTMLContent(context);
@@ -156,17 +156,17 @@ export class PlayerCharacterSheet extends ActorSheet {
     registerEffectHandlers(html, actor);
     registerCommonHandlers(html, actor);
 
-    //render before edit check
+    // Render before edit check
     html.find('.item-edit').click((ev) => {
       const li = $(ev.currentTarget).parents('.item');
       const item = this.actor.items.get(li.data('itemId'));
       item.sheet.render(true);
     });
 
-    // editable
+    // Editable
     if (!this.isEditable) return;
 
-    // add inventory
+    // Add inventory
     html.find('.item-create').click(this._onItemCreate.bind(this));
 
     // Delete Inventory Item
@@ -197,10 +197,10 @@ export class PlayerCharacterSheet extends ActorSheet {
       }
     });
 
-    // anything rollable
+    // Anything rollable
     html.find('.rollable').click(this._onRoll.bind(this));
 
-    // drag events for macros
+    // Drag events for macros
     if (this.actor.isOwner) {
       let handler = (ev) => this._onDragStart(ev);
       html.find('li.item').each((i, li) => {
@@ -210,10 +210,10 @@ export class PlayerCharacterSheet extends ActorSheet {
       });
     }
 
-    //Edit Item Input Fields
+    // Edit Item Input Fields
     html.find('.sheet-inline-edit').change(this._onSkillEdit.bind(this));
 
-    //Edit Item Checkboxes
+    // Edit Item Checkboxes
     html.find('.equipped.checkBox').click(async (ev) => {
       const itemId = ev.currentTarget.closest('.equipped.checkBox').dataset.itemId;
       const item = actor.items.get(itemId);
@@ -223,7 +223,7 @@ export class PlayerCharacterSheet extends ActorSheet {
       };
       const updated = item.update(updateData);
 
-      //handles activation/deactivation of values provided by effects inherited from items
+      // Handles activation/deactivation of values provided by effects inherited from items
       let allEffects = this.object.effects;
       let effUpdateData = [];
       for (let effectScan of allEffects) {
@@ -241,86 +241,7 @@ export class PlayerCharacterSheet extends ActorSheet {
       actor.updateEmbeddedDocuments('ActiveEffect', effUpdateData);
     });
 
-    //show on hover
+    // Show on hover
     html.find('.reveal').on('mouseover mouseout', this._onToggleReveal.bind(this));
-  }
-
-  /** @override */
-  async _onDropItemCreate(item) {
-    // Create the owned item as normal
-    return super._onDropItemCreate(item);
-  }
-
-  /**
-   * Handle creating new Owned items for a character based on the HTML data
-   * @param {Event} event     The originating click event
-   * @private
-   */
-  async _onItemCreate(event) {
-    event.preventDefault();
-    const header = event.currentTarget;
-    const type = header.dataset.type;
-    const data = duplicate(header.dataset);
-    const name = `New ${type.capitalize()}`;
-    const itemData = {
-      name: name,
-      type: type,
-      data: data,
-    };
-
-    delete itemData.data['type'];
-    this.actor.createEmbeddedDocuments('Item', [itemData]);
-  }
-
-  _onSkillEdit(event) {
-    event.preventDefault();
-    let element = event.currentTarget;
-    let itemId = element.closest('.item').dataset.itemId;
-    let item = this.actor.items.get(itemId);
-    let field = element.dataset.field;
-
-    return item.update({ [field]: element.value });
-  }
-
-  _onToggleReveal(event) {
-    const reveals = event.currentTarget.getElementsByClassName('info');
-    $.each(reveals, function (index, value) {
-      $(value).toggleClass('icon-hidden');
-    });
-    const revealer = event.currentTarget.getElementsByClassName('toggle');
-    $.each(revealer, function (index, value) {
-      $(value).toggleClass('noShow');
-    });
-  }
-
-  /**
-   * Handle clickable rolls
-   * @param {Event} event     the originating click event
-   * @private
-   */
-  _onRoll(event) {
-    event.preventDefault();
-    const element = event.currentTarget;
-    const dataset = element.dataset;
-
-    // handle item rolls
-    if (dataset.rollType) {
-      if (dataset.rollType == 'item') {
-        const itemId = element.closest('.item').dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        if (item) return item.roll();
-      }
-    }
-    // handle rolls that supply their own formula
-    if (dataset.roll) {
-      let label = dataset.label ? `[ability] ${dataset.label}` : '';
-      let roll = new Roll(dataset.roll, this.actor.getRollData());
-      roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get('core', 'rollMode'),
-      });
-      return roll;
-    }
   }
 }
