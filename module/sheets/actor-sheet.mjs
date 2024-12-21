@@ -32,7 +32,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
   /** @override */
   async _prepareContext() {
-    const context = super._prepareContext();
+    const context = super._prepare_context();
     context.dtypes = ['String', 'Number', 'Boolean'];
 
     // Copy the actor to operate safely
@@ -145,8 +145,8 @@ export class PlayerCharacterSheet extends ActorSheet {
   /* ------------------------------------- */
 
   /** @override */
-  _onRender(html) {
-    super._onRender(html);
+  _onRender(context) {
+    super._onRender(context);
 
     let actor = this.actor;
 
