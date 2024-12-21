@@ -24,8 +24,6 @@ export class PlayerCharacterSheet extends ActorSheet {
     });
   }
 
-  static PARTS = { actor: { template: 'systems/glog/templates/actor/actor-sheet.html' } };
-
   /** @override */
   get template() {
     return `systems/glog/templates/actor/actor-sheet.html`;
