@@ -81,27 +81,33 @@
 				"abilities": {
 					"str": {
 						"base": 0,
-						"roll": "2d6+@abilities.str.mod-@exhaustion"
+						"value": 0,
+						"roll": "2d6+@abilities.str.mod"
 					},
 					"dex": {
 						"base": 0,
-						"roll": "2d6+@abilities.dex.mod-@encumberance-@exhaustion"
+						"value": 0,
+						"roll": "2d6+@abilities.dex.mod-@encumberance"
 					},
 					"con": {
 						"base": 0,
-						"roll": "2d6+@abilities.con.mod-@exhaustion"
+						"value": 0,
+						"roll": "2d6+@abilities.con.mod"
 					},
 					"int": {
 						"base": 0,
-						"roll": "2d6+@abilities.int.mod-@exhaustion"
+						"value": 0,
+						"roll": "2d6+@abilities.int.mod"
 					},
 					"wis": {
 						"base": 0,
-						"roll": "2d6+@abilities.wis.mod-@exhaustion"
+						"value": 0,
+						"roll": "2d6+@abilities.wis.mod"
 					},
 					"cha": {
 						"base": 0,
-						"roll": "2d6+@abilities.cha.mod-@exhaustion"
+						"value": 0,
+						"roll": "2d6+@abilities.cha.mod"
 					}
 				},
 				"stealth": {
