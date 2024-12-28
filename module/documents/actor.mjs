@@ -118,6 +118,9 @@ export class PlayerCharacter extends Actor {
     // subtract encumebrance from move
     context.move.value -= context.encumberance;
 
+    // calculate max hp
+    context.hp.max = context.hp.base - context.exhuastion + context.hp.bonus;
+
     /**
      * dexterity check penalties for encumberance are handled in template.json > dex.roll...
      * ...because it simplifies defense calculations
@@ -134,18 +137,6 @@ export class PlayerCharacter extends Actor {
     this._applyFeatures(actorData);
 
     console.log(actorData);
-  }
-
-  async update(data, options) {
-    // Ensure hp.max is recalculated if hp.base changes
-    if (data["system.hp.base"] !== undefined) {
-      const baseValue = data["system.hp.base"];
-      const exhaust = data["system.exhuastion"];
-      data["system.hp.max"] = baseValue - exhaust;
-    }
-
-    // Call the super method to ensure the update is handled by the base class return
-    super.update(data, options);
   }
 
   // applies class (level 0) roll and data transforms to the document
@@ -167,7 +158,7 @@ export class PlayerCharacter extends Actor {
         disguise += 2;
         break;
       case "barbarian":
-        context.hp.base += context.classTemplates.barbarian; // +1 hp per barbarian template
+        context.hp.bonus += context.classTemplates.barbarian; // +1 hp per barbarian template
         break;
       case "courtier":
         context.social.react += this._halfClass(context, "courtier"); // +1 react per 2 couriter levels

@@ -1,238 +1,253 @@
 {
-  "Actor": {
-    "types": ["playerCharacter", "hireling", "companion", "npc"],
-    "templates": {
-      "description": {
-        "description": "",
-        "class": "",
-        "languages": "",
-        "legend": ""
-      },
-      "warnings": {
-        "warnings": {
-          "noSwimWarning": "You can't swim in this armor.",
-          "strSwimWarning": "Make a strength check to swim in this armor."
-        }
-      },
-      "attributes": {
-        "encumberance": 0,
-        "enduranceMod": 0,
-        "exhaustion": 0,
-        "initMod": 0,
-        "level" : 0,
-        "traumaMod": 0,
-        "wounds": 0,
-        "xp": 0,
-        "features": [],
-        "magicDice": {
-          "base": 0,
-          "value": 0,
-          "max": 0
-        },
-        "move": {
-          "value": 4
-        }
-      },
-      "currStat": {
-        "flags": {
-          "noSwim": false,
-          "strSwim": false,
-          "deprived": false,
-          "exhausted": false,
-          "encumbered": false,
-          "xpNext": "-"
-        }
-      },
-      "equipment": {
-        "equipment": {
-          "armors": [],
-          "shields": [],
-          "weapons": [],
-          "consumables": [],
-          "gear": []
-        }
-      },
-      "resources": {
-        "hp": {
-          "base": 0,
-          "value": 0,
-          "max": 0
-        },
-        "inventory": {
-          "value": 0,
-          "max": 0
-        },
-        "magicDice": {
-          "value": 0,
-          "max": 0
-        },
-        "hires": {
-          "value": 0,
-          "max": 0
-        }
-      },
-      "stats": {
-        "abilities": {
-          "str": {
-            "base": 0,
-            "roll": "2d6+@abilities.str.mod-@exhaustion"
-          },
-          "dex": {
-            "base": 0,
-            "roll": "2d6+@abilities.dex.mod-@encumberance-@exhaustion"
-          },
-          "con": {
-            "base": 0,
-            "roll": "2d6+@abilities.con.mod-@exhaustion"
-          },
-          "int": {
-            "base": 0,
-            "roll": "2d6+@abilities.int.mod-@exhaustion"
-          },
-          "wis": {
-            "base": 0,
-            "roll": "2d6+@abilities.wis.mod-@exhaustion"
-          },
-          "cha": {
-            "base": 0,
-            "roll": "2d6+@abilities.cha.mod-@exhaustion"
-          }
-        },
-        "stealth": {
-          "sneak": 0,
-          "hide": 0,
-          "disguise": 0
-        },
-        "combat": {
-          "atk": 0,
-          "def": 0,
-          "man": 0,
-          "dmg": 0,
-          "archery": false
-        },
-        "social": {
-          "react": 0,
-          "diplo": 0,
-          "intim": 0
-        },
-        "explore": {
-          "ambush": 0,
-          "recon": 0,
-          "invest": 0
-        }
-      },
-      "npc": {
-        "loyalty": 0,
-        "morale": 0
-      }
-    },
-    "playerCharacter": {
-      "templates": [
-        "description",
-        "attributes",
-        "resources",
-        "stats",
-        "equipment",
-        "currStat",
-        "warnings"
-      ],
-      "hirelings": []
-    },
-    "hireling": {
-      "templates": [
-        "description",
-        "attributes",
-        "resources",
-        "stats",
-        "npc",
-        "equipment",
-        "currStat",
-        "warnings"
-      ]
-    },
-    "companion": {
-      "templates": ["stats", "combat", "stealth"],
-      "name": ""
-    },
-    "npc": {
-      "tempaltes": ["stats", "combat", "stealth", "npc"]
-    }
-  },
-  "Item": {
-    "types": [
-      "gear",
-      "spell",
-      "weapon",
-      "armor",
-      "consumable",
-      "feature"
-    ],
-    "templates": {
-      "info": {
-        "name": "name here",
-        "description": "description here"
-      },
-      "base": {
-        "active": true,
-        "slots": 0,
-        "quantity": 1,
-        "roll": "2d6"
-      },
-      "buyable": {
-        "cost": 0,
-        "rarity": ""
-      }
-    },
-    "gear": {
-      "templates": [
-        "info",
-        "base",
-        "buyable"
-      ],
-      "displayCategory": "gear"
-    },
-    "consumable": {
-      "templates": [
-        "info",
-        "base",
-        "buyable"
-      ],
-      "displayCategory": "consumable"
-    },
-    "spell": {
-      "templates": [
-        "info",
-        "buyable"
-      ],
-      "range": "",
-      "target": "",
-      "duration": "",
-      "displayCategory": "spell"
-    },
-    "weapon": {
-      "templates": [
-        "info",
-        "base",
-        "buyable"
-      ],
-      "dmg": "",
-      "displayCategory": "weapon"
-    },
-    "armor": {
-      "templates": [
-        "info",
-        "base",
-        "buyable"
-      ],
-      "defense": 1,
-      "encumberance": 1,
-      "displayCategory": "armor"
-    },
-    "feature": {
-      "templates": [
-        "info"
-      ],
-      "displayCategory": "feature"
-    }
-  }
+	"Actor": {
+		"types": [
+			"playerCharacter",
+			"hireling",
+			"companion",
+			"npc"
+		],
+		"templates": {
+			"description": {
+				"description": "",
+				"class": "",
+				"languages": "",
+				"legend": ""
+			},
+			"warnings": {
+				"warnings": {
+					"noSwimWarning": "You can't swim in this armor.",
+					"strSwimWarning": "Make a strength check to swim in this armor."
+				}
+			},
+			"attributes": {
+				"encumberance": 0,
+				"enduranceMod": 0,
+				"exhaustion": 0,
+				"initMod": 0,
+				"level": 0,
+				"traumaMod": 0,
+				"wounds": 0,
+				"xp": 0,
+				"features": [],
+				"magicDice": {
+					"base": 0,
+					"value": 0,
+					"max": 0
+				},
+				"move": {
+					"value": 4
+				}
+			},
+			"currStat": {
+				"flags": {
+					"noSwim": false,
+					"strSwim": false,
+					"deprived": false,
+					"exhausted": false,
+					"encumbered": false,
+					"xpNext": "-"
+				}
+			},
+			"equipment": {
+				"equipment": {
+					"armors": [],
+					"shields": [],
+					"weapons": [],
+					"consumables": [],
+					"gear": []
+				}
+			},
+			"resources": {
+				"hp": {
+					"base": 0,
+					"bonus": 0,
+					"value": 0,
+					"max": 0
+				},
+				"inventory": {
+					"value": 0,
+					"max": 0
+				},
+				"magicDice": {
+					"value": 0,
+					"max": 0
+				},
+				"hires": {
+					"value": 0,
+					"max": 0
+				}
+			},
+			"stats": {
+				"abilities": {
+					"str": {
+						"base": 0,
+						"roll": "2d6+@abilities.str.mod-@exhaustion"
+					},
+					"dex": {
+						"base": 0,
+						"roll": "2d6+@abilities.dex.mod-@encumberance-@exhaustion"
+					},
+					"con": {
+						"base": 0,
+						"roll": "2d6+@abilities.con.mod-@exhaustion"
+					},
+					"int": {
+						"base": 0,
+						"roll": "2d6+@abilities.int.mod-@exhaustion"
+					},
+					"wis": {
+						"base": 0,
+						"roll": "2d6+@abilities.wis.mod-@exhaustion"
+					},
+					"cha": {
+						"base": 0,
+						"roll": "2d6+@abilities.cha.mod-@exhaustion"
+					}
+				},
+				"stealth": {
+					"sneak": 0,
+					"hide": 0,
+					"disguise": 0
+				},
+				"combat": {
+					"atk": 0,
+					"def": 0,
+					"man": 0,
+					"dmg": 0,
+					"archery": false
+				},
+				"social": {
+					"react": 0,
+					"diplo": 0,
+					"intim": 0
+				},
+				"explore": {
+					"ambush": 0,
+					"recon": 0,
+					"invest": 0
+				}
+			},
+			"npc": {
+				"loyalty": 0,
+				"morale": 0
+			}
+		},
+		"playerCharacter": {
+			"templates": [
+				"description",
+				"attributes",
+				"resources",
+				"stats",
+				"equipment",
+				"currStat",
+				"warnings"
+			],
+			"hirelings": []
+		},
+		"hireling": {
+			"templates": [
+				"description",
+				"attributes",
+				"resources",
+				"stats",
+				"npc",
+				"equipment",
+				"currStat",
+				"warnings"
+			]
+		},
+		"companion": {
+			"templates": [
+				"stats",
+				"combat",
+				"stealth"
+			],
+			"name": ""
+		},
+		"npc": {
+			"tempaltes": [
+				"stats",
+				"combat",
+				"stealth",
+				"npc"
+			]
+		}
+	},
+	"Item": {
+		"types": [
+			"gear",
+			"spell",
+			"weapon",
+			"armor",
+			"consumable",
+			"feature"
+		],
+		"templates": {
+			"info": {
+				"name": "name here",
+				"description": "description here"
+			},
+			"base": {
+				"active": true,
+				"slots": 0,
+				"quantity": 1,
+				"roll": "2d6"
+			},
+			"buyable": {
+				"cost": 0,
+				"rarity": ""
+			}
+		},
+		"gear": {
+			"templates": [
+				"info",
+				"base",
+				"buyable"
+			],
+			"displayCategory": "gear"
+		},
+		"consumable": {
+			"templates": [
+				"info",
+				"base",
+				"buyable"
+			],
+			"displayCategory": "consumable"
+		},
+		"spell": {
+			"templates": [
+				"info",
+				"buyable"
+			],
+			"range": "",
+			"target": "",
+			"duration": "",
+			"displayCategory": "spell"
+		},
+		"weapon": {
+			"templates": [
+				"info",
+				"base",
+				"buyable"
+			],
+			"dmg": "",
+			"displayCategory": "weapon"
+		},
+		"armor": {
+			"templates": [
+				"info",
+				"base",
+				"buyable"
+			],
+			"defense": 1,
+			"encumberance": 1,
+			"displayCategory": "armor"
+		},
+		"feature": {
+			"templates": [
+				"info"
+			],
+			"displayCategory": "feature"
+		}
+	}
 }
