@@ -25,7 +25,7 @@
 		<div class="listBackground shape2 grid grid-3col noMargin">
 			{{#each actor.system.abilities as |ability key|}}
 			<div class="flexrow flex-group-center reveal standard-height">
-				<div class="flexrow flex-group-center input-small rollable" data-type="ability" data-name="{{key}}"
+				<button class="flexrow flex-group-center input-small rollable" data-type="ability" data-name="{{key}}"
 					data-key="system.abilities.{{key}}.mod" data-roll="2d6+@abilities.{{key}}.mod">
 					<span class="toggle resource-value alignCenter"
 						style=" min-width: 26px; text-transform: uppercase;">{{key}}</span>
@@ -33,7 +33,7 @@
 						style="font-size: 18px;">
 						<i class="fa-light fa-dice-six alignCenter"></i>
 					</label>
-				</div>
+				</button>
 				<input class="input-small" type="number" name="system.abilities.{{key}}.base" value="{{ability.base}}"
 					data-dtype="Number" placeholder="0" />
 			</div>
