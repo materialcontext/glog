@@ -240,6 +240,8 @@ export class PlayerCharacterSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
 
+    console.log(event);
+
     // Handle item rolls.
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {
@@ -251,6 +253,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
+      console.log(dataset.roll);
       let label = dataset.label ? `[ability] ${dataset.label}` : '';
       let roll = new Roll(dataset.roll, this.actor.getRollData());
       roll.toMessage({
