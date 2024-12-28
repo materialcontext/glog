@@ -131,8 +131,8 @@ export class PlayerCharacterSheet extends ActorSheet {
   /* ------------------------------------- */
 
   /** @override */
-  _onRender(context) {
-    super._onRender(context);
+  _activateListeners(html) {
+    super._activateListeners(html);
 
     let actor = this.actor;
 
