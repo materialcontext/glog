@@ -6,27 +6,24 @@
 export function onManageActiveEffect(event, owner) {
   event.preventDefault();
   const a = event.currentTarget;
-  const li = a.closest("li");
-  const effect = li.dataset.effectId
-    ? owner.effects.get(li.dataset.effectId)
-    : null;
+  const li = a.closest('li');
+  const effect = li.dataset.effectId ? owner.effects.get(li.dataset.effectId) : null;
   switch (a.dataset.action) {
-    case "create":
-      return owner.createEmbeddedDocuments("ActiveEffect", [
+    case 'create':
+      return owner.createEmbeddedDocuments('ActiveEffect', [
         {
-          label: "New Effect",
-          icon: "icons/svg/aura.svg",
+          label: 'New Effect',
+          icon: 'icons/svg/aura.svg',
           origin: owner.uuid,
-          "duration.rounds":
-            li.dataset.effectType === "temporary" ? 1 : undefined,
-          disabled: li.dataset.effectType === "inactive",
+          'duration.rounds': li.dataset.effectType === 'temporary' ? 1 : undefined,
+          disabled: li.dataset.effectType === 'inactive',
         },
       ]);
-    case "edit":
+    case 'edit':
       return effect.sheet.render(true);
-    case "delete":
+    case 'delete':
       return effect.delete();
-    case "toggle":
+    case 'toggle':
       return effect.update({ disabled: !effect.disabled });
   }
 }
@@ -40,25 +37,24 @@ export function prepareActiveEffectCategories(effects) {
   // Define effect header categories
   const categories = {
     temporary: {
-      type: "temporary",
-      label: "Temporary Effects",
+      type: 'temporary',
+      label: 'Temporary Effects',
       effects: [],
     },
     passive: {
-      type: "passive",
-      label: "Passive Effects",
+      type: 'passive',
+      label: 'Passive Effects',
       effects: [],
     },
     inactive: {
-      type: "inactive",
-      label: "Inactive Effects",
+      type: 'inactive',
+      label: 'Inactive Effects',
       effects: [],
     },
   };
 
   // Iterate over active effects, classifying them into categories
   for (let e of effects) {
-    e._getSourceName(); // Trigger a lookup for the source name
     if (e.disabled) categories.inactive.effects.push(e);
     else if (e.isTemporary) categories.temporary.effects.push(e);
     else categories.passive.effects.push(e);
@@ -67,18 +63,18 @@ export function prepareActiveEffectCategories(effects) {
 }
 
 export function collapsible() {
-  var coll = document.getElementsByClassName("collapsible");
+  var coll = document.getElementsByClassName('collapsible');
   var i;
 
   for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-          this.classList.toggle("collapsible");
-          var itemdescription = this.nextElementSibling;
-          if (itemdescription.style.display === "block") {
-              itemdescription.style.display = "none";
-          } else {
-              itemdescription.style.display = "block";
-          }
-      });
+    coll[i].addEventListener('click', function () {
+      this.classList.toggle('collapsible');
+      var itemdescription = this.nextElementSibling;
+      if (itemdescription.style.display === 'block') {
+        itemdescription.style.display = 'none';
+      } else {
+        itemdescription.style.display = 'block';
+      }
+    });
   }
 }

@@ -1,4 +1,4 @@
-import { GLOG } from "../helpers/config.mjs";
+import { GLOG } from '../helpers/config.mjs';
 
 /**
  * Extends the basic actor sheet
@@ -16,13 +16,18 @@ export class PlayerCharacter extends Actor {
     const items = this.items;
 
     //Determin whether any gear is present
-    for(let gearCheck of items){
-      if(gearCheck.system.displayCategory === "weapon" || gearCheck.system.displayCategory === "gear" || gearCheck.system.displayCategory === "armor" || gearCheck.system.slotType === "consumable") {
+    for (let gearCheck of items) {
+      if (
+        gearCheck.system.displayCategory === 'weapon' ||
+        gearCheck.system.displayCategory === 'gear' ||
+        gearCheck.system.displayCategory === 'armor' ||
+        gearCheck.system.slotType === 'consumable'
+      ) {
         actorModel.hasGear = true;
         break;
-      };
-    };
-  };
+      }
+    }
+  }
 
   /** @override */
   prepareBaseData() {
@@ -36,15 +41,23 @@ export class PlayerCharacter extends Actor {
       for (let [k, v] of Object.entries(abilities)) {
         v.value = v.base - context.exhaustion;
 
-        if (v.value < 3) { abilities[k].mod = -3; }
-        else if (v.value == 3 || v.value == 4) { abilities[k].mod = -2; } 
-        else if (v.value == 5 || v.value == 6) { abilities[k].mod = -1; } 
-        else if (v.value == 8 || v.value == 9) { abilities[k].mod = 1; } 
-        else if (v.value == 10 || v.value == 11) { abilities[k].mod = 2; }
-        else if (v.value > 11) { abilities[k].mod = 3; }
-        else { abilities[k].mod = 0; };
-      };
-    };
+        if (v.value < 3) {
+          abilities[k].mod = -3;
+        } else if (v.value == 3 || v.value == 4) {
+          abilities[k].mod = -2;
+        } else if (v.value == 5 || v.value == 6) {
+          abilities[k].mod = -1;
+        } else if (v.value == 8 || v.value == 9) {
+          abilities[k].mod = 1;
+        } else if (v.value == 10 || v.value == 11) {
+          abilities[k].mod = 2;
+        } else if (v.value > 11) {
+          abilities[k].mod = 3;
+        } else {
+          abilities[k].mod = 0;
+        }
+      }
+    }
 
     //set exhaustion and encumberance flags before processing ability scores
     context.exhausted = context.exhaustion > 0 ? true : false;
@@ -76,10 +89,10 @@ export class PlayerCharacter extends Actor {
 
     // set move
     context.move.value = 4;
-    
+
     // calculate inventory
-    context.inventory.max = 6 + (Math.max(abilities.str.mod, abilities.con.mod) * 2);
-  };
+    context.inventory.max = 6 + Math.max(abilities.str.mod, abilities.con.mod) * 2;
+  }
 
   /** @inheritdoc */
   prepareDerivedData() {
@@ -88,11 +101,11 @@ export class PlayerCharacter extends Actor {
 
     this._prepareCharacterData(actorData);
     this._prepareNPCData(actorData);
-  };
+  }
 
   // prepare playerCharacter type specific data
   _prepareCharacterData(actorData) {
-    if (actorData.type !== "playerCharacter") return;
+    if (actorData.type !== 'playerCharacter') return;
 
     let context = actorData.system;
     let abilities = context.abilities;
@@ -107,23 +120,23 @@ export class PlayerCharacter extends Actor {
     // set max HP to base
     context.hp.max = context.hp.base - context.exhaustion;
 
-    /** 
+    /**
      * dexterity check penalties for encumberance are handled in template.json > dex.roll...
      * ...because it simplifies defense calculations
-     * */ 
+     * */
 
     // hires
     if (level > 3) {
       context.hires.max = level;
-    } else { 
-      context.hires.max = level + abilities.cha.mod; 
-    };
+    } else {
+      context.hires.max = level + abilities.cha.mod;
+    }
 
     this._applyClass(actorData);
     this._applyFeatures(actorData);
 
     console.log(actorData);
-  };
+  }
 
   // applies class (level 0) roll and data transforms to the document
   _applyClass(actorData) {
@@ -133,37 +146,40 @@ export class PlayerCharacter extends Actor {
     let sneak = context.stealth.sneak;
     let hide = context.stealth.hide;
     let disguise = context.stealth.disguise;
-    
+
     switch (className) {
-      case "acrobat": 
+      case 'acrobat':
         sneak += 1;
         break;
-      case "assassin":
-        sneak += 2; hide += 2; disguise +=2;
+      case 'assassin':
+        sneak += 2;
+        hide += 2;
+        disguise += 2;
         break;
-      case "barbarian":
+      case 'barbarian':
         context.hp.max += context.classTemplates.barbarian; // +1 hp per barbarian template
         break;
-      case "courtier": 
-        context.social.react += this._halfClass(context, "courtier"); // +1 react per 2 couriter levels
-      break;
-      case "fighter": 
+      case 'courtier':
+        context.social.react += this._halfClass(context, 'courtier'); // +1 react per 2 couriter levels
+        break;
+      case 'fighter':
         context.combat.atk += 2;
         break;
-      case "hunter":
+      case 'hunter':
         context.combat.archery = true;
         break;
-      case "thief": 
-        sneak += this._halfClass(context, "thief");  // +1 stealth per 2 thief levels
-        hide += this._halfClass(context, "thief");
-        disguise += this._halfClass(context, "thief");
+      case 'thief':
+        sneak += this._halfClass(context, 'thief'); // +1 stealth per 2 thief levels
+        hide += this._halfClass(context, 'thief');
+        disguise += this._halfClass(context, 'thief');
         break;
-      case "wiard":
-        context.magicDice.max = context.classTemplates.wizard // +1 md per wizard template
+      case 'wiard':
+        context.magicDice.max = context.classTemplates.wizard; // +1 md per wizard template
         break;
-      default: break; //do nothing
-    };
-  };
+      default:
+        break; //do nothing
+    }
+  }
 
   // applies feature data and roll transforms to the document
   _applyFeatures(actorData) {
@@ -172,47 +188,49 @@ export class PlayerCharacter extends Actor {
 
     for (let feat in features) {
       switch (feat) {
-        case "courtly education": 
+        case 'courtly education':
           context.combat.archery = true;
           break;
-        case "danger sense": 
-          context.social.hide += this._halfClass(context, "barbarian");
-          context.explore.ambushMod +=1;
+        case 'danger sense':
+          context.social.hide += this._halfClass(context, 'barbarian');
+          context.explore.ambushMod += 1;
           break;
-        case "stalker":
+        case 'stalker':
           context.stealth.sneak += 1;
           context.stealth.hide += 1;
           context.explore.ambushMod += 1;
           break;
-        case "tough": 
+        case 'tough':
           context.enduranceMod += 1;
           context.traumaMod += 1;
           break;
-        case "unburdened": break;
-        default: break; // do nothing
-      };
-    };
-  };
+        case 'unburdened':
+          break;
+        default:
+          break; // do nothing
+      }
+    }
+  }
 
   _halfClass(context, templateName) {
     return Math.floor(context.classTemplates[templateName] / 2);
-  };
+  }
 
   // prepare NPC type specific data
   _prepareNPCData(actorData) {
-    if (actorData.type !== "npc") return;
-  };
+    if (actorData.type !== 'npc') return;
+  }
 
   // prepare companion specific data
   _prepareCompanionData(actorData) {
-    if (actorData.type !== "companion") return;
-  };
+    if (actorData.type !== 'companion') return;
+  }
 
   // prepare hireling specific data
   _prepareHirelingData(actorData) {
-    if (actorData.type !== "hireling") return;
-  };
-  
+    if (actorData.type !== 'hireling') return;
+  }
+
   /**
    * Override getRollData() that's supplied to rolls
    */
@@ -224,9 +242,9 @@ export class PlayerCharacter extends Actor {
     //prepare character roll data
     this._getCharacterRollData(data);
     return data;
-  };
+  }
 
   _getCharacterRollData(data) {
     // do character specific roll stuff in here
-  };
-};
+  }
+}
