@@ -119,7 +119,13 @@ export class PlayerCharacter extends Actor {
     context.move.value -= context.encumberance;
 
     // calculate max hp
-    context.hp.max = context.hp.base - context.exhuastion + context.hp.bonus;
+    console.log(
+      context.hp.max,
+      context.hp.base,
+      context.exhaustion,
+      context.hp.bonus,
+    );
+    context.hp.max = context.hp.base - context.exhaustion + context.hp.bonus;
 
     /**
      * dexterity check penalties for encumberance are handled in template.json > dex.roll...

@@ -1,22 +1,22 @@
 {
-    "name": "Fighter",
-    "0": {
-        "Level-0": "You get a +2 bonus on all Attack rolls.",
-        "equipment": "any armor of your choice, any 2 melee or thrown weapons or 1 firearm with 2 magazines; a nasty scar"
-    },
-    "1": {
-        "Battle Scars": "Each time you recover from a wound that could have killed you, increase your max HP by 1 up to the number of fighter templates you possess. You regain this much HP at the start and end of every fight.",
-        "Veteran's Eye": "You've seen and fought opponents of every imaginable kind and you can size people up at a glance.  You have a good idea of what an enemy is capable of and how much punishment he can take.  At the start of combat you learn the target's current HP (in hit dice) and Strength or Dexterity (whichever is higher) of a number of enemies equal to your intelligence modifier (minimum 1). "
-    },
-    "2": {
-        "Cut Down": "You get a +2 damage bonus on opportunity attacks and attacks against fleeing enemies. Those with a penchant for wanton bloodletting are likely to develop a deserved reputation.",
-        "Reputation for Mercy": "You’ve been fair in your dealings and merciful to your opponents. Your reputation has spread far beyond you. Whenever you encounter another fighter or leader of importance there is a 5-in-6 chance they’ve heard of you. You have a +1 bonus to all reaction rolls and Diplomacy checks against characters who’ve heard of you. In the event you do not deserve such a reputation, replace this feature with the Barbarian’s Reputation for Violence feature. Once you lose this feature, you cannot regain it."
-    },
-    "3": {
-        "Superior Combatant": "When you hit with an attack and roll doubles it's a critical hit.  If you miss but get doubles, execute a free Combat Maneuver. ",
-        "Impress": "Whenever you win a fight against challenging foes, people who don't like you make a new reaction roll. This even works on people you just defeated in combat, unless you caused them undeserved or disproportionate harm."
-    },
-    "4": {
-        "Double Attack": "You can attack twice per round on your turn."
-    }
+	"name": "Fighter",
+	"0": {
+		"Level-0": "You get a +2 bonus on all Attack rolls.",
+		"equipment": "any armor of your choice, any 2 melee or thrown weapons or 1 firearm with 2 magazines; a nasty scar"
+	},
+	"1": {
+		"Battle Scars": "Each time you recover from a wound that could have killed you, increase your max HP by 1 up to the number of fighter templates you possess. You regain this much HP at the start and end of every fight.",
+		"Veteran's Eye": "You've seen and fought opponents of every imaginable kind and you can size people up at a glance.  You have a good idea of what an enemy is capable of and how much punishment he can take.  At the start of combat you learn the target's current HP (in hit dice) and Strength or Dexterity (whichever is higher) of a number of enemies equal to your intelligence modifier (minimum 1). "
+	},
+	"2": {
+		"Cut Down": "You get a +2 damage bonus on opportunity attacks and attacks against fleeing enemies. Those with a penchant for wanton bloodletting are likely to develop a deserved reputation.",
+		"Reputation for Mercy": "You’ve been fair in your dealings and merciful to your opponents. Your reputation has spread far beyond you. Whenever you encounter another fighter or leader of importance there is a 5-in-6 chance they’ve heard of you. You have a +1 bonus to all reaction rolls and Diplomacy checks against characters who’ve heard of you. In the event you do not deserve such a reputation, replace this feature with the Barbarian’s Reputation for Violence feature. Once you lose this feature, you cannot regain it."
+	},
+	"3": {
+		"Superior Combatant": "When you hit with an attack and roll doubles it's a critical hit.  If you miss but get doubles, execute a free Combat Maneuver. ",
+		"Impress": "Whenever you win a fight against challenging foes, people who don't like you make a new reaction roll. This even works on people you just defeated in combat, unless you caused them undeserved or disproportionate harm."
+	},
+	"4": {
+		"Double Attack": "You can attack twice per round on your turn."
+	}
 }
