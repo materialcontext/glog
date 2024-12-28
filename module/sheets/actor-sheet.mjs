@@ -230,4 +230,35 @@ export class PlayerCharacterSheet extends ActorSheet {
     // Show on hover
     html.find('.reveal').on('mouseover mouseout', this._onToggleReveal.bind(this));
   }
+  /**
+   * Handle clickable rolls.
+   * @param {Event} event   The originating click event
+   * @private
+   */
+  _onRoll(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+
+    // Handle item rolls.
+    if (dataset.rollType) {
+      if (dataset.rollType == 'item') {
+        const itemId = element.closest('.item').dataset.itemId;
+        const item = this.actor.items.get(itemId);
+        if (item) return item.roll();
+      }
+    }
+
+    // Handle rolls that supply the formula directly.
+    if (dataset.roll) {
+      let label = dataset.label ? `[ability] ${dataset.label}` : '';
+      let roll = new Roll(dataset.roll, this.actor.getRollData());
+      roll.toMessage({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: label,
+        rollMode: game.settings.get('core', 'rollMode'),
+      });
+      return roll;
+    }
+  }
 }
