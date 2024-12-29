@@ -922,7 +922,7 @@ a:hover,
 	min-height: 273px;
 }
 
-.sheet .feature . editor-content {
+.sheet .feature .editor-content {
 	min-height: 253px;
 	max-height: 253px;
 }
@@ -1796,8 +1796,8 @@ h3.inline {
 
 .wantToKnowMore .tooltipText {
 	opacity: 0;
-	transition: opacity 0.5s;
-	transition-delay: 0.5s;
+	transition: opacity 0.3s;
+	transition-delay: 0.3s;
 	visibility: hidden;
 	position: absolute;
 	min-width: 100px;

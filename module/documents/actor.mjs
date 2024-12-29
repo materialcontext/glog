@@ -12,7 +12,7 @@ export class PlayerCharacter extends Actor {
   prepareData() {
     super.prepareData();
 
-    const actorModel = this.system;
+    const actor = this.system;
     const items = this.items;
 
     //Determin whether any gear is present
@@ -23,10 +23,21 @@ export class PlayerCharacter extends Actor {
         gearCheck.system.displayCategory === "armor" ||
         gearCheck.system.slotType === "consumable"
       ) {
-        actorModel.hasGear = true;
+        actor.hasGear = true;
         break;
       }
     }
+
+    let inventory = 0;
+    Object.values(actor.system.equipment).forEach((arr) => {
+      arr.forEach((item) => (inventory += item.system.slots));
+    });
+    actor.system.inventory.value = inventory;
+
+    actor.system.encumberance = Math.max(
+      0,
+      actor.system.inventory.value - actor.system.inventory.max,
+    );
   }
 
   /** @override */
@@ -43,7 +54,6 @@ export class PlayerCharacter extends Actor {
         if (k == "dex") {
           v.value -= context.encumberance;
         }
-        console.log(k, context.encumberance);
 
         if (v.value < 3) {
           abilities[k].mod = -3;

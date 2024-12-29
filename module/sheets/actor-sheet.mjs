@@ -3,7 +3,6 @@ import { prepareActiveEffectCategories } from "../helpers/effects.mjs";
 import {
   registerEffectHandlers,
   registerCommonHandlers,
-  _tempEffectCreation,
   confirmation,
 } from "../helpers/common-sheet-functions.mjs";
 
@@ -182,10 +181,14 @@ export class PlayerCharacterSheet extends ActorSheet {
     });
 
     html.find(".hp-max-input").on("change", async (event) => {
-      const baseVal = parseInt(event.target.value);
+      const base = parseInt(event.target.value);
+
+      const hp = actor.system.hp;
+      const val = hp.val > base ? base : hp.val;
 
       await this.actor.update({
-        "system.hp.base": baseVal,
+        "system.hp.base": base,
+        "system.hp.value": val,
       });
     });
 
@@ -194,7 +197,7 @@ export class PlayerCharacterSheet extends ActorSheet {
       console.log(event.target);
 
       await this.actor.update({
-        ["system.attributes." + event.target.id + ".base"]: attrVal,
+        ["system.abilities." + event.target.id + ".base"]: attrVal,
       });
     });
 
