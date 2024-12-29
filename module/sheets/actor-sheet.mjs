@@ -144,6 +144,8 @@ export class PlayerCharacterSheet extends ActorSheet {
       actor.system.encumberance += actor.overrides.system.encumberance;
     }
 
+    console.log("2");
+    console.log(actor.system.abilities.dex.value);
     actor.system.abilities.dex.value =
       actor.system.abilities.dex.base -
       actor.system.encumberance -
@@ -196,7 +198,8 @@ export class PlayerCharacterSheet extends ActorSheet {
     html.find(".encumberance").on("change", async (event) => {
       const attrVal = parseInt(event.target.value);
 
-      await this.actor.update({
+      console.log(actor.system.abilities.dex.val);
+      await this.actor.updateSource({
         "system.encumberance": attrVal,
         "system.abilities.dex.val":
           actor.system.abilities.dex.base -
