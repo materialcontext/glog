@@ -191,6 +191,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
     html.find(".attribute").on("change", async (event) => {
       const attrVal = parseInt(event.target.value);
+      console.log(event.target);
 
       await this.actor.update({
         ["system.attributes." + event.target.id + ".base"]: attrVal,
