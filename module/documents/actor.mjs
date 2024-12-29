@@ -130,8 +130,11 @@ export class PlayerCharacter extends Actor {
     if (level > 3) {
       context.hires.max = level;
     } else {
-      context.hires.max = level + abilities.cha.mod;
+      context.hires.max = level + Math.max(abilities.cha.mod, 0);
     }
+
+    // attack
+    context.combat.atk = level;
 
     this._applyClass(actorData);
     this._applyFeatures(actorData);

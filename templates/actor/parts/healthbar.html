@@ -11,13 +11,13 @@
 				value="{{actor.system.hp.max}}" data-dtype="Number" placeholder="0" />
 		</div>
 		<div class="wantToKnowMore rollable" data-type="traumeSave" data-name="traumaSave" data-key="system.traumaMod"
-			data-roll="2d6+@abilities.con.mod+@traumaMod">
+			data-roll="2d6+@traumaMod">
 			<i class="fa-regular fa-bandage awesomeIcon" style="font-size: 18px;"></i>
 			<span class="tooltipText resource-label" style="font-size: 13px;">Trauma Save</span>
 			<span class="resource-label" style="font-size: 18px"> {{actor.system.traumaMod}}</span>
 		</div>
 		<div class="wantToKnowMore rollable" data-type="initiative" data-name="initiative" data-key="system.initMod"
-			data-roll="2d6+@abilities.wis.mod+@initMod">
+			data-roll="2d6+@initMod">
 			<i class="fa-regular fa-stopwatch awesomeIcon" style="font-size: 18px;"></i>
 			<span class="tooltipText resource-label" style="font-size: 13px;">Initiative</span>
 			<span class="resource-label" style="font-size: 18px"> {{actor.system.initMod}}</span>

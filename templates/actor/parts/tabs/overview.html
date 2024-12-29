@@ -1,10 +1,12 @@
 <div class="tab overview" data-group="primary" data-tab="overview">
-    <div class="flexrow subheader">
-        <h3 class="subheader">Features</h3>
-        <div class="alignRight flexGrowHalf reveal">
-            <div class="alignRight flexGrowHalf"></div>
-        </div>
-    </div>
+	{{> systems/glog/actor/parts/tabs/general.html }}
+	<div class="flexrow subheader">
+		<h3 class="subheader">Features</h3>
+		<div class="alignRight flexGrowHalf reveal">
+			<div class="alignRight flexGrowHalf"></div>
+		</div>
+	</div>
+	<!--
     <div class="flexcol flex-group-left" >
         {{#each actor.system.features as |item id|}}
         <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 10px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
@@ -14,16 +16,18 @@
         </div>
         {{/each}}
     </div>
-<!--
-    <div class="flexrow subheader" style="margin-top: 10px;">
-        <h3 class="subheader">Hirelings</h3>
-        <div class="alignRight flexGrowHalf reveal">
-            <div class="alignRight flexGrowHalf">
-                <input class="input-small" type="number" name="system.hires.value" value="{{actor.system.hires.value}}" data-dtype="Number" placeholder="0"/>
-                <span class="input-small">/ {{actor.system.hires.max}}</span>
-            </div>
-        </div>
-    </div>
+	-->
+	<div class="flexrow subheader" style="margin-top: 10px;">
+		<h3 class="subheader">Hirelings</h3>
+		<div class="alignRight flexGrowHalf reveal">
+			<div class="alignRight flexGrowHalf">
+				<input class="input-small" type="number" name="system.hires.value" value="{{actor.system.hires.value}}"
+					data-dtype="Number" placeholder="0" />
+				<span class="input-small">/ {{actor.system.hires.max}}</span>
+			</div>
+		</div>
+	</div>
+	<!--
     <div class="flexcol flex-group-left">
         {{#each actor.system.hirelings as |item id|}}
         <div class="item flexrow flex-group-left itemHover" style="width: 100%; padding: 0 10px;" data-item-id="{{item._id}}" data-item-name="{{item.name}}">
@@ -35,11 +39,11 @@
         {{/each}}
     </div>
 -->
-    <div class="flexrow subheader" style="margin-top: 10px;">
-        <h3 class="subheader">Notes</h3>
-        <div class="alignRight flexGrowHalf reveal">
-            <div class="alignRight flexGrowHalf"></div>
-        </div>
-    </div>
-    {{editor content=system.legend target="system.legend" button=true owner=owner editable=editable}}
+	<div class="flexrow subheader" style="margin-top: 10px;">
+		<h3 class="subheader">Notes</h3>
+		<div class="alignRight flexGrowHalf reveal">
+			<div class="alignRight flexGrowHalf"></div>
+		</div>
+	</div>
+	{{editor content=system.legend target="system.legend" button=true owner=owner editable=editable}}
 </div>

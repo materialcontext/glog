@@ -1,12 +1,14 @@
 import { GLOG } from "../helpers/config.mjs";
-import { registerEffectHandlers,registerCommonHandlers } from "../helpers/common-sheet-functions.mjs";
+import {
+  registerEffectHandlers,
+  registerCommonHandlers,
+} from "../helpers/common-sheet-functions.mjs";
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
 export class GlogGearSheet extends ItemSheet {
-
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
@@ -14,7 +16,13 @@ export class GlogGearSheet extends ItemSheet {
       resizable: false,
       width: 520,
       height: 445,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
+      tabs: [
+        {
+          navSelector: ".sheet-tabs",
+          contentSelector: ".sheet-body",
+          initial: "description",
+        },
+      ],
     });
   }
 
@@ -33,13 +41,13 @@ export class GlogGearSheet extends ItemSheet {
 
   /** @override */
   getData() {
-    const sheetData = super.getData()
-    const item = sheetData.item
+    const sheetData = super.getData();
+    const item = sheetData.item;
 
-    sheetData.config = GLOG
-    item.showEffectsTab = true
+    sheetData.config = GLOG;
+    item.showEffectsTab = true;
 
-    return sheetData
+    return sheetData;
   }
 
   /** @override */
@@ -66,3 +74,4 @@ export class GlogGearSheet extends ItemSheet {
 
   /* -------------------------------------------- */
 }
+
