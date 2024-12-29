@@ -34,8 +34,8 @@
 						<i class="fa-light fa-dice-six alignCenter"></i>
 					</label>
 				</div>
-				<input class="input-small" type="number" name="system.abilities.{{key}}.base" value="{{ability.base}}"
-					data-dtype="Number" placeholder="0" />
+				<input id="{{key}}" class="input-small attribute" type="number" name="system.abilities.{{key}}.value"
+					value="{{ability.value}}" data-dtype="Number" placeholder="0" />
 			</div>
 			{{/each}}
 		</div>
