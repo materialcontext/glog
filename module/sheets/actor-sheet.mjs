@@ -143,12 +143,29 @@ export class PlayerCharacterSheet extends ActorSheet {
 
     console.log("2");
     console.log(actor.system.abilities.dex.value);
-    actor.system.abilities.dex.value =
+    const dex = actor.system.abilities.dex;
+    dex.value =
       actor.system.abilities.dex.base -
       actor.system.encumberance -
       actor.system.exhaustion;
 
-    actor.system.abilities.dex.value;
+    if (dex.value < 3) {
+      dex.mod = -3;
+    } else if (dex.value == 3 || dex.value == 4) {
+      dex.mod = -2;
+    } else if (dex.value == 5 || dex.value == 6) {
+      dex.mod = -1;
+    } else if (dex.value == 8 || dex.value == 9) {
+      dex.mod = 1;
+    } else if (dex.value == 10 || dex.value == 11) {
+      dex.mod = 2;
+    } else if (dex.value > 11) {
+      dex.mod = 3;
+    } else {
+      dex.mod = 0;
+    }
+
+    actor.system.move.value = actor.system.move.base - actor.system.exhaustion;
   }
 
   async _prepareRenderedHTMLContent(context) {

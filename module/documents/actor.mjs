@@ -40,9 +40,6 @@ export class PlayerCharacter extends Actor {
     if (abilities) {
       for (let [k, v] of Object.entries(abilities)) {
         v.value = v.base - context.exhaustion;
-        if (k == "dex") {
-          v.value -= context.encumberance;
-        }
 
         if (v.value < 3) {
           abilities[k].mod = -3;
@@ -91,7 +88,7 @@ export class PlayerCharacter extends Actor {
     context.initMod = abilities.wis.mod;
 
     // set move
-    context.move.value = 4;
+    context.move.base = 4;
 
     // calculate inventory
     context.inventory.max =
@@ -119,7 +116,7 @@ export class PlayerCharacter extends Actor {
     context.flags.xpNext = GLOG.xp[level];
 
     // subtract encumebrance from move
-    context.move.value -= context.encumberance;
+    context.move.value = context.move.base - context.encumberance;
 
     context.hp.max = context.hp.base - context.exhaustion + context.hp.bonus;
 
