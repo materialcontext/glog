@@ -116,7 +116,8 @@ export class PlayerCharacter extends Actor {
     context.flags.xpNext = GLOG.xp[level];
 
     // subtract encumebrance from move
-    context.move.value = context.move.base - context.encumberance;
+    context.move.value =
+      context.move.base - Math.floor(context.encumberance / 2);
 
     context.hp.max = context.hp.base - context.exhaustion + context.hp.bonus;
 

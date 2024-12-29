@@ -165,7 +165,8 @@ export class PlayerCharacterSheet extends ActorSheet {
       dex.mod = 0;
     }
 
-    actor.system.move.value = actor.system.move.base - actor.system.exhaustion;
+    actor.system.move.value =
+      actor.system.move.base - Math.floor(actor.system.exhaustion / 2);
   }
 
   async _prepareRenderedHTMLContent(context) {
