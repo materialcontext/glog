@@ -27,17 +27,6 @@ export class PlayerCharacter extends Actor {
         break;
       }
     }
-
-    let inventory = 0;
-    Object.values(actor.system.equipment).forEach((arr) => {
-      arr.forEach((item) => (inventory += item.system.slots));
-    });
-    actor.system.inventory.value = inventory;
-
-    actor.system.encumberance = Math.max(
-      0,
-      actor.system.inventory.value - actor.system.inventory.max,
-    );
   }
 
   /** @override */

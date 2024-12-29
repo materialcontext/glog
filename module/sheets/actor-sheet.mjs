@@ -185,6 +185,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
       const hp = actor.system.hp;
       const val = hp.val > base ? base : hp.val;
+      console.log(hp, val);
 
       await this.actor.update({
         "system.hp.base": base,
@@ -192,9 +193,20 @@ export class PlayerCharacterSheet extends ActorSheet {
       });
     });
 
+    html.find(".encumberance").on("change", async (event) => {
+      const attrVal = parseInt(event.target.value);
+
+      await this.actor.update({
+        "system.encumberance": attrVal,
+        "system.abilities.dex.val":
+          actor.system.abilities.dex.base -
+          actor.system.encumberance -
+          actor.system.exhaustion,
+      });
+    });
+
     html.find(".attribute").on("change", async (event) => {
       const attrVal = parseInt(event.target.value);
-      console.log(event.target);
 
       await this.actor.update({
         ["system.abilities." + event.target.id + ".base"]: attrVal,
