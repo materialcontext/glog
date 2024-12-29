@@ -11,28 +11,29 @@
 			{{> systems/glog/templates/actor/parts/currentStatus/stealthSummary.html }}
 			{{!-- Social --}}
 			{{> systems/glog/templates/actor/parts/currentStatus/socialSummary.html }}
-			<div class="wrappercenter npcvariant1">
-				{{!-- Primary Tab Navigation --}}
-				<nav class="primary-tabs tabs" data-group="primary">
-					<a class="item" data-tab="overview">Overview</a>
-					<a class="item" data-tab="gear">Inventory</a>
-					<a class="item" data-tab="spells">Spells</a>
-					<a class="item" data-tab="effects">Effects</a>
-				</nav>
-				{{!-- Health Overview --}}
-				{{> systems/glog/templates/actor/parts/healthbar.html }}
-				<div class="contentcenter">
-					{{!-- Center Body --}}
-					<section class="primary-body">
-						{{!--History Tab--}}
-						{{!-- Inventory Tab --}}
-						{{> systems/glog/templates/actor/parts/tabs/gear.html }}
-						{{!-- Spells Tab --}}
-						{{> systems/glog/templates/actor/parts/tabs/spells.html }}
-						{{!-- Effects Tab --}}
-						{{> systems/glog/templates/actor/parts/tabs/effects-tab.html }}
-					</section>
-				</div>
+		</div>
+		<div class="wrappercenter npcvariant1">
+			{{!-- Primary Tab Navigation --}}
+			<nav class="primary-tabs tabs" data-group="primary">
+				<a class="item" data-tab="overview">Overview</a>
+				<a class="item" data-tab="gear">Inventory</a>
+				<a class="item" data-tab="spells">Spells</a>
+				<a class="item" data-tab="effects">Effects</a>
+			</nav>
+			{{!-- Health Overview --}}
+			{{> systems/glog/templates/actor/parts/healthbar.html }}
+			<div class="contentcenter">
+				{{!-- Center Body --}}
+				<section class="primary-body">
+					{{!--History Tab--}}
+					{{!-- Inventory Tab --}}
+					{{> systems/glog/templates/actor/parts/tabs/gear.html }}
+					{{!-- Spells Tab --}}
+					{{> systems/glog/templates/actor/parts/tabs/spells.html }}
+					{{!-- Effects Tab --}}
+					{{> systems/glog/templates/actor/parts/tabs/effects-tab.html }}
+				</section>
 			</div>
 		</div>
+	</div>
 </form>
