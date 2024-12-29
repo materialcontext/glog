@@ -140,9 +140,6 @@ export class PlayerCharacterSheet extends ActorSheet {
       0,
       actor.system.inventory.value - actor.system.inventory.max,
     );
-    if (actor.overrides.system && actor.overrides.system.encumberance) {
-      actor.system.encumberance += actor.overrides.system.encumberance;
-    }
 
     console.log("2");
     console.log(actor.system.abilities.dex.value);
@@ -150,6 +147,8 @@ export class PlayerCharacterSheet extends ActorSheet {
       actor.system.abilities.dex.base -
       actor.system.encumberance -
       actor.system.exhaustion;
+
+    actor.system.abilities.dex.value;
   }
 
   async _prepareRenderedHTMLContent(context) {
@@ -192,19 +191,6 @@ export class PlayerCharacterSheet extends ActorSheet {
       await this.actor.update({
         "system.hp.base": base,
         "system.hp.value": val,
-      });
-    });
-
-    html.find(".encumberance").on("change", async (event) => {
-      const attrVal = parseInt(event.target.value);
-
-      console.log(actor.system.abilities.dex.val);
-      await this.actor.updateSource({
-        "system.encumberance": attrVal,
-        "system.abilities.dex.val":
-          actor.system.abilities.dex.base -
-          actor.system.encumberance -
-          actor.system.exhaustion,
       });
     });
 
