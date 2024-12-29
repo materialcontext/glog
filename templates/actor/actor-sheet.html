@@ -4,20 +4,21 @@
 			{{!-- Sheet Header --}}
 			{{> systems/glog/templates/actor/parts/headerblock.html }}
 			{{!-- Secondary Tab Navigation --}}
+			{{> systems/glog/templates/actor/parts/currentStatus/weaponSummary.html }}
 			<nav class="secondary-tabs tabs" style="height: 52px; line-height: 52px;" data-group="secondary">
-				<a class="item" data-tab="general">General</a>
-				<a class="item" data-tab="wounds">Wounds</a>
-				<a class="item" data-tab="templates">Status</a>
+				<a class="item" data-tab="general">Explore</a>
+				<a class="item" data-tab="wounds">Stealth</a>
+				<a class="item" data-tab="templates">Social</a>
 			</nav>
 			<div class="contentleft">
 				{{!-- Left Body --}}
 				<section class="secondary-body">
-					{{!-- Profile --}}
-					{{> systems/glog/templates/actor/parts/tabs/general.html }}
-					{{!-- Wounds --}}
-					{{> systems/glog/templates/actor/parts/tabs/wounds-tab.html }}
-					{{!-- Status --}}
-					{{> systems/glog/templates/actor/parts/tabs/status-tab.html }}
+					{{!-- Explore --}}
+					{{> systems/glog/templates/actor/parts/currentStatus/exploreSummary.html }}
+					{{!-- Stealth --}}
+					{{> systems/glog/templates/actor/parts/currentStatus/stealthSummary.html }}
+					{{!-- Social --}}
+					{{> systems/glog/templates/actor/parts/currentStatus/socialSummary.html }}
 				</section>
 			</div>
 		</div>
@@ -43,9 +44,6 @@
 					{{> systems/glog/templates/actor/parts/tabs/effects-tab.html }}
 				</section>
 			</div>
-		</div>
-		<div class="wrapperright npcvariant1">
-			{{> systems/glog/templates/actor/parts/currentStatus/sidecar.html }}
 		</div>
 	</div>
 </form>

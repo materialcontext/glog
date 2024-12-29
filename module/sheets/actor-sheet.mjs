@@ -196,7 +196,7 @@ export class PlayerCharacterSheet extends ActorSheet {
 
       if (!askForOptions) {
         const li = $(ev.currentTarget).parents(".item");
-        const itemName = [li.data("itemName")] ? [li.data("itemName")] : null;
+        const itemName = li.data("itemName") ?? null;
         const popUpTitle = "Confirmation Needed";
         const popUpHeadline = "Delete" + " " + (itemName ? itemName : "");
         const popUpCopy =
