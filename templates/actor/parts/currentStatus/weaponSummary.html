@@ -1,10 +1,7 @@
 <div class="sideCarStealthBox gearSideCar">
-	<div class="boxheadmargin">
-		<label class="resource-value" style="font-size: 20px;">Combat</label>
-	</div>
 	<div class="flexrow flex-justify flex-align" style="height: 30px; margin-bottom: 10px;">
 		<div class="flexrow flex-group-center reveal">
-			<button class="restReset rollable" style="width: 96px;" type="button" data-type="combat" data-name="attack"
+			<button class="restReset rollable" style="width: 36px;" type="button" data-type="combat" data-name="attack"
 				data-key="actor.system.atk" data-roll="2d6+@combat.atk">
 				<span class="toggle resource-value align-center">ATTACK</span>
 				<label class="toggle noShow flex-group-center" style="font-size: 16px; max-width: 36px;">{{numberFormat
@@ -12,21 +9,19 @@
 			</button>
 		</div>
 		<div class="flexrow flex-group-center reveal">
-			<button class="restReset rollable" style="width: 96px;" type="button" data-type="combat" data-name="damage"
+			<button class="restReset rollable" style="width: 36px;" type="button" data-type="combat" data-name="damage"
 				data-key="actor.system.dmg" data-roll="{{actor.system.dmg}}">
 				<span class="toggle resource-value align-center">DAMAGE</span>
 				<label class="toggle noShow flex-group-center" style="font-size: 16px; max-width: 36px;">{{numberFormat
 					system.combat.dmg decimals=0 sign=true}}</label>
 			</button>
 		</div>
-	</div>
-	<div class="flexrow flex-justify flex-align" style="height: 30px;">
 		<div class="flexrow flex-group-center reveal">
-			<button class="restReset rollable" style="width: 96px;" type="button" data-type="defend" data-name="defend"
-				data-key="actor.system.def" data-roll="2d6+@combat.def">
+			<button class="restReset rollable" style="width: 36px;" type="button" data-type="defend" data-name="defend"
+				data-key="actor.system.def" data-roll="1d6+@combat.def">
 				<span class="toggle resource-value align-center">DEFEND</span>
-				<label class="toggle noShow flex-group-center" style="font-size: 16px;  max-width: 36px;">{{numberFormat
-					system.combat.def decimals=0 sign=true}}</label>
+				<label class="toggle noShow flex-group-center" style="font-size: 15px;  max-width: 36px;">{{numberFormat
+					system.combat.def decimals=-1 sign=true}}</label>
 			</button>
 		</div>
 	</div>
