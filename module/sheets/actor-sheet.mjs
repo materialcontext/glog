@@ -84,11 +84,6 @@ export class PlayerCharacterSheet extends ActorSheet {
     for (let [k, v] of Object.entries(context.system.abilities)) {
       v.label = game.i18n.localize(CONFIG.glog.abilities[k]) ?? k;
     }
-
-    context.system.abilities.dex.value =
-      context.system.abilities.dex.base -
-      context.encumberance -
-      context.exhaustion;
   }
 
   _prepareItems(context) {
@@ -149,6 +144,11 @@ export class PlayerCharacterSheet extends ActorSheet {
     if (actor.overrides.system && actor.overrides.system.encumberance) {
       actor.system.encumberance += actor.overrides.system.encumberance;
     }
+
+    actor.system.abilities.dex.value =
+      actor.system.abilities.dex.base -
+      actor.system.encumberance -
+      actor.system.exhaustion;
   }
 
   async _prepareRenderedHTMLContent(context) {
