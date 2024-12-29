@@ -84,6 +84,11 @@ export class PlayerCharacterSheet extends ActorSheet {
     for (let [k, v] of Object.entries(context.system.abilities)) {
       v.label = game.i18n.localize(CONFIG.glog.abilities[k]) ?? k;
     }
+
+    context.actor.abilities.dex.value =
+      context.actor.abilities.dex.base -
+      context.encumberance -
+      context.exhaustion;
   }
 
   _prepareItems(context) {
