@@ -127,7 +127,7 @@
 	grid-column: span 12 / span 12;
 	grid-template-columns: repeat(12, minmax(0, 1fr));
 	grid-template-areas:
-		"left left left center center center center center center right right right";
+		"left left left left center center center center center center center center";
 }
 
 /*Content Wrapper*/
