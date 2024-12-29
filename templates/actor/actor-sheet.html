@@ -3,24 +3,14 @@
 		<div class="wrapperleft npcvariant1">
 			{{!-- Sheet Header --}}
 			{{> systems/glog/templates/actor/parts/headerblock.html }}
-			{{!-- Secondary Tab Navigation --}}
+			{{!-- Combat --}}
 			{{> systems/glog/templates/actor/parts/currentStatus/weaponSummary.html }}
-			<nav class="secondary-tabs tabs" style="height: 52px; line-height: 52px;" data-group="secondary">
-				<a class="item" data-tab="explore">Explore</a>
-				<a class="item" data-tab="stealth">Stealth</a>
-				<a class="item" data-tab="social">Social</a>
-			</nav>
-			<div class="contentleft">
-				{{!-- Left Body --}}
-				<section class="secondary-body">
-					{{!-- Explore --}}
-					{{> systems/glog/templates/actor/parts/currentStatus/exploreSummary.html }}
-					{{!-- Stealth --}}
-					{{> systems/glog/templates/actor/parts/currentStatus/stealthSummary.html }}
-					{{!-- Social --}}
-					{{> systems/glog/templates/actor/parts/currentStatus/socialSummary.html }}
-				</section>
-			</div>
+			{{!-- Explore --}}
+			{{> systems/glog/templates/actor/parts/currentStatus/exploreSummary.html }}
+			{{!-- Stealth --}}
+			{{> systems/glog/templates/actor/parts/currentStatus/stealthSummary.html }}
+			{{!-- Social --}}
+			{{> systems/glog/templates/actor/parts/currentStatus/socialSummary.html }}
 		</div>
 		<div class="wrappercenter npcvariant1">
 			{{!-- Primary Tab Navigation --}}
