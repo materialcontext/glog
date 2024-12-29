@@ -39,7 +39,11 @@ export class PlayerCharacter extends Actor {
     // derive abilitiy bonuses from scores and set as ability.mod after factoring exhaustion
     if (abilities) {
       for (let [k, v] of Object.entries(abilities)) {
-        v.value = v.base - context.exhaustion;
+        if (k == "dex") {
+          v.value = v.base - context.exhaustion - context.encumberance;
+        } else {
+          v.value = v.base - context.exhaustion;
+        }
 
         if (v.value < 3) {
           abilities[k].mod = -3;

@@ -26,7 +26,7 @@
 			{{#each actor.system.abilities as |ability key|}}
 			<div class="flexrow flex-group-center reveal standard-height">
 				<div class="flexrow flex-group-center input-small rollable" data-type="ability" data-name="{{key}}"
-					data-key="system.abilities.{{key}}.mod" data-roll="system.abilities.{{key}}.roll">
+					data-key="system.abilities.{{key}}.mod" data-roll="2d6+@abilities.{{key}}.mod">
 					<span class="toggle resource-value alignCenter"
 						style=" min-width: 26px; text-transform: uppercase;">{{key}}</span>
 					<label class="toggle roll-label task-check noShow flexrow flex-group-center"
