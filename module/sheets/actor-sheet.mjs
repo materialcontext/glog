@@ -16,7 +16,7 @@ export class PlayerCharacterSheet extends ActorSheet {
       resizable: false,
       template: "systems/glog/templates/actor/actor-sheet.html",
       width: 960,
-      height: 780,
+      height: 875,
       tabs: [
         {
           navSelector: ".primary-tabs",
