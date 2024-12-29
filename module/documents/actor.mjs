@@ -147,18 +147,14 @@ export class PlayerCharacter extends Actor {
     let context = actorData.system;
     let className = context.class;
 
-    let sneak = context.stealth.sneak;
-    let hide = context.stealth.hide;
-    let disguise = context.stealth.disguise;
-
     switch (className) {
       case "acrobat":
-        sneak += 1;
+        context.stealth.sneak += 1;
         break;
       case "assassin":
-        sneak += 2;
-        hide += 2;
-        disguise += 2;
+        context.stealth.sneak += 2;
+        context.stealth.hide += 2;
+        context.stealth.disguise += 2;
         break;
       case "barbarian":
         context.hp.bonus += context.classTemplates.barbarian; // +1 hp per barbarian template
@@ -173,9 +169,9 @@ export class PlayerCharacter extends Actor {
         context.combat.archery = true;
         break;
       case "thief":
-        sneak += this._halfClass(context, "thief"); // +1 stealth per 2 thief levels
-        hide += this._halfClass(context, "thief");
-        disguise += this._halfClass(context, "thief");
+        context.stealth.sneak += this._halfClass(context, "thief"); // +1 stealth per 2 thief levels
+        context.stealth.hide += this._halfClass(context, "thief");
+        context.stealth.disguise += this._halfClass(context, "thief");
         break;
       case "wiard":
         context.magicDice.max = context.classTemplates.wizard; // +1 md per wizard template
