@@ -145,12 +145,12 @@
 }
 
 .wrappercenter {
-	height: 665px;
+	height: 766px;
 	grid-area: center;
 }
 
 .contentcenter {
-	height: 700px;
+	height: 656px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	background-color: var(--mainBackground);

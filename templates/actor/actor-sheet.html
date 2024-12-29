@@ -36,10 +36,8 @@
 			</div>
 		</div>
 	</div>
-	<div style="background-color: var(--mainBackground); padding: 10px 0 10px 0;">
-		<div class="flexrow flex-group-center listBackground grid grid-5col"
-			style="background-color: var(--pitchBorder); margin: 0; display: flex; justify-content:space-around; width:100%;">
-			{{> systems/glog/templates/actor/parts/currentStatus/encumberanceSummary.html }}
-		</div>
+	<div class="flexrow flex-group-left" style="background-color: var(--mainBackground); padding: 0 12px;">
+		{{> systems/glog/templates/actor/parts/currentStatus/encumberanceSummary.html }}
+		{{> systems/glog/templates/actor/parts/currentStatus/exhaustionSummary.html }}
 	</div>
 </form>
