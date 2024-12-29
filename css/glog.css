@@ -150,7 +150,7 @@
 }
 
 .contentcenter {
-	height: 555px;
+	height: 600px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	background-color: var(--mainBackground);
@@ -1037,7 +1037,8 @@ optgroup .Default .Roll .Mode,
 
 button.distribute,
 button.restReset {
-	padding: 0 15px;
+	padding: 0 12px;
+	font-size: 13px;
 }
 
 .button .icon-small {
