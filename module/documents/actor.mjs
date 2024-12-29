@@ -40,6 +40,10 @@ export class PlayerCharacter extends Actor {
     if (abilities) {
       for (let [k, v] of Object.entries(abilities)) {
         v.value = v.base - context.exhaustion;
+        if (k == "dex") {
+          v.value -= context.encumberance;
+        }
+        console.log(k, context.encumberance);
 
         if (v.value < 3) {
           abilities[k].mod = -3;
@@ -59,7 +63,7 @@ export class PlayerCharacter extends Actor {
       }
     }
 
-    //set exhaustion and encumberance flags before processing ability scores
+    //set exhaustion and encumberance ui flags
     context.exhausted = context.exhaustion > 0 ? true : false;
     context.encumbered = context.encumberance > 0 ? true : false;
 
